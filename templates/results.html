@@ -1,0 +1,585 @@
+{% extends "base.html" %}
+
+{% block title %}Assessment Results - {{ customer.name }} - SOC CMM{% endblock %}
+
+{% block content %}
+<div class="mb-3">
+    <div class="flex justify-between items-center mb-2">
+        <h1 class="card-title" style="font-size: 1.75rem; margin: 0;">
+            <i class="fas fa-chart-line"></i>
+            Assessment Results
+        </h1>
+        <div class="flex gap-2">
+            <button onclick="exportResults()" class="btn btn-secondary btn-sm">
+                <i class="fas fa-download"></i>
+                Export
+            </button>
+            <a href="/customers" class="btn btn-primary btn-sm">
+                <i class="fas fa-arrow-left"></i>
+                Back to Customers
+            </a>
+        </div>
+    </div>
+    <p style="color: var(--text-secondary);">
+        Customer: <strong>{{ customer.name }}</strong>
+        {% if customer.organization %} | Organization: <strong>{{ customer.organization }}</strong>{% endif %}
+        <br>
+        Assessment: <strong>{{ assessment.name }}</strong> | 
+        Completed: <strong>{{ assessment.completed_at }}</strong>
+    </p>
+</div>
+
+<!-- Overall Score Card -->
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-trophy"></i>
+            Overall SOC Maturity Score
+        </h2>
+    </div>
+    <div class="card-body">
+        <div class="grid grid-cols-1" style="max-width: 400px; margin: 0 auto;">
+            <div class="text-center">
+                <div id="overallScoreCircle" style="width: 200px; height: 200px; margin: 0 auto 1rem;">
+                    <!-- Overall score circle will be rendered here -->
+                </div>
+                <h3 id="overallScoreText" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin: 0;">
+                    Calculating...
+                </h3>
+                <p style="color: var(--text-secondary); margin: 0;">
+                    Average Maturity Level
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Radar Chart -->
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-chart-radar"></i>
+            Maturity Radar Chart
+        </h2>
+        <p class="card-subtitle">Visual representation of maturity across all domains</p>
+    </div>
+    <div class="card-body">
+        <div style="position: relative; height: 400px; max-width: 600px; margin: 0 auto;">
+            <canvas id="radarChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Domain Scores -->
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-list-alt"></i>
+            Domain Breakdown
+        </h2>
+    </div>
+    <div class="card-body">
+        <div class="grid grid-cols-1 gap-3" id="domainScores">
+            <!-- Domain scores will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<!-- Aspect Details -->
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-microscope"></i>
+            Detailed Aspect Scores
+        </h2>
+    </div>
+    <div class="card-body">
+        <div id="aspectScores">
+            <!-- Aspect scores will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<!-- Progress Tracking -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-trending-up"></i>
+            Progress Over Time
+        </h2>
+        <p class="card-subtitle">Compare with previous assessments</p>
+    </div>
+    <div class="card-body">
+        <div id="progressContent">
+            <div class="text-center">
+                <div class="spinner"></div>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Loading progress data...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.score-bar {
+    background-color: var(--border-color);
+    border-radius: 9999px;
+    height: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.score-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.8s ease;
+}
+
+.score-level-1 { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.score-level-2 { background: linear-gradient(90deg, #f59e0b, #d97706); }
+.score-level-3 { background: linear-gradient(90deg, #eab308, #ca8a04); }
+.score-level-4 { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.score-level-5 { background: linear-gradient(90deg, #10b981, #059669); }
+
+.maturity-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge-level-1 { background-color: #ef4444; }
+.badge-level-2 { background-color: #f59e0b; }
+.badge-level-3 { background-color: #eab308; }
+.badge-level-4 { background-color: #22c55e; }
+.badge-level-5 { background-color: #10b981; }
+
+.progress-chart {
+    position: relative;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.domain-score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 0.75rem;
+}
+
+.domain-score-item:last-child {
+    margin-bottom: 0;
+}
+
+.aspect-group {
+    margin-bottom: 2rem;
+}
+
+.aspect-group:last-child {
+    margin-bottom: 0;
+}
+
+.aspect-group h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.aspect-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+    background-color: var(--background-color);
+}
+
+.aspect-item:last-child {
+    margin-bottom: 0;
+}
+.hidden {
+    display: none;
+}
+</style>
+
+<script>
+// Global variables
+let assessmentId = {{ assessment.id }};
+let customerId = {{ customer.id }};
+let radarChart = null;
+let progressChart = null;
+
+// Initialize results page
+document.addEventListener('DOMContentLoaded', function() {
+    loadAssessmentResults();
+    loadProgressData();
+});
+
+async function loadAssessmentResults() {
+    try {
+        // Load scores
+        const scoresResponse = await fetch(`/api/assessments/${assessmentId}/scores`);
+        const scoresData = await scoresResponse.json();
+        
+        // Load radar data
+        const radarResponse = await fetch(`/api/assessments/${assessmentId}/radar-data`);
+        const radarData = await radarResponse.json();
+        
+        // Display results
+        displayOverallScore(scoresData.scores);
+        displayRadarChart(radarData.radar_data);
+        displayDomainScores(scoresData.scores.domain_scores);
+        displayAspectScores(scoresData.scores.aspect_scores);
+        
+    } catch (error) {
+        console.error('Error loading assessment results:', error);
+    }
+}
+
+function displayOverallScore(scores) {
+    const domainScores = scores.domain_scores;
+    const averageScore = domainScores.reduce((sum, domain) => sum + domain.score, 0) / domainScores.length;
+    const averagePercentage = domainScores.reduce((sum, domain) => sum + domain.percentage, 0) / domainScores.length;
+    
+    // Update overall score text
+    document.getElementById('overallScoreText').textContent = `${averageScore.toFixed(1)}/5.0`;
+    
+    // Create overall score circle chart
+    const ctx = document.createElement('canvas');
+    ctx.width = 200;
+    ctx.height = 200;
+    document.getElementById('overallScoreCircle').appendChild(ctx);
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [averagePercentage, 100 - averagePercentage],
+                backgroundColor: [
+                    getScoreColor(averageScore),
+                    '#e2e8f0'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            cutout: '70%',
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+            }
+        }
+    });
+}
+
+function displayRadarChart(radarData) {
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    
+    radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: radarData.labels,
+            datasets: [{
+                label: 'Current Maturity Level',
+                data: radarData.datasets[0].data,
+                backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                borderColor: 'rgba(37, 99, 235, 1)',
+                borderWidth: 3,
+                pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    },
+                    angleLines: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.parsed.r.toFixed(1)}% (Level ${(context.parsed.r / 20).toFixed(1)})`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function displayDomainScores(domainScores) {
+    const container = document.getElementById('domainScores');
+    
+    container.innerHTML = domainScores.map(domain => {
+        const level = Math.round(domain.score);
+        const levelText = getLevelText(level);
+        
+        return `
+            <div class="domain-score-item">
+                <div>
+                    <h4 style="margin: 0; font-weight: 600;">${domain.name}</h4>
+                    <div class="score-bar" style="width: 200px; margin-top: 0.5rem;">
+                        <div class="score-fill score-level-${level}" style="width: ${domain.percentage}%;"></div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div style="font-size: 1.25rem; font-weight: 700; color: var(--primary-color);">
+                        ${domain.score.toFixed(1)}/5.0
+                    </div>
+                    <div class="maturity-badge badge-level-${level}">
+                        ${levelText}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function displayAspectScores(aspectScores) {
+    const container = document.getElementById('aspectScores');
+    
+    // Group aspects by domain
+    const groupedAspects = {};
+    aspectScores.forEach(aspect => {
+        if (!groupedAspects[aspect.domain_name]) {
+            groupedAspects[aspect.domain_name] = [];
+        }
+        groupedAspects[aspect.domain_name].push(aspect);
+    });
+    
+    container.innerHTML = Object.entries(groupedAspects).map(([domainName, aspects]) => `
+        <div class="aspect-group">
+            <h3>${domainName} Domain</h3>
+            ${aspects.map(aspect => {
+                const level = Math.round(aspect.score);
+                const levelText = getLevelText(level);
+                
+                return `
+                    <div class="aspect-item">
+                        <div>
+                            <h5 style="margin: 0; font-weight: 600;">${aspect.aspect_name}</h5>
+                            <div class="score-bar" style="width: 150px; margin-top: 0.25rem;">
+                                <div class="score-fill score-level-${level}" style="width: ${aspect.percentage}%;"></div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div style="font-weight: 600;">${aspect.score.toFixed(1)}/5.0</div>
+                            <div class="maturity-badge badge-level-${level}" style="font-size: 0.625rem;">
+                                Level ${level}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `).join('');
+}
+
+async function loadProgressData() {
+    try {
+        const response = await fetch(`/api/customers/${customerId}/progress`);
+        const data = await response.json();
+        
+        displayProgressData(data.progress);
+    } catch (error) {
+        console.error('Error loading progress data:', error);
+        document.getElementById('progressContent').innerHTML = `
+            <div class="text-center">
+                <p style="color: var(--text-secondary);">Error loading progress data</p>
+            </div>
+        `;
+    }
+}
+
+function displayProgressData(progressData) {
+    const container = document.getElementById('progressContent');
+    
+    if (progressData.length <= 1) {
+        container.innerHTML = `
+            <div class="text-center">
+                <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">No Progress Data Yet</h3>
+                <p style="color: var(--text-secondary);">
+                    Complete additional assessments to track progress over time.
+                </p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Create progress chart
+    container.innerHTML = `
+        <div class="progress-chart">
+            <canvas id="progressChart"></canvas>
+        </div>
+        <div class="grid grid-cols-1 gap-2" id="progressList">
+            <!-- Progress items will be added here -->
+        </div>
+    `;
+    
+    // Prepare data for line chart
+    const labels = progressData.map(item => new Date(item.completed_at).toLocaleDateString());
+    const datasets = [];
+    
+    // Get all domain names from the first assessment
+    const domainNames = progressData[0].radar_data.labels;
+    const colors = [
+        '#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'
+    ];
+    
+    domainNames.forEach((domain, index) => {
+        datasets.push({
+            label: domain,
+            data: progressData.map(item => item.radar_data.datasets[0].data[index]),
+            borderColor: colors[index % colors.length],
+            backgroundColor: colors[index % colors.length] + '20',
+            borderWidth: 2,
+            fill: false,
+            tension: 0.1
+        });
+    });
+    
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    progressChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 15,
+                        usePointStyle: true
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    // Display progress list
+    const progressList = document.getElementById('progressList');
+    progressList.innerHTML = progressData.map((item, index) => `
+        <div class="card" style="padding: 1rem;">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h5 style="margin: 0; font-weight: 600;">${item.name}</h5>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">
+                        ${new Date(item.completed_at).toLocaleDateString()}
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <a href="/results/${item.assessment_id}" class="btn btn-secondary btn-sm">
+                        <i class="fas fa-eye"></i>
+                        View
+                    </a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Utility functions
+function getScoreColor(score) {
+    if (score >= 4.5) return '#10b981';
+    if (score >= 3.5) return '#22c55e';
+    if (score >= 2.5) return '#eab308';
+    if (score >= 1.5) return '#f59e0b';
+    return '#ef4444';
+}
+
+function getLevelText(level) {
+    const levels = {
+        1: 'Initial',
+        2: 'Developing',
+        3: 'Defined',
+        4: 'Managed',
+        5: 'Optimized'
+    };
+    return levels[level] || 'Unknown';
+}
+
+function exportResults() {
+    // Simple export functionality - could be enhanced with PDF generation
+    const data = {
+        customer: '{{ customer.name }}',
+        assessment: '{{ assessment.name }}',
+        completed_at: '{{ assessment.completed_at }}',
+        // Add more data as needed
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `soc_cmm_results_${assessmentId}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+</script>
+{% endblock %}
+
