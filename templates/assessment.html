@@ -1,0 +1,392 @@
+{% extends "base.html" %}
+
+{% block title %}Assessment - {{ customer.name }} - SOC CMM{% endblock %}
+
+{% block content %}
+<div class="mb-3">
+    <div class="flex justify-between items-center mb-2">
+        <h1 class="card-title" style="font-size: 1.75rem; margin: 0;">
+            <i class="fas fa-clipboard-list"></i>
+            SOC CMM Assessment
+        </h1>
+        <button onclick="saveAndExit()" class="btn btn-secondary btn-sm">
+            <i class="fas fa-save"></i>
+            Save & Exit
+        </button>
+    </div>
+    <p style="color: var(--text-secondary);">
+        Customer: <strong>{{ customer.name }}</strong>
+        {% if customer.organization %} | Organization: <strong>{{ customer.organization }}</strong>{% endif %}
+    </p>
+</div>
+
+<!-- Progress Bar -->
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="progress-text" id="progressText">Step 1 of 6: Business Domain</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 16.67%;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Step Indicator -->
+<div class="step-indicator mb-3">
+    {% for domain in domains %}
+    <div class="step" id="step-{{ domain.id }}" {% if loop.index == 1 %}class="step active"{% endif %}>
+        <div class="step-number">{{ loop.index }}</div>
+        <span style="font-size: 0.875rem; font-weight: 500;">{{ domain.name }}</span>
+    </div>
+    {% if not loop.last %}
+    <div class="step-connector"></div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<!-- Assessment Content -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title" id="currentDomainTitle">
+            <i class="fas fa-building"></i>
+            Business Domain
+        </h2>
+        <p class="card-subtitle" id="currentDomainSubtitle">Assessing business strategy and governance aspects</p>
+    </div>
+    <div class="card-body">
+        <!-- Domain/Aspect Selection -->
+        <div id="domainSelection" class="mb-3">
+            <h3 style="margin-bottom: 1rem;">Select an aspect to assess:</h3>
+            <div id="aspectsList" class="grid grid-cols-1 gap-2">
+                <!-- Aspects will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer" class="hidden">
+            <div class="flex justify-between items-center mb-3">
+                <h3 id="currentAspectTitle">Current Aspect</h3>
+                <button onclick="backToAspects()" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Aspects
+                </button>
+            </div>
+            
+            <div id="questionsList">
+                <!-- Questions will be loaded here -->
+            </div>
+            
+            <div class="flex justify-between mt-3">
+                <button onclick="backToAspects()" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Aspects
+                </button>
+                <button onclick="completeAspect()" class="btn btn-success" id="completeAspectBtn" disabled>
+                    <i class="fas fa-check"></i>
+                    Complete Aspect
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="flex justify-between">
+            <button onclick="previousDomain()" class="btn btn-secondary" id="prevDomainBtn" disabled>
+                <i class="fas fa-chevron-left"></i>
+                Previous Domain
+            </button>
+            <button onclick="nextDomain()" class="btn btn-primary" id="nextDomainBtn">
+                Next Domain
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button onclick="completeAssessment()" class="btn btn-success hidden" id="completeAssessmentBtn">
+                <i class="fas fa-flag-checkered"></i>
+                Complete Assessment
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Global variables
+let currentDomainIndex = 0;
+let currentAspectId = null;
+let domains = {{ domains | tojson }};
+let assessmentId = {{ assessment.id }};
+let aspectsData = {};
+let questionsData = {};
+let answers = {};
+let completedAspects = new Set();
+
+// Domain icons mapping
+const domainIcons = {
+    'Business': 'fas fa-building',
+    'People': 'fas fa-users',
+    'Process': 'fas fa-cogs',
+    'Technology': 'fas fa-microchip',
+    'Services': 'fas fa-server',
+    'Results': 'fas fa-chart-line'
+};
+
+// Initialize assessment
+document.addEventListener('DOMContentLoaded', function() {
+    loadDomainAspects(domains[0].id);
+});
+
+async function loadDomainAspects(domainId) {
+    try {
+        const response = await fetch(`/api/domains/${domainId}/aspects`);
+        const data = await response.json();
+        aspectsData[domainId] = data.aspects;
+        displayAspects(data.aspects);
+    } catch (error) {
+        console.error('Error loading aspects:', error);
+    }
+}
+
+function displayAspects(aspects) {
+    const aspectsList = document.getElementById('aspectsList');
+    aspectsList.innerHTML = aspects.map(aspect => `
+        <div class="card" style="cursor: pointer; transition: var(--transition);" 
+             onclick="selectAspect(${aspect.id})"
+             onmouseover="this.style.transform='translateY(-2px)'"
+             onmouseout="this.style.transform='translateY(0)'">
+            <div class="card-body">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 style="margin: 0; font-weight: 600;">${aspect.name}</h4>
+                        <p style="color: var(--text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">
+                            ${aspect.description}
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        ${completedAspects.has(aspect.id) ? 
+                            '<i class="fas fa-check-circle" style="color: var(--success-color); font-size: 1.25rem;"></i>' :
+                            '<i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>'
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function selectAspect(aspectId) {
+    currentAspectId = aspectId;
+    
+    try {
+        const response = await fetch(`/api/aspects/${aspectId}/questions`);
+        const data = await response.json();
+        questionsData[aspectId] = data.questions;
+        
+        // Find aspect name
+        const currentDomain = domains[currentDomainIndex];
+        const aspects = aspectsData[currentDomain.id];
+        const aspect = aspects.find(a => a.id === aspectId);
+        
+        document.getElementById('currentAspectTitle').textContent = aspect.name;
+        displayQuestions(data.questions);
+        
+        // Show questions container, hide domain selection
+        document.getElementById('domainSelection').classList.add('hidden');
+        document.getElementById('questionsContainer').classList.remove('hidden');
+        
+    } catch (error) {
+        console.error('Error loading questions:', error);
+    }
+}
+
+function displayQuestions(questions) {
+    const questionsList = document.getElementById('questionsList');
+    console.log(questions);
+    questionsList.innerHTML = questions.map((question, index) => `
+        <div class="question-container">
+            <div class="question-text">
+                ${index + 1}. ${question.question_text}
+            </div>
+            <div class="answer-options">
+                ${question.options.map(option => `
+                    <div class="answer-option">
+                        <input type="radio" 
+                               id="q${question.id}_o${option.id}" 
+                               name="question_${question.id}" 
+                               value="${option.id}"
+                               onchange="saveAnswer(${question.id}, ${option.id})"
+                               ${answers[question.id] === option.id ? 'checked' : ''}>
+                        <label for="q${question.id}_o${option.id}">
+                            <div class="maturity-level">Level ${option.maturity_level}</div>
+                            ${option.option_text}
+                        </label>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+    
+    checkAspectCompletion();
+}
+
+async function saveAnswer(questionId, optionId) {
+    answers[questionId] = optionId;
+    
+    try {
+        await fetch('/api/answers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                assessment_id: assessmentId,
+                question_id: questionId,
+                answer_option_id: optionId
+            })
+        });
+        
+        checkAspectCompletion();
+    } catch (error) {
+        console.error('Error saving answer:', error);
+    }
+}
+
+function checkAspectCompletion() {
+    if (!currentAspectId || !questionsData[currentAspectId]) return;
+    
+    const questions = questionsData[currentAspectId];
+    const answeredQuestions = questions.filter(q => answers[q.id] !== undefined);
+    
+    const completeBtn = document.getElementById('completeAspectBtn');
+    if (answeredQuestions.length === questions.length) {
+        completeBtn.disabled = false;
+    } else {
+        completeBtn.disabled = true;
+    }
+}
+
+function completeAspect() {
+    if (currentAspectId) {
+        completedAspects.add(currentAspectId);
+        backToAspects();
+        
+        // Check if all aspects in current domain are completed
+        const currentDomain = domains[currentDomainIndex];
+        const aspects = aspectsData[currentDomain.id];
+        const allCompleted = aspects.every(aspect => completedAspects.has(aspect.id));
+        
+        if (allCompleted) {
+            // Mark domain as completed
+            const stepElement = document.getElementById(`step-${currentDomain.id}`);
+            stepElement.classList.add('completed');
+            stepElement.classList.remove('active');
+        }
+    }
+}
+
+function backToAspects() {
+    document.getElementById('questionsContainer').classList.add('hidden');
+    document.getElementById('domainSelection').classList.remove('hidden');
+    
+    // Refresh aspects display to show completion status
+    const currentDomain = domains[currentDomainIndex];
+    displayAspects(aspectsData[currentDomain.id]);
+    
+    currentAspectId = null;
+}
+
+function previousDomain() {
+    if (currentDomainIndex > 0) {
+        changeDomain(currentDomainIndex - 1);
+    }
+}
+
+function nextDomain() {
+    if (currentDomainIndex < domains.length - 1) {
+        changeDomain(currentDomainIndex + 1);
+    }
+}
+
+async function changeDomain(newIndex) {
+    // Hide questions if showing
+    backToAspects();
+    
+    // Update current domain
+    const oldStep = document.getElementById(`step-${domains[currentDomainIndex].id}`);
+    oldStep.classList.remove('active');
+    
+    currentDomainIndex = newIndex;
+    const newDomain = domains[currentDomainIndex];
+    
+    const newStep = document.getElementById(`step-${newDomain.id}`);
+    newStep.classList.add('active');
+    
+    // Update UI
+    updateDomainUI();
+    
+    // Load aspects if not already loaded
+    if (!aspectsData[newDomain.id]) {
+        await loadDomainAspects(newDomain.id);
+    } else {
+        displayAspects(aspectsData[newDomain.id]);
+    }
+    
+    // Update navigation buttons
+    updateNavigationButtons();
+}
+
+function updateDomainUI() {
+    const domain = domains[currentDomainIndex];
+    const icon = domainIcons[domain.name] || 'fas fa-circle';
+    
+    document.getElementById('currentDomainTitle').innerHTML = `
+        <i class="${icon}"></i>
+        ${domain.name} Domain
+    `;
+    document.getElementById('currentDomainSubtitle').textContent = domain.description;
+    
+    // Update progress
+    const progress = ((currentDomainIndex + 1) / domains.length) * 100;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+    document.getElementById('progressText').textContent = 
+        `Step ${currentDomainIndex + 1} of ${domains.length}: ${domain.name} Domain`;
+}
+
+function updateNavigationButtons() {
+    const prevBtn = document.getElementById('prevDomainBtn');
+    const nextBtn = document.getElementById('nextDomainBtn');
+    const completeBtn = document.getElementById('completeAssessmentBtn');
+    
+    prevBtn.disabled = currentDomainIndex === 0;
+    
+    if (currentDomainIndex === domains.length - 1) {
+        nextBtn.classList.add('hidden');
+        completeBtn.classList.remove('hidden');
+    } else {
+        nextBtn.classList.remove('hidden');
+        completeBtn.classList.add('hidden');
+    }
+}
+
+async function completeAssessment() {
+    try {
+        const response = await fetch(`/api/assessments/${assessmentId}/complete`, {
+            method: 'PUT'
+        });
+        
+        if (response.ok) {
+            window.location.href = `/results/${assessmentId}`;
+        } else {
+            alert('Error completing assessment');
+        }
+    } catch (error) {
+        alert('Error completing assessment');
+    }
+}
+
+async function saveAndExit() {
+    // Just redirect to customers page - answers are already saved
+    window.location.href = '/customers';
+}
+
+// Initialize UI
+updateDomainUI();
+updateNavigationButtons();
+</script>
+{% endblock %}
+
