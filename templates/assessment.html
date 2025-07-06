@@ -197,33 +197,108 @@ async function selectAspect(aspectId) {
 function displayQuestions(questions) {
     const questionsList = document.getElementById('questionsList');
     console.log(questions);
-    questionsList.innerHTML = questions.map((question, index) => `
-        <div class="question-container">
-            <div class="question-text">
-                ${index + 1}. ${question.question_text}
+    questionsList.innerHTML = questions.map((question, index) => {
+        let inputHtml = '';
+        
+        if (question.question_type === 'multiple_choice') {
+            inputHtml = `
+                <select id="q${question.id}" name="question_${question.id}" onchange="saveAnswer(${question.id}, this.value)">
+                    <option value="">Selecione uma opção...</option>
+                    ${question.options ? question.options.map(option => `
+                        <option value="${option.id}" ${answers[question.id] == option.id ? 'selected' : ''}>${option.option_text}</option>
+                    `).join('') : ''}
+                </select>
+            `;
+        } else if (question.question_type === 'numeric') {
+            inputHtml = `
+                <input type="number" id="q${question.id}" name="question_${question.id}" 
+                       value="${answers[question.id] || ''}" 
+                       onchange="saveAnswer(${question.id}, this.value)" 
+                       placeholder="Digite um número">
+            `;
+        } else if (question.question_type === 'text') {
+            inputHtml = `
+                <input type="text" id="q${question.id}" name="question_${question.id}" 
+                       value="${answers[question.id] || ''}" 
+                       onchange="saveAnswer(${question.id}, this.value)" 
+                       placeholder="Digite sua resposta">
+            `;
+        } else if (question.question_type === 'checkbox') {
+            inputHtml = `
+                <div class="checkbox-group">
+                    ${question.options ? question.options.map(option => `
+                        <label class="checkbox-option">
+                            <input type="checkbox" value="${option.id}" 
+                                   ${answers[question.id] && answers[question.id].includes(option.id) ? 'checked' : ''}
+                                   onchange="saveCheckboxAnswer(${question.id}, ${option.id}, this.checked)">
+                            <span>${option.option_text}</span>
+                        </label>
+                    `).join('') : ''}
+                </div>
+            `;
+        }
+        
+        return `
+            <div class="question-container">
+                <div class="question-text">
+                    ${index + 1}. ${question.question_text}
+                </div>
+                <div class="answer-options">
+                    ${inputHtml}
+                </div>
             </div>
-            <div class="answer-options">
-                ${question.question_type == 'multiple_choice' ? `
-                    <select id="q${question.id}" name="question_${question.id}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
-                        ${question.options.map(option => `
-                            <option value="${option.id}" ${answers[question.id] === option.id ? 'selected' : ''}>${option.option_text}</option>
-                        `).join('')}
-                    </select>
-
-                } else if (question.question_type == 'numeric') {
-                    <input type="number" id="q${question.id}" name="question_${question.id}" value="${answers[question.id]}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
-                } else if (question.question_type == 'text') {
-                    <textarea id="q${question.id}" name="question_${question.id}" value="${answers[question.id]}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
-                }
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
     
     checkAspectCompletion();
 }
 
-async function saveAnswer(questionId, optionId) {
-    answers[questionId] = optionId;
+async function saveAnswer(questionId, value) {
+    answers[questionId] = value;
+    
+    try {
+        const payload = {
+            assessment_id: assessmentId,
+            question_id: questionId
+        };
+        
+        // Se for uma questão de múltipla escolha, enviar answer_option_id
+        if (value && !isNaN(value)) {
+            payload.answer_option_id = parseInt(value);
+        } else {
+            // Se for texto ou número, enviar answer_text
+            payload.answer_text = value;
+        }
+        
+        await fetch('/api/answers', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+        
+        checkAspectCompletion();
+    } catch (error) {
+        console.error('Error saving answer:', error);
+    }
+}
+
+async function saveCheckboxAnswer(questionId, optionId, checked) {
+    // Inicializar array se não existir
+    if (!answers[questionId]) {
+        answers[questionId] = [];
+    }
+    
+    if (checked) {
+        // Adicionar opção se não estiver na lista
+        if (!answers[questionId].includes(optionId)) {
+            answers[questionId].push(optionId);
+        }
+    } else {
+        // Remover opção da lista
+        answers[questionId] = answers[questionId].filter(id => id !== optionId);
+    }
     
     try {
         await fetch('/api/answers', {
@@ -234,13 +309,13 @@ async function saveAnswer(questionId, optionId) {
             body: JSON.stringify({
                 assessment_id: assessmentId,
                 question_id: questionId,
-                answer_option_id: optionId
+                answer_text: JSON.stringify(answers[questionId]) // Salvar array como JSON
             })
         });
         
         checkAspectCompletion();
     } catch (error) {
-        console.error('Error saving answer:', error);
+        console.error('Error saving checkbox answer:', error);
     }
 }
 
@@ -386,5 +461,88 @@ async function saveAndExit() {
 updateDomainUI();
 updateNavigationButtons();
 </script>
+
+<style>
+.question-container {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.question-text {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.answer-options select,
+.answer-options input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--surface-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.answer-options select:focus,
+.answer-options input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--surface-color);
+}
+
+.checkbox-option:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary-color);
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.checkbox-option span {
+    flex: 1;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.checkbox-option input[type="checkbox"]:checked + span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.answer-options input[type="number"] {
+    max-width: 200px;
+}
+
+.answer-options input[type="text"] {
+    max-width: 400px;
+}
+</style>
+
 {% endblock %}
 
