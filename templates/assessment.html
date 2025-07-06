@@ -203,20 +203,18 @@ function displayQuestions(questions) {
                 ${index + 1}. ${question.question_text}
             </div>
             <div class="answer-options">
-                ${question.options.map(option => `
-                    <div class="answer-option">
-                        <input type="radio" 
-                               id="q${question.id}_o${option.id}" 
-                               name="question_${question.id}" 
-                               value="${option.id}"
-                               onchange="saveAnswer(${question.id}, ${option.id})"
-                               ${answers[question.id] === option.id ? 'checked' : ''}>
-                        <label for="q${question.id}_o${option.id}">
-                            <div class="maturity-level">Level ${option.maturity_level}</div>
-                            ${option.option_text}
-                        </label>
-                    </div>
-                `).join('')}
+                ${question.question_type == 'multiple_choice' ? `
+                    <select id="q${question.id}" name="question_${question.id}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
+                        ${question.options.map(option => `
+                            <option value="${option.id}" ${answers[question.id] === option.id ? 'selected' : ''}>${option.option_text}</option>
+                        `).join('')}
+                    </select>
+
+                } else if (question.question_type == 'numeric') {
+                    <input type="number" id="q${question.id}" name="question_${question.id}" value="${answers[question.id]}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
+                } else if (question.question_type == 'text') {
+                    <textarea id="q${question.id}" name="question_${question.id}" value="${answers[question.id]}" onchange="saveAnswer(${question.id}, ${answers[question.id]})">
+                }
             </div>
         </div>
     `).join('');
