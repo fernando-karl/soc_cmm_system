@@ -1,0 +1,4945 @@
+{
+  "General": {
+    "Profile": [
+      {
+        "id": "Assessment Details.Date of assessment",
+        "question": "Date of assessment",
+        "fieldType": "date",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Assessment Details.Name(s)",
+        "question": "Name(s)",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Assessment Details.Department(s)",
+        "question": "Department(s)",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Assessment Details.Intended purpose of the assessment",
+        "question": "Intended purpose of the assessment",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Assessment Details.Assessment type",
+        "question": "Assessment type",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Click on the dropdown box for more information"
+      },
+      {
+        "id": "Assessment Details.Assessment style",
+        "question": "Assessment style",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Click on the dropdown box for more information"
+      },
+      {
+        "id": "Organisation & SOC Profile.Business size (FTE)",
+        "question": "Business size (FTE)",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Organisation & SOC Profile.Sector",
+        "question": "Sector",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Organisation & SOC Profile.Number of years of SOC operations",
+        "question": "Number of years of SOC operations",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Organisation & SOC Profile.SOC size (FTE's)",
+        "question": "SOC size (FTE's)",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Organisation & SOC Profile.SOC organisational model",
+        "question": "SOC organisational model",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Click on the dropdown box for more information"
+      },
+      {
+        "id": "Organisation & SOC Profile.SOC region",
+        "question": "SOC region",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Organisation & SOC Profile.Geographic operation",
+        "question": "Geographic operation",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Target Maturity.business domain",
+        "question": "Target maturity level business domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 5. Decimals can be used"
+      },
+      {
+        "id": "Target Maturity.people domain",
+        "question": "Target maturity level people domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 5. Decimals can be used"
+      },
+      {
+        "id": "Target Maturity.process domain",
+        "question": "Target maturity level process domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 5. Decimals can be used"
+      },
+      {
+        "id": "Target Maturity.technology domain",
+        "question": "Target maturity level technology domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 5. Decimals can be used"
+      },
+      {
+        "id": "Target Maturity.services domain",
+        "question": "Target maturity level services domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 5. Decimals can be used"
+      },
+      {
+        "id": "Target Capability.technology domain",
+        "question": "Target capability level technology domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 3. Decimals can be used"
+      },
+      {
+        "id": "Target Capability.services domain",
+        "question": "Target capability level services domain",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indicate a score from 1 to 3. Decimals can be used"
+      }
+    ],
+    "Scope": {
+      "SOC Tooling (Technology domain)": [
+        {
+          "id": "SIEM / UEBA",
+          "question": "SIEM / UEBA",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Security Information and Event management tooling. Used to gather logging information from company assets and correlate events. Also includes User and Entity Behaviour Analytics (UEBA)"
+        },
+        {
+          "id": "NDR",
+          "question": "NDR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Network security solution, used detect network exploits and anomalous network activity and perform network forensics"
+        },
+        {
+          "id": "EDR",
+          "question": "EDR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "End-point security solution, used to prevent, detect and respond to threats on end-points"
+        },
+        {
+          "id": "SOAR",
+          "question": "SOAR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Used to automate workflows and SOC actions, support incident response and orchestrate between different security products"
+        }
+      ],
+      "SOC Services (services domain)": [
+        {
+          "id": "Security Monitoring",
+          "question": "Security Monitoring",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The security monitoring service aims at detecting security incidents and events"
+        },
+        {
+          "id": "Security Incident Management",
+          "question": "Security Incident Management",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The security incident management service aims at responding to security incidents in a timely, accurate and organized fashion"
+        },
+        {
+          "id": "Security Analysis",
+          "question": "Security Analysis",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The security analysis service supports security monitoring and security incident management. Analysis includes event analysis and forensic analysis"
+        },
+        {
+          "id": "Threat Intelligence",
+          "question": "Threat Intelligence",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The threat intelligence service provides information about potential threats that can be used in security monitoring, security incident response, security analysis and threat hunting"
+        },
+        {
+          "id": "Threat Hunting",
+          "question": "Threat Hunting",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The hunting service takes a proactive approach to finding threats in the infrastructure. Threat intelligence is often used to guide hunting efforts"
+        },
+        {
+          "id": "Vulnerability Management",
+          "question": "Vulnerability Management",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The vulnerability management service is used to detect vulnerabilities in assets by discovery and actively scanning assets for known vulnerabilities"
+        },
+        {
+          "id": "Log Management",
+          "question": "Log Management",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "The log management service is used to collect, store and retain logging. Can be used for compliance purposes as well as investigation purposes"
+        }
+      ]
+    }
+  },
+  "Business": {
+    "Business Drivers": [
+      {
+        "id": "1.1",
+        "question": "Have you identified the main business drivers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not defined", "Partially defined", "Fully defined"],
+        "guidance": "Example business drivers: cyber crime prevention, risk reduction, law / regulation, audit / compliance, business continuity"
+      },
+      {
+        "id": "1.2",
+        "question": "Have you documented the main business drivers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Documentation of business drivers is important for demonstrable business alignment"
+      },
+      {
+        "id": "1.3",
+        "question": "Do you use business drivers in the decision making process?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. to determine priorities or make decisions regarding the on-boarding of new services or operations"
+      },
+      {
+        "id": "1.4",
+        "question": "Do you regularly check if the current service catalogue is aligned with business drivers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. do you check for services or operations that outside the scope of business drivers?"
+      },
+      {
+        "id": "1.5",
+        "question": "Have the business drivers been validated with business stakeholders?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Business stakeholders can be C-level management"
+      }
+    ],
+    "Customers": [
+      {
+        "id": "2.1",
+        "question": "Have you identified the SOC customers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not identified", "Partially identified", "Fully identified"],
+        "guidance": "Types of customers, customer requirements / expectations, etc."
+      },
+      {
+        "id": "2.2",
+        "question": "Please specify your customers:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Legal",
+          "Audit",
+          "Engineering / R&D",
+          "IT",
+          "Business",
+          "External customers",
+          "(Senior) Management",
+          "Other customers"
+        ],
+        "guidance": "Use this as a guideline for answering 2.1. This is also potentially useful for insights and comparison with previous assessments."
+      },
+      {
+        "id": "2.3",
+        "question": "Have you documented the main SOC customers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Formal registration of customer contact details, place in the organization, geolocation, etc."
+      },
+      {
+        "id": "2.4",
+        "question": "Do you differentiate output towards these specific customers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "For example, are communication style and contents to Business customers different than that to IT?"
+      },
+      {
+        "id": "2.5",
+        "question": "Do you have service level agreements with these customers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Service level agreements are used to provide standardized services operating within known boundaries"
+      },
+      {
+        "id": "2.6",
+        "question": "Do you regularly send updates to your customers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "For example: changes in service scope or delivery. Can also be reports, dashboards, etc."
+      },
+      {
+        "id": "2.7",
+        "question": "Do you actively measure and manage customer satisfaction?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Understanding customer satisfaction will help to better align with business needs"
+      }
+    ],
+    "Charter": [
+      {
+        "id": "3.1",
+        "question": "Does the SOC have a formal charter document in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "See 3.2 for charter document elements"
+      },
+      {
+        "id": "3.2",
+        "question": "Please specify elements of the charter document:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Mission",
+          "Vision",
+          "Strategy",
+          "Service Scope",
+          "Deliverables",
+          "Responsibilities",
+          "Accountability",
+          "Operational Hours",
+          "Stakeholders",
+          "Objectives / Goals",
+          "Statement of success"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.3",
+        "question": "Is the SOC charter document regularly updated?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Regularity should be matched to your own internal policy. At least yearly is recommended"
+      },
+      {
+        "id": "3.4",
+        "question": "Is the SOC charter document approved by the business / CISO?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Approval from the relevant stakeholders will aid in business support for SOC operations"
+      },
+      {
+        "id": "3.5",
+        "question": "Are all stakeholders familiar with the SOC charter document contents?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Making stakeholders aware of the contents helps in getting organizational support for security operations"
+      }
+    ],
+    "Governance": [
+      {
+        "id": "4.1",
+        "question": "Does the SOC have a governance process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A governance process is required to determine the way the SOC should be managed"
+      },
+      {
+        "id": "4.2",
+        "question": "Have all governance elements been identified?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not identified", "Partially identified", "Fully identified"],
+        "guidance": "Possible governance elements can be found in under 4.3"
+      },
+      {
+        "id": "4.3",
+        "question": "Please specify identified governance elements",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Business Alignment",
+          "Accountability",
+          "Sponsorship",
+          "Mandate",
+          "Relationships & Third Party Management",
+          "Vendor Engagement",
+          "Service Commitment",
+          "Project / Program Management",
+          "Continual Improvement",
+          "Span of control / federation governance",
+          "Outsourced service management",
+          "SOC KPIs & Metrics",
+          "SOC risk management",
+          "Customer Engagement / Satisfaction"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.4",
+        "question": "Is cost management in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Managing costs is required to justify budget allocation for the SOC and ensure continued service delivery in the future"
+      },
+      {
+        "id": "4.5",
+        "question": "Please specify cost management elements",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "People cost",
+          "Process cost",
+          "Technology cost",
+          "Services cost",
+          "Facility cost",
+          "Budget forecasting",
+          "Budget alignment",
+          "Return on investment"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.6",
+        "question": "Are all governance elements formally documented?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Formal documentation should be signed off and stored in a quality management system"
+      },
+      {
+        "id": "4.7",
+        "question": "Are SOC governance meetings regularly held?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Meetings at different levels (operational, tactical, strategic) should be formalised in Terms of Reference (ToR) and driven by metrics"
+      },
+      {
+        "id": "4.8",
+        "question": "Is the governance process regularly reviewed?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Frequency should be matched to your own internal policy. At least yearly is recommended"
+      },
+      {
+        "id": "4.9",
+        "question": "Is the governance process aligned with all stakeholders?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Alignment will help the SOC obtain required mandate, budget and management support"
+      },
+      {
+        "id": "4.10",
+        "question": "Is the SOC regularly audited or subjected to (external) assessments?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Frequency should be matched to the SOC policy. At least yearly is recommended. 3rd party assessments have a higher objectivity"
+      },
+      {
+        "id": "4.11",
+        "question": "Is there an active cooperation with other SOCs (external)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Exchange of best practices, intelligence and actions on threats with other SOCs is vital for improving cyber defence"
+      }
+    ],
+    "Privacy & Policy": [
+      {
+        "id": "5.1",
+        "question": "Is there an information security policy in place that supports the SOC activities?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A clear security policy that supports SOC operations provides guidance and helps to enforce mandate for the SOC in the organisation"
+      },
+      {
+        "id": "5.2",
+        "question": "Has a SOC policy been created?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A SOC policy is to outline the rules to which SOC personnel and SOC management needs to adhere"
+      },
+      {
+        "id": "5.3",
+        "question": "Please specify elements of the SOC policy",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Code of conduct",
+          "Rules of engagement & responsibilities",
+          "Review frequency of documentation",
+          "SOC assessment frequency and type",
+          "Knowledge exchange and maintenance",
+          "Exercise frequency",
+          "Usage of TLP",
+          "Working agreements"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.4",
+        "question": "Is the SOC consulted in the creation and updates of operational security policy?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Consulting the SOC in the creation of security policy will ensure that SOC activities are properly mentioned and enforceable"
+      },
+      {
+        "id": "5.5",
+        "question": "Is a reporting policy for security incidents in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A reporting policy for security incidents will aid the SOC in identifying incidents and threats in the organization"
+      },
+      {
+        "id": "5.6",
+        "question": "Is a privacy policy regarding security monitoring of employees in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A privacy policy should state that monitoring of employees is possible within acceptable limits"
+      },
+      {
+        "id": "5.7",
+        "question": "Does the SOC operate in compliance with all applicable privacy laws and regulations?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Local laws and regulations as well as company policy may apply and should all be considered"
+      },
+      {
+        "id": "5.8",
+        "question": "Does the SOC cooperate with legal departments regarding privacy matters?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Cooperation will ensure that the SOC is enabled to perform activities, rather than blocked"
+      },
+      {
+        "id": "5.9",
+        "question": "Are specific procedures in place for dealing with privacy related investigations?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Privacy related issues require careful examination, especially those potentially leading to court cases"
+      },
+      {
+        "id": "5.10",
+        "question": "Is the SOC aware of all information that it processes and is subject to privacy regulations?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Such information includes IP addresses, customer identifiers, user names, host names (for personally owned devices), etc."
+      },
+      {
+        "id": "5.11",
+        "question": "Is a Privacy Impact Assessment (PIA) regularly conducted?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Can be used to determine the impact of monitoring on privacy, and can help uncover potential violations"
+      }
+    ]
+  },
+  "People": {
+    "Employees": [
+      {
+        "id": "1.1",
+        "question": "How many FTE’s are in your SOC?",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Include both internal and external FTE's"
+      },
+      {
+        "id": "1.2",
+        "question": "Do you use external employees / contractors in your SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Yes", "No"],
+        "guidance": "External employees can be hired experts to fill in vacant positions or perform project activities"
+      },
+      {
+        "id": "1.2.1",
+        "question": "If yes, specify the number of external FTE's",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "1.3",
+        "question": "Does the current size of the SOC meet FTE requirements?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. is the SOC size sufficient to realize business goals?"
+      },
+      {
+        "id": "1.4",
+        "question": "Does the SOC meet requirements for internal to external employee FTE ratio?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Note: requirements do not need to be explicit. Set importance to 'None' if you have no external employees."
+      },
+      {
+        "id": "1.5",
+        "question": "Does the SOC meet requirements for internal to external employee skillset?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. Are there any crucial skills amongst external employees? Set importance to 'None' if you have no external employees"
+      },
+      {
+        "id": "1.6",
+        "question": "Are all positions filled?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Unfilled positions may be due to deficiencies in the recruitment process"
+      },
+      {
+        "id": "1.7",
+        "question": "Do you have a recruitment process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A recruitment process is required to obtain new employees in a market where talent is scarce"
+      },
+      {
+        "id": "1.8",
+        "question": "Do you have a talent acquisition process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Talent recruitment can be vital for SOC success, but talent retaining is equally important"
+      },
+      {
+        "id": "1.9",
+        "question": "Do you have specific KSAOs established for SOC personnel?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Knowledge, Skills, Abilities and Other attributes (KSAOs) should be in place: technical, cognitive, social and character"
+      },
+      {
+        "id": "1.10",
+        "question": "Do you actively seek to create a psychologically safe environment for SOC personnel?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A psychologically safe environment is an environment where everyone is able to speak their mind and feel valued"
+      }
+    ],
+    "Roles and Hierarchy": [
+      {
+        "id": "2.1",
+        "question": "Do you formally differentiate roles within the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Use the roles in 2.2 to determine if you have all roles required in the SOC"
+      },
+      {
+        "id": "2.2",
+        "question": "Which of the following roles are present in your SOC?",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Security Analyst",
+          "Security / Systems Engineer",
+          "Forensic Analyst",
+          "Security Architect",
+          "Threat Intelligence Analyst",
+          "Data Scientist",
+          "SOC Manager",
+          "Team Leader",
+          "Incident Handler",
+          "Incident Manager",
+          "Penetration Tester",
+          "Detection engineer",
+          "Automation engineer",
+          "Others"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.3",
+        "question": "Do you differentiate tiers within these roles?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "If you have no tiers, and you feel this is not a restriction, select importance 'None'"
+      },
+      {
+        "id": "2.4",
+        "question": "Are all roles sufficiently staffed?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Consider the staffing levels (desired FTE count) as well as knowledge and experience for all roles"
+      },
+      {
+        "id": "2.5",
+        "question": "Is there a role-based hierarchy in your SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "If you have no hierarchy, and you feel this is not a restriction, select importance 'None'"
+      },
+      {
+        "id": "2.6",
+        "question": "Have you formally documented all SOC roles?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Possible documentation elements can be found in under 2.7"
+      },
+      {
+        "id": "2.7",
+        "question": "Please specify elements in the role documentation:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Role description",
+          "Role tasks",
+          "Role responsibilities",
+          "Role expectations",
+          "Required technical skills",
+          "Required soft skills",
+          "Required educational level",
+          "Required or preferred certifications"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.8",
+        "question": "Are responsibilities for each role understood?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Responsibilities for each role should be clearly understood by all SOC personnel"
+      },
+      {
+        "id": "2.9",
+        "question": "Have you documented career progression requirements for each of these roles?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Career progression for roles can be documented through training, certification, experience and soft skills requirements"
+      },
+      {
+        "id": "2.10",
+        "question": "Do you regularly revise or update the role descriptions?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "To revise is to review and verify whether to documentation is still correct or requires an update"
+      }
+    ],
+    "People Management": [
+      {
+        "id": "3.1",
+        "question": "Do you have a job rotation plan in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Job rotation can be used to train employees in a variety of tasks and avoid too much routine"
+      },
+      {
+        "id": "3.2",
+        "question": "Do you have a career progression process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Career development, promotion, etc."
+      },
+      {
+        "id": "3.3",
+        "question": "Do you have a talent management process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Talent should be adequately managed to retain such staff and fully develop their potential."
+      },
+      {
+        "id": "3.4",
+        "question": "Do you have team diversity goals?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. background diversity, ethnic diversity, gender diversity, etc."
+      },
+      {
+        "id": "3.5",
+        "question": "Have you established team goals?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Team goals help to bring focus to the team and monitor progress"
+      },
+      {
+        "id": "3.6",
+        "question": "Do you document and track individual team member goals?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Individual team member goals should be set to help grow the employee to full potential"
+      },
+      {
+        "id": "3.7",
+        "question": "Do you periodically evaluate SOC employees?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Can also be included in the regular organization evaluation process"
+      },
+      {
+        "id": "3.8",
+        "question": "Do you have a 'new hire' process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. a defined process to quickly let new employees find their place and perform well in the SOC"
+      },
+      {
+        "id": "3.9",
+        "question": "Are all SOC employees subjected to screening?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Personnel screening is performed to avoid infiltration or misbehaviour by SOC employees"
+      },
+      {
+        "id": "3.10",
+        "question": "Do you measure employee satisfaction for improving the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Employee satisfaction should be taken seriously as lack of satisfaction may lead to key personnel leaving"
+      },
+      {
+        "id": "3.11",
+        "question": "Are there regular 1-on-1 meetings between the SOC manager and the employees?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Such informal 1-on-1 conversations are used to coach employees and help the SOC manager gain insight in personal challenges"
+      },
+      {
+        "id": "3.12",
+        "question": "Do you perform regular teambuilding exercises?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Teambuilding exercises are used to promote collaboration between individuals in the team and to raise team spirit"
+      },
+      {
+        "id": "3.13",
+        "question": "Do you perform regular teambuilding exercises with other teams relevant to the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "In multi-team systems (MTS), the SOC collaborates with other teams. Use cross-team teambuilding to maximize performance"
+      },
+      {
+        "id": "3.14",
+        "question": "Do you periodically evaluate team performance?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Besides individual performance, team performance and dynamics are also important to measure and improve on"
+      }
+    ],
+    "Knowledge Management": [
+      {
+        "id": "4.1",
+        "question": "Do you have a formal knowledge management process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Formal knowledge management helps to optimize knowledge creation and distribution"
+      },
+      {
+        "id": "4.2",
+        "question": "Do you have a skill matrix in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A matrix may consist of: SOC skills, SOC employees and skill levels (novice, intermediate, expert)"
+      },
+      {
+        "id": "4.3",
+        "question": "Please specify elements of the skill matrix:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "All SOC employees",
+          "Hard skills",
+          "Soft skills",
+          "Skill levels (novice, intermediate, expert)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.4",
+        "question": "Is the skill matrix actively used for team and personal improvement?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Personal improvement is essential, team improvement requires insight in team dynamics and skill distribution"
+      },
+      {
+        "id": "4.5",
+        "question": "Do you have a knowledge matrix in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": ""
+      },
+      {
+        "id": "4.6",
+        "question": "Please specify elements of the knowledge matrix:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "All SOC employees",
+          "All relevant knowledge areas",
+          "Knowledge levels (novice, intermediate, expert)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.7",
+        "question": "Is the knowledge matrix actively used to determine training and education needs?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "The matrix should be used as a means to identify and resolve knowledge gaps"
+      },
+      {
+        "id": "4.8",
+        "question": "Have you documented SOC team member abilities?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Besides knowledge and skills, team member abilities are also important to document"
+      },
+      {
+        "id": "4.9",
+        "question": "Do you regularly assess and revise the knowledge management process?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "This refers to the knowledge management process as a whole"
+      },
+      {
+        "id": "4.10",
+        "question": "Is there effective tooling in place to support knowledge documentation and distribution?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Such tooling can help to avoid investigation similar issues multiple times by integrating into the security monitoring process"
+      }
+    ],
+    "Training and Education": [
+      {
+        "id": "5.1",
+        "question": "Do you have a training program in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A training program is used to ensure a minimal level of knowledge for employees"
+      },
+      {
+        "id": "5.2",
+        "question": "Please specify elements of the training program:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Training on the Job",
+          "Product-specific training",
+          "Internal company training",
+          "Role-based specific training",
+          "Soft-skill training",
+          "Formal education"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.3",
+        "question": "Do you have a certification program in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A certification program is used to provide a demonstrable minimum level of knowledge and skills"
+      },
+      {
+        "id": "5.4",
+        "question": "Please specify elements of the certification program:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Internal certification track",
+          "External certification track",
+          "Re-certification track (continuous education)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.5",
+        "question": "Is the training and certification program connected to evaluation and career progression?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. certain training and certifications are required to grow from a junior level function to a more senior level function"
+      },
+      {
+        "id": "5.6",
+        "question": "Is there a reserved budget for education and training?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. a fixed percentage of the total SOC budget that is allocated for education and cannot be used for other purposes"
+      },
+      {
+        "id": "5.7",
+        "question": "Is there a reserved amount of time for education and training?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "This is an extension of education budget"
+      },
+      {
+        "id": "5.8",
+        "question": "Do you have regular workshops for knowledge development?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Workshops are an informal way of distributing knowledge"
+      },
+      {
+        "id": "5.9",
+        "question": "Do you regularly revise and update the training and certification programs?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Training and certification must be a relevant reflection of SOC knowledge and skill requirements"
+      }
+    ]
+  },
+  "Process": {
+    "Management": [
+      {
+        "id": "1.1",
+        "question": "Is there a SOC management process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A SOC management process is used to manage all aspects SOC service delivery and quality"
+      },
+      {
+        "id": "1.2",
+        "question": "Are SOC management elements formally identified and documented?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not identified", "Partially identified", "Fully identified"],
+        "guidance": "Possible SOC management elements can be found in under 1.3"
+      },
+      {
+        "id": "1.3",
+        "question": "Please specify identified SOC management elements:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Internal relationship management",
+          "External relationship management",
+          "Vendor management",
+          "Continuous service improvement",
+          "Project methodology",
+          "Process documentation and diagrams",
+          "RACI matrix",
+          "Service Catalogue",
+          "Service on-boarding procedure",
+          "Service off-loading procedure"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "1.4",
+        "question": "Is the SOC management process regularly reviewed?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Regular review of the SOC management process ensures optimal performance"
+      },
+      {
+        "id": "1.5",
+        "question": "Is the SOC management process aligned with all stakeholders?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Alignment with stakeholders will ensure the SOC delivers services that meet customer expectations"
+      },
+      {
+        "id": "1.6",
+        "question": "Have you implemented a process for continuous improvement (CI)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Continuous improvement is a vital process for SOCs to evolve their capabilities"
+      },
+      {
+        "id": "1.7",
+        "question": "Specify elements of the continuous improvement program:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Daily progress tracking",
+          "Weekly planning",
+          "Backlog management",
+          "Work item effort estimation",
+          "Work item prioritisation",
+          "Refinement",
+          "Capacity for change"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "1.8",
+        "question": "Have you implemented a process to manage SOC quality assurance (QA)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Quality assurance is aimed at ensuring SOC processes, technology and services meet their quality requirements"
+      },
+      {
+        "id": "1.9",
+        "question": "Please specify elements of the quality assurance program:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Ticket quality assurance",
+          "Incident quality assurance",
+          "Service quality assurance",
+          "Process quality assurance",
+          "Report quality assurance"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "1.10",
+        "question": "Have you implemented a SOC architecture process?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A SOC architecture describes how different components"
+      },
+      {
+        "id": "1.11",
+        "question": "Please specify elements of the SOC architecture:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "SOC process architecture",
+          "SOC technology architecture",
+          "SOC service architecture",
+          "Architecture diagrams",
+          "Architecture principles"
+        ],
+        "guidance": ""
+      }
+    ],
+    "Operations and Facilities": [
+      {
+        "id": "2.1.1",
+        "question": "Do you have a documented exercise plan?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "An exercise plan lists the type of exercises to be conducted, the frequency and the exercise goals"
+      },
+      {
+        "id": "2.1.2",
+        "question": "Please specify types of exercises included in the plan",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Table-top exercises",
+          "Playbook drills",
+          "Cyber range",
+          "Capture the flag",
+          "Purple/Red/Black team exercises",
+          "Public exercises"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.1.3",
+        "question": "Do you perform security operations exercises regularly?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Regularity should be matched to your own internal policy"
+      },
+      {
+        "id": "2.1.4",
+        "question": "Are the results from exercises documented?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Results from exercises should be structurally documented for future reference and identification of improvements"
+      },
+      {
+        "id": "2.1.5",
+        "question": "Is the output from exercises actively used to improve security operations?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Exercise output should be used to structurally improve security operations"
+      },
+      {
+        "id": "2.2.1",
+        "question": "Do you have standard operating procedures?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Standard operating procedures are used to provide consistent output"
+      },
+      {
+        "id": "2.2.2",
+        "question": "Do you use checklists for recurring activities?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Checklists can be useful to avoid recurring activities from being overlooked"
+      },
+      {
+        "id": "2.2.3",
+        "question": "Do you use documented workflows?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Workflows are used to standardize steps in, for example, security analysis"
+      },
+      {
+        "id": "2.2.4",
+        "question": "Do you have a SOC operational handbook?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A SOC operational handbook contains an overview of SOC tasks, as well as rules of engagement and expected behavior"
+      },
+      {
+        "id": "2.2.5",
+        "question": "Have you established an Operational Security (OPSEC) program?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "An OPSEC program dictates security rules to ensure the integrity and confidentiality of SOC processes, tools and information"
+      },
+      {
+        "id": "2.3.1",
+        "question": "Is the configuration management process integrated in the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC services and procedures should be aligned and integrated with the organization's configuration management process"
+      },
+      {
+        "id": "2.3.2",
+        "question": "Is the change management process integrated in the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC services and procedures should be aligned and integrated with the organization's change management process"
+      },
+      {
+        "id": "2.3.3",
+        "question": "Is the problem management process integrated in the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC services and procedures should be aligned and integrated with the organization's problem management process"
+      },
+      {
+        "id": "2.3.4",
+        "question": "Is the incident management process integrated in the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC services and procedures should be aligned and integrated with the organization's incident management process"
+      },
+      {
+        "id": "2.3.5",
+        "question": "Is the asset management process integrated in the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC services and procedures should be aligned and integrated with the organization's asset management process"
+      },
+      {
+        "id": "2.4.1",
+        "question": "Do you have a dedicated physical SOC location?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "A dedicated physical location decreases likelihood of unauthorized access and provides confidentiality for security incidents"
+      },
+      {
+        "id": "2.4.2",
+        "question": "Do you have a war room for the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "A dedicated facility for coordination of major security incidents"
+      },
+      {
+        "id": "2.4.3",
+        "question": "Do you have a dedicated network for the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "Given the confidentiality of the SOC and the importance of monitoring, it is recommended to use a separate network"
+      },
+      {
+        "id": "2.4.4",
+        "question": "Do you have physical access control to the SOC location?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "e.g. key cards (badges) for access with access logging"
+      },
+      {
+        "id": "2.4.5",
+        "question": "Do you have a secure physical storage location?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "Secure storage facilities can be used to store evidence collected during investigations or other operational security purposes"
+      },
+      {
+        "id": "2.4.6",
+        "question": "Do you have a video wall for monitoring purposes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "A video wall can be used to display the real-time security status and can be used for decision making as well as PR"
+      },
+      {
+        "id": "2.4.7",
+        "question": "Do you have a call-center capability for the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "Since communication and coordination are important features of a SOC, call-center capability may be required"
+      },
+      {
+        "id": "2.4.8",
+        "question": "Do you have specialized analyst workstations?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "e.g. multiple screen setup, virtual machines, etc."
+      },
+      {
+        "id": "2.4.9",
+        "question": "Have you optimized secure remote working capabilities for SOC employees?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Secure working enabled means secure access (MFA, encryption, etc.), secure working facilitated also means equipped and performing"
+      },
+      {
+        "id": "2.5.1",
+        "question": "Do you use shift schedules?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "Shift schedules are used to ensure full shift coverage"
+      },
+      {
+        "id": "2.5.2",
+        "question": "Have schedules been created to optimize vigilance during shifts?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Schedules should be created to optimize vigilance. Thus, shift should include mandatory breaks and not be too long"
+      },
+      {
+        "id": "2.5.3",
+        "question": "Do you have a shift log?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "A shift log covers all exceptions found during the shift, running investigations, etc."
+      },
+      {
+        "id": "2.5.4",
+        "question": "Do you have a formally described shift turnover procedure?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. a procedure for handing over a shift and exchanging information regarding running tasks or issues for further follow-up"
+      },
+      {
+        "id": "2.5.5",
+        "question": "Do you have a daily SOC operational stand-up?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Yes"],
+        "guidance": "This can also be a call in case physical attendance is not possible for all attendees"
+      },
+      {
+        "id": "2.5.6",
+        "question": "Do you have stand-by arrangements with employees within the SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. is there a formal stand-by function that obligates employees to be able to be reached within a certain time?"
+      },
+      {
+        "id": "2.6.1",
+        "question": "Do you have a Document Management System in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "The system should support different file types, authorizations and version management; possibly even encryption"
+      },
+      {
+        "id": "2.6.2",
+        "question": "Do you have a knowledge & collaboration platform in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. a wiki space or SharePoint that allows collaboration and supports team efforts"
+      }
+    ],
+    "Reporting & communication": [
+      {
+        "id": "3.1",
+        "question": "Do you regularly provide reports?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Regular reports help to keep customers informed of SOC activities"
+      },
+      {
+        "id": "3.2",
+        "question": "Are these reports tailored to the recipients?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. management reports for senior management, technical reports for the IT organization"
+      },
+      {
+        "id": "3.3",
+        "question": "Are the report contents approved by or reviewed by the recipients?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "formal sign-off can be part of a larger service delivery sign-off"
+      },
+      {
+        "id": "3.4",
+        "question": "Do you have established reporting lines within the organization?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. reporting lines could be: SOC management, IT management, senior management"
+      },
+      {
+        "id": "3.5",
+        "question": "Do you regularly revise and update the report templates?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Report templates should be regularly optimized to ensure continued"
+      },
+      {
+        "id": "3.6",
+        "question": "Do you have formal agreements with the recipients regarding reports?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "For example: timelines of delivery, report contents, etc."
+      },
+      {
+        "id": "3.7",
+        "question": "Do you provide different types of reports to your recipients?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Different types of reports provide more insight into security operations"
+      },
+      {
+        "id": "3.8",
+        "question": "Please specify SOC report types:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Technical security reports",
+          "Executive security reports",
+          "Operational reports",
+          "Incident reports",
+          "Newsletter or digest",
+          "KPI reports",
+          "Trend reports",
+          "Real-time reporting dashboards"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.9",
+        "question": "Do you use different types of metrics in your reports?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Different types of metrics provide more insight into security operations"
+      },
+      {
+        "id": "3.10",
+        "question": "Please specify SOC metric types",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Quantitative metrics",
+          "Qualitative metrics",
+          "Incident & case metrics",
+          "Timing metrics",
+          "Metrics regarding SLAs",
+          "Proactive and reactive metrics"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.11.1",
+        "question": "Do you provide advisories to the organization regarding threats and vulnerabilities?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Advisories are used to inform customers of security threats and vulnerabilities"
+      },
+      {
+        "id": "3.11.2",
+        "question": "Do you perform risk / impact assessments of these advisories?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. do you add organizational context to these advisories?"
+      },
+      {
+        "id": "3.11.3",
+        "question": "Do you perform follow-up of these advisories?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. do you assist in coordination when required?"
+      },
+      {
+        "id": "3.12.1",
+        "question": "Do you provide education and security awareness to the organization?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "The SOC may be involved in security awareness and education to make users in the organisation aware of their role in cyber security"
+      },
+      {
+        "id": "3.12.2",
+        "question": "Do you measure the effect of education and security awareness efforts?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Measuring the efforts is necessary for improvement of the security awareness function"
+      },
+      {
+        "id": "3.13.1",
+        "question": "Do you use communication templates?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Communication templates help to standardize and professionalize SOC communication to stakeholders"
+      },
+      {
+        "id": "3.13.2",
+        "question": "Do you have a communication matrix in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A communication matrix can be used to decide when, how and with whom to communicate"
+      },
+      {
+        "id": "3.13.3",
+        "question": "Is communication training (verbal/written) available for SOC personnel?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Communication training helps SOC personnel to communicate effectively"
+      },
+      {
+        "id": "3.13.4",
+        "question": "Are communication skills element of SOC role descriptions?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Communication skills are important for analysts to explain their findings and recommendations"
+      }
+    ],
+    "Use Case Management": [
+      {
+        "id": "4.1.1",
+        "question": "Is there a use case management process or framework in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A framework, such as MaGMa UCF, can be used to guide use case lifecycle and document use case in a standardized format"
+      },
+      {
+        "id": "4.1.2",
+        "question": "Are use cases formally documented?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Formal documentation may include use case documentation templates"
+      },
+      {
+        "id": "4.1.3",
+        "question": "Are use cases approved by relevant stakeholders?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. business stakeholders, IT stakeholders, CISOs, audit & compliance, risk management, etc."
+      },
+      {
+        "id": "4.1.4",
+        "question": "Is the use case management process aligned with other important processes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. integration with the threat / risk management process to revise use cases when the threat landscape changes"
+      },
+      {
+        "id": "4.1.5",
+        "question": "Are use cases created using a standardized process?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "i.e. a standardized approach to derive use cases from threats or business requirements"
+      },
+      {
+        "id": "4.1.6",
+        "question": "Are use cases created using a top-down approach?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "e.g. use cases can be derived from business requirements, risk assessments, threat management / intelligence"
+      },
+      {
+        "id": "4.1.7",
+        "question": "Can use cases be traced from high-level drivers to low-level implementation?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Top-down traceability is important to determine completeness of implementation and demonstrable risk reduction"
+      },
+      {
+        "id": "4.1.8",
+        "question": "Can use cases be traced from low-level implementation to high-level drivers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Bottom-up traceability is important for contextualizing use case output and business alignment"
+      },
+      {
+        "id": "4.1.9",
+        "question": "Are use cases measured for implementation and effectiveness?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Metrics can be applied to use cases to determine growth and maturity by measuring effectiveness and implementation"
+      },
+      {
+        "id": "4.1.10",
+        "question": "Are use cases scored and prioritized based on risk levels?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Risks can be (cyber)threats, but also non-compliance or penalties (laws & regulations)"
+      },
+      {
+        "id": "4.1.11",
+        "question": "Are use cases regularly revised and updated?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Use cases should be subjected to life cycle management and may require updates or may be outdated and decommissioned"
+      },
+      {
+        "id": "4.2.1",
+        "question": "Do you measure use cases against the MITRE ATT&CK® framework for gap analysis purposes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "By measuring use cases against MITRE ATT&CK®, it is possible to determine strengths and weaknesses in your layered detection approach"
+      },
+      {
+        "id": "4.2.2",
+        "question": "Are monitoring rules tagged with MITRE ATT&CK® framework identifiers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Tagging monitoring rules with MITRE ATT&CK® identifiers allows for reporting on sightings of attack techniques"
+      },
+      {
+        "id": "4.2.3",
+        "question": "Have you created a MITRE ATT&CK® risk profile for your organization?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "The creation of a risk profile in MITRE ATT&CK® can help to identify relevant attack techniques"
+      },
+      {
+        "id": "4.2.4",
+        "question": "Have you prioritized MITRE ATT&CK® techniques for relevance?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Using organizational context (protection and detection mechanisms), ATT&CK® techniques can be prioritized"
+      },
+      {
+        "id": "4.2.5",
+        "question": "Is use case output (alerts) used in threat intelligence activities?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Using MITRE ATT&CK®, it is possible to connect alerts to specific threat actors, or potentially even active campaigns"
+      },
+      {
+        "id": "4.2.6",
+        "question": "Is threat intelligence used for the creation and updates of use cases?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Threat intelligence can provide input into security monitoring, especially when using MITRE ATT&CK® to connect both"
+      },
+      {
+        "id": "4.3.1",
+        "question": "Do you determine and document visibility requirements for each use case?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Data source requirements should be part of use case design"
+      },
+      {
+        "id": "4.3.2",
+        "question": "Do you measure visibility status for your use cases for gap analysis purposes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Measuring visibility status of use cases will help to identify use cases that require additional data sources for detection optimization"
+      },
+      {
+        "id": "4.3.3",
+        "question": "Do you map data source visibility to the MITRE ATT&CK® framework?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Mapping available data sources to MITRE ATT&CK® data source requirements will help identify gaps in visibility of attack techniques"
+      }
+    ],
+    "Detection Engineering & Validation": [
+      {
+        "id": "5.1.1",
+        "question": "Do you have a detection engineering process in place?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A detection engineering process supports the creation and deployment of detection rules for security monitoring purposes"
+      },
+      {
+        "id": "5.1.2",
+        "question": "Is the detection engineering process formally documented?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+        "guidance": "Formal documentation supports process standardisation, and allows for faster training of new engineers"
+      },
+      {
+        "id": "5.1.3",
+        "question": "Are there specific roles and requirements for detection engineers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Detection engineers have a skillset that is different from security analysts and security engineers"
+      },
+      {
+        "id": "5.1.4",
+        "question": "Is there active cooperation between the SOC analysts and the detection engineers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "SOC analyst deal with alerts resulting from detections created by engineers, so a tight interaction is required to optimize the ruleset"
+      },
+      {
+        "id": "5.1.5",
+        "question": "Is there active cooperation between the Threat Intelligence analysts and detection engineers?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Threat intelligence is a major input into the creation or updating of detection rules"
+      },
+      {
+        "id": "5.1.6",
+        "question": "Are there formal hand-over to the analyst team?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Once the detections are created, they must be operationalized. This should be done with a formal hand-over to production"
+      },
+      {
+        "id": "5.1.7",
+        "question": "Is there a testing enviroment to test and validate detections before deploying them?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A testing environment allows for thorough testing of new detections, which ensures a higher level of quality"
+      },
+      {
+        "id": "5.1.8",
+        "question": "Is there a formal release process in place for new detections?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A formal release process includes automated deployment of rules and adheres to organizational change management procedures"
+      },
+      {
+        "id": "5.1.9",
+        "question": "Do you apply a versioning system to detections?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A versioning system will allow to revert back to previous versions of detections"
+      },
+      {
+        "id": "5.1.10",
+        "question": "Do you have a roll-back procedure in place in case of problems with detections?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "A roll-back procedure enabled reverting back to a good state if a deployment has an adverse effect on security monitoring"
+      },
+      {
+        "id": "5.2.1",
+        "question": "Do you perform adversary emulation or automated detection testing?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "These validation activities provides insights into how well security monitoring is able to detect certain adversaries or attack techniques"
+      },
+      {
+        "id": "5.2.2",
+        "question": "Do you test for detection of MITRE ATT&CK® techniques?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Testing for MITRE ATT&CK® techniques can augment mapping of use cases and visibility in Mitre ATT&CK"
+      },
+      {
+        "id": "5.2.3",
+        "question": "Do you test detection analytics not directly associated with MITRE ATT&CK®?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Not all use cases and risks have a relationship to MITRE ATT&CK®. These use cases should be tested as well"
+      },
+      {
+        "id": "5.2.4",
+        "question": "Do you test response playbooks?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Testing both detection and response provides a more complete view of SOC capabilities"
+      },
+      {
+        "id": "5.2.5",
+        "question": "Is detection validation fully integrated in the detection engineering process / pipeline?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "When deploying new or updated detection, automated detection testing should be executed as a quality gate"
+      },
+      {
+        "id": "5.2.6",
+        "question": "Is the outcome from detection validation used as input into monitoring and detection engineering?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Output should lead to updates in detections and new detections, as well as instructions for SOC analysts"
+      },
+      {
+        "id": "5.2.7",
+        "question": "Do you monitor the data ingestion status for data sources?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Monitoring data ingestion is used to identify data ingestion problems or inactive data sources"
+      },
+      {
+        "id": "5.2.8",
+        "question": "Do you actively measure and improve data source coverage?",
+        "fieldType": "dropdown",
+        "answerOptions": ["No", "Partially", "Yes"],
+        "guidance": "Data source coverage should be optimized to avoid blind spots in monitoring"
+      }
+    ]
+  },
+  "Technology": {
+    "SIEM / UEBA": {
+      "Maturity": [
+        {
+          "id": "1.1.1",
+          "question": "Has functional ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Functional ownership includes functional accountability"
+        },
+        {
+          "id": "1.1.2",
+          "question": "Has technical ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Technical ownership includes technical accountability"
+        },
+        {
+          "id": "1.2.1",
+          "question": "Has the solution been technically documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A technical description of the SIEM system components and configuration"
+        },
+        {
+          "id": "1.2.2",
+          "question": "Has the solution been functionally documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A description of the SIEM functional configuration (rules, filters, lists, etc.)"
+        },
+        {
+          "id": "1.3.1",
+          "question": "Is there dedicated personnel for support?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Dedicated personnel should be in place to ensure that support is always available. Can also be staff with outsourced provider"
+        },
+        {
+          "id": "1.3.2",
+          "question": "Is the personnel for support formally trained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Training helps to jump start new hires, and to learn a proper way of working with the tool"
+        },
+        {
+          "id": "1.3.3",
+          "question": "Is the personnel for support certified?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Certification demonstrates ability to handle the tooling properly"
+        },
+        {
+          "id": "1.3.4",
+          "question": "Is there a support contract for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A support contract may cover on-site support, support availability, response times, escalation and full access to resources"
+        },
+        {
+          "id": "1.4.1",
+          "question": "Is the system regularly maintained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Systems should be regularly maintained to keep up with the latest features and bug fixes"
+        },
+        {
+          "id": "1.4.2",
+          "question": "Is remote maintenance on the system managed?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Remote maintenance by a third party may be part of system maintenance procedures"
+        },
+        {
+          "id": "1.4.3",
+          "question": "Are maintenance & configuration updates executed through the change management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Maintenance and configuration updates should follow the formal change management process"
+        },
+        {
+          "id": "1.4.4",
+          "question": "Have you established maintenance windows?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Setting maintenance windows helps to structure the maintenance process and make it more predictable"
+        },
+        {
+          "id": "1.4.5",
+          "question": "Is maintenance performed using authorised and trusted tooling?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system"
+        },
+        {
+          "id": "1.5.1",
+          "question": "Is there high availability (HA) in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Can be fully implemented HA, partially implemented, hot spare, etc."
+        },
+        {
+          "id": "1.5.2",
+          "question": "Is there data backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "May not be feasible for all SIEM solutions"
+        },
+        {
+          "id": "1.5.3",
+          "question": "Is there configuration backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Configuration synchronization could be part of a HA setup"
+        },
+        {
+          "id": "1.5.4",
+          "question": "Is there a Disaster Recovery plan in place for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A DR plan is required to restore service in case of catastrophic events"
+        },
+        {
+          "id": "1.5.5",
+          "question": "Is the Disaster Recovery plan regularly tested?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Testing the DR plan is required to ensure that it is complete, functional and tasks and responsibilities for involved personnel are understood"
+        },
+        {
+          "id": "1.5.6",
+          "question": "Is there a separate development / test environment for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A separate test environment allows for testing of new configurations before deployment in production"
+        },
+        {
+          "id": "1.6.1",
+          "question": "Is access to the solution limited to authorized personnel?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "The system will contain confidential information and information that possibly impacts employee privacy"
+        },
+        {
+          "id": "1.6.2",
+          "question": "Are access rights regularly reviewed and revoked if required?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse"
+        },
+        {
+          "id": "1.6.3",
+          "question": "Is a break glass procedure in place?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages"
+        }
+      ],
+      "Capability": {
+        "Technical capabilities": [
+          {
+            "id": "1.7.1",
+            "question": "Subtle event detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.2",
+            "question": "Automated alerting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.3",
+            "question": "Alert acknowledgement",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.4",
+            "question": "Case management system",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.5",
+            "question": "Network model",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.6",
+            "question": "Detailed audit trail of analyst activities",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.7",
+            "question": "Historical activity detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.8",
+            "question": "Flexible and scalable architecture",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.9",
+            "question": "MITRE ATT&CK® identifier tagging",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Data ingestion and processing": [
+          {
+            "id": "1.7.10",
+            "question": "Aggregation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.11",
+            "question": "Normalisation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.12",
+            "question": "Correlation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.13",
+            "question": "Multi-stage correlation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.14",
+            "question": "Custom parsing",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.15",
+            "question": "API Integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.16",
+            "question": "Secure Event Transfer",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.17",
+            "question": "Support for multiple event transfer technologies",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Integrations (technical & process)": [
+          {
+            "id": "1.7.18",
+            "question": "Asset management integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.19",
+            "question": "Business context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.20",
+            "question": "Identity context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.21",
+            "question": "Asset context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.22",
+            "question": "Vulnerability context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.23",
+            "question": "Threat Intelligence integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.24",
+            "question": "Threat hunting integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.25",
+            "question": "Security incident management integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.26",
+            "question": "SOAR integration",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Rule-based detection": [
+          {
+            "id": "1.7.27",
+            "question": "Standard detection rules",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.28",
+            "question": "Custom detection rules",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Anomaly detection": [
+          {
+            "id": "1.7.29",
+            "question": "User anomalies",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.30",
+            "question": "Application anomalies",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.31",
+            "question": "Device anomalies",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.32",
+            "question": "Network anomalies",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Visualisation and output": [
+          {
+            "id": "1.7.33",
+            "question": "Reporting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.34",
+            "question": "Dashboards",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.35",
+            "question": "Data visualization techniques",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.36",
+            "question": "Data drilldowns",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.37",
+            "question": "Central analysis console",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "1.7.38",
+            "question": "Advanced searching and querying",
+            "fieldType": "checkbox"
+          }
+        ]
+      }
+    },
+    "NDR": {
+      "Maturity": [
+        {
+          "id": "2.1.1",
+          "question": "Has functional ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Functional ownership includes functional accountability"
+        },
+        {
+          "id": "2.1.2",
+          "question": "Has technical ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Technical ownership includes technical accountability"
+        },
+        {
+          "id": "2.2.1",
+          "question": "Has the solution been technically documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A technical description of the NDR system components and configuration"
+        },
+        {
+          "id": "2.2.2",
+          "question": "Has the solution been functionally documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A description of the NDR functional configuration (rules, alerts, thresholds, etc.)"
+        },
+        {
+          "id": "2.3.1",
+          "question": "Is there dedicated personnel for support?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Dedicated personnel should be in place to ensure that support is always available. Can also be staff with outsourced provider"
+        },
+        {
+          "id": "2.3.2",
+          "question": "Is the personnel for support formally trained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Training helps to jump start new hires, and to learn a proper way of working with the tool"
+        },
+        {
+          "id": "2.3.3",
+          "question": "Is the personnel for support certified?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Certification demonstrates ability to handle the tooling properly"
+        },
+        {
+          "id": "2.3.4",
+          "question": "Is there a support contract for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A support contract may cover on-site support, support availability, response times, escalation and full access to resources"
+        },
+        {
+          "id": "2.4.1",
+          "question": "Is the system regularly maintained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Systems should be regularly maintained to keep up with the latest features and bug fixes"
+        },
+        {
+          "id": "2.4.2",
+          "question": "Is remote maintenance on the system managed?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Remote maintenance by a third party may be part of system maintenance procedures"
+        },
+        {
+          "id": "2.4.3",
+          "question": "Are maintenance & configuration updates executed through the change management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Maintenance and configuration updates should follow the formal change management process"
+        },
+        {
+          "id": "2.4.4",
+          "question": "Have you established maintenance windows?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Setting maintenance windows helps to structure the maintenance process and make it more predictable"
+        },
+        {
+          "id": "2.4.5",
+          "question": "Is maintenance performed using authorised and trusted tooling?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system"
+        },
+        {
+          "id": "2.5.1",
+          "question": "Is there high availability (HA) in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Can be fully implemented HA, partially implemented, hot spare, etc."
+        },
+        {
+          "id": "2.5.2",
+          "question": "Is there data backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Data may include logs and PCAP files"
+        },
+        {
+          "id": "2.5.3",
+          "question": "Is there configuration backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Configuration synchronization could be part of a HA setup"
+        },
+        {
+          "id": "2.5.4",
+          "question": "Is there a Disaster Recovery plan in place for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A DR plan is required to restore service in case of catastrophic events"
+        },
+        {
+          "id": "2.5.5",
+          "question": "Is the Disaster Recovery plan regularly tested?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Testing the DR plan is required to ensure that it is complete, functional and tasks and responsibilities for involved personnel are understood"
+        },
+        {
+          "id": "2.5.6",
+          "question": "Is there a separate development / test environment for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A separate test environment allows for testing of new configurations before deployment in production"
+        },
+        {
+          "id": "2.6.1",
+          "question": "Is access to the solution limited to authorized personnel?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "The IDPS system will contain confidential information and possibly information that impacts employee privacy"
+        },
+        {
+          "id": "2.6.2",
+          "question": "Are access rights regularly reviewed and revoked if required?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse"
+        },
+        {
+          "id": "2.6.3",
+          "question": "Is a break glass procedure in place?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages"
+        }
+      ],
+      "Capability": {
+        "Technical capabilities": [
+          {
+            "id": "2.7.1",
+            "question": "Encrypted traffic analysis",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.2",
+            "question": "IDS signature matching",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.3",
+            "question": "Supervised machine learning",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.4",
+            "question": "Unsupervised machine learning",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.5",
+            "question": "Traffic blocking",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.6",
+            "question": "Unauthorised device detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.7",
+            "question": "MITRE ATT&CK® identifier tagging",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.8",
+            "question": "Deep packet inspection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.9",
+            "question": "Correlation",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Data ingestion and processing": [
+          {
+            "id": "2.7.10",
+            "question": "Full packet capture",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.11",
+            "question": "Flow data ingestion",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Monitoring capabilities": [
+          {
+            "id": "2.7.12",
+            "question": "Monitoring north - south network traffic",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.13",
+            "question": "Monitoring east - west network traffic",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.14",
+            "question": "Monitoring classified network segements",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.15",
+            "question": "Monitoring cloud environments",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.16",
+            "question": "Monitoring ICS/SCADA networks",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.17",
+            "question": "Monitoring DNS traffic",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Integrations (technical & process)": [
+          {
+            "id": "2.7.18",
+            "question": "Business context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.19",
+            "question": "Identity context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.20",
+            "question": "Threat Intelligence integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.21",
+            "question": "Threat hunting integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.22",
+            "question": "Security incident management integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.23",
+            "question": "SIEM integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.24",
+            "question": "Malware sandbox integration",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Rule-based detection": [
+          {
+            "id": "2.7.25",
+            "question": "Standard detection rules",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.26",
+            "question": "Custom detection rules",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Anomaly detection": [
+          {
+            "id": "2.7.27",
+            "question": "Traffic baselining",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.28",
+            "question": "Pattern analysis",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Visualisation and output": [
+          {
+            "id": "2.7.29",
+            "question": "Reporting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.30",
+            "question": "Dashboards",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.31",
+            "question": "Data visualization techniques",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.32",
+            "question": "Data drilldowns",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.33",
+            "question": "Central analysis console",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "2.7.34",
+            "question": "Advanced searching and querying",
+            "fieldType": "checkbox"
+          }
+        ]
+      }
+    },
+    "EDR": {
+      "Maturity": [
+        {
+          "id": "3.1.1",
+          "question": "Has functional ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Functional ownership includes functional accountability"
+        },
+        {
+          "id": "3.1.2",
+          "question": "Has technical ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Technical ownership includes technical accountability"
+        },
+        {
+          "id": "3.2.1",
+          "question": "Has the solution been technically documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A technical description of the security analytics system components and configuration"
+        },
+        {
+          "id": "3.2.2",
+          "question": "Has the solution been functionally documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A description of the EDR functional configuration (rules, alerts, thresholds, etc.)"
+        },
+        {
+          "id": "3.3.1",
+          "question": "Is there dedicated personnel for support?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Dedicated personnel should be in place to ensure that support is always available. Can also be staff with outsourced provider"
+        },
+        {
+          "id": "3.3.2",
+          "question": "Is the personnel for support formally trained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Training helps to jump start new hires, and to learn a proper way of working with the tool"
+        },
+        {
+          "id": "3.3.3",
+          "question": "Is the personnel for support certified?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Certification demonstrates ability to handle the tooling properly"
+        },
+        {
+          "id": "3.3.4",
+          "question": "Is there a support contract for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A support contract may cover on-site support, support availability, response times, escalation and full access to resources"
+        },
+        {
+          "id": "3.4.1",
+          "question": "Is the system regularly maintained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Systems should be regularly maintained to keep up with the latest features and bug fixes"
+        },
+        {
+          "id": "3.4.2",
+          "question": "Is remote maintenance on the system managed?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Remote maintenance by a third party may be part of system maintenance procedures"
+        },
+        {
+          "id": "3.4.3",
+          "question": "Are maintenance & configuration updates executed through the change management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Maintenance and configuration updates should follow the formal change management process"
+        },
+        {
+          "id": "3.4.4",
+          "question": "Have you established maintenance windows?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Setting maintenance windows helps to structure the maintenance process and make it more predictable"
+        },
+        {
+          "id": "3.4.5",
+          "question": "Is maintenance performed using authorised and trusted tooling?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system"
+        },
+        {
+          "id": "3.5.1",
+          "question": "Is there high availability (HA) in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Can be fully implemented HA, partially implemented, hot spare, etc. May not be applicable"
+        },
+        {
+          "id": "3.5.2",
+          "question": "Is there data backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "May not be applicable to all EDR solutions"
+        },
+        {
+          "id": "3.5.3",
+          "question": "Is there configuration backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Configuration synchronization could be part of a HA setup"
+        },
+        {
+          "id": "3.5.4",
+          "question": "Is there a Disaster Recovery plan in place for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A DR plan is required to restore service in case of catastrophic events"
+        },
+        {
+          "id": "3.5.5",
+          "question": "Is the Disaster Recovery plan regularly tested?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Testing the DR plan is required to ensure that it is complete, functional and tasks and responsibilities for involved personnel are understood"
+        },
+        {
+          "id": "3.5.6",
+          "question": "Is there a separate development / test environment for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A separate test environment allows for testing of new configurations before deployment in production"
+        },
+        {
+          "id": "3.6.1",
+          "question": "Is access to the solution limited to authorized personnel?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "The analytics system will contain confidential information and information that possibly impacts employee privacy"
+        },
+        {
+          "id": "3.6.2",
+          "question": "Are access rights regularly reviewed and revoked if required?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse"
+        },
+        {
+          "id": "3.6.3",
+          "question": "Is a break glass procedure in place?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages"
+        }
+      ],
+      "Capability": {
+        "Technical capabilities": [
+          {
+            "id": "3.7.1",
+            "question": "OS support",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.2",
+            "question": "Mobile device support",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.3",
+            "question": "Physical, virtual & cloud deployment",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.4",
+            "question": "Vulnerability patching",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.5",
+            "question": "Forensic information preservation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.6",
+            "question": "Historic data retention",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.7",
+            "question": "MITRE ATT&CK® identifier tagging",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.8",
+            "question": "Memory analysis",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.9",
+            "question": "Correlation",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Prevention capabilities": [
+          {
+            "id": "3.7.10",
+            "question": "Exploit prevention",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.11",
+            "question": "Fileless malware protection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.12",
+            "question": "Application allowlisting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.13",
+            "question": "Ransomware protection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.14",
+            "question": "Attack surface reduction",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Detection capabilities": [
+          {
+            "id": "3.7.15",
+            "question": "Vulnerability detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.16",
+            "question": "Process execution monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.17",
+            "question": "File system monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.18",
+            "question": "Task & service monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.19",
+            "question": "Network connection monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.20",
+            "question": "Registry monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.21",
+            "question": "User activity monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.22",
+            "question": "Configuration monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.23",
+            "question": "Air-gaped end-point monitoring",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.24",
+            "question": "File reputation service",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.25",
+            "question": "Deception techniques",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Remediation capabilities": [
+          {
+            "id": "3.7.26",
+            "question": "URL filtering / blocking",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.27",
+            "question": "Web content filtering",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.28",
+            "question": "Machine isolation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.29",
+            "question": "Process termination / suspension",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.30",
+            "question": "File / registry key deletion",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.31",
+            "question": "Forced user logoff",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Integrations": [
+          {
+            "id": "3.7.32",
+            "question": "Threat Intelligence integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.33",
+            "question": "Vulnerability intelligence integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.34",
+            "question": "Threat hunting integration - TTPs",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.35",
+            "question": "Threat hunting integration - Tools & artifacts",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.36",
+            "question": "Threat hunting integration - Technical indicators",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.37",
+            "question": "Security incident management integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.38",
+            "question": "SIEM integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.39",
+            "question": "Malware sandbox integration",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Rule-based detection": [
+          {
+            "id": "3.7.40",
+            "question": "Online signature-based detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.41",
+            "question": "Offline signature-based detection",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.42",
+            "question": "Custom rules",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Anomaly detection": [
+          {
+            "id": "3.7.43",
+            "question": "Behavioural detection",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Visualisation & output": [
+          {
+            "id": "3.7.44",
+            "question": "Reporting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.45",
+            "question": "Dashboards",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.46",
+            "question": "Data visualization techniques",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.47",
+            "question": "Data drilldowns",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.48",
+            "question": "Central analysis console",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "3.7.49",
+            "question": "Advanced searching and querying",
+            "fieldType": "checkbox"
+          }
+        ]
+      }
+    },
+    "SOAR": {
+      "Maturity": [
+        {
+          "id": "4.1.1",
+          "question": "Has functional ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Functional ownership includes functional accountability"
+        },
+        {
+          "id": "4.1.2",
+          "question": "Has technical ownership of the solution been formally assigned?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Technical ownership includes technical accountability"
+        },
+        {
+          "id": "4.2.1",
+          "question": "Has the solution been technically documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A technical description of the automation & orchestration system components and configuration"
+        },
+        {
+          "id": "4.2.2",
+          "question": "Has the solution been functionally documented?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Not documented", "Partially documented", "Fully documented"],
+          "guidance": "A description of the automation & orchestration system functional configuration (workflows, integrations, etc.)"
+        },
+        {
+          "id": "4.3.1",
+          "question": "Is there dedicated personnel for support?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Dedicated personnel should be in place to ensure that support is always available. Can also be staff with outsourced provider"
+        },
+        {
+          "id": "4.3.2",
+          "question": "Is the personnel for support formally trained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Training helps to jump start new hires, and to learn a proper way of working with the tool"
+        },
+        {
+          "id": "4.3.3",
+          "question": "Is the personnel for support certified?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Certification demonstrates ability to handle the tooling properly"
+        },
+        {
+          "id": "4.3.4",
+          "question": "Is there a support contract for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A support contract may cover on-site support, support availability, response times, escalation and full access to resources"
+        },
+        {
+          "id": "4.4.1",
+          "question": "Is the system regularly maintained?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Systems should be regularly maintained to keep up with the latest features and bug fixes"
+        },
+        {
+          "id": "4.4.2",
+          "question": "Is remote maintenance on the system managed?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Remote maintenance by a third party may be part of system maintenance procedures"
+        },
+        {
+          "id": "4.4.3",
+          "question": "Are maintenance & configuration updates executed through the change management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Maintenance and configuration updates should follow the formal change management process"
+        },
+        {
+          "id": "4.4.4",
+          "question": "Have you established maintenance windows?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Setting maintenance windows helps to structure the maintenance process and make it more predictable"
+        },
+        {
+          "id": "4.4.5",
+          "question": "Is maintenance performed using authorised and trusted tooling?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system"
+        },
+        {
+          "id": "4.5.1",
+          "question": "Is there high availability (HA) in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Can be fully implemented HA, partially implemented, hot spare, etc."
+        },
+        {
+          "id": "4.5.2",
+          "question": "Is there data backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "May not be required for this particular solution"
+        },
+        {
+          "id": "4.5.3",
+          "question": "Is there configuration backup / replication in place for the solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Configuration synchronization could be part of a HA setup"
+        },
+        {
+          "id": "4.5.4",
+          "question": "Is there a Disaster Recovery plan in place for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A DR plan is required to restore service in case of catastrophic events"
+        },
+        {
+          "id": "4.5.5",
+          "question": "Is the Disaster Recovery plan regularly tested?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Testing the DR plan is required to ensure that it is complete, functional and tasks and responsibilities for involved personnel are understood"
+        },
+        {
+          "id": "4.5.6",
+          "question": "Is there a separate development / test environment for this solution?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A separate test environment allows for testing of new configurations before deployment in production"
+        },
+        {
+          "id": "4.6.1",
+          "question": "Is access to the solution limited to authorized personnel?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "The automation system may have automated actions that can impact the usage of systems and should be restricted"
+        },
+        {
+          "id": "4.6.2",
+          "question": "Are access rights regularly reviewed and revoked if required?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse"
+        },
+        {
+          "id": "4.6.3",
+          "question": "Is a break glass procedure in place?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages"
+        }
+      ],
+      "Capability": {
+        "Technical capabilities": [
+          {
+            "id": "4.7.1",
+            "question": "Historical event matching",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.2",
+            "question": "Risk-based event prioritization",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.3",
+            "question": "Ticket workflow support",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Data integrations": [
+          {
+            "id": "4.7.4",
+            "question": "SIEM data integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.5",
+            "question": "Threat intelligence integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.6",
+            "question": "Asset context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.7",
+            "question": "Identity context integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.8",
+            "question": "Vulnerability management integration",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Response integrations": [
+          {
+            "id": "4.7.9",
+            "question": "Knowledge base integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.10",
+            "question": "Firewall integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.11",
+            "question": "NDR integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.12",
+            "question": "EDR integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.13",
+            "question": "Email protection integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.14",
+            "question": "Malware protection integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.15",
+            "question": "Sandbox integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.16",
+            "question": "Active Directory / IAM integration",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.17",
+            "question": "SIEM integration",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Playbooks": [
+          {
+            "id": "4.7.18",
+            "question": "Standard playbooks",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.19",
+            "question": "Customised playbooks",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.20",
+            "question": "Playbook automation",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.21",
+            "question": "Playbook development process",
+            "fieldType": "checkbox"
+          }
+        ],
+        "Visualisation and output": [
+          {
+            "id": "4.7.22",
+            "question": "Reporting",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.23",
+            "question": "Dashboards",
+            "fieldType": "checkbox"
+          },
+          {
+            "id": "4.7.24",
+            "question": "Performance tracking",
+            "fieldType": "checkbox"
+          }
+        ]
+      }
+    }
+  },
+  "Services": {
+    "Security Monitoring": {
+      "Maturity": [
+        {
+          "id": "1.1",
+          "question": "Have you formally described the security monitoring service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "1.2",
+          "question": "Please specify elements of the security monitoring service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.3",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from the previous questions used for reporting on the service?"
+        },
+        {
+          "id": "1.4",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "1.5",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "1.6",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "1.7",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "1.8",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. alignment with configuration management, incident management, etc."
+        },
+        {
+          "id": "1.9",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "1.10",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "1.11",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "1.12",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "1.13",
+          "question": "Are use cases used in the security monitoring service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. user login brute-force, denial of service, non-compliance, etc."
+        },
+        {
+          "id": "1.14",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "1.15",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "1.16.1",
+          "question": "Early detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.2",
+          "question": "Intrusion detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.3",
+          "question": "Exfiltration detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.4",
+          "question": "Subtle event detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.5",
+          "question": "Malware detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.6",
+          "question": "Anomaly detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.7",
+          "question": "Real-time detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.8",
+          "question": "Alerting & notification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.9",
+          "question": "False-positive reduction",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.10",
+          "question": "Continuous tuning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.11",
+          "question": "Coverage management",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.12",
+          "question": "Status monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.13",
+          "question": "Perimeter monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.14",
+          "question": "Host monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.15",
+          "question": "Network & traffic monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.16",
+          "question": "Access & usage monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.17",
+          "question": "User / identity monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.18",
+          "question": "Application & service monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.19",
+          "question": "Behavior monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.20",
+          "question": "Database monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.21",
+          "question": "Data loss monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.22",
+          "question": "Device loss / theft monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.23",
+          "question": "Third-party monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.24",
+          "question": "Physical environment monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.25",
+          "question": "Cloud monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.26",
+          "question": "Mobile device monitoring",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "1.16.27",
+          "question": "OT monitoring",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Security Incident Management": {
+      "Maturity": [
+        {
+          "id": "2.1",
+          "question": "Have you adopted a maturity assessment methodology for Security Incident Management?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Yes", "No"],
+          "guidance": ""
+        },
+        {
+          "id": "2.1.1",
+          "question": "If yes, please specify the methodology",
+          "fieldType": "text",
+          "answerOptions": [],
+          "guidance": "e.g., SOC-CMM 4CERT, SIM3, CREST, etc."
+        },
+        {
+          "id": "2.1.2",
+          "question": "If yes, please specify the maturity level (can have up to 2 digits)",
+          "fieldType": "numeric",
+          "answerOptions": [],
+          "guidance": "Please convert to a 5-point scale if required. For example: 3.6 on a 4-point scale = 4.5 on a 5-point scale"
+        },
+        {
+          "id": "2.2",
+          "question": "Have you adopted a standard for the Security Incident Management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. NIST 800-62r1, CERT handbook, etc."
+        },
+        {
+          "id": "2.3",
+          "question": "Have you formally described the security incident management process?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "2.4",
+          "question": "Please specify elements of the security incident management document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Security incident definition",
+            "Service levels",
+            "Workflow",
+            "Decision tree",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.5",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from the previous questions used for reporting on the service?"
+        },
+        {
+          "id": "2.6",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "2.7",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "2.8",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "2.9",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "2.10",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. alignment with configuration management, incident management, etc."
+        },
+        {
+          "id": "2.11",
+          "question": "Is the incident response team authorized to perform (invasive) actions when required?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "This is a mandate issue. The team should have mandate beforehand to optimize incident response times"
+        },
+        {
+          "id": "2.12",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "2.13",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "2.14",
+          "question": "Is the service supported by predefined workflows or scenarios?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Workflows and scenario's can be used to structure follow-up and determine expected incident progression"
+        },
+        {
+          "id": "2.15",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "2.16",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "2.17.1",
+          "question": "Incident logging procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.2",
+          "question": "Incident resolution procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.3",
+          "question": "Incident investigation procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.4",
+          "question": "Escalation procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.5",
+          "question": "Evidence collection procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.6",
+          "question": "Incident containment procedures",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.7",
+          "question": "IR Training",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.8",
+          "question": "Table-top exercises",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.9",
+          "question": "Red team / blue team exercises",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.10",
+          "question": "RACI matrix",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.11",
+          "question": "Response authorization",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.12",
+          "question": "Incident template",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.13",
+          "question": "Incident tracking system",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.14",
+          "question": "False-positive reduction",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.15",
+          "question": "Priority assignment",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.16",
+          "question": "Severity assignment",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.17",
+          "question": "Categorization",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.18",
+          "question": "Critical bridge",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.19",
+          "question": "War room",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.20",
+          "question": "Communication plan & email templates",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.21",
+          "question": "Backup communication technology",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.22",
+          "question": "Secure communication channels",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.23",
+          "question": "(dedicated) information sharing platform",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.24",
+          "question": "Change management integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.25",
+          "question": "Malware extraction & analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.26",
+          "question": "On-site incident response",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.27",
+          "question": "Remote incident response",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.28",
+          "question": "Third-party escalation",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.29",
+          "question": "Evaluation template",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.30",
+          "question": "Reporting template",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.31",
+          "question": "Incident closure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.32",
+          "question": "Lessons learned extraction for process improvement",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.33",
+          "question": "External security incident support agreements",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.34",
+          "question": "Exercises with other incident response teams",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.35",
+          "question": "Root Cause Analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "2.17.36",
+          "question": "Restore integrity verification",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Security Analysis & Forensics": {
+      "Maturity": [
+        {
+          "id": "3.1",
+          "question": "Have you formally described the security analysis & forensics service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "3.2",
+          "question": "Please specify elements of the security analysis service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "3.3",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from the previous questions used for reporting on the service?"
+        },
+        {
+          "id": "3.4",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "3.5",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "3.6",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "3.7",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "3.8",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. alignment with configuration management, incident management, etc."
+        },
+        {
+          "id": "3.9",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "3.10",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "3.11",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "3.12",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "3.13",
+          "question": "Is the service supported by predefined workflows or scenarios?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Use cases can be used to guide the analysis workflows"
+        },
+        {
+          "id": "3.14",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "3.15",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "3.16.1",
+          "question": "Event analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.2",
+          "question": "Event analysis toolkit",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.3",
+          "question": "Trend analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.4",
+          "question": "Incident analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.5",
+          "question": "Visual analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.6",
+          "question": "Static malware analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.7",
+          "question": "Dynamic malware analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.8",
+          "question": "Tradecraft analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.9",
+          "question": "Historic analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.10",
+          "question": "Network analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.11",
+          "question": "Memory analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.12",
+          "question": "Mobile device analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.13",
+          "question": "Volatile information collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.14",
+          "question": "Remote evidence collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.15",
+          "question": "Forensic hardware toolkit",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.16",
+          "question": "Forensic analysis software toolkit",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.17",
+          "question": "Dedicated analysis workstations",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.18",
+          "question": "Security analysis & forensics handbook",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.19",
+          "question": "Security analysis & forensics workflows",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.20",
+          "question": "Case management system",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.21",
+          "question": "Report templates",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.22",
+          "question": "Evidence seizure procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.23",
+          "question": "Evidence transport procedure",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "3.16.24",
+          "question": "Chain of custody preservation procedure",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Threat Intelligence": {
+      "Maturity": [
+        {
+          "id": "4.1",
+          "question": "Have you formally described the threat intelligence service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "4.2",
+          "question": "Please specify elements of the threat intelligence service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "4.3",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from the previous questions used for reporting on the service?"
+        },
+        {
+          "id": "4.4",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "4.5",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "4.6",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "4.7",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "4.8",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. the security monitoring process, and mainly the security incident management process"
+        },
+        {
+          "id": "4.9",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "4.10",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "4.11",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "4.12",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "4.13",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "4.14",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "4.15.1",
+          "question": "Continuous intelligence gathering",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.2",
+          "question": "Automated intelligence gathering & processing",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.3",
+          "question": "Centralized collection & distribution",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.4",
+          "question": "Intelligence collection from open / public sources",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.5",
+          "question": "Intelligence collection from closed communities",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.6",
+          "question": "Intelligence collection from intelligence provider",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.7",
+          "question": "Intelligence collection from business partners",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.8",
+          "question": "Intelligence collection from mailing lists",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.9",
+          "question": "Intelligence collection from internal sources",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.10",
+          "question": "Structured data analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.11",
+          "question": "Unstructured data analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.12",
+          "question": "Past incident analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.13",
+          "question": "Trend analysis",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.14",
+          "question": "Automated alerting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.15",
+          "question": "Adversary movement tracking",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.16",
+          "question": "Attacker identification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.17",
+          "question": "Threat identification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.18",
+          "question": "Threat prediction",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.19",
+          "question": "TTP extraction",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.20",
+          "question": "Deduplication",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.21",
+          "question": "Enrichment",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.22",
+          "question": "Contextualization",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.23",
+          "question": "Prioritization",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.24",
+          "question": "Threat intelligence reporting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.25",
+          "question": "Threat landscaping",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.26",
+          "question": "Forecasting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.27",
+          "question": "Sharing within the company",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.28",
+          "question": "Sharing with the industry",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.29",
+          "question": "Sharing outside the industry",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.30",
+          "question": "Sharing in standardized format (e.g. STIX)",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "4.15.31",
+          "question": "Management of the CTI infrastructure (Threat Intelligence Platform)",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Threat Hunting": {
+      "Maturity": [
+        {
+          "id": "5.1",
+          "question": "Do you use a standardized threat hunting methodology?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Can be an internally developed approach or a publically available methodolology, such as TaHiTI"
+        },
+        {
+          "id": "5.2",
+          "question": "Have you formally described the threat hunting service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "5.3",
+          "question": "Please specify elements of the threat hunting service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "5.4",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from the previous questions used for reporting on the service?"
+        },
+        {
+          "id": "5.5",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "5.6",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "5.7",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "5.8",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "5.9",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. threat intelligence, security monitoring, security incident response"
+        },
+        {
+          "id": "5.10",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "5.11",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "5.12",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "5.13",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "5.14",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "5.15",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "5.16.1",
+          "question": "Hash value hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.2",
+          "question": "IP address hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.3",
+          "question": "Domain name hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.4",
+          "question": "Network artefact hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.5",
+          "question": "Host-based artefact hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.6",
+          "question": "Adversary tools hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.7",
+          "question": "Adversary TTP hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.8",
+          "question": "Inbound threat hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.9",
+          "question": "Outbound threat hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.10",
+          "question": "Internal threat hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.11",
+          "question": "Outlier detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.12",
+          "question": "Hunting coverage",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.13",
+          "question": "Leveraging of existing tooling",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.14",
+          "question": "Custom hunting scripts and tools",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.15",
+          "question": "Dedicated hunting platform",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.16",
+          "question": "Continuous hunting data collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.17",
+          "question": "Historic hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.18",
+          "question": "Automated hunting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.19",
+          "question": "Hunt alerting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.20",
+          "question": "Vulnerability information integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "5.16.21",
+          "question": "Threat intelligence integration",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Vulnerability Management": {
+      "Maturity": [
+        {
+          "id": "6.1",
+          "question": "Have you formally described the vulnerability management service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "6.2",
+          "question": "Please specify elements of the vulnerability management service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "6.3",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from 1.3.2 used for reporting on the service?"
+        },
+        {
+          "id": "6.4",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "6.5",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "6.6",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "6.7",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "6.8",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. the security monitoring process, and mainly the security incident management process"
+        },
+        {
+          "id": "6.9",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "6.10",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "6.11",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "6.12",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service. Adoption of a standard like NIST 800-40r4 is part of best practices"
+        },
+        {
+          "id": "6.13",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "6.14",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "6.15.1",
+          "question": "Network mapping",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.2",
+          "question": "Vulnerability identification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.3",
+          "question": "Risk identification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.4",
+          "question": "Risk acceptance",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.5",
+          "question": "Security baseline scanning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.6",
+          "question": "Authenticated scanning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.7",
+          "question": "Incident management integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.8",
+          "question": "Asset management integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.9",
+          "question": "Configuration management integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.10",
+          "question": "Patch management integration",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.11",
+          "question": "Trend identification",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.12",
+          "question": "Enterprise vulnerability repository",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.13",
+          "question": "Enterprise application inventory",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.14",
+          "question": "Vulnerability Management procedures",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.15",
+          "question": "Scanning policy tuning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.16",
+          "question": "Detailed Vulnerability Reporting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.17",
+          "question": "Management Reporting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.18",
+          "question": "Scheduled scanning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.19",
+          "question": "Ad-hoc specific scanning",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "6.15.20",
+          "question": "Vulnerability information gathering & analysis",
+          "fieldType": "checkbox"
+        }
+      ]
+    },
+    "Log Management": {
+      "Maturity": [
+        {
+          "id": "7.1",
+          "question": "Have you formally described the log management service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "A service description should be in place"
+        },
+        {
+          "id": "7.2",
+          "question": "Please specify elements of the log management service document:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Key performance indicators",
+            "Quality indicators",
+            "Service dependencies",
+            "Service levels",
+            "Hours of operation",
+            "Service customers and stakeholders",
+            "Purpose",
+            "Service input / triggers",
+            "Service output / deliverables",
+            "Service activities",
+            "Service roles & responsibilities"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "7.3",
+          "question": "Is the service measured for quality?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Are the quality indicators from 1.3.2 used for reporting on the service?"
+        },
+        {
+          "id": "7.4",
+          "question": "Is the service measured for service delivery in accordance with service levels?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service levels should be used to formally commit the SOC to service delivery"
+        },
+        {
+          "id": "7.5",
+          "question": "Are customers and/or stakeholders regularly updated about the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Changes to the service scope, delivery, etc."
+        },
+        {
+          "id": "7.6",
+          "question": "Is there a contractual agreement between the SOC and the customers?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Contractual agreements should also cover penalties"
+        },
+        {
+          "id": "7.7",
+          "question": "Is sufficient personnel allocated to the process to ensure required service delivery?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Allocation of dedicated personnel will ensure highest service quality"
+        },
+        {
+          "id": "7.8",
+          "question": "Is the service aligned with other relevant processes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "e.g. the security monitoring process, and mainly the security incident management process"
+        },
+        {
+          "id": "7.9",
+          "question": "Is there a incident resolution / service continuity process in place for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service continuity is important to comply with contractual agreements, even in case of major incidents"
+        },
+        {
+          "id": "7.10",
+          "question": "Has a set of procedures been created for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Procedures support process standardization and quality. Personnel should be trained to use procedures correctly and structurally"
+        },
+        {
+          "id": "7.11",
+          "question": "Is there an onboarding and offloading procedure for this service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Customer onboarding and offloading procedures support efficient service delivery and ensure customers are (dis)connected properly"
+        },
+        {
+          "id": "7.12",
+          "question": "Are best practices applied to the service?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Best practices should be used to optimize this service"
+        },
+        {
+          "id": "7.13",
+          "question": "Is process data gathered for prediction of service performance?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Service performance measurement requires establishment of performance goals"
+        },
+        {
+          "id": "7.14",
+          "question": "Is the service continuously being improved based on improvement goals?",
+          "fieldType": "dropdown",
+          "answerOptions": ["No", "Partially", "Yes"],
+          "guidance": "Improvement based on based evaluation, (maturity) assessment, tests, etc."
+        }
+      ],
+      "Capability": [
+        {
+          "id": "7.15.1",
+          "question": "End-point log collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.2",
+          "question": "Application log collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.3",
+          "question": "Database log collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.4",
+          "question": "Network flow data collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.5",
+          "question": "Network device log collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.6",
+          "question": "Security device log collection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.7",
+          "question": "Centralized aggregation and storage",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.8",
+          "question": "Multiple retention periods",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.9",
+          "question": "Secure log transfer",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.10",
+          "question": "Support for multiple log formats",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.11",
+          "question": "Support for multiple transfer techniques",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.12",
+          "question": "Data normalization",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.13",
+          "question": "Log searching and filtering",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.14",
+          "question": "Alerting",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.15",
+          "question": "Reporting and dashboards",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.16",
+          "question": "Log tampering detection",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.17",
+          "question": "Log collection policy",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.18",
+          "question": "Logging policy",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.19",
+          "question": "Data retention policy",
+          "fieldType": "checkbox"
+        },
+        {
+          "id": "7.15.20",
+          "question": "Privacy and Sensitive data handling policy",
+          "fieldType": "checkbox"
+        }
+      ]
+    }
+  }
+}
