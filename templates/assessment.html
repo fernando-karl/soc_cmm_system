@@ -116,6 +116,63 @@ let questionsData = {};
 let answers = {};
 let completedAspects = new Set();
 
+// Função para carregar respostas existentes
+async function loadExistingAnswers() {
+    try {
+        const response = await fetch(`/api/assessments/${assessmentId}/answers`);
+        const data = await response.json();
+        
+        // Verificar se há respostas
+        if (data.answers && Array.isArray(data.answers)) {
+            // Processar as respostas e adicionar ao objeto answers
+            data.answers.forEach(answer => {
+                if (answer.answer_option_id) {
+                    // Resposta de múltipla escolha
+                    answers[answer.question_id] = answer.answer_option_id;
+                } else if (answer.answer_text) {
+                    // Resposta de texto ou checkbox (JSON)
+                    try {
+                        const parsedText = JSON.parse(answer.answer_text);
+                        if (Array.isArray(parsedText)) {
+                            // É um array (checkbox)
+                            answers[answer.question_id] = parsedText;
+                        } else {
+                            // É texto simples
+                            answers[answer.question_id] = answer.answer_text;
+                        }
+                    } catch (e) {
+                        // Se não conseguir fazer parse, é texto simples
+                        answers[answer.question_id] = answer.answer_text;
+                    }
+                }
+            });
+            
+            console.log('Respostas carregadas:', answers);
+        } else {
+            console.log('Nenhuma resposta encontrada para este assessment');
+        }
+        
+    } catch (error) {
+        console.error('Erro ao carregar respostas existentes:', error);
+    }
+}
+
+// Função para atualizar aspectos completados
+function updateCompletedAspects() {
+    // Verificar cada aspecto carregado
+    Object.keys(aspectsData).forEach(domainId => {
+        const aspects = aspectsData[domainId];
+        aspects.forEach(aspect => {
+            if (questionsData[aspect.id]) {
+                const progress = calculateAspectProgress(aspect.id);
+                if (progress.answered === progress.total && progress.total > 0) {
+                    completedAspects.add(aspect.id);
+                }
+            }
+        });
+    });
+}
+
 // Domain icons mapping
 const domainIcons = {
     'Business': 'fas fa-building',
@@ -128,7 +185,9 @@ const domainIcons = {
 
 // Initialize assessment
 document.addEventListener('DOMContentLoaded', function() {
-    loadDomainAspects(domains[0].id);
+    loadExistingAnswers().then(() => {
+        loadDomainAspects(domains[0].id);
+    });
 });
 
 async function loadDomainAspects(domainId) {
@@ -136,58 +195,106 @@ async function loadDomainAspects(domainId) {
         const response = await fetch(`/api/domains/${domainId}/aspects`);
         const data = await response.json();
         aspectsData[domainId] = data.aspects;
+        
+        // Carregar questões de todos os aspectos deste domínio
+        for (const aspect of data.aspects) {
+            if (!questionsData[aspect.id]) {
+                const questionsResponse = await fetch(`/api/aspects/${aspect.id}/questions`);
+                const questionsDataResponse = await questionsResponse.json();
+                questionsData[aspect.id] = questionsDataResponse.questions;
+            }
+        }
+        
+        // Atualizar aspectos completados após carregar os aspectos e questões
+        updateCompletedAspects();
+        
+        // Exibir aspectos com progresso atualizado
         displayAspects(data.aspects);
+        
+        // Atualizar progresso do domínio
+        updateDomainProgressDisplay();
+        
     } catch (error) {
         console.error('Error loading aspects:', error);
     }
 }
 
+
+
 function displayAspects(aspects) {
     const aspectsList = document.getElementById('aspectsList');
-    aspectsList.innerHTML = aspects.map(aspect => `
-        <div class="card" style="cursor: pointer; transition: var(--transition);" 
-             onclick="selectAspect(${aspect.id})"
-             onmouseover="this.style.transform='translateY(-2px)'"
-             onmouseout="this.style.transform='translateY(0)'">
-            <div class="card-body">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h4 style="margin: 0; font-weight: 600;">${aspect.name}</h4>
-                        <p style="color: var(--text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">
-                            ${aspect.description}
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        ${completedAspects.has(aspect.id) ? 
-                            '<i class="fas fa-check-circle" style="color: var(--success-color); font-size: 1.25rem;"></i>' :
-                            '<i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>'
-                        }
+    aspectsList.innerHTML = aspects.map(aspect => {
+        // Calcular progresso do aspecto
+        const aspectProgress = calculateAspectProgress(aspect.id);
+        
+        return `
+            <div class="card" style="cursor: pointer; transition: var(--transition);" 
+                 onclick="selectAspect(${aspect.id})"
+                 onmouseover="this.style.transform='translateY(-2px)'"
+                 onmouseout="this.style.transform='translateY(0)'">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0; font-weight: 600;">${aspect.name}</h4>
+                            <p style="color: var(--text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">
+                                ${aspect.description}
+                            </p>
+                            <div class="aspect-progress" style="margin-top: 0.5rem;">
+                                <div class="progress-text-small">
+                                    ${aspectProgress.answered} de ${aspectProgress.total} questões respondidas
+                                </div>
+                                <div class="progress-bar-small">
+                                    <div class="progress-fill" style="width: ${aspectProgress.percentage}%;"></div>
+                                </div>
+                                <div class="progress-percentage">${aspectProgress.percentage}%</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            ${completedAspects.has(aspect.id) ? 
+                                '<i class="fas fa-check-circle" style="color: var(--success-color); font-size: 1.25rem;"></i>' :
+                                '<i class="fas fa-chevron-right" style="color: var(--text-secondary);"></i>'
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 async function selectAspect(aspectId) {
+    console.log('Selecionando aspecto:', aspectId);
     currentAspectId = aspectId;
     
     try {
         const response = await fetch(`/api/aspects/${aspectId}/questions`);
         const data = await response.json();
+        console.log('Dados recebidos da API:', data);
+        
         questionsData[aspectId] = data.questions;
         
         // Find aspect name
         const currentDomain = domains[currentDomainIndex];
         const aspects = aspectsData[currentDomain.id];
-        const aspect = aspects.find(a => a.id === aspectId);
+        console.log('Aspectos carregados:', aspects);
+        const aspect = aspects.find(a => String(a.id) === String(aspectId));
         
-        document.getElementById('currentAspectTitle').textContent = aspect.name;
+        console.log('Exibindo questões:', data.questions.length);
         displayQuestions(data.questions);
+        updateAspectProgressDisplay();
+        
+        // Atualizar visual das questões que já foram respondidas
+        data.questions.forEach(question => {
+            if (answers[question.id] !== undefined) {
+                updateQuestionVisual(question.id, answers[question.id]);
+            }
+        });
         
         // Show questions container, hide domain selection
         document.getElementById('domainSelection').classList.add('hidden');
         document.getElementById('questionsContainer').classList.remove('hidden');
+        
+        console.log('Aspecto selecionado com sucesso');
         
     } catch (error) {
         console.error('Error loading questions:', error);
@@ -238,11 +345,22 @@ function displayQuestions(questions) {
             `;
         }
         
+        // Verificar se a questão foi respondida
+        const isAnswered = answers[question.id] !== undefined && 
+                          (answers[question.id] !== '' && answers[question.id] !== null);
+        
         return `
-            <div class="question-container">
+            <div class="question-container ${isAnswered ? 'answered' : ''}" id="question-container-${question.id}">
                 <div class="question-text">
                     ${index + 1}. ${question.question_text}
+                    ${isAnswered ? '<i class="fas fa-check-circle answered-icon"></i>' : ''}
                 </div>
+                ${question.guidance ? `
+                    <div class="question-guidance">
+                        <i class="fas fa-info-circle"></i>
+                        <span>${question.guidance}</span>
+                    </div>
+                ` : ''}
                 <div class="answer-options">
                     ${inputHtml}
                 </div>
@@ -255,6 +373,9 @@ function displayQuestions(questions) {
 
 async function saveAnswer(questionId, value) {
     answers[questionId] = value;
+    
+    // Atualizar visual da questão
+    updateQuestionVisual(questionId, value);
     
     try {
         const payload = {
@@ -300,6 +421,9 @@ async function saveCheckboxAnswer(questionId, optionId, checked) {
         answers[questionId] = answers[questionId].filter(id => id !== optionId);
     }
     
+    // Atualizar visual da questão
+    updateQuestionVisual(questionId, answers[questionId]);
+    
     try {
         await fetch('/api/answers', {
             method: 'POST',
@@ -317,6 +441,79 @@ async function saveCheckboxAnswer(questionId, optionId, checked) {
     } catch (error) {
         console.error('Error saving checkbox answer:', error);
     }
+}
+
+function calculateAspectProgress(aspectId) {
+    if (!questionsData[aspectId]) {
+        return { answered: 0, total: 0, percentage: 0 };
+    }
+    
+    const questions = questionsData[aspectId];
+    const answeredQuestions = questions.filter(q => {
+        const answer = answers[q.id];
+        return answer !== undefined && 
+               (Array.isArray(answer) ? answer.length > 0 : answer !== '' && answer !== null);
+    });
+    
+    const total = questions.length;
+    const answered = answeredQuestions.length;
+    const percentage = total > 0 ? Math.round((answered / total) * 100) : 0;
+    
+    return { answered, total, percentage };
+}
+
+function calculateDomainProgress(domainId) {
+    if (!aspectsData[domainId]) {
+        return { answered: 0, total: 0, percentage: 0 };
+    }
+    
+    const aspects = aspectsData[domainId];
+    let totalAnswered = 0;
+    let totalQuestions = 0;
+    
+    aspects.forEach(aspect => {
+        const progress = calculateAspectProgress(aspect.id);
+        totalAnswered += progress.answered;
+        totalQuestions += progress.total;
+    });
+    
+    const percentage = totalQuestions > 0 ? Math.round((totalAnswered / totalQuestions) * 100) : 0;
+    
+    return { answered: totalAnswered, total: totalQuestions, percentage };
+}
+
+function updateQuestionVisual(questionId, value) {
+    const container = document.getElementById(`question-container-${questionId}`);
+    const questionText = container.querySelector('.question-text');
+    
+    // Verificar se a questão foi respondida
+    const isAnswered = value !== undefined && 
+                      (Array.isArray(value) ? value.length > 0 : value !== '' && value !== null);
+    
+    if (isAnswered) {
+        container.classList.add('answered');
+        
+        // Adicionar ícone se não existir
+        if (!questionText.querySelector('.answered-icon')) {
+            questionText.innerHTML += '<i class="fas fa-check-circle answered-icon"></i>';
+        }
+    } else {
+        container.classList.remove('answered');
+        
+        // Remover ícone se existir
+        const icon = questionText.querySelector('.answered-icon');
+        if (icon) {
+            icon.remove();
+        }
+    }
+    
+    // Atualizar progresso do aspecto atual
+    if (currentAspectId) {
+        updateAspectProgressDisplay();
+    }
+    
+    // Atualizar progresso do domínio
+    updateDomainProgressDisplay();
 }
 
 function checkAspectCompletion() {
@@ -403,6 +600,53 @@ async function changeDomain(newIndex) {
     updateNavigationButtons();
 }
 
+function updateAspectProgressDisplay() {
+    if (!currentAspectId) return;
+    
+    const progress = calculateAspectProgress(currentAspectId);
+    const aspectTitle = document.getElementById('currentAspectTitle');
+    
+    // Atualizar título do aspecto com progresso
+    const currentDomain = domains[currentDomainIndex];
+    const aspects = aspectsData[currentDomain.id];
+    console.log('Procurando aspecto:', currentAspectId, 'Tipo:', typeof currentAspectId);
+    console.log('Aspectos disponíveis:', aspects.map(a => ({ id: a.id, type: typeof a.id, name: a.name })));
+    const aspect = aspects.find(a => String(a.id) === String(currentAspectId));
+    
+    if (!aspect) {
+        console.error('Aspecto não encontrado:', currentAspectId);
+        aspectTitle.innerHTML = `Aspecto ${currentAspectId}`;
+        return;
+    }
+    
+    aspectTitle.innerHTML = `
+        ${aspect.name}
+        <span class="aspect-progress-badge">
+            ${progress.answered}/${progress.total} (${progress.percentage}%)
+        </span>
+    `;
+}
+
+function updateDomainProgressDisplay() {
+    const currentDomain = domains[currentDomainIndex];
+    const domainProgress = calculateDomainProgress(currentDomain.id);
+    
+    // Atualizar barra de progresso principal
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    
+    // Progresso baseado no domínio atual + progresso dentro do domínio
+    const domainStepProgress = (currentDomainIndex / domains.length) * 100;
+    const currentDomainProgress = (domainProgress.percentage / domains.length);
+    const totalProgress = domainStepProgress + currentDomainProgress;
+    
+    progressBar.style.width = `${totalProgress}%`;
+    progressText.innerHTML = `
+        Step ${currentDomainIndex + 1} of ${domains.length}: ${currentDomain.name} Domain
+        <br><small>${domainProgress.answered} de ${domainProgress.total} questões respondidas (${domainProgress.percentage}%)</small>
+    `;
+}
+
 function updateDomainUI() {
     const domain = domains[currentDomainIndex];
     const icon = domainIcons[domain.name] || 'fas fa-circle';
@@ -414,10 +658,7 @@ function updateDomainUI() {
     document.getElementById('currentDomainSubtitle').textContent = domain.description;
     
     // Update progress
-    const progress = ((currentDomainIndex + 1) / domains.length) * 100;
-    document.getElementById('progressBar').style.width = `${progress}%`;
-    document.getElementById('progressText').textContent = 
-        `Step ${currentDomainIndex + 1} of ${domains.length}: ${domain.name} Domain`;
+    updateDomainProgressDisplay();
 }
 
 function updateNavigationButtons() {
@@ -469,12 +710,43 @@ updateNavigationButtons();
     border-radius: var(--border-radius);
     padding: 1.5rem;
     margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.question-container.answered {
+    background: linear-gradient(135deg, var(--surface-color) 0%, rgba(var(--success-color-rgb), 0.05) 100%);
+    border-color: var(--success-color);
+    box-shadow: 0 2px 8px rgba(var(--success-color-rgb), 0.1);
 }
 
 .question-text {
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.answered-icon {
+    color: var(--success-color);
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+    animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .answer-options select,
@@ -541,6 +813,85 @@ updateNavigationButtons();
 
 .answer-options input[type="text"] {
     max-width: 400px;
+}
+
+/* Estilos para progresso dos aspectos */
+.aspect-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.progress-text-small {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.progress-bar-small {
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: right;
+}
+
+.aspect-progress-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+/* Estilos para a barra de progresso principal */
+.progress-text small {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Estilos para guidance das questões */
+.question-guidance {
+    background: rgba(var(--primary-color-rgb), 0.05);
+    border-left: 3px solid var(--primary-color);
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.question-guidance i {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.question-guidance span {
+    line-height: 1.4;
 }
 </style>
 

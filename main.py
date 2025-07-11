@@ -41,7 +41,8 @@ class AssessmentCreate(BaseModel):
 class AnswerSubmit(BaseModel):
     assessment_id: int
     question_id: int
-    answer_option_id: int
+    answer_option_id: Optional[int] = None
+    answer_text: Optional[str] = None
 
 # API Routes
 
@@ -170,10 +171,20 @@ async def get_domain_aspects(domain_id: int):
     return {"aspects": aspects}
 
 @app.get("/api/aspects/{aspect_id}/questions")
-async def get_aspect_questions(aspect_id: int):
+async def get_aspect_questions(aspect_id: str):
     """Get questions for an aspect"""
     questions = db.get_aspect_questions(aspect_id)
     return {"questions": questions}
+
+@app.get("/api/assessments/{assessment_id}/answers")
+async def get_assessment_answers(assessment_id: int):
+    """Get all answers for an assessment"""
+    assessment = db.get_assessment(assessment_id)
+    if not assessment:
+        raise HTTPException(status_code=404, detail="Assessment not found")
+    
+    answers = db.get_assessment_answers(assessment_id)
+    return {"answers": answers}
 
 @app.post("/api/answers")
 async def submit_answer(answer: AnswerSubmit):
@@ -181,7 +192,8 @@ async def submit_answer(answer: AnswerSubmit):
     db.save_answer(
         assessment_id=answer.assessment_id,
         question_id=answer.question_id,
-        answer_option_id=answer.answer_option_id
+        answer_option_id=answer.answer_option_id,
+        answer_text=answer.answer_text
     )
     return {"message": "Answer saved successfully"}
 

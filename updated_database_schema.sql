@@ -1,4 +1,5 @@
--- SOC CMM Assessment System Database Schema
+-- SOC CMM Assessment System - Updated Database Schema
+-- Aspects agora usam códigos como "1.1", "2.1", etc. como IDs
 
 -- Customers table
 CREATE TABLE customers (
@@ -19,11 +20,11 @@ CREATE TABLE domains (
 );
 
 -- Aspects table (subcategories within each domain)
+-- Agora usa códigos como "1.1", "2.1", etc. como IDs
 CREATE TABLE aspects (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id VARCHAR(10) PRIMARY KEY, -- Códigos como "1.1", "2.1", "3.1", etc.
     domain_id INTEGER NOT NULL,
     name VARCHAR(100) NOT NULL,
-    code VARCHAR(10) NOT NULL,
     description TEXT,
     order_index INTEGER NOT NULL,
     FOREIGN KEY (domain_id) REFERENCES domains(id)
@@ -32,10 +33,9 @@ CREATE TABLE aspects (
 -- Questions table
 CREATE TABLE questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    aspect_id INTEGER NOT NULL,
+    aspect_id VARCHAR(10) NOT NULL, -- Agora referencia o código do aspect
     question_text TEXT NOT NULL,
     question_type VARCHAR(50) DEFAULT 'multiple_choice',
-    guidance TEXT,
     order_index INTEGER NOT NULL,
     FOREIGN KEY (aspect_id) REFERENCES aspects(id)
 );
@@ -79,7 +79,7 @@ CREATE TABLE assessment_answers (
 CREATE TABLE assessment_scores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     assessment_id INTEGER NOT NULL,
-    aspect_id INTEGER,
+    aspect_id VARCHAR(10), -- Agora referencia o código do aspect
     domain_id INTEGER,
     score DECIMAL(5,2) NOT NULL,
     max_score DECIMAL(5,2) NOT NULL,
@@ -98,3 +98,16 @@ CREATE INDEX idx_assessments_customer ON assessments(customer_id);
 CREATE INDEX idx_assessment_answers_assessment ON assessment_answers(assessment_id);
 CREATE INDEX idx_assessment_scores_assessment ON assessment_scores(assessment_id);
 
+-- Comentários sobre a mudança:
+-- 
+-- PRINCIPAL MUDANÇA: O campo 'aspect_id' agora é VARCHAR(10) e usa códigos como:
+-- - "1.1" = Business Drivers (Business domain)
+-- - "1.2" = Customers (Business domain)
+-- - "1.3" = Charter (Business domain)
+-- - "2.1" = Staffing (People domain)
+-- - "3.1" = Process Management (Process domain)
+-- - "4.1" = Technology Management (Technology domain)
+-- - "5.1" = Service Management (Services domain)
+-- etc.
+--
+-- Isso torna o sistema mais legível e alinhado com o arquivo JSON original. 

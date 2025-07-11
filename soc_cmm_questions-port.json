@@ -1,0 +1,3896 @@
+{
+  "Geral": {
+    "Perfil": [
+      {
+        "id": "Detalhes da Avaliação.Data da avaliação",
+        "question": "Data da avaliação",
+        "fieldType": "date",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Detalhes da Avaliação.Nome(s)",
+        "question": "Nome(s)",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Detalhes da Avaliação.Departamento(s)",
+        "question": "Departamento(s)",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Detalhes da Avaliação.Propósito pretendido da avaliação",
+        "question": "Propósito pretendido da avaliação",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Detalhes da Avaliação.Tipo de avaliação",
+        "question": "Tipo de avaliação",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Clique na caixa suspensa para mais informações"
+      },
+      {
+        "id": "Detalhes da Avaliação.Estilo de avaliação",
+        "question": "Estilo de avaliação",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Clique na caixa suspensa para mais informações"
+      },
+      {
+        "id": "Perfil da Organização e SOC.Tamanho da empresa (FTE)",
+        "question": "Tamanho da empresa (FTE)",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Perfil da Organização e SOC.Setor",
+        "question": "Setor",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Perfil da Organização e SOC.Número de anos de operações do SOC",
+        "question": "Número de anos de operações do SOC",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Perfil da Organização e SOC.Tamanho do SOC (FTEs)",
+        "question": "Tamanho do SOC (FTEs)",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Perfil da Organização e SOC.Modelo organizacional do SOC",
+        "question": "Modelo organizacional do SOC",
+        "fieldType": "dropdown",
+        "answerOptions": [],
+        "guidance": "Clique na caixa suspensa para mais informações"
+      },
+      {
+        "id": "Perfil da Organização e SOC.Região do SOC",
+        "question": "Região do SOC",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Perfil da Organização e SOC.Operação geográfica",
+        "question": "Operação geográfica",
+        "fieldType": "text",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "Maturidade Alvo.Domínio de negócio",
+        "question": "Nível de maturidade alvo do domínio de negócio",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 5. Decimais podem ser usados"
+      },
+      {
+        "id": "Maturidade Alvo.Domínio de pessoas",
+        "question": "Nível de maturidade alvo do domínio de pessoas",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 5. Decimais podem ser usados"
+      },
+      {
+        "id": "Maturidade Alvo.Domínio de processo",
+        "question": "Nível de maturidade alvo do domínio de processo",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 5. Decimais podem ser usados"
+      },
+      {
+        "id": "Maturidade Alvo.Domínio de tecnologia",
+        "question": "Nível de maturidade alvo do domínio de tecnologia",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 5. Decimais podem ser usados"
+      },
+      {
+        "id": "Maturidade Alvo.Domínio de serviços",
+        "question": "Nível de maturidade alvo do domínio de serviços",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 5. Decimais podem ser usados"
+      },
+      {
+        "id": "Capacidade Alvo.Domínio de tecnologia",
+        "question": "Nível de capacidade alvo do domínio de tecnologia",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 3. Decimais podem ser usados"
+      },
+      {
+        "id": "Capacidade Alvo.Domínio de serviços",
+        "question": "Nível de capacidade alvo do domínio de serviços",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Indique uma pontuação de 1 a 3. Decimais podem ser usados"
+      }
+    ],
+    "Escopo": {
+      "Ferramentas SOC (domínio de Tecnologia)": [
+        {
+          "id": "SIEM / UEBA",
+          "question": "SIEM / UEBA",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Ferramentas de Gerenciamento de Eventos e Informações de Segurança (SIEM). Usadas para coletar informações de log de ativos da empresa e correlacionar eventos. Também inclui Análise de Comportamento de Usuários e Entidades (UEBA)"
+        },
+        {
+          "id": "NDR",
+          "question": "NDR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Solução de segurança de rede, usada para detectar exploits de rede e atividades de rede anômalas e realizar forense de rede"
+        },
+        {
+          "id": "EDR",
+          "question": "EDR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Solução de segurança de endpoint, usada para prevenir, detectar e responder a ameaças em endpoints"
+        },
+        {
+          "id": "SOAR",
+          "question": "SOAR",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "Usado para automatizar fluxos de trabalho e ações do SOC, suportar a resposta a incidentes e orquestrar entre diferentes produtos de segurança"
+        }
+      ],
+      "Serviços SOC (domínio de serviços)": [
+        {
+          "id": "Monitoramento de Segurança",
+          "question": "Monitoramento de Segurança",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de monitoramento de segurança visa detectar incidentes e eventos de segurança"
+        },
+        {
+          "id": "Gerenciamento de Incidentes de Segurança",
+          "question": "Gerenciamento de Incidentes de Segurança",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de gerenciamento de incidentes de segurança visa responder a incidentes de segurança de forma oportuna, precisa e organizada"
+        },
+        {
+          "id": "Análise de Segurança",
+          "question": "Análise de Segurança",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de análise de segurança suporta o monitoramento de segurança e o gerenciamento de incidentes de segurança. A análise inclui análise de eventos e análise forense"
+        },
+        {
+          "id": "Inteligência de Ameaças",
+          "question": "Inteligência de Ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de inteligência de ameaças fornece informações sobre ameaças potenciais que podem ser usadas no monitoramento de segurança, resposta a incidentes de segurança, análise de segurança e caça a ameaças"
+        },
+        {
+          "id": "Caça a Ameaças",
+          "question": "Caça a Ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de caça adota uma abordagem proativa para encontrar ameaças na infraestrutura. A inteligência de ameaças é frequentemente usada para guiar os esforços de caça"
+        },
+        {
+          "id": "Gerenciamento de Vulnerabilidades",
+          "question": "Gerenciamento de Vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de gerenciamento de vulnerabilidades é usado para detectar vulnerabilidades em ativos por descoberta e varredura ativa de ativos para vulnerabilidades conhecidas"
+        },
+        {
+          "id": "Gerenciamento de Logs",
+          "question": "Gerenciamento de Logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": "O serviço de gerenciamento de logs é usado para coletar, armazenar e reter logs. Pode ser usado para fins de conformidade, bem como para fins de investigação"
+        }
+      ]
+    }
+  },
+  "Negócio": {
+    "Drivers de Negócio": [
+      {
+        "id": "1.1",
+        "question": "Você identificou os principais drivers de negócio?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não definidos", "Parcialmente definidos", "Totalmente definidos"],
+        "guidance": "Exemplos de drivers de negócio: prevenção de crimes cibernéticos, redução de riscos, leis / regulamentações, auditoria / conformidade, continuidade de negócios"
+      },
+      {
+        "id": "1.2",
+        "question": "Você documentou os principais drivers de negócio?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentados", "Parcialmente documentados", "Totalmente documentados"],
+        "guidance": "A documentação dos drivers de negócio é importante para um alinhamento demonstrável com o negócio"
+      },
+      {
+        "id": "1.3",
+        "question": "Você usa os drivers de negócio no processo de tomada de decisão?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ex: para determinar prioridades ou tomar decisões sobre a integração de novos serviços ou operações"
+      },
+      {
+        "id": "1.4",
+        "question": "Você verifica regularmente se o catálogo de serviços atual está alinhado com os drivers de negócio?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ou seja, você verifica serviços ou operações que estão fora do escopo dos drivers de negócio?"
+      },
+      {
+        "id": "1.5",
+        "question": "Os drivers de negócio foram validados com as partes interessadas do negócio?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As partes interessadas do negócio podem ser a gerência de alto nível (C-level)"
+      }
+    ],
+    "Clientes": [
+      {
+        "id": "2.1",
+        "question": "Você identificou os clientes do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Tipos de clientes, requisitos / expectativas do cliente, etc."
+      },
+      {
+        "id": "2.2",
+        "question": "Por favor, especifique seus clientes:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Jurídico",
+          "Auditoria",
+          "Engenharia / P&D",
+          "TI",
+          "Negócios",
+          "Clientes externos",
+          "Gerência (Sênior)",
+          "Outros clientes"
+        ],
+        "guidance": "Use isso como um guia para responder 2.1. Isso também é potencialmente útil para insights e comparação com avaliações anteriores."
+      },
+      {
+        "id": "2.3",
+        "question": "Você documentou os principais clientes do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentados", "Parcialmente documentados", "Totalmente documentados"],
+        "guidance": "Registro formal de detalhes de contato do cliente, local na organização, geolocalização, etc."
+      },
+      {
+        "id": "2.4",
+        "question": "Você diferencia a saída para esses clientes específicos?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Por exemplo, o estilo de comunicação e o conteúdo para clientes de Negócios são diferentes dos de TI?"
+      },
+      {
+        "id": "2.5",
+        "question": "Você tem acordos de nível de serviço com esses clientes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Os acordos de nível de serviço são usados para fornecer serviços padronizados operando dentro de limites conhecidos"
+      },
+      {
+        "id": "2.6",
+        "question": "Você envia atualizações regularmente para seus clientes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Por exemplo: mudanças no escopo ou entrega do serviço. Também podem ser relatórios, painéis, etc."
+      },
+      {
+        "id": "2.7",
+        "question": "Você mede e gerencia ativamente a satisfação do cliente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Compreender a satisfação do cliente ajudará a alinhar melhor com as necessidades do negócio"
+      }
+    ],
+    "Estatuto": [
+      {
+        "id": "3.1",
+        "question": "O SOC possui um documento de estatuto formal?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Veja 3.2 para os elementos do documento de estatuto"
+      },
+      {
+        "id": "3.2",
+        "question": "Por favor, especifique os elementos do documento de estatuto:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Missão",
+          "Visão",
+          "Estratégia",
+          "Escopo do Serviço",
+          "Entregáveis",
+          "Responsabilidades",
+          "Responsabilidade",
+          "Horário de Funcionamento",
+          "Partes Interessadas",
+          "Objetivos / Metas",
+          "Declaração de sucesso"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.3",
+        "question": "O documento de estatuto do SOC é atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A regularidade deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "3.4",
+        "question": "O documento de estatuto do SOC é aprovado pelo negócio / CISO?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A aprovação das partes interessadas relevantes ajudará no suporte do negócio às operações do SOC"
+      },
+      {
+        "id": "3.5",
+        "question": "Todas as partes interessadas estão familiarizadas com o conteúdo do documento de estatuto do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Conscientizar as partes interessadas sobre o conteúdo ajuda a obter suporte organizacional para as operações de segurança"
+      }
+    ],
+    "Governança": [
+      {
+        "id": "4.1",
+        "question": "O SOC possui um processo de governança implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de governança é necessário para determinar a forma como o SOC deve ser gerenciado"
+      },
+      {
+        "id": "4.2",
+        "question": "Todos os elementos de governança foram identificados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de governança podem ser encontrados em 4.3"
+      },
+      {
+        "id": "4.3",
+        "question": "Por favor, especifique os elementos de governança identificados",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Alinhamento com o Negócio",
+          "Responsabilidade",
+          "Patrocínio",
+          "Mandato",
+          "Gerenciamento de Relacionamentos e Terceiros",
+          "Engajamento com Fornecedores",
+          "Compromisso de Serviço",
+          "Gerenciamento de Projetos / Programas",
+          "Melhoria Contínua",
+          "Abrangência de controle / governança de federação",
+          "Gerenciamento de serviços terceirizados",
+          "KPIs e Métricas do SOC",
+          "Gerenciamento de riscos do SOC",
+          "Engajamento / Satisfação do Cliente"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.4",
+        "question": "O gerenciamento de custos está implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O gerenciamento de custos é necessário para justificar a alocação orçamentária para o SOC e garantir a entrega contínua do serviço no futuro"
+      },
+      {
+        "id": "4.5",
+        "question": "Por favor, especifique os elementos de gerenciamento de custos",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Custo de Pessoal",
+          "Custo de Processo",
+          "Custo de Tecnologia",
+          "Custo de Serviços",
+          "Custo de Instalação",
+          "Previsão Orçamentária",
+          "Alinhamento Orçamentário",
+          "Retorno sobre o Investimento"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.6",
+        "question": "Todos os elementos de governança estão formalmente documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentados", "Parcialmente documentados", "Totalmente documentados"],
+        "guidance": "A documentação formal deve ser assinada e armazenada em um sistema de gerenciamento de qualidade"
+      },
+      {
+        "id": "4.7",
+        "question": "As reuniões de governança do SOC são realizadas regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As reuniões em diferentes níveis (operacional, tático, estratégico) devem ser formalizadas em Termos de Referência (ToR) e orientadas por métricas"
+      },
+      {
+        "id": "4.8",
+        "question": "O processo de governança é revisado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "4.9",
+        "question": "O processo de governança está alinhado com todas as partes interessadas?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O alinhamento ajudará o SOC a obter o mandato, o orçamento e o suporte gerencial necessários"
+      },
+      {
+        "id": "4.10",
+        "question": "O SOC é auditado regularmente ou submetido a avaliações (externas)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com a política do SOC. Recomenda-se pelo menos anualmente. Avaliações de terceiros têm uma objetividade maior"
+      },
+      {
+        "id": "4.11",
+        "question": "Existe uma cooperação ativa com outros SOCs (externos)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A troca de melhores práticas, inteligência e ações sobre ameaças com outros SOCs é vital para melhorar a defesa cibernética"
+      }
+    ],
+    "Privacidade e Política": [
+      {
+        "id": "5.1",
+        "question": "Existe uma política de segurança da informação que suporta as atividades do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Uma política de segurança clara que suporta as operações do SOC fornece orientação e ajuda a fazer valer o mandato do SOC na organização"
+      },
+      {
+        "id": "5.2",
+        "question": "Foi criada uma política do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Uma política do SOC serve para delinear as regras às quais o pessoal e a gerência do SOC devem aderir"
+      },
+      {
+        "id": "5.3",
+        "question": "Por favor, especifique os elementos da política do SOC",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Código de conduta",
+          "Regras de engajamento e responsabilidades",
+          "Frequência de revisão da documentação",
+          "Frequência e tipo de avaliação do SOC",
+          "Troca e manutenção de conhecimento",
+          "Frequência de exercícios",
+          "Uso de TLP",
+          "Acordos de trabalho"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.4",
+        "question": "O SOC é consultado na criação e atualização da política de segurança operacional?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Consultar o SOC na criação da política de segurança garantirá que as atividades do SOC sejam mencionadas e aplicáveis corretamente"
+      },
+      {
+        "id": "5.5",
+        "question": "Existe uma política de relatórios para incidentes de segurança?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Uma política de relatórios para incidentes de segurança auxiliará o SOC na identificação de incidentes e ameaças na organização"
+      },
+      {
+        "id": "5.6",
+        "question": "Existe uma política de privacidade em relação ao monitoramento de segurança de funcionários?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Uma política de privacidade deve declarar que o monitoramento de funcionários é possível dentro dos limites aceitáveis"
+      },
+      {
+        "id": "5.7",
+        "question": "O SOC opera em conformidade com todas as leis e regulamentações de privacidade aplicáveis?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Leis e regulamentações locais, bem como a política da empresa, podem ser aplicáveis e devem ser todas consideradas"
+      },
+      {
+        "id": "5.8",
+        "question": "O SOC coopera com os departamentos jurídicos em relação a questões de privacidade?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A cooperação garantirá que o SOC esteja habilitado a realizar atividades, em vez de ser bloqueado"
+      },
+      {
+        "id": "5.9",
+        "question": "Existem procedimentos específicos para lidar com investigações relacionadas à privacidade?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Questões relacionadas à privacidade exigem um exame cuidadoso, especialmente aquelas que podem levar a processos judiciais"
+      },
+      {
+        "id": "5.10",
+        "question": "O SOC está ciente de todas as informações que processa e que estão sujeitas a regulamentações de privacidade?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Tais informações incluem endereços IP, identificadores de clientes, nomes de usuários, nomes de hosts (para dispositivos de propriedade pessoal), etc."
+      },
+      {
+        "id": "5.11",
+        "question": "Uma Avaliação de Impacto de Privacidade (PIA) é realizada regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Pode ser usada para determinar o impacto do monitoramento na privacidade e pode ajudar a descobrir possíveis violações"
+      }
+    ]
+  },
+  "Pessoas": {
+    "Funcionários": [
+      {
+        "id": "1.1",
+        "question": "Quantos FTEs há no seu SOC?",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": "Inclua FTEs internos e externos"
+      },
+      {
+        "id": "1.2",
+        "question": "Você usa funcionários externos / contratados em seu SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Sim", "Não"],
+        "guidance": "Funcionários externos podem ser especialistas contratados para preencher vagas ou realizar atividades de projeto"
+      },
+      {
+        "id": "1.2.1",
+        "question": "Se sim, especifique o número de FTEs externos",
+        "fieldType": "numeric",
+        "answerOptions": [],
+        "guidance": ""
+      },
+      {
+        "id": "1.3",
+        "question": "O tamanho atual do SOC atende aos requisitos de FTE?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ou seja, o tamanho do SOC é suficiente para atingir os objetivos de negócio?"
+      },
+      {
+        "id": "1.4",
+        "question": "O SOC atende aos requisitos de proporção de FTEs internos para externos?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Nota: os requisitos não precisam ser explícitos. Defina a importância como 'Nenhum' se você não tiver funcionários externos."
+      },
+      {
+        "id": "1.5",
+        "question": "O SOC atende aos requisitos de conjunto de habilidades de funcionários internos para externos?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ou seja, existem habilidades cruciais entre os funcionários externos? Defina a importância como 'Nenhum' se você não tiver funcionários externos"
+      },
+      {
+        "id": "1.6",
+        "question": "Todas as posições estão preenchidas?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Posições não preenchidas podem ser devido a deficiências no processo de recrutamento"
+      },
+      {
+        "id": "1.7",
+        "question": "Você tem um processo de recrutamento implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de recrutamento é necessário para obter novos funcionários em um mercado onde o talento é escasso"
+      },
+      {
+        "id": "1.8",
+        "question": "Você tem um processo de aquisição de talentos implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O recrutamento de talentos pode ser vital para o sucesso do SOC, mas a retenção de talentos é igualmente importante"
+      },
+      {
+        "id": "1.9",
+        "question": "Você tem KSAOs específicos estabelecidos para o pessoal do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Conhecimentos, Habilidades, Aptidões e Outros atributos (KSAOs) devem estar em vigor: técnicos, cognitivos, sociais e de caráter"
+      },
+      {
+        "id": "1.10",
+        "question": "Você busca ativamente criar um ambiente psicologicamente seguro para o pessoal do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um ambiente psicologicamente seguro é um ambiente onde todos são capazes de expressar suas opiniões e se sentir valorizados"
+      }
+    ],
+    "Funções e Hierarquia": [
+      {
+        "id": "2.1",
+        "question": "Você diferencia formalmente as funções dentro do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Use as funções em 2.2 para determinar se você tem todas as funções necessárias no SOC"
+      },
+      {
+        "id": "2.2",
+        "question": "Quais das seguintes funções estão presentes no seu SOC?",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Analista de Segurança",
+          "Engenheiro de Segurança / Sistemas",
+          "Analista Forense",
+          "Arquiteto de Segurança",
+          "Analista de Inteligência de Ameaças",
+          "Cientista de Dados",
+          "Gerente de SOC",
+          "Líder de Equipe",
+          "Manipulador de Incidentes",
+          "Gerente de Incidentes",
+          "Testador de Penetração",
+          "Engenheiro de Detecção",
+          "Engenheiro de Automação",
+          "Outros"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.3",
+        "question": "Você diferencia níveis dentro dessas funções?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Se você não tem níveis e sente que isso não é uma restrição, selecione importância 'Nenhum'"
+      },
+      {
+        "id": "2.4",
+        "question": "Todas as funções estão suficientemente preenchidas?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Considere os níveis de pessoal (contagem de FTEs desejada), bem como o conhecimento e a experiência para todas as funções"
+      },
+      {
+        "id": "2.5",
+        "question": "Existe uma hierarquia baseada em funções em seu SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Se você não tem hierarquia e sente que isso não é uma restrição, selecione importância 'Nenhum'"
+      },
+      {
+        "id": "2.6",
+        "question": "Você documentou formalmente todas as funções do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "Possíveis elementos de documentação podem ser encontrados em 2.7"
+      },
+      {
+        "id": "2.7",
+        "question": "Por favor, especifique os elementos na documentação da função:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Descrição da função",
+          "Tarefas da função",
+          "Responsabilidades da função",
+          "Expectativas da função",
+          "Habilidades técnicas necessárias",
+          "Habilidades interpessoais necessárias",
+          "Nível educacional exigido",
+          "Certificações exigidas ou preferenciais"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.8",
+        "question": "As responsabilidades de cada função são compreendidas?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As responsabilidades de cada função devem ser claramente compreendidas por todo o pessoal do SOC"
+      },
+      {
+        "id": "2.9",
+        "question": "Você documentou os requisitos de progressão na carreira para cada uma dessas funções?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A progressão na carreira para as funções pode ser documentada por meio de treinamento, certificação, experiência e requisitos de habilidades interpessoais"
+      },
+      {
+        "id": "2.10",
+        "question": "Você revisa ou atualiza regularmente as descrições de função?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Revisar significa verificar e confirmar se a documentação ainda está correta ou se exige uma atualização"
+      }
+    ],
+    "Gerenciamento de Pessoas": [
+      {
+        "id": "3.1",
+        "question": "Você tem um plano de rotação de trabalho implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A rotação de trabalho pode ser usada para treinar funcionários em uma variedade de tarefas e evitar muita rotina"
+      },
+      {
+        "id": "3.2",
+        "question": "Você tem um processo de progressão na carreira implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Desenvolvimento de carreira, promoção, etc."
+      },
+      {
+        "id": "3.3",
+        "question": "Você tem um processo de gerenciamento de talentos implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O talento deve ser gerenciado adequadamente para reter essa equipe e desenvolver plenamente seu potencial."
+      },
+      {
+        "id": "3.4",
+        "question": "Você tem metas de diversidade de equipe?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ex: diversidade de histórico, diversidade étnica, diversidade de gênero, etc."
+      },
+      {
+        "id": "3.5",
+        "question": "Você estabeleceu metas de equipe?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As metas de equipe ajudam a dar foco à equipe e monitorar o progresso"
+      },
+      {
+        "id": "3.6",
+        "question": "Você documenta e acompanha as metas individuais dos membros da equipe?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As metas individuais dos membros da equipe devem ser definidas para ajudar o funcionário a desenvolver todo o seu potencial"
+      },
+      {
+        "id": "3.7",
+        "question": "Você avalia periodicamente os funcionários do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Também pode ser incluído no processo regular de avaliação da organização"
+      },
+      {
+        "id": "3.8",
+        "question": "Você tem um processo de 'novos contratados' implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ou seja, um processo definido para que novos funcionários se adaptem rapidamente e tenham um bom desempenho no SOC"
+      },
+      {
+        "id": "3.9",
+        "question": "Todos os funcionários do SOC são submetidos a triagem?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A triagem de pessoal é realizada para evitar infiltração ou mau comportamento de funcionários do SOC"
+      },
+      {
+        "id": "3.10",
+        "question": "Você mede a satisfação dos funcionários para melhorar o SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A satisfação dos funcionários deve ser levada a sério, pois a falta de satisfação pode levar à saída de pessoal chave"
+      },
+      {
+        "id": "3.11",
+        "question": "Existem reuniões regulares individuais entre o gerente do SOC e os funcionários?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Essas conversas informais individuais são usadas para orientar os funcionários e ajudar o gerente do SOC a obter insights sobre os desafios pessoais"
+      },
+      {
+        "id": "3.12",
+        "question": "Você realiza exercícios regulares de construção de equipe?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Exercícios de construção de equipe são usados para promover a colaboração entre os indivíduos da equipe e aumentar o espírito de equipe"
+      },
+      {
+        "id": "3.13",
+        "question": "Você realiza exercícios regulares de construção de equipe com outras equipes relevantes para o SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Em sistemas de múltiplas equipes (MTS), o SOC colabora com outras equipes. Use a construção de equipe entre equipes para maximizar o desempenho"
+      },
+      {
+        "id": "3.14",
+        "question": "Você avalia periodicamente o desempenho da equipe?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Além do desempenho individual, o desempenho e a dinâmica da equipe também são importantes para medir e melhorar"
+      }
+    ],
+    "Gerenciamento do Conhecimento": [
+      {
+        "id": "4.1",
+        "question": "Você tem um processo formal de gerenciamento de conhecimento implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O gerenciamento formal do conhecimento ajuda a otimizar a criação e distribuição do conhecimento"
+      },
+      {
+        "id": "4.2",
+        "question": "Você tem uma matriz de habilidades implementada?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Uma matriz pode consistir em: habilidades do SOC, funcionários do SOC e níveis de habilidade (novato, intermediário, especialista)"
+      },
+      {
+        "id": "4.3",
+        "question": "Por favor, especifique os elementos da matriz de habilidades:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Todos os funcionários do SOC",
+          "Habilidades técnicas",
+          "Habilidades interpessoais",
+          "Níveis de habilidade (novato, intermediário, especialista)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.4",
+        "question": "A matriz de habilidades é usada ativamente para melhoria da equipe e pessoal?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A melhoria pessoal é essencial, a melhoria da equipe requer insight na dinâmica da equipe e distribuição de habilidades"
+      },
+      {
+        "id": "4.5",
+        "question": "Você tem uma matriz de conhecimento implementada?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": ""
+      },
+      {
+        "id": "4.6",
+        "question": "Por favor, especifique os elementos da matriz de conhecimento:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Todos os funcionários do SOC",
+          "Todas as áreas de conhecimento relevantes",
+          "Níveis de conhecimento (novato, intermediário, especialista)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.7",
+        "question": "A matriz de conhecimento é usada ativamente para determinar as necessidades de treinamento e educação?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A matriz deve ser usada como um meio para identificar e resolver lacunas de conhecimento"
+      },
+      {
+        "id": "4.8",
+        "question": "Você documentou as habilidades dos membros da equipe do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentadas", "Parcialmente documentadas", "Totalmente documentadas"],
+        "guidance": "Além do conhecimento e das habilidades, as habilidades dos membros da equipe também são importantes de documentar"
+      },
+      {
+        "id": "4.9",
+        "question": "Você avalia e revisa regularmente o processo de gerenciamento de conhecimento?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Isso se refere ao processo de gerenciamento de conhecimento como um todo"
+      },
+      {
+        "id": "4.10",
+        "question": "Existem ferramentas eficazes para apoiar a documentação e distribuição do conhecimento?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Essas ferramentas podem ajudar a evitar investigar problemas semelhantes várias vezes, integrando-se ao processo de monitoramento de segurança"
+      }
+    ],
+    "Treinamento e Educação": [
+      {
+        "id": "5.1",
+        "question": "Você tem um programa de treinamento implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um programa de treinamento é usado para garantir um nível mínimo de conhecimento para os funcionários"
+      },
+      {
+        "id": "5.2",
+        "question": "Por favor, especifique os elementos do programa de treinamento:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Treinamento no Trabalho",
+          "Treinamento específico do produto",
+          "Treinamento interno da empresa",
+          "Treinamento específico baseado em função",
+          "Treinamento de habilidades interpessoais",
+          "Educação formal"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.3",
+        "question": "Você tem um programa de certificação implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um programa de certificação é usado para fornecer um nível mínimo demonstrável de conhecimento e habilidades"
+      },
+      {
+        "id": "5.4",
+        "question": "Por favor, especifique os elementos do programa de certificação:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Trilha de certificação interna",
+          "Trilha de certificação externa",
+          "Trilha de recertificação (educação continuada)"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.5",
+        "question": "O programa de treinamento e certificação está conectado à avaliação e progressão na carreira?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ex: certos treinamentos e certificações são necessários para crescer de uma função de nível júnior para uma função de nível mais sênior"
+      },
+      {
+        "id": "5.6",
+        "question": "Existe um orçamento reservado para educação e treinamento?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Ou seja, uma porcentagem fixa do orçamento total do SOC que é alocada para educação e não pode ser usada para outros fins"
+      },
+      {
+        "id": "5.7",
+        "question": "Existe uma quantidade de tempo reservada para educação e treinamento?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Esta é uma extensão do orçamento de educação"
+      },
+      {
+        "id": "5.8",
+        "question": "Você realiza workshops regulares para desenvolvimento de conhecimento?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Workshops são uma forma informal de distribuir conhecimento"
+      },
+      {
+        "id": "5.9",
+        "question": "Você revisa e atualiza regularmente os programas de treinamento e certificação?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O treinamento e a certificação devem ser um reflexo relevante dos requisitos de conhecimento e habilidades do SOC"
+      }
+    ]
+  },
+  "Processo": {
+    "Gerenciamento": [
+      {
+        "id": "1.1",
+        "question": "Existe um processo de gerenciamento do SOC implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de gerenciamento do SOC é usado para gerenciar todos os aspectos da entrega e qualidade dos serviços do SOC"
+      },
+      {
+        "id": "1.2",
+        "question": "Os elementos de gerenciamento do SOC estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de gerenciamento do SOC podem ser encontrados em 1.3"
+      },
+      {
+        "id": "1.3",
+        "question": "Por favor, especifique os elementos de gerenciamento do SOC identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Gerenciamento de relacionamento interno",
+          "Gerenciamento de relacionamento externo",
+          "Gerenciamento de capacidade",
+          "Gerenciamento de desempenho",
+          "Gerenciamento de configurações",
+          "Gerenciamento de mudanças",
+          "Gerenciamento de portfólio",
+          "Gerenciamento de projetos",
+          "Gerenciamento financeiro",
+          "Gerenciamento de riscos",
+          "Gerenciamento de continuidade de serviço",
+          "Gerenciamento de crise",
+          "Gerenciamento da qualidade"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "1.4",
+        "question": "O processo de gerenciamento do SOC é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos gerentes"
+      },
+      {
+        "id": "1.5",
+        "question": "O processo de gerenciamento do SOC é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "1.6",
+        "question": "O processo de gerenciamento do SOC está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "1.7",
+        "question": "Existe uma cooperação ativa entre a gerência do SOC e outras gerências (por exemplo, de segurança)?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A cooperação garante um forte alinhamento com os objetivos organizacionais"
+      }
+    ],
+    "Coleta de Dados": [
+      {
+        "id": "2.1",
+        "question": "Existe um processo formal de coleta de dados implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de coleta de dados é necessário para garantir o controle sobre os dados de segurança"
+      },
+      {
+        "id": "2.2",
+        "question": "Todos os elementos de coleta de dados estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de coleta de dados podem ser encontrados em 2.3"
+      },
+      {
+        "id": "2.3",
+        "question": "Por favor, especifique os elementos de coleta de dados identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Requisitos de dados",
+          "Tipos de dados",
+          "Fontes de dados",
+          "Técnicas de coleta",
+          "Armazenamento de dados",
+          "Retenção de dados",
+          "Qualidade dos dados",
+          "Normalização dos dados",
+          "Integração de dados"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "2.4",
+        "question": "O processo de coleta de dados é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos engenheiros"
+      },
+      {
+        "id": "2.5",
+        "question": "O processo de coleta de dados é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "2.6",
+        "question": "O processo de coleta de dados está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "2.7",
+        "question": "O SOC utiliza todos os dados que coleta?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O volume de dados pode ser um desafio na coleta e uso de dados"
+      },
+      {
+        "id": "2.8",
+        "question": "O SOC coleta dados de todas as fontes relevantes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As fontes relevantes podem ser encontradas nas perguntas da capacidade"
+      },
+      {
+        "id": "2.9",
+        "question": "A qualidade dos dados é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A qualidade dos dados é importante para garantir a detecção correta e evitar falsos positivos"
+      },
+      {
+        "id": "2.10",
+        "question": "A precisão da coleta de dados é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão da coleta de dados é importante para evitar a perda de dados"
+      },
+      {
+        "id": "2.11",
+        "question": "A integridade da coleta de dados é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A integridade da coleta de dados é importante para evitar a adulteração de dados"
+      },
+      {
+        "id": "2.12",
+        "question": "Os dados são coletados de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A coleta segura de dados é importante para evitar a exposição de dados"
+      }
+    ],
+    "Análise": [
+      {
+        "id": "3.1",
+        "question": "Existe um processo formal de análise implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de análise é necessário para garantir que os dados de segurança sejam analisados e interpretados corretamente"
+      },
+      {
+        "id": "3.2",
+        "question": "Todos os elementos de análise estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de análise podem ser encontrados em 3.3"
+      },
+      {
+        "id": "3.3",
+        "question": "Por favor, especifique os elementos de análise identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Requisitos de análise",
+          "Tipos de análise",
+          "Técnicas de análise",
+          "Ferramentas de análise",
+          "Resultados da análise",
+          "Relatórios de análise",
+          "Fluxos de trabalho de análise",
+          "Funções e responsabilidades da análise"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.4",
+        "question": "O processo de análise é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos analistas"
+      },
+      {
+        "id": "3.5",
+        "question": "O processo de análise é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "3.6",
+        "question": "O processo de análise está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "3.7",
+        "question": "O SOC utiliza todas as técnicas de análise relevantes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As técnicas relevantes podem ser encontradas nas perguntas da capacidade"
+      },
+      {
+        "id": "3.8",
+        "question": "A precisão da análise é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão da análise é importante para garantir a detecção correta e evitar falsos positivos"
+      },
+      {
+        "id": "3.9",
+        "question": "A completude da análise é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A completude da análise é importante para evitar a perda de informações"
+      },
+      {
+        "id": "3.10",
+        "question": "A pontualidade da análise é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A pontualidade da análise é importante para garantir a resposta rápida a incidentes"
+      },
+      {
+        "id": "3.11",
+        "question": "A análise é realizada de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A análise segura é importante para evitar a exposição de dados"
+      }
+    ],
+    "Resposta": [
+      {
+        "id": "4.1",
+        "question": "Existe um processo formal de resposta implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de resposta é necessário para garantir que os incidentes de segurança sejam tratados de forma eficaz e eficiente"
+      },
+      {
+        "id": "4.2",
+        "question": "Todos os elementos de resposta estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de resposta podem ser encontrados em 4.3"
+      },
+      {
+        "id": "4.3",
+        "question": "Por favor, especifique os elementos de resposta identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Requisitos de resposta",
+          "Tipos de resposta",
+          "Técnicas de resposta",
+          "Ferramentas de resposta",
+          "Resultados da resposta",
+          "Relatórios de resposta",
+          "Fluxos de trabalho de resposta",
+          "Funções e responsabilidades da resposta"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "4.4",
+        "question": "O processo de resposta é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos respondedores"
+      },
+      {
+        "id": "4.5",
+        "question": "O processo de resposta é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "4.6",
+        "question": "O processo de resposta está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "4.7",
+        "question": "O SOC utiliza todas as técnicas de resposta relevantes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As técnicas relevantes podem ser encontradas nas perguntas da capacidade"
+      },
+      {
+        "id": "4.8",
+        "question": "A precisão da resposta é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão da resposta é importante para garantir a contenção e erradicação eficazes de incidentes"
+      },
+      {
+        "id": "4.9",
+        "question": "A completude da resposta é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A completude da resposta é importante para garantir que todos os aspectos do incidente sejam tratados"
+      },
+      {
+        "id": "4.10",
+        "question": "A pontualidade da resposta é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A pontualidade da resposta é importante para minimizar o impacto de incidentes"
+      },
+      {
+        "id": "4.11",
+        "question": "A resposta é realizada de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A resposta segura é importante para evitar a exposição de dados"
+      }
+    ],
+    "Gerenciamento de Casos": [
+      {
+        "id": "5.1",
+        "question": "Existe um processo formal de gerenciamento de casos implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de gerenciamento de casos é necessário para garantir que todos os casos sejam tratados de forma consistente e eficaz"
+      },
+      {
+        "id": "5.2",
+        "question": "Todos os elementos de gerenciamento de casos estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de gerenciamento de casos podem ser encontrados em 5.3"
+      },
+      {
+        "id": "5.3",
+        "question": "Por favor, especifique os elementos de gerenciamento de casos identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Requisitos de gerenciamento de casos",
+          "Tipos de casos",
+          "Fluxos de trabalho de casos",
+          "Ferramentas de gerenciamento de casos",
+          "Resultados do gerenciamento de casos",
+          "Relatórios de gerenciamento de casos",
+          "Funções e responsabilidades do gerenciamento de casos"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "5.4",
+        "question": "O processo de gerenciamento de casos é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos gerentes de casos"
+      },
+      {
+        "id": "5.5",
+        "question": "O processo de gerenciamento de casos é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "5.6",
+        "question": "O processo de gerenciamento de casos está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "5.7",
+        "question": "O SOC utiliza todas as ferramentas de gerenciamento de casos relevantes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "As ferramentas relevantes podem ser encontradas nas perguntas da capacidade"
+      },
+      {
+        "id": "5.8",
+        "question": "A precisão do gerenciamento de casos é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão do gerenciamento de casos é importante para garantir que os casos sejam tratados corretamente"
+      },
+      {
+        "id": "5.9",
+        "question": "A completude do gerenciamento de casos é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A completude do gerenciamento de casos é importante para garantir que todos os aspectos do caso sejam tratados"
+      },
+      {
+        "id": "5.10",
+        "question": "A pontualidade do gerenciamento de casos é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A pontualidade do gerenciamento de casos é importante para garantir que os casos sejam tratados rapidamente"
+      },
+      {
+        "id": "5.11",
+        "question": "O gerenciamento de casos é realizado de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "O gerenciamento de casos seguro é importante para evitar a exposição de dados"
+      }
+    ],
+    "Comunicação": [
+      {
+        "id": "6.1",
+        "question": "Existe um processo formal de comunicação implementado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um processo de comunicação é necessário para garantir que as informações sejam comunicadas de forma eficaz e eficiente"
+      },
+      {
+        "id": "6.2",
+        "question": "Todos os elementos de comunicação estão formalmente identificados e documentados?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+        "guidance": "Possíveis elementos de comunicação podem ser encontrados em 6.3"
+      },
+      {
+        "id": "6.3",
+        "question": "Por favor, especifique os elementos de comunicação identificados:",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Requisitos de comunicação",
+          "Tipos de comunicação",
+          "Canais de comunicação",
+          "Frequência de comunicação",
+          "Públicos de comunicação",
+          "Conteúdo da comunicação",
+          "Resultados da comunicação",
+          "Relatórios de comunicação",
+          "Funções e responsabilidades da comunicação"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "6.4",
+        "question": "O processo de comunicação é formalmente documentado?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+        "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos comunicadores"
+      },
+      {
+        "id": "6.5",
+        "question": "O processo de comunicação é revisado e atualizado regularmente?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+      },
+      {
+        "id": "6.6",
+        "question": "O processo de comunicação está alinhado com outras funções e processos do SOC?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+      },
+      {
+        "id": "6.7",
+        "question": "O SOC utiliza todos os canais de comunicação relevantes?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "Os canais relevantes podem ser encontrados nas perguntas da capacidade"
+      },
+      {
+        "id": "6.8",
+        "question": "A precisão da comunicação é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão da comunicação é importante para garantir que as informações sejam corretas"
+      },
+      {
+        "id": "6.9",
+        "question": "A clareza da comunicação é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A clareza da comunicação é importante para garantir que as informações sejam compreendidas"
+      },
+      {
+        "id": "6.10",
+        "question": "A pontualidade da comunicação é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A pontualidade da comunicação é importante para garantir que as informações sejam entregues rapidamente"
+      },
+      {
+        "id": "6.11",
+        "question": "A comunicação é realizada de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A comunicação segura é importante para evitar a exposição de dados"
+      }
+    ]
+  },
+  "Tecnologia": {
+    "SIEM / UEBA": {
+      "Maturidade": [
+        {
+          "id": "1.1",
+          "question": "Você tem um processo formal de gerenciamento de SIEM / UEBA implementado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um processo de gerenciamento de SIEM / UEBA é necessário para garantir que a ferramenta seja usada de forma eficaz e eficiente"
+        },
+        {
+          "id": "1.2",
+          "question": "Todos os elementos de gerenciamento de SIEM / UEBA estão formalmente identificados e documentados?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+          "guidance": "Possíveis elementos de gerenciamento de SIEM / UEBA podem ser encontrados em 1.3"
+        },
+        {
+          "id": "1.3",
+          "question": "Por favor, especifique os elementos de gerenciamento de SIEM / UEBA identificados:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Requisitos de SIEM / UEBA",
+            "Tipos de SIEM / UEBA",
+            "Implantação de SIEM / UEBA",
+            "Configuração de SIEM / UEBA",
+            "Manutenção de SIEM / UEBA",
+            "Otimização de SIEM / UEBA",
+            "Resultados de SIEM / UEBA",
+            "Relatórios de SIEM / UEBA",
+            "Fluxos de trabalho de SIEM / UEBA",
+            "Funções e responsabilidades de SIEM / UEBA"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.4",
+          "question": "O processo de gerenciamento de SIEM / UEBA é formalmente documentado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+          "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos gerentes de SIEM / UEBA"
+        },
+        {
+          "id": "1.5",
+          "question": "O processo de gerenciamento de SIEM / UEBA é revisado e atualizado regularmente?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+        },
+        {
+          "id": "1.6",
+          "question": "O processo de gerenciamento de SIEM / UEBA está alinhado com outras funções e processos do SOC?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+        },
+        {
+          "id": "1.7",
+          "question": "O SOC utiliza todas as ferramentas de SIEM / UEBA relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As ferramentas relevantes podem ser encontradas nas perguntas da capacidade"
+        },
+        {
+          "id": "1.8",
+          "question": "A precisão do SIEM / UEBA é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A precisão do SIEM / UEBA é importante para garantir a detecção correta e evitar falsos positivos"
+        },
+        {
+          "id": "1.9",
+          "question": "A completude do SIEM / UEBA é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A completude do SIEM / UEBA é importante para garantir que todos os dados relevantes sejam coletados"
+        },
+        {
+          "id": "1.10",
+          "question": "A pontualidade do SIEM / UEBA é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A pontualidade do SIEM / UEBA é importante para garantir a detecção e resposta rápidas a incidentes"
+        },
+        {
+          "id": "1.11",
+          "question": "O SIEM / UEBA é operado de forma segura?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A operação segura do SIEM / UEBA é importante para evitar a exposição de dados"
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "1.12",
+          "question": "Coleta de logs (tipos de dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Logs de segurança",
+            "Logs de sistema",
+            "Logs de aplicativos",
+            "Logs de rede",
+            "Logs de eventos"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.13",
+          "question": "Coleta de logs (fontes de dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Firewall",
+            "IDS / IPS",
+            "Anti-malware",
+            "E-mail",
+            "Proxy",
+            "Servidor web",
+            "Servidor de aplicativos",
+            "Banco de dados",
+            "Sistema operacional",
+            "Dispositivo de rede",
+            "Dispositivo de segurança",
+            "Dispositivo de controle industrial (ICS / SCADA)",
+            "Nuvem",
+            "Dispositivo móvel",
+            "Dispositivo OT"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.14",
+          "question": "Coleta de logs (técnicas de coleta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Syslog",
+            "SNMP",
+            "WMI",
+            "API",
+            "Agente",
+            "Arquivo"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.15",
+          "question": "Coleta de logs (formato de log)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "CEF",
+            "LEEF",
+            "JSON",
+            "XML",
+            "CSV",
+            "Texto"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.16",
+          "question": "Coleta de logs (retenção de dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "7 dias",
+            "30 dias",
+            "90 dias",
+            "180 dias",
+            "365 dias",
+            "Mais de 365 dias"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.17",
+          "question": "Coleta de logs (qualidade dos dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Normalização de dados",
+            "Enriquecimento de dados",
+            "Validação de dados",
+            "Sanitização de dados"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.18",
+          "question": "Detecção (tipos de detecção)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Detecção baseada em regras",
+            "Detecção baseada em anomalias",
+            "Detecção baseada em comportamento",
+            "Detecção baseada em assinatura",
+            "Detecção heurística",
+            "Detecção baseada em aprendizado de máquina",
+            "Detecção baseada em inteligência artificial"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.19",
+          "question": "Detecção (tipos de anomalias)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Comportamento de usuário anômalo",
+            "Comportamento de rede anômalo",
+            "Comportamento de host anômalo",
+            "Comportamento de aplicativo anômalo",
+            "Comportamento de dados anômalo"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.20",
+          "question": "Resposta (tipos de resposta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Alerta",
+            "Notificação",
+            "Bloqueio",
+            "Quarentena",
+            "Remediação",
+            "Contenção",
+            "Erradicação",
+            "Recuperação"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.21",
+          "question": "Resposta (técnicas de resposta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Resposta manual",
+            "Resposta semiautomática",
+            "Resposta automática"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.22",
+          "question": "Relatórios e painéis",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Relatórios de segurança",
+            "Painéis de segurança",
+            "Relatórios de conformidade",
+            "Relatórios de auditoria"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.23",
+          "question": "Integração (ferramentas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Ferramentas de gerenciamento de ativos",
+            "Ferramentas de gerenciamento de identidade",
+            "Ferramentas de gerenciamento de vulnerabilidades",
+            "Ferramentas de inteligência de ameaças",
+            "Ferramentas de gerenciamento de incidentes",
+            "Ferramentas SOAR"
+          ],
+          "guidance": ""
+        }
+      ]
+    },
+    "NDR": {
+      "Maturidade": [
+        {
+          "id": "2.1",
+          "question": "Você tem um processo formal de gerenciamento de NDR implementado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um processo de gerenciamento de NDR é necessário para garantir que a ferramenta seja usada de forma eficaz e eficiente"
+        },
+        {
+          "id": "2.2",
+          "question": "Todos os elementos de gerenciamento de NDR estão formalmente identificados e documentados?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+          "guidance": "Possíveis elementos de gerenciamento de NDR podem ser encontrados em 2.3"
+        },
+        {
+          "id": "2.3",
+          "question": "Por favor, especifique os elementos de gerenciamento de NDR identificados:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Requisitos de NDR",
+            "Tipos de NDR",
+            "Implantação de NDR",
+            "Configuração de NDR",
+            "Manutenção de NDR",
+            "Otimização de NDR",
+            "Resultados de NDR",
+            "Relatórios de NDR",
+            "Fluxos de trabalho de NDR",
+            "Funções e responsabilidades de NDR"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.4",
+          "question": "O processo de gerenciamento de NDR é formalmente documentado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+          "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos gerentes de NDR"
+        },
+        {
+          "id": "2.5",
+          "question": "O processo de gerenciamento de NDR é revisado e atualizado regularmente?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+        },
+        {
+          "id": "2.6",
+          "question": "O processo de gerenciamento de NDR está alinhado com outras funções e processos do SOC?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+        },
+        {
+          "id": "2.7",
+          "question": "O SOC utiliza todas as ferramentas de NDR relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As ferramentas relevantes podem ser encontradas nas perguntas da capacidade"
+        },
+        {
+          "id": "2.8",
+          "question": "A precisão do NDR é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A precisão do NDR é importante para garantir a detecção correta e evitar falsos positivos"
+        },
+        {
+          "id": "2.9",
+          "question": "A completude do NDR é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A completude do NDR é importante para garantir que todos os dados relevantes sejam coletados"
+        },
+        {
+          "id": "2.10",
+          "question": "A pontualidade do NDR é medida?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A pontualidade do NDR é importante para garantir a detecção e resposta rápidas a incidentes"
+        },
+        {
+          "id": "2.11",
+          "question": "O NDR é operado de forma segura?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A operação segura do NDR é importante para evitar a exposição de dados"
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "2.12",
+          "question": "Coleta de dados (tipos de dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Dados de fluxo de rede",
+            "Dados de pacote de rede",
+            "Metadados de rede"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.13",
+          "question": "Coleta de dados (fontes de dados)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Firewall",
+            "IDS / IPS",
+            "Roteador",
+            "Switch",
+            "Balanceador de carga",
+            "DNS",
+            "DHCP"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.14",
+          "question": "Coleta de dados (técnicas de coleta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Sondas de rede",
+            "Espelhamento de porta",
+            "TAP de rede"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.15",
+          "question": "Detecção (tipos de detecção)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Detecção baseada em regras",
+            "Detecção baseada em anomalias",
+            "Detecção baseada em comportamento",
+            "Detecção baseada em assinatura",
+            "Detecção heurística",
+            "Detecção baseada em aprendizado de máquina",
+            "Detecção baseada em inteligência artificial"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.16",
+          "question": "Detecção (tipos de anomalias)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Comportamento de usuário anômalo",
+            "Comportamento de rede anômalo"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.17",
+          "question": "Resposta (tipos de resposta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Alerta",
+            "Notificação",
+            "Bloqueio",
+            "Quarentena",
+            "Remediação",
+            "Contenção",
+            "Erradicação",
+            "Recuperação"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.18",
+          "question": "Resposta (técnicas de resposta)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Resposta manual",
+            "Resposta semiautomática",
+            "Resposta automática"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.19",
+          "question": "Relatórios e painéis",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Relatórios de segurança",
+            "Painéis de segurança",
+            "Relatórios de conformidade",
+            "Relatórios de auditoria"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.20",
+          "question": "Integração (ferramentas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Ferramentas de gerenciamento de ativos",
+            "Ferramentas de gerenciamento de identidade",
+            "Ferramentas de gerenciamento de vulnerabilidades",
+            "Ferramentas de inteligência de ameaças",
+            "Ferramentas de gerenciamento de incidentes",
+            "Ferramentas SOAR"
+          ],
+          "guidance": ""
+        }
+      ]
+    },
+    "EDR": {
+      "Maturidade": [
+        {
+          "id": "3.1",
+          "question": "Você tem um processo formal de gerenciamento de EDR implementado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um processo de gerenciamento de EDR é necessário para garantir que a ferramenta seja usada de forma eficaz e eficiente"
+        },
+        {
+          "id": "3.2",
+          "question": "Todos os elementos de gerenciamento de EDR estão formalmente identificados e documentados?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não identificados", "Parcialmente identificados", "Totalmente identificados"],
+          "guidance": "Possíveis elementos de gerenciamento de EDR podem ser encontrados em 3.3"
+        },
+        {
+          "id": "3.3",
+          "question": "Por favor, especifique os elementos de gerenciamento de EDR identificados:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Requisitos de EDR",
+            "Tipos de EDR",
+            "Implantação de EDR",
+            "Configuração de EDR",
+            "Manutenção de EDR",
+            "Otimização de EDR",
+            "Resultados de EDR",
+            "Relatórios de EDR",
+            "Fluxos de trabalho de EDR",
+            "Funções e responsabilidades de EDR"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "3.4",
+          "question": "O processo de gerenciamento de EDR é formalmente documentado?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não documentado", "Parcialmente documentado", "Totalmente documentado"],
+          "guidance": "A documentação formal suporta a padronização do processo e permite um treinamento mais rápido de novos gerentes de EDR"
+        },
+        {
+          "id": "3.5",
+          "question": "O processo de gerenciamento de EDR é revisado e atualizado regularmente?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A frequência deve ser compatível com sua própria política interna. Recomenda-se pelo menos anualmente"
+        },
+        {
+          "id": "3.6",
+          "question": "O processo de gerenciamento de EDR está alinhado com outras funções e processos do SOC?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Um forte alinhamento com outros processos garante o melhor desempenho do SOC"
+        },
+        {
+          "id": "3.7",
+          "question": "O SOC utiliza todas as ferramentas de EDR relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As ferramentas relevantes podem ser encontradas nas perguntas da capacidade"
+        },
+        {
+          "id": "3.8",
+          "question": "A precisão do EDR é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A precisão do EDR é importante para garantir a detecção correta e evitar falsos positivos"
+      },
+      {
+        "id": "3.9",
+        "question": "A completude do EDR é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A completude do EDR é importante para garantir que todos os dados relevantes sejam coletados"
+      },
+      {
+        "id": "3.10",
+        "question": "A pontualidade do EDR é medida?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A pontualidade do EDR é importante para garantir a detecção e resposta rápidas a incidentes"
+      },
+      {
+        "id": "3.11",
+        "question": "O EDR é operado de forma segura?",
+        "fieldType": "dropdown",
+        "answerOptions": ["Não", "Parcialmente", "Sim"],
+        "guidance": "A operação segura do EDR é importante para evitar a exposição de dados"
+      }
+    ],
+    "Capacidade": [
+      {
+        "id": "3.12",
+        "question": "Coleta de dados (tipos de dados)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Logs de endpoint",
+          "Dados de processo",
+          "Dados de arquivo",
+          "Dados de registro",
+          "Dados de memória",
+          "Dados de rede",
+          "Dados de usuário"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.13",
+        "question": "Coleta de dados (fontes de dados)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Estações de trabalho",
+          "Servidores",
+          "Dispositivos móveis",
+          "Dispositivos IoT"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.14",
+        "question": "Coleta de dados (técnicas de coleta)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Agente",
+          "API",
+          "Arquivo",
+          "Stream de dados"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.15",
+        "question": "Detecção (tipos de detecção)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Detecção baseada em regras",
+          "Detecção baseada em anomalias",
+          "Detecção baseada em comportamento",
+          "Detecção baseada em assinatura",
+          "Detecção heurística",
+          "Detecção baseada em aprendizado de máquina",
+          "Detecção baseada em inteligência artificial"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.16",
+        "question": "Detecção (tipos de anomalias)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Comportamento de usuário anômalo",
+          "Comportamento de processo anômalo",
+          "Comportamento de arquivo anômalo",
+          "Comportamento de registro anômalo",
+          "Comportamento de memória anômalo",
+          "Comportamento de rede anômalo"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.17",
+        "question": "Resposta (tipos de resposta)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Alerta",
+          "Notificação",
+          "Bloqueio",
+          "Quarentena",
+          "Remediação",
+          "Contenção",
+          "Erradicação",
+          "Recuperação"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.18",
+        "question": "Resposta (técnicas de resposta)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Resposta manual",
+          "Resposta semiautomática",
+          "Resposta automática"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.19",
+        "question": "Relatórios e painéis",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Relatórios de segurança",
+          "Painéis de segurança",
+          "Relatórios de conformidade",
+          "Relatórios de auditoria"
+        ],
+        "guidance": ""
+      },
+      {
+        "id": "3.20",
+        "question": "Integração (ferramentas)",
+        "fieldType": "checkbox",
+        "answerOptions": [
+          "Ferramentas de gerenciamento de ativos",
+          "Ferramentas de gerenciamento de identidade",
+          "Ferramentas de gerenciamento de vulnerabilidades",
+          "Ferramentas de inteligência de ameaças",
+          "Ferramentas de gerenciamento de incidentes",
+          "Ferramentas SOAR"
+        ],
+        "guidance": ""
+      }
+    ]
+    }
+  },
+  "Serviços": {
+    "Monitoramento de Segurança": {
+      "Maturidade": [
+        {
+          "id": "1.1",
+          "question": "Você descreveu formalmente o serviço de monitoramento de segurança?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "1.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de monitoramento de segurança:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "1.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "1.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "1.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "1.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "1.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "1.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, etc."
+        },
+        {
+          "id": "1.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "1.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "1.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "1.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço"
+        },
+        {
+          "id": "1.13",
+          "question": "Os casos de uso são usados no serviço de monitoramento de segurança?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: força bruta de login de usuário, negação de serviço, não conformidade, etc."
+        },
+        {
+          "id": "1.14",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "1.15",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "1.16.1",
+          "question": "Detecção precoce",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.2",
+          "question": "Detecção de intrusão",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.3",
+          "question": "Detecção de exfiltração",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.4",
+          "question": "Detecção de eventos sutis",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.5",
+          "question": "Detecção de malware",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.6",
+          "question": "Detecção de anomalias",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.7",
+          "question": "Detecção em tempo real",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.8",
+          "question": "Alertas e notificações",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.9",
+          "question": "Redução de falsos positivos",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.10",
+          "question": "Ajuste contínuo",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.11",
+          "question": "Gerenciamento de cobertura",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.12",
+          "question": "Monitoramento de status",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.13",
+          "question": "Monitoramento de perímetro",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.14",
+          "question": "Monitoramento de host",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.15",
+          "question": "Monitoramento de rede e tráfego",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.16",
+          "question": "Monitoramento de acesso e uso",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.17",
+          "question": "Monitoramento de usuário / identidade",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.18",
+          "question": "Monitoramento de aplicativos e serviços",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.19",
+          "question": "Monitoramento de comportamento",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.20",
+          "question": "Monitoramento de banco de dados",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.21",
+          "question": "Monitoramento de perda de dados",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.22",
+          "question": "Monitoramento de perda / roubo de dispositivo",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.23",
+          "question": "Monitoramento de terceiros",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.24",
+          "question": "Monitoramento de ambiente físico",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.25",
+          "question": "Monitoramento de nuvem",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.26",
+          "question": "Monitoramento de dispositivo móvel",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "1.16.27",
+          "question": "Monitoramento de OT",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        }
+      ]
+    },
+    "Gerenciamento de Incidentes de Segurança": {
+      "Maturidade": [
+        {
+          "id": "2.1",
+          "question": "Você adotou uma metodologia de avaliação de maturidade para Gerenciamento de Incidentes de Segurança?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Sim", "Não"],
+          "guidance": ""
+        },
+        {
+          "id": "2.1.1",
+          "question": "Se sim, por favor, especifique a metodologia",
+          "fieldType": "text",
+          "answerOptions": [],
+          "guidance": "Ex: SOC-CMM 4CERT, SIM3, CREST, etc."
+        },
+        {
+          "id": "2.1.2",
+          "question": "Se sim, por favor, especifique o nível de maturidade (pode ter até 2 dígitos)",
+          "fieldType": "numeric",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.2",
+          "question": "Você descreveu formalmente o serviço de gerenciamento de incidentes de segurança?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "2.3",
+          "question": "Por favor, especifique os elementos do documento de serviço de gerenciamento de incidentes de segurança:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "2.4",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "2.5",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "2.6",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "2.7",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "2.8",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "2.9",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "2.10",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "2.11",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "2.12",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "2.13",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço. Adotar um padrão como o NIST SP 800-61 ou ISO 27035 ajudará a melhorar o serviço"
+        },
+        {
+          "id": "2.14",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "2.15",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "2.16.1",
+          "question": "Contenção de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.2",
+          "question": "Erradicação de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.3",
+          "question": "Recuperação de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.4",
+          "question": "Análise de causa raiz",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.5",
+          "question": "Relatórios pós-incidente",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.6",
+          "question": "Comunicação de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.7",
+          "question": "Gerenciamento de tickets de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.8",
+          "question": "Priorização de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.9",
+          "question": "Escalonamento de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.10",
+          "question": "Automação de resposta a incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.11",
+          "question": "Orquestração de resposta a incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.12",
+          "question": "Respostas pré-definidas",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.13",
+          "question": "Respostas personalizadas",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.14",
+          "question": "Respostas forenses",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.15",
+          "question": "Respostas legais",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.16",
+          "question": "Respostas de relações públicas",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.17",
+          "question": "Simulações de resposta a incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.18",
+          "question": "Exercícios de mesa",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.19",
+          "question": "Testes de intrusão",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.20",
+          "question": "Testes de equipe vermelha",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.21",
+          "question": "Testes de equipe azul",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "2.16.22",
+          "question": "Testes de equipe roxa",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        }
+      ]
+    },
+    "Análise de Segurança": {
+      "Maturidade": [
+        {
+          "id": "3.1",
+          "question": "Você descreveu formalmente o serviço de análise de segurança?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "3.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de análise de segurança:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "3.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "3.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "3.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "3.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "3.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "3.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "3.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "3.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "3.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "3.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço"
+        },
+        {
+          "id": "3.13",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "3.14",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "3.15.1",
+          "question": "Análise de eventos",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.2",
+          "question": "Análise forense",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.3",
+          "question": "Análise de malware",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.4",
+          "question": "Análise de inteligência de ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.5",
+          "question": "Análise de comportamento",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.6",
+          "question": "Análise de vulnerabilidade",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.7",
+          "question": "Análise de risco",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.8",
+          "question": "Análise de conformidade",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.9",
+          "question": "Análise de log",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.10",
+          "question": "Análise de rede",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.11",
+          "question": "Análise de host",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.12",
+          "question": "Análise de aplicativo",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.13",
+          "question": "Análise de banco de dados",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.14",
+          "question": "Análise de nuvem",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.15",
+          "question": "Análise de dispositivo móvel",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.16",
+          "question": "Análise de OT",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.17",
+          "question": "Análise de dados (técnicas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Visualização de dados",
+            "Mineração de dados",
+            "Análise estatística",
+            "Aprendizado de máquina",
+            "Inteligência artificial"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "3.15.18",
+          "question": "Análise de dados (ferramentas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Ferramentas SIEM / UEBA",
+            "Ferramentas NDR",
+            "Ferramentas EDR",
+            "Ferramentas de inteligência de ameaças",
+            "Ferramentas de gerenciamento de incidentes",
+            "Ferramentas SOAR"
+          ],
+          "guidance": ""
+        }
+      ]
+    },
+    "Inteligência de Ameaças": {
+      "Maturidade": [
+        {
+          "id": "4.1",
+          "question": "Você descreveu formalmente o serviço de inteligência de ameaças?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "4.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de inteligência de ameaças:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "4.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "4.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "4.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "4.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "4.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "4.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "4.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "4.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "4.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "4.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço"
+        },
+        {
+          "id": "4.13",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "4.14",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "4.15.1",
+          "question": "Coleta de inteligência de ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.2",
+          "question": "Análise de inteligência de ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.3",
+          "question": "Disseminação de inteligência de ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.4",
+          "question": "Compartilhamento de inteligência de ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.5",
+          "question": "Uso de inteligência de ameaças em monitoramento de segurança",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.6",
+          "question": "Uso de inteligência de ameaças em gerenciamento de incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.7",
+          "question": "Uso de inteligência de ameaças em caça a ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.8",
+          "question": "Uso de inteligência de ameaças em análise de segurança",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.9",
+          "question": "Uso de inteligência de ameaças em gerenciamento de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "4.15.10",
+          "question": "Uso de inteligência de ameaças em resposta a incidentes",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        }
+      ]
+    },
+    "Caça a Ameaças": {
+      "Maturidade": [
+        {
+          "id": "5.1",
+          "question": "Você descreveu formalmente o serviço de caça a ameaças?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "5.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de caça a ameaças:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "5.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "5.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "5.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "5.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "5.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "5.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "5.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "5.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "5.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "5.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço"
+        },
+        {
+          "id": "5.13",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "5.14",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "5.15.1",
+          "question": "Caça a ameaças baseada em inteligência",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.2",
+          "question": "Caça a ameaças baseada em comportamento",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.3",
+          "question": "Caça a ameaças baseada em indicadores",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.4",
+          "question": "Caça a ameaças baseada em ferramentas",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.5",
+          "question": "Caça a ameaças proativa",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.6",
+          "question": "Caça a ameaças reativa",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.7",
+          "question": "Caça a ameaças contínua",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.8",
+          "question": "Caça a ameaças manual",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.9",
+          "question": "Caça a ameaças semiautomática",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.10",
+          "question": "Caça a ameaças automática",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.11",
+          "question": "Relatórios de caça a ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.12",
+          "question": "Painéis de caça a ameaças",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "5.15.13",
+          "question": "Integração (ferramentas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Ferramentas SIEM / UEBA",
+            "Ferramentas NDR",
+            "Ferramentas EDR",
+            "Ferramentas de inteligência de ameaças",
+            "Ferramentas de gerenciamento de incidentes",
+            "Ferramentas SOAR"
+          ],
+          "guidance": ""
+        }
+      ]
+    },
+    "Gerenciamento de Vulnerabilidades": {
+      "Maturidade": [
+        {
+          "id": "6.1",
+          "question": "Você descreveu formalmente o serviço de gerenciamento de vulnerabilidades?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "6.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de gerenciamento de vulnerabilidades:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "6.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "6.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "6.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "6.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "6.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "6.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "6.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "6.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "6.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "6.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço. A adoção de um padrão como o NIST 800-40r4..."
+        },
+        {
+          "id": "6.13",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "6.14",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "6.15.1",
+          "question": "Descoberta de ativos",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.2",
+          "question": "Varredura de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.3",
+          "question": "Análise de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.4",
+          "question": "Priorização de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.5",
+          "question": "Remediação de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.6",
+          "question": "Relatórios de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.7",
+          "question": "Painéis de vulnerabilidades",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "6.15.8",
+          "question": "Integração (ferramentas)",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Ferramentas SIEM / UEBA",
+            "Ferramentas NDR",
+            "Ferramentas EDR",
+            "Ferramentas de inteligência de ameaças",
+            "Ferramentas de gerenciamento de incidentes",
+            "Ferramentas SOAR"
+          ],
+          "guidance": ""
+        }
+      ]
+    },
+    "Gerenciamento de Logs": {
+      "Maturidade": [
+        {
+          "id": "7.1",
+          "question": "Você descreveu formalmente o serviço de gerenciamento de logs?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Uma descrição do serviço deve estar em vigor"
+        },
+        {
+          "id": "7.2",
+          "question": "Por favor, especifique os elementos do documento de serviço de gerenciamento de logs:",
+          "fieldType": "checkbox",
+          "answerOptions": [
+            "Indicadores chave de desempenho",
+            "Indicadores de qualidade",
+            "Dependências de serviço",
+            "Níveis de serviço",
+            "Horário de funcionamento",
+            "Clientes e partes interessadas do serviço",
+            "Propósito",
+            "Entrada / Gatilhos do serviço",
+            "Saída / Entregáveis do serviço",
+            "Atividades do serviço",
+            "Funções e responsabilidades do serviço"
+          ],
+          "guidance": ""
+        },
+        {
+          "id": "7.3",
+          "question": "O serviço é medido quanto à qualidade?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?"
+        },
+        {
+          "id": "7.4",
+          "question": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço"
+        },
+        {
+          "id": "7.5",
+          "question": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Mudanças no escopo do serviço, entrega, etc."
+        },
+        {
+          "id": "7.6",
+          "question": "Existe um acordo contratual entre o SOC e os clientes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os acordos contratuais também devem cobrir penalidades"
+        },
+        {
+          "id": "7.7",
+          "question": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço"
+        },
+        {
+          "id": "7.8",
+          "question": "O serviço está alinhado com outros processos relevantes?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc."
+        },
+        {
+          "id": "7.9",
+          "question": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves"
+        },
+        {
+          "id": "7.10",
+          "question": "Um conjunto de procedimentos foi criado para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural"
+        },
+        {
+          "id": "7.11",
+          "question": "Existe um procedimento de integração e desativação para este serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente"
+        },
+        {
+          "id": "7.12",
+          "question": "As melhores práticas são aplicadas ao serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "As melhores práticas devem ser usadas para otimizar este serviço"
+        },
+        {
+          "id": "7.13",
+          "question": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho"
+        },
+        {
+          "id": "7.14",
+          "question": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+          "fieldType": "dropdown",
+          "answerOptions": ["Não", "Parcialmente", "Sim"],
+          "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc."
+        }
+      ],
+      "Capacidade": [
+        {
+          "id": "7.15.1",
+          "question": "Coleta de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.2",
+          "question": "Armazenamento de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.3",
+          "question": "Retenção de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.4",
+          "question": "Arquivamento de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.5",
+          "question": "Exclusão de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.6",
+          "question": "Integridade de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.7",
+          "question": "Disponibilidade de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.8",
+          "question": "Confidencialidade de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.9",
+          "question": "Suporte para múltiplas fontes de log",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.10",
+          "question": "Suporte para múltiplos formatos de log",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.11",
+          "question": "Suporte para múltiplas técnicas de transferência",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.12",
+          "question": "Normalização de dados",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.13",
+          "question": "Pesquisa e filtragem de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.14",
+          "question": "Alertas",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.15",
+          "question": "Relatórios e painéis",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.16",
+          "question": "Detecção de adulteração de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.17",
+          "question": "Política de coleta de logs",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.18",
+          "question": "Política de registro",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        },
+        {
+          "id": "7.15.19",
+          "question": "Política de retenção de dados",
+          "fieldType": "checkbox",
+          "answerOptions": [],
+          "guidance": ""
+        }
+      ]
+    }
+  }
+}
