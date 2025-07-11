@@ -194,7 +194,7 @@ class DatabaseManager:
         conn.close()
         return aspects
     
-    def get_aspect_questions(self, aspect_id: int) -> List[Dict]:
+    def get_aspect_questions(self, aspect_id: str) -> List[Dict]:
         conn = self.get_connection()
         cursor = conn.cursor()
         
@@ -226,7 +226,6 @@ class DatabaseManager:
         conn = self.get_connection()
         cursor = conn.cursor()
         
-        # Get the maturity score from the answer option
         cursor.execute("""
             SELECT maturity_level FROM answer_options WHERE id = ?
         """, (answer_option_id,))
@@ -248,6 +247,21 @@ class DatabaseManager:
         
         conn.commit()
         conn.close()
+    
+    def get_assessment_answers(self, assessment_id: int) -> List[Dict]:
+        """Get all answers for an assessment"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT question_id, answer_option_id, answer_text, maturity_score
+            FROM assessment_answers 
+            WHERE assessment_id = ?
+        """, (assessment_id,))
+        
+        answers = [dict(row) for row in cursor.fetchall()]
+        conn.close()
+        return answers
     
     def calculate_assessment_scores(self, assessment_id: int):
         """Calculate and store assessment scores by aspect and domain"""
