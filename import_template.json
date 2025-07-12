@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "import_date": "",
+    "translated_by": "Gemini",
+    "description": "Traduções geradas pelo Gemini"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question_text": "Tradução em português da questão",
+      "guidance": "Tradução em português da orientação",
+      "aspect_id": 1,
+      "question_type": "multiple_choice",
+      "order_index": 1,
+      "original_question": "Original question in English",
+      "translation_notes": "Notas sobre a tradução se necessário"
+    }
+  ]
+}
