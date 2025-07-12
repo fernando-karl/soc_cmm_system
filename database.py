@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import List, Dict, Optional
 
 class DatabaseManager:
-    def __init__(self, db_path: str = "soc_cmm.db"):
+    def __init__(self, db_path: str = "soc_cmm_translated.db"):
         self.db_path = db_path
         #self.init_database()
         #self.populate_initial_data()

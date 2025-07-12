@@ -7,25 +7,25 @@
     <div class="flex justify-between items-center mb-2">
         <h1 class="card-title" style="font-size: 1.75rem; margin: 0;">
             <i class="fas fa-chart-line"></i>
-            Assessment Results
+            Resultados da Avaliação
         </h1>
         <div class="flex gap-2">
             <button onclick="exportResults()" class="btn btn-secondary btn-sm">
                 <i class="fas fa-download"></i>
-                Export
+                Exportar
             </button>
             <a href="/customers" class="btn btn-primary btn-sm">
                 <i class="fas fa-arrow-left"></i>
-                Back to Customers
+                Voltar para Clientes
             </a>
         </div>
     </div>
     <p style="color: var(--text-secondary);">
-        Customer: <strong>{{ customer.name }}</strong>
-        {% if customer.organization %} | Organization: <strong>{{ customer.organization }}</strong>{% endif %}
+        Cliente: <strong>{{ customer.name }}</strong>
+        {% if customer.organization %} | Organização: <strong>{{ customer.organization }}</strong>{% endif %}
         <br>
-        Assessment: <strong>{{ assessment.name }}</strong> | 
-        Completed: <strong>{{ assessment.completed_at }}</strong>
+        Avaliação: <strong>{{ assessment.name }}</strong> | 
+        Concluída: <strong>{{ assessment.completed_at }}</strong>
     </p>
 </div>
 
@@ -34,7 +34,7 @@
     <div class="card-header">
         <h2 class="card-title">
             <i class="fas fa-trophy"></i>
-            Overall SOC Maturity Score
+            Maturidade Geral da SOC
         </h2>
     </div>
     <div class="card-body">
@@ -44,10 +44,10 @@
                     <!-- Overall score circle will be rendered here -->
                 </div>
                 <h3 id="overallScoreText" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); margin: 0;">
-                    Calculating...
+                    Calculando...
                 </h3>
                 <p style="color: var(--text-secondary); margin: 0;">
-                    Average Maturity Level
+                    Média de Maturidade
                 </p>
             </div>
         </div>
@@ -59,9 +59,9 @@
     <div class="card-header">
         <h2 class="card-title">
             <i class="fas fa-chart-radar"></i>
-            Maturity Radar Chart
+            Gráfico de Radar de Maturidade
         </h2>
-        <p class="card-subtitle">Visual representation of maturity across all domains</p>
+        <p class="card-subtitle">Visualização da maturidade em todos os domínios</p>
     </div>
     <div class="card-body">
         <div style="position: relative; height: 400px; max-width: 600px; margin: 0 auto;">
@@ -75,7 +75,7 @@
     <div class="card-header">
         <h2 class="card-title">
             <i class="fas fa-list-alt"></i>
-            Domain Breakdown
+            Breakdown do Domínio
         </h2>
     </div>
     <div class="card-body">
@@ -90,7 +90,7 @@
     <div class="card-header">
         <h2 class="card-title">
             <i class="fas fa-microscope"></i>
-            Detailed Aspect Scores
+            Detalhes do Aspecto
         </h2>
     </div>
     <div class="card-body">
@@ -105,15 +105,15 @@
     <div class="card-header">
         <h2 class="card-title">
             <i class="fas fa-trending-up"></i>
-            Progress Over Time
+            Progresso ao Longo do Tempo
         </h2>
-        <p class="card-subtitle">Compare with previous assessments</p>
+        <p class="card-subtitle">Compare com avaliações anteriores</p>
     </div>
     <div class="card-body">
         <div id="progressContent">
             <div class="text-center">
                 <div class="spinner"></div>
-                <p style="margin-top: 1rem; color: var(--text-secondary);">Loading progress data...</p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Carregando dados de progresso...</p>
             </div>
         </div>
     </div>
@@ -239,7 +239,7 @@ async function loadAssessmentResults() {
         displayAspectScores(scoresData.scores.aspect_scores);
         
     } catch (error) {
-        console.error('Error loading assessment results:', error);
+        console.error('Erro ao carregar resultados da avaliação:', error);
     }
 }
 
@@ -422,10 +422,10 @@ async function loadProgressData() {
         
         displayProgressData(data.progress);
     } catch (error) {
-        console.error('Error loading progress data:', error);
+        console.error('Erro ao carregar dados de progresso:', error);
         document.getElementById('progressContent').innerHTML = `
             <div class="text-center">
-                <p style="color: var(--text-secondary);">Error loading progress data</p>
+                <p style="color: var(--text-secondary);">Erro ao carregar dados de progresso</p>
             </div>
         `;
     }
@@ -438,9 +438,9 @@ function displayProgressData(progressData) {
         container.innerHTML = `
             <div class="text-center">
                 <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">No Progress Data Yet</h3>
+                <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Nenhum Dado de Progresso Ainda</h3>
                 <p style="color: var(--text-secondary);">
-                    Complete additional assessments to track progress over time.
+                    Complete mais avaliações para acompanhar o progresso ao longo do tempo.
                 </p>
             </div>
         `;
@@ -533,7 +533,7 @@ function displayProgressData(progressData) {
                 <div class="flex gap-2">
                     <a href="/results/${item.assessment_id}" class="btn btn-secondary btn-sm">
                         <i class="fas fa-eye"></i>
-                        View
+                        Ver
                     </a>
                 </div>
             </div>
@@ -552,13 +552,13 @@ function getScoreColor(score) {
 
 function getLevelText(level) {
     const levels = {
-        1: 'Initial',
-        2: 'Developing',
-        3: 'Defined',
-        4: 'Managed',
-        5: 'Optimized'
+        1: 'Iniciante',
+        2: 'Em Desenvolvimento',
+        3: 'Definido',
+        4: 'Gerenciado',
+        5: 'Otimizado'
     };
-    return levels[level] || 'Unknown';
+    return levels[level] || 'Desconhecido';
 }
 
 function exportResults() {

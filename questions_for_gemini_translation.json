@@ -1,0 +1,5660 @@
+{
+  "metadata": {
+    "export_date": "2025-07-11T21:21:57.327589",
+    "total_questions": 565,
+    "source_database": "soc_cmm_translated.db",
+    "description": "Exportação completa das questões do SOC CMM para tradução no Gemini"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question_text": "Você identificou os principais drivers de negócio?",
+      "guidance": "",
+      "aspect_id": 1.1,
+      "question_type": "multiple_choice",
+      "order_index": 1,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 2,
+      "question_text": "Você documentou os principais drivers de negócio?",
+      "guidance": "",
+      "aspect_id": 1.1,
+      "question_type": "multiple_choice",
+      "order_index": 2,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 3,
+      "question_text": "Você usa os drivers de negócio no processo de tomada de decisão?",
+      "guidance": "",
+      "aspect_id": 1.1,
+      "question_type": "multiple_choice",
+      "order_index": 3,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 4,
+      "question_text": "Você verifica regularmente se o catálogo de serviços atual está alinhado com os drivers de negócio?",
+      "guidance": "",
+      "aspect_id": 1.1,
+      "question_type": "multiple_choice",
+      "order_index": 4,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 5,
+      "question_text": "Os drivers de negócio foram validados com as partes interessadas do negócio?",
+      "guidance": "",
+      "aspect_id": 1.1,
+      "question_type": "multiple_choice",
+      "order_index": 5,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 6,
+      "question_text": "Você identificou os clientes do SOC?",
+      "guidance": "",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 6,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 7,
+      "question_text": "Por favor, especifique seus clientes:",
+      "guidance": "",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 7,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 8,
+      "question_text": "Você documentou os principais clientes do SOC?",
+      "guidance": "",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 8,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 9,
+      "question_text": "Você diferencia a saída para esses clientes específicos?",
+      "guidance": "",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 9,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 10,
+      "question_text": "Você tem acordos de nível de serviço com esses clientes?",
+      "guidance": "",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 10,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 11,
+      "question_text": "Você envia regularmente atualizações para seus clientes?",
+      "guidance": "Atualizações regulares mantêm os clientes informados sobre o status dos serviços",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 11,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 12,
+      "question_text": "Você mede e gerencia ativamente a satisfação do cliente?",
+      "guidance": "Medir a satisfação do cliente é essencial para melhorar os serviços",
+      "aspect_id": 1.2,
+      "question_type": "multiple_choice",
+      "order_index": 12,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 13,
+      "question_text": "O SOC possui um documento de estatuto formal?",
+      "guidance": "Um estatuto formal define o escopo e responsabilidades do SOC",
+      "aspect_id": 1.3,
+      "question_type": "multiple_choice",
+      "order_index": 13,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 14,
+      "question_text": "Please specify elements of the charter document:",
+      "guidance": "",
+      "aspect_id": 1.3,
+      "question_type": "multiple_choice",
+      "order_index": 14,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 15,
+      "question_text": "O documento de estatuto do SOC é atualizado regularmente?",
+      "guidance": "",
+      "aspect_id": 1.3,
+      "question_type": "multiple_choice",
+      "order_index": 15,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 16,
+      "question_text": "O documento de estatuto do SOC é aprovado pelo negócio / CISO?",
+      "guidance": "Aprovação formal garante alinhamento com a estratégia de negócio",
+      "aspect_id": 1.3,
+      "question_type": "multiple_choice",
+      "order_index": 16,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 17,
+      "question_text": "Are all stakeholders familiar with the SOC charter document contents?",
+      "guidance": "Making stakeholders aware of the contents helps in getting organizational support for security operations",
+      "aspect_id": 1.3,
+      "question_type": "multiple_choice",
+      "order_index": 17,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 18,
+      "question_text": "O SOC possui um processo de governança?",
+      "guidance": "Processos de governança garantem conformidade e eficiência",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 18,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 19,
+      "question_text": "Todos os elementos de governança foram identificados?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 19,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 20,
+      "question_text": "Please specify identified governance elements",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 20,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 21,
+      "question_text": "Is cost management in place?",
+      "guidance": "Managing costs is required to justify budget allocation for the SOC and ensure continued service delivery in the future",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 21,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 22,
+      "question_text": "Please specify cost management elements",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 22,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 23,
+      "question_text": "Todos os elementos de governança estão formalmente documentados?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 23,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 24,
+      "question_text": "Are SOC governance meetings regularly held?",
+      "guidance": "Meetings at different levels (operational, tactical, strategic) should be formalised in Terms of Reference (ToR) and driven by metrics",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 24,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 25,
+      "question_text": "O processo de governança é revisado regularmente?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 25,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 26,
+      "question_text": "O processo de governança está alinhado com todas as partes interessadas?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 26,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 27,
+      "question_text": "O SOC é auditado regularmente ou submetido a avaliações (externas)?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 27,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 28,
+      "question_text": "Existe uma cooperação ativa com outros SOCs (externos)?",
+      "guidance": "",
+      "aspect_id": 1.4,
+      "question_type": "multiple_choice",
+      "order_index": 28,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 29,
+      "question_text": "Existe uma política de segurança da informação que apoia as atividades do SOC?",
+      "guidance": "Políticas claras fornecem base para as operações do SOC",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 29,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 30,
+      "question_text": "Foi criada uma política do SOC?",
+      "guidance": "",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 30,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 31,
+      "question_text": "Please specify elements of the SOC policy",
+      "guidance": "",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 31,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 32,
+      "question_text": "O SOC é consultado na criação e atualizações da política de segurança operacional?",
+      "guidance": "Participação do SOC garante políticas práticas e eficazes",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 32,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 33,
+      "question_text": "Is a reporting policy for security incidents in place?",
+      "guidance": "A reporting policy for security incidents will aid the SOC in identifying incidents and threats in the organization",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 33,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 34,
+      "question_text": "Is a privacy policy regarding security monitoring of employees in place?",
+      "guidance": "A privacy policy should state that monitoring of employees is possible within acceptable limits",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 34,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 35,
+      "question_text": "O SOC opera em conformidade com todas as leis e regulamentações de privacidade aplicáveis?",
+      "guidance": "",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 35,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 36,
+      "question_text": "O SOC coopera com os departamentos jurídicos em relação a questões de privacidade?",
+      "guidance": "",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 36,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 37,
+      "question_text": "Are specific procedures in place for dealing with privacy related investigations?",
+      "guidance": "Privacy related issues require careful examination, especially those potentially leading to court cases",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 37,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 38,
+      "question_text": "O SOC está ciente de todas as informações que processa e está sujeito a regulamentações de privacidade?",
+      "guidance": "Conformidade com regulamentações de privacidade é essencial",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 38,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 39,
+      "question_text": "Uma Avaliação de Impacto de Privacidade (PIA) é realizada regularmente?",
+      "guidance": "",
+      "aspect_id": 1.5,
+      "question_type": "multiple_choice",
+      "order_index": 39,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 40,
+      "question_text": "How many FTE’s are in your SOC?",
+      "guidance": "Include both internal and external FTE's",
+      "aspect_id": 2.6,
+      "question_type": "numeric",
+      "order_index": 40,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 41,
+      "question_text": "Você usa funcionários externos / contratados em seu SOC?",
+      "guidance": "Funcionários externos podem complementar a equipe interna",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 41,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 42,
+      "question_text": "If yes, specify the number of external FTE's",
+      "guidance": "",
+      "aspect_id": 2.6,
+      "question_type": "numeric",
+      "order_index": 42,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 43,
+      "question_text": "O tamanho atual do SOC atende aos requisitos de FTE?",
+      "guidance": "Recursos adequados são necessários para operações eficazes",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 43,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 44,
+      "question_text": "O SOC atende aos requisitos para a proporção de funcionários internos para externos?",
+      "guidance": "Proporção adequada garante controle interno e expertise externa",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 44,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 45,
+      "question_text": "O SOC atende aos requisitos para o conjunto de habilidades de funcionários internos e externos?",
+      "guidance": "Habilidades complementares entre equipes internas e externas",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 45,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 46,
+      "question_text": "Todas as posições estão preenchidas?",
+      "guidance": "",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 46,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 47,
+      "question_text": "Você possui um processo de recrutamento?",
+      "guidance": "Processo de recrutamento estruturado garante contratações adequadas",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 47,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 48,
+      "question_text": "Você possui um processo de aquisição de talentos?",
+      "guidance": "Aquisição estratégica de talentos para o SOC",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 48,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 49,
+      "question_text": "Você possui KSAs específicos estabelecidos para o pessoal do SOC?",
+      "guidance": "Conhecimentos, habilidades e aptidões definidos para cada função",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 49,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 50,
+      "question_text": "Você actively seek to create a psychologically safe environment for SOC personnel?",
+      "guidance": "",
+      "aspect_id": 2.6,
+      "question_type": "multiple_choice",
+      "order_index": 50,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 51,
+      "question_text": "Você formally differentiate roles within the SOC?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 51,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 52,
+      "question_text": "Which of the following roles are present in your SOC?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 52,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 53,
+      "question_text": "Você differentiate tiers within these roles?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 53,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 54,
+      "question_text": "Are all roles sufficiently staffed?",
+      "guidance": "Consider the staffing levels (desired FTE count) as well as knowledge and experience for all roles",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 54,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 55,
+      "question_text": "Existe uma hierarquia baseada em funções no seu SOC?",
+      "guidance": "Hierarquia clara define responsabilidades e autoridade",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 55,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 56,
+      "question_text": "Você tem formally documented all SOC roles?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 56,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 57,
+      "question_text": "Please specify elements in the role documentation:",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 57,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 58,
+      "question_text": "Are responsibilities for each role understood?",
+      "guidance": "Responsibilities for each role should be clearly understood by all SOC personnel",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 58,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 59,
+      "question_text": "Você tem documented career progression requirements for each of these roles?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 59,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 60,
+      "question_text": "Você regularly revise or update the role descriptions?",
+      "guidance": "",
+      "aspect_id": 2.7,
+      "question_type": "multiple_choice",
+      "order_index": 60,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 61,
+      "question_text": "Você possui um job rotation plan?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 61,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 62,
+      "question_text": "Você possui um career progression process?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 62,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 63,
+      "question_text": "Você possui um talent management process?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 63,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 64,
+      "question_text": "Você have team diversity goals?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 64,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 65,
+      "question_text": "Você tem established team goals?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 65,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 66,
+      "question_text": "Você document and track individual team member goals?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 66,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 67,
+      "question_text": "Você periodically evaluate SOC employees?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 67,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 68,
+      "question_text": "Você possui um 'new hire' process?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 68,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 69,
+      "question_text": "Are all SOC employees subjected to screening?",
+      "guidance": "Personnel screening is performed to avoid infiltration or misbehaviour by SOC employees",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 69,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 70,
+      "question_text": "Você measure employee satisfaction for improving the SOC?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 70,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 71,
+      "question_text": "Existem reuniões regulares 1-para-1 entre o gerente do SOC e os funcionários?",
+      "guidance": "Reuniões individuais promovem desenvolvimento e feedback",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 71,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 72,
+      "question_text": "Você perform regular teambuilding exercises?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 72,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 73,
+      "question_text": "Você perform regular teambuilding exercises with other teams relevant to the SOC?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 73,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 74,
+      "question_text": "Você periodically evaluate team performance?",
+      "guidance": "",
+      "aspect_id": 2.8,
+      "question_type": "multiple_choice",
+      "order_index": 74,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 75,
+      "question_text": "Você possui um processo formal de gestão do conhecimento?",
+      "guidance": "Gestão do conhecimento preserva expertise organizacional",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 75,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 76,
+      "question_text": "Você possui um skill matrix?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 76,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 77,
+      "question_text": "Please specify elements of the skill matrix:",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 77,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 78,
+      "question_text": "O skill matrix actively used for team and personal improvement?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 78,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 79,
+      "question_text": "Você possui um knowledge matrix?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 79,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 80,
+      "question_text": "Please specify elements of the knowledge matrix:",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 80,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 81,
+      "question_text": "O knowledge matrix actively used to determine training and education needs?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 81,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 82,
+      "question_text": "Você tem documented SOC team member abilities?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 82,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 83,
+      "question_text": "Você regularly assess and revise the knowledge management process?",
+      "guidance": "",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 83,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 84,
+      "question_text": "Existem ferramentas eficazes para apoiar a documentação e distribuição do conhecimento?",
+      "guidance": "Ferramentas adequadas facilitam compartilhamento de conhecimento",
+      "aspect_id": 2.9,
+      "question_type": "multiple_choice",
+      "order_index": 84,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 85,
+      "question_text": "Você possui um training program?",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 85,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 86,
+      "question_text": "Please specify elements of the training program:",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 86,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 87,
+      "question_text": "Você possui um certification program?",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 87,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 88,
+      "question_text": "Please specify elements of the certification program:",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 88,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 89,
+      "question_text": "O training and certification program connected to evaluation and career progression?",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 89,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 90,
+      "question_text": "Existe um orçamento reservado para educação e treinamento?",
+      "guidance": "Orçamento dedicado garante desenvolvimento contínuo",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 90,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 91,
+      "question_text": "Existe uma quantidade de tempo reservada para educação e treinamento?",
+      "guidance": "Tempo dedicado permite aprendizado contínuo",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 91,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 92,
+      "question_text": "Você have regular workshops for knowledge development?",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 92,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 93,
+      "question_text": "Você regularly revise and update the training and certification programs?",
+      "guidance": "",
+      "aspect_id": 2.1,
+      "question_type": "multiple_choice",
+      "order_index": 93,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 94,
+      "question_text": "Existe um SOC management process?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 94,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 95,
+      "question_text": "Are SOC management elements formally identified and documented?",
+      "guidance": "Possible SOC management elements can be found in under 1.3",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 95,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 96,
+      "question_text": "Please specify identified SOC management elements:",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 96,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 97,
+      "question_text": "O SOC management process regularly reviewed?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 97,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 98,
+      "question_text": "O SOC management process aligned with all stakeholders?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 98,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 99,
+      "question_text": "Você tem implemented a process for continuous improvement (CI)?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 99,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 100,
+      "question_text": "Specify elements of the continuous improvement program:",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 100,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 101,
+      "question_text": "Você tem implemented a process to manage SOC quality assurance (QA)?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 101,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 102,
+      "question_text": "Please specify elements of the quality assurance program:",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 102,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 103,
+      "question_text": "Você tem implemented a SOC architecture process?",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 103,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 104,
+      "question_text": "Please specify elements of the SOC architecture:",
+      "guidance": "",
+      "aspect_id": 3.11,
+      "question_type": "multiple_choice",
+      "order_index": 104,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 105,
+      "question_text": "Você have a documented exercise plan?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 105,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 106,
+      "question_text": "Please specify types of exercises included in the plan",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 106,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 107,
+      "question_text": "Você perform security operations exercises regularly?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 107,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 108,
+      "question_text": "Os results from exercises documented?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 108,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 109,
+      "question_text": "O output from exercises actively used to improve security operations?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 109,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 110,
+      "question_text": "Você have standard operating procedures?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 110,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 111,
+      "question_text": "Você use checklists for recurring activities?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 111,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 112,
+      "question_text": "Você use documented workflows?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 112,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 113,
+      "question_text": "Você have a SOC operational handbook?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 113,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 114,
+      "question_text": "Você tem established an Operational Security (OPSEC) program?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 114,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 115,
+      "question_text": "O configuration management process integrated in the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 115,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 116,
+      "question_text": "O change management process integrated in the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 116,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 117,
+      "question_text": "O problem management process integrated in the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 117,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 118,
+      "question_text": "O incident management process integrated in the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 118,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 119,
+      "question_text": "O asset management process integrated in the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 119,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 120,
+      "question_text": "Você have a dedicated physical SOC location?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 120,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 121,
+      "question_text": "Você have a war room for the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 121,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 122,
+      "question_text": "Você have a dedicated network for the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 122,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 123,
+      "question_text": "Você have physical access control to the SOC location?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 123,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 124,
+      "question_text": "Você have a secure physical storage location?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 124,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 125,
+      "question_text": "Você have a video wall for monitoring purposes?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 125,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 126,
+      "question_text": "Você have a call-center capability for the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 126,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 127,
+      "question_text": "Você have specialized analyst workstations?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 127,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 128,
+      "question_text": "Você tem optimized secure remote working capabilities for SOC employees?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 128,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 129,
+      "question_text": "Você use shift schedules?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 129,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 130,
+      "question_text": "Have schedules been created to optimize vigilance during shifts?",
+      "guidance": "Schedules should be created to optimize vigilance. Thus, shift should include mandatory breaks and not be too long",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 130,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 131,
+      "question_text": "Você have a shift log?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 131,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 132,
+      "question_text": "Você have a formally described shift turnover procedure?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 132,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 133,
+      "question_text": "Você have a daily SOC operational stand-up?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 133,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 134,
+      "question_text": "Você have stand-by arrangements with employees within the SOC?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 134,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 135,
+      "question_text": "Você possui um Document Management System?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 135,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 136,
+      "question_text": "Você possui um knowledge & collaboration platform?",
+      "guidance": "",
+      "aspect_id": 3.12,
+      "question_type": "multiple_choice",
+      "order_index": 136,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 137,
+      "question_text": "Você regularly provide reports?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 137,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 138,
+      "question_text": "Esses relatórios são personalizados para os destinatários?",
+      "guidance": "Relatórios personalizados atendem necessidades específicas",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 138,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 139,
+      "question_text": "Os report contents approved by or reviewed by the recipients?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 139,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 140,
+      "question_text": "Você have established reporting lines within the organization?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 140,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 141,
+      "question_text": "Você regularly revise and update the report templates?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 141,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 142,
+      "question_text": "Você have formal agreements with the recipients regarding reports?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 142,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 143,
+      "question_text": "Você provide different types of reports to your recipients?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 143,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 144,
+      "question_text": "Please specify SOC report types:",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 144,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 145,
+      "question_text": "Você use different types of metrics in your reports?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 145,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 146,
+      "question_text": "Please specify SOC metric types",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 146,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 147,
+      "question_text": "Você provide advisories to the organization regarding threats and vulnerabilities?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 147,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 148,
+      "question_text": "Você perform risk / impact assessments of these advisories?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 148,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 149,
+      "question_text": "Você perform follow-up of these advisories?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 149,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 150,
+      "question_text": "Você provide education and security awareness to the organization?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 150,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 151,
+      "question_text": "Você measure the effect of education and security awareness efforts?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 151,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 152,
+      "question_text": "Você use communication templates?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 152,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 153,
+      "question_text": "Você possui um communication matrix?",
+      "guidance": "",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 153,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 154,
+      "question_text": "Is communication training (verbal/written) available for SOC personnel?",
+      "guidance": "Communication training helps SOC personnel to communicate effectively",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 154,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 155,
+      "question_text": "Are communication skills element of SOC role descriptions?",
+      "guidance": "Communication skills are important for analysts to explain their findings and recommendations",
+      "aspect_id": 3.13,
+      "question_type": "multiple_choice",
+      "order_index": 155,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 156,
+      "question_text": "Existe um use case management process or framework?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 156,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 157,
+      "question_text": "Are use cases formally documented?",
+      "guidance": "Formal documentation may include use case documentation templates",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 157,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 158,
+      "question_text": "Are use cases approved by relevant stakeholders?",
+      "guidance": "e.g. business stakeholders, IT stakeholders, CISOs, audit & compliance, risk management, etc.",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 158,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 159,
+      "question_text": "O use case management process aligned with other important processes?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 159,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 160,
+      "question_text": "Are use cases created using a standardized process?",
+      "guidance": "i.e. a standardized approach to derive use cases from threats or business requirements",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 160,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 161,
+      "question_text": "Are use cases created using a top-down approach?",
+      "guidance": "e.g. use cases can be derived from business requirements, risk assessments, threat management / intelligence",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 161,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 162,
+      "question_text": "Can use cases be traced from high-level drivers to low-level implementation?",
+      "guidance": "Top-down traceability is important to determine completeness of implementation and demonstrable risk reduction",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 162,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 163,
+      "question_text": "Can use cases be traced from low-level implementation to high-level drivers?",
+      "guidance": "Bottom-up traceability is important for contextualizing use case output and business alignment",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 163,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 164,
+      "question_text": "Are use cases measured for implementation and effectiveness?",
+      "guidance": "Metrics can be applied to use cases to determine growth and maturity by measuring effectiveness and implementation",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 164,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 165,
+      "question_text": "Are use cases scored and prioritized based on risk levels?",
+      "guidance": "Risks can be (cyber)threats, but also non-compliance or penalties (laws & regulations)",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 165,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 166,
+      "question_text": "Are use cases regularly revised and updated?",
+      "guidance": "Use cases should be subjected to life cycle management and may require updates or may be outdated and decommissioned",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 166,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 167,
+      "question_text": "Você measure use cases against the MITRE ATT&CK® framework for gap analysis purposes?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 167,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 168,
+      "question_text": "Are monitoring rules tagged with MITRE ATT&CK® framework identifiers?",
+      "guidance": "Tagging monitoring rules with MITRE ATT&CK® identifiers allows for reporting on sightings of attack techniques",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 168,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 169,
+      "question_text": "Você tem created a MITRE ATT&CK® risk profile for your organization?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 169,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 170,
+      "question_text": "Você tem prioritized MITRE ATT&CK® techniques for relevance?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 170,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 171,
+      "question_text": "Is use case output (alerts) used in threat intelligence activities?",
+      "guidance": "Using MITRE ATT&CK®, it is possible to connect alerts to specific threat actors, or potentially even active campaigns",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 171,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 172,
+      "question_text": "Is threat intelligence used for the creation and updates of use cases?",
+      "guidance": "Threat intelligence can provide input into security monitoring, especially when using MITRE ATT&CK® to connect both",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 172,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 173,
+      "question_text": "Você determine and document visibility requirements for each use case?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 173,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 174,
+      "question_text": "Você measure visibility status for your use cases for gap analysis purposes?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 174,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 175,
+      "question_text": "Você map data source visibility to the MITRE ATT&CK® framework?",
+      "guidance": "",
+      "aspect_id": 3.14,
+      "question_type": "multiple_choice",
+      "order_index": 175,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 176,
+      "question_text": "Você possui um detection engineering process?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 176,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 177,
+      "question_text": "O detection engineering process formally documented?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 177,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 178,
+      "question_text": "Existem funções e requisitos específicos para engenheiros de detecção?",
+      "guidance": "Funções específicas garantem expertise especializada",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 178,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 179,
+      "question_text": "Existe cooperação ativa entre os analistas do SOC e os engenheiros de detecção?",
+      "guidance": "Cooperação entre equipes melhora eficácia operacional",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 179,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 180,
+      "question_text": "Existe cooperação ativa entre os analistas de Threat Intelligence e engenheiros de detecção?",
+      "guidance": "Integração entre TI e detecção maximiza eficácia",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 180,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 181,
+      "question_text": "Existem transferências formais para a equipe de analistas?",
+      "guidance": "Transferências formais garantem continuidade operacional",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 181,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 182,
+      "question_text": "Existe um ambiente de teste para testar e validar detecções antes de implantá-las?",
+      "guidance": "Ambiente de teste garante qualidade antes da implantação",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 182,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 183,
+      "question_text": "Existe um processo formal de liberação para novas detecções?",
+      "guidance": "Processo de liberação controla mudanças e riscos",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 183,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 184,
+      "question_text": "Você apply a versioning system to detections?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 184,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 185,
+      "question_text": "Você have a roll-back procedure in place in case of problems with detections?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 185,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 186,
+      "question_text": "Você perform adversary emulation or automated detection testing?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 186,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 187,
+      "question_text": "Você test for detection of MITRE ATT&CK® techniques?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 187,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 188,
+      "question_text": "Você test detection analytics not directly associated with MITRE ATT&CK®?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 188,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 189,
+      "question_text": "Você test response playbooks?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 189,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 190,
+      "question_text": "Is detection validation fully integrated in the detection engineering process / pipeline?",
+      "guidance": "When deploying new or updated detection, automated detection testing should be executed as a quality gate",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 190,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 191,
+      "question_text": "O outcome from detection validation used as input into monitoring and detection engineering?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 191,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 192,
+      "question_text": "Você monitor the data ingestion status for data sources?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 192,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 193,
+      "question_text": "Você actively measure and improve data source coverage?",
+      "guidance": "",
+      "aspect_id": 3.15,
+      "question_type": "multiple_choice",
+      "order_index": 193,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 194,
+      "question_text": "Has functional ownership of the solution been formally assigned?",
+      "guidance": "Functional ownership includes functional accountability",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 194,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 195,
+      "question_text": "Has technical ownership of the solution been formally assigned?",
+      "guidance": "Technical ownership includes technical accountability",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 195,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 196,
+      "question_text": "Se sim, especifique o número de FTEs externos",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 196,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 197,
+      "question_text": "O solution been functionally documented?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 197,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 198,
+      "question_text": "Existe pessoal dedicado para suporte?",
+      "guidance": "Pessoal dedicado garante disponibilidade de suporte",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 198,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 199,
+      "question_text": "O personnel for support formally trained?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 199,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 200,
+      "question_text": "O personnel for support certified?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 200,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 201,
+      "question_text": "Existe um contrato de suporte para a solução?",
+      "guidance": "Contrato de suporte define níveis de serviço",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 201,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 202,
+      "question_text": "O system regularly maintained?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 202,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 203,
+      "question_text": "Is remote maintenance on the system managed?",
+      "guidance": "Remote maintenance by a third party may be part of system maintenance procedures",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 203,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 204,
+      "question_text": "Are maintenance & configuration updates executed through the change management process?",
+      "guidance": "Maintenance and configuration updates should follow the formal change management process",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 204,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 205,
+      "question_text": "Você tem established maintenance windows?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 205,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 206,
+      "question_text": "Is maintenance performed using authorised and trusted tooling?",
+      "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 206,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 207,
+      "question_text": "Existe alta disponibilidade (HA) implementada para a solução?",
+      "guidance": "Alta disponibilidade garante continuidade operacional",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 207,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 208,
+      "question_text": "Existe backup de dados / replicação implementada para a solução?",
+      "guidance": "Backup e replicação protegem contra perda de dados",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 208,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 209,
+      "question_text": "Existe backup de configuração / replicação implementada para a solução?",
+      "guidance": "Backup de configuração facilita recuperação",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 209,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 210,
+      "question_text": "Existe um plano de Disaster Recovery implementado para esta solução?",
+      "guidance": "Plano de DR garante recuperação em caso de desastres",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 210,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 211,
+      "question_text": "O Disaster Recovery plan regularly tested?",
+      "guidance": "",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 211,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 212,
+      "question_text": "Existe um ambiente separado de desenvolvimento / teste para esta solução?",
+      "guidance": "Ambiente separado permite desenvolvimento seguro",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 212,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 213,
+      "question_text": "Is access to the solution limited to authorized personnel?",
+      "guidance": "The automation system may have automated actions that can impact the usage of systems and should be restricted",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 213,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 214,
+      "question_text": "Are access rights regularly reviewed and revoked if required?",
+      "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 214,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 215,
+      "question_text": "Is a break glass procedure in place?",
+      "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages",
+      "aspect_id": 4.16,
+      "question_type": "multiple_choice",
+      "order_index": 215,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 216,
+      "question_text": "Has functional ownership of the solution been formally assigned?",
+      "guidance": "Functional ownership includes functional accountability",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 216,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 217,
+      "question_text": "Has technical ownership of the solution been formally assigned?",
+      "guidance": "Technical ownership includes technical accountability",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 217,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 218,
+      "question_text": "Se sim, especifique o número de FTEs externos",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 218,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 219,
+      "question_text": "O solution been functionally documented?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 219,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 220,
+      "question_text": "Existe pessoal dedicado para suporte?",
+      "guidance": "Pessoal dedicado garante disponibilidade de suporte",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 220,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 221,
+      "question_text": "O personnel for support formally trained?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 221,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 222,
+      "question_text": "O personnel for support certified?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 222,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 223,
+      "question_text": "Existe um contrato de suporte para a solução?",
+      "guidance": "Contrato de suporte define níveis de serviço",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 223,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 224,
+      "question_text": "O system regularly maintained?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 224,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 225,
+      "question_text": "Is remote maintenance on the system managed?",
+      "guidance": "Remote maintenance by a third party may be part of system maintenance procedures",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 225,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 226,
+      "question_text": "Are maintenance & configuration updates executed through the change management process?",
+      "guidance": "Maintenance and configuration updates should follow the formal change management process",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 226,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 227,
+      "question_text": "Você tem established maintenance windows?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 227,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 228,
+      "question_text": "Is maintenance performed using authorised and trusted tooling?",
+      "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 228,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 229,
+      "question_text": "Existe alta disponibilidade (HA) implementada para a solução?",
+      "guidance": "Alta disponibilidade garante continuidade operacional",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 229,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 230,
+      "question_text": "Existe backup de dados / replicação implementada para a solução?",
+      "guidance": "Backup e replicação protegem contra perda de dados",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 230,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 231,
+      "question_text": "Existe backup de configuração / replicação implementada para a solução?",
+      "guidance": "Backup de configuração facilita recuperação",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 231,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 232,
+      "question_text": "Existe um plano de Disaster Recovery implementado para esta solução?",
+      "guidance": "Plano de DR garante recuperação em caso de desastres",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 232,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 233,
+      "question_text": "O Disaster Recovery plan regularly tested?",
+      "guidance": "",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 233,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 234,
+      "question_text": "Existe um ambiente separado de desenvolvimento / teste para esta solução?",
+      "guidance": "Ambiente separado permite desenvolvimento seguro",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 234,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 235,
+      "question_text": "Is access to the solution limited to authorized personnel?",
+      "guidance": "The automation system may have automated actions that can impact the usage of systems and should be restricted",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 235,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 236,
+      "question_text": "Are access rights regularly reviewed and revoked if required?",
+      "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 236,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 237,
+      "question_text": "Is a break glass procedure in place?",
+      "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages",
+      "aspect_id": 4.17,
+      "question_type": "multiple_choice",
+      "order_index": 237,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 238,
+      "question_text": "Has functional ownership of the solution been formally assigned?",
+      "guidance": "Functional ownership includes functional accountability",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 238,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 239,
+      "question_text": "Has technical ownership of the solution been formally assigned?",
+      "guidance": "Technical ownership includes technical accountability",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 239,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 240,
+      "question_text": "Se sim, especifique o número de FTEs externos",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 240,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 241,
+      "question_text": "O solution been functionally documented?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 241,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 242,
+      "question_text": "Existe pessoal dedicado para suporte?",
+      "guidance": "Pessoal dedicado garante disponibilidade de suporte",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 242,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 243,
+      "question_text": "O personnel for support formally trained?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 243,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 244,
+      "question_text": "O personnel for support certified?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 244,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 245,
+      "question_text": "Existe um contrato de suporte para a solução?",
+      "guidance": "Contrato de suporte define níveis de serviço",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 245,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 246,
+      "question_text": "O system regularly maintained?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 246,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 247,
+      "question_text": "Is remote maintenance on the system managed?",
+      "guidance": "Remote maintenance by a third party may be part of system maintenance procedures",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 247,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 248,
+      "question_text": "Are maintenance & configuration updates executed through the change management process?",
+      "guidance": "Maintenance and configuration updates should follow the formal change management process",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 248,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 249,
+      "question_text": "Você tem established maintenance windows?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 249,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 250,
+      "question_text": "Is maintenance performed using authorised and trusted tooling?",
+      "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 250,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 251,
+      "question_text": "Existe alta disponibilidade (HA) implementada para a solução?",
+      "guidance": "Alta disponibilidade garante continuidade operacional",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 251,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 252,
+      "question_text": "Existe backup de dados / replicação implementada para a solução?",
+      "guidance": "Backup e replicação protegem contra perda de dados",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 252,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 253,
+      "question_text": "Existe backup de configuração / replicação implementada para a solução?",
+      "guidance": "Backup de configuração facilita recuperação",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 253,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 254,
+      "question_text": "Existe um plano de Disaster Recovery implementado para esta solução?",
+      "guidance": "Plano de DR garante recuperação em caso de desastres",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 254,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 255,
+      "question_text": "O Disaster Recovery plan regularly tested?",
+      "guidance": "",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 255,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 256,
+      "question_text": "Existe um ambiente separado de desenvolvimento / teste para esta solução?",
+      "guidance": "Ambiente separado permite desenvolvimento seguro",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 256,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 257,
+      "question_text": "Is access to the solution limited to authorized personnel?",
+      "guidance": "The automation system may have automated actions that can impact the usage of systems and should be restricted",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 257,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 258,
+      "question_text": "Are access rights regularly reviewed and revoked if required?",
+      "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 258,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 259,
+      "question_text": "Is a break glass procedure in place?",
+      "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages",
+      "aspect_id": 4.18,
+      "question_type": "multiple_choice",
+      "order_index": 259,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 260,
+      "question_text": "Has functional ownership of the solution been formally assigned?",
+      "guidance": "Functional ownership includes functional accountability",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 260,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 261,
+      "question_text": "Has technical ownership of the solution been formally assigned?",
+      "guidance": "Technical ownership includes technical accountability",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 261,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 262,
+      "question_text": "Se sim, especifique o número de FTEs externos",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 262,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 263,
+      "question_text": "O solution been functionally documented?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 263,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 264,
+      "question_text": "Existe pessoal dedicado para suporte?",
+      "guidance": "Pessoal dedicado garante disponibilidade de suporte",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 264,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 265,
+      "question_text": "O personnel for support formally trained?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 265,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 266,
+      "question_text": "O personnel for support certified?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 266,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 267,
+      "question_text": "Existe um contrato de suporte para a solução?",
+      "guidance": "Contrato de suporte define níveis de serviço",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 267,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 268,
+      "question_text": "O system regularly maintained?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 268,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 269,
+      "question_text": "Is remote maintenance on the system managed?",
+      "guidance": "Remote maintenance by a third party may be part of system maintenance procedures",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 269,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 270,
+      "question_text": "Are maintenance & configuration updates executed through the change management process?",
+      "guidance": "Maintenance and configuration updates should follow the formal change management process",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 270,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 271,
+      "question_text": "Você tem established maintenance windows?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 271,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 272,
+      "question_text": "Is maintenance performed using authorised and trusted tooling?",
+      "guidance": "Performing maintenance with authorised and trusted tooling helps to ensure security and integrity of the system",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 272,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 273,
+      "question_text": "Existe alta disponibilidade (HA) implementada para a solução?",
+      "guidance": "Alta disponibilidade garante continuidade operacional",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 273,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 274,
+      "question_text": "Existe backup de dados / replicação implementada para a solução?",
+      "guidance": "Backup e replicação protegem contra perda de dados",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 274,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 275,
+      "question_text": "Existe backup de configuração / replicação implementada para a solução?",
+      "guidance": "Backup de configuração facilita recuperação",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 275,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 276,
+      "question_text": "Existe um plano de Disaster Recovery implementado para esta solução?",
+      "guidance": "Plano de DR garante recuperação em caso de desastres",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 276,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 277,
+      "question_text": "O Disaster Recovery plan regularly tested?",
+      "guidance": "",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 277,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 278,
+      "question_text": "Existe um ambiente separado de desenvolvimento / teste para esta solução?",
+      "guidance": "Ambiente separado permite desenvolvimento seguro",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 278,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 279,
+      "question_text": "Is access to the solution limited to authorized personnel?",
+      "guidance": "The automation system may have automated actions that can impact the usage of systems and should be restricted",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 279,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 280,
+      "question_text": "Are access rights regularly reviewed and revoked if required?",
+      "guidance": "Revocation is part of normal employee termination. Special emergency revocation should be in place for suspected misuse",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 280,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 281,
+      "question_text": "Is a break glass procedure in place?",
+      "guidance": "A break glass procedure and account is required to gain access to the tooling even in case of major IT outages",
+      "aspect_id": 4.19,
+      "question_type": "multiple_choice",
+      "order_index": 281,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 282,
+      "question_text": "Você descreveu formalmente o serviço de monitoramento de segurança?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 282,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 283,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de monitoramento de segurança:",
+      "guidance": "",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 283,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 284,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 284,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 285,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 285,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 286,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 286,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 287,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 287,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 288,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 288,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 289,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 289,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 290,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 290,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 291,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 291,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 292,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 292,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 293,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 293,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 294,
+      "question_text": "Os casos de uso são usados no serviço de monitoramento de segurança?",
+      "guidance": "Ex: força bruta de login de usuário, negação de serviço, não conformidade, etc.",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 294,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 295,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 295,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 296,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.2,
+      "question_type": "multiple_choice",
+      "order_index": 296,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 297,
+      "question_text": "Detecção precoce",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 297,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 298,
+      "question_text": "Detecção de intrusão",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 298,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 299,
+      "question_text": "Detecção de exfiltração",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 299,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 300,
+      "question_text": "Detecção de eventos sutis",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 300,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 301,
+      "question_text": "Detecção de malware",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 301,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 302,
+      "question_text": "Detecção de anomalias",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 302,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 303,
+      "question_text": "Detecção em tempo real",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 303,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 304,
+      "question_text": "Alertas e notificações",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 304,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 305,
+      "question_text": "Redução de falsos positivos",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 305,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 306,
+      "question_text": "Ajuste contínuo",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 306,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 307,
+      "question_text": "Gerenciamento de cobertura",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 307,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 308,
+      "question_text": "Monitoramento de status",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 308,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 309,
+      "question_text": "Monitoramento de perímetro",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 309,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 310,
+      "question_text": "Monitoramento de host",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 310,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 311,
+      "question_text": "Monitoramento de rede e tráfego",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 311,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 312,
+      "question_text": "Monitoramento de acesso e uso",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 312,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 313,
+      "question_text": "Monitoramento de usuário / identidade",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 313,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 314,
+      "question_text": "Monitoramento de aplicativos e serviços",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 314,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 315,
+      "question_text": "Monitoramento de comportamento",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 315,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 316,
+      "question_text": "Monitoramento de banco de dados",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 316,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 317,
+      "question_text": "Monitoramento de perda de dados",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 317,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 318,
+      "question_text": "Monitoramento de perda / roubo de dispositivo",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 318,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 319,
+      "question_text": "Monitoramento de terceiros",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 319,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 320,
+      "question_text": "Monitoramento de ambiente físico",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 320,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 321,
+      "question_text": "Monitoramento de nuvem",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 321,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 322,
+      "question_text": "Monitoramento de dispositivo móvel",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 322,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 323,
+      "question_text": "Monitoramento de OT",
+      "guidance": "",
+      "aspect_id": 5.21,
+      "question_type": "multiple_choice",
+      "order_index": 323,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 324,
+      "question_text": "Você adotou uma metodologia de avaliação de maturidade para Gerenciamento de Incidentes de Segurança?",
+      "guidance": "",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 324,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 325,
+      "question_text": "Se sim, por favor, especifique a metodologia",
+      "guidance": "Ex: SOC-CMM 4CERT, SIM3, CREST, etc.",
+      "aspect_id": 5.22,
+      "question_type": "text",
+      "order_index": 325,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 326,
+      "question_text": "Se sim, por favor, especifique o nível de maturidade (pode ter até 2 dígitos)",
+      "guidance": "",
+      "aspect_id": 5.22,
+      "question_type": "numeric",
+      "order_index": 326,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 327,
+      "question_text": "Você descreveu formalmente o serviço de gerenciamento de incidentes de segurança?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 327,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 328,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de gerenciamento de incidentes de segurança:",
+      "guidance": "",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 328,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 329,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 329,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 330,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 330,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 331,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 331,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 332,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 332,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 333,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 333,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 334,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 334,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 335,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 335,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 336,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 336,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 337,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 337,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 338,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 338,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 339,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 339,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 340,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 340,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 341,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.22,
+      "question_type": "multiple_choice",
+      "order_index": 341,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 342,
+      "question_text": "Incident logging procedure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 342,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 343,
+      "question_text": "Incident resolution procedure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 343,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 344,
+      "question_text": "Incident investigation procedure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 344,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 345,
+      "question_text": "Escalation procedure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 345,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 346,
+      "question_text": "Evidence collection procedure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 346,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 347,
+      "question_text": "Incident containment procedures",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 347,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 348,
+      "question_text": "IR Training",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 348,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 349,
+      "question_text": "Table-top exercises",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 349,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 350,
+      "question_text": "Red team / blue team exercises",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 350,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 351,
+      "question_text": "RACI matrix",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 351,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 352,
+      "question_text": "Response authorization",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 352,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 353,
+      "question_text": "Incident template",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 353,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 354,
+      "question_text": "Incident tracking system",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 354,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 355,
+      "question_text": "Redução de falsos positivos",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 355,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 356,
+      "question_text": "Priority assignment",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 356,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 357,
+      "question_text": "Severity assignment",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 357,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 358,
+      "question_text": "Categorization",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 358,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 359,
+      "question_text": "Critical bridge",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 359,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 360,
+      "question_text": "War room",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 360,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 361,
+      "question_text": "Communication plan & email templates",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 361,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 362,
+      "question_text": "Backup communication technology",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 362,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 363,
+      "question_text": "Secure communication channels",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 363,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 364,
+      "question_text": "(dedicated) information sharing platform",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 364,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 365,
+      "question_text": "Change management integration",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 365,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 366,
+      "question_text": "Malware extraction & analysis",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 366,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 367,
+      "question_text": "On-site incident response",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 367,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 368,
+      "question_text": "Remote incident response",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 368,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 369,
+      "question_text": "Third-party escalation",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 369,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 370,
+      "question_text": "Evaluation template",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 370,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 371,
+      "question_text": "Reporting template",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 371,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 372,
+      "question_text": "Incident closure",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 372,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 373,
+      "question_text": "Lessons learned extraction for process improvement",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 373,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 374,
+      "question_text": "External security incident support agreements",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 374,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 375,
+      "question_text": "Exercises with other incident response teams",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 375,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 376,
+      "question_text": "Root Cause Analysis",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 376,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 377,
+      "question_text": "Restore integrity verification",
+      "guidance": "",
+      "aspect_id": 5.23,
+      "question_type": "multiple_choice",
+      "order_index": 377,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 378,
+      "question_text": "Você descreveu formalmente o serviço de análise de segurança?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 378,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 379,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de análise de segurança:",
+      "guidance": "",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 379,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 380,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 380,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 381,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 381,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 382,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 382,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 383,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 383,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 384,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 384,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 385,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 385,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 386,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 386,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 387,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 387,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 388,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 388,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 389,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 389,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 390,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 390,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 391,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 391,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 392,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.24,
+      "question_type": "multiple_choice",
+      "order_index": 392,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 393,
+      "question_text": "Event analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 393,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 394,
+      "question_text": "Event analysis toolkit",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 394,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 395,
+      "question_text": "Trend analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 395,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 396,
+      "question_text": "Incident analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 396,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 397,
+      "question_text": "Visual analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 397,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 398,
+      "question_text": "Static malware analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 398,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 399,
+      "question_text": "Dynamic malware analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 399,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 400,
+      "question_text": "Tradecraft analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 400,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 401,
+      "question_text": "Historic analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 401,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 402,
+      "question_text": "Network analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 402,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 403,
+      "question_text": "Memory analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 403,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 404,
+      "question_text": "Mobile device analysis",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 404,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 405,
+      "question_text": "Volatile information collection",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 405,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 406,
+      "question_text": "Remote evidence collection",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 406,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 407,
+      "question_text": "Forensic hardware toolkit",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 407,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 408,
+      "question_text": "Forensic analysis software toolkit",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 408,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 409,
+      "question_text": "Dedicated analysis workstations",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 409,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 410,
+      "question_text": "Security analysis & forensics handbook",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 410,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 411,
+      "question_text": "Security analysis & forensics workflows",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 411,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 412,
+      "question_text": "Case management system",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 412,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 413,
+      "question_text": "Report templates",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 413,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 414,
+      "question_text": "Evidence seizure procedure",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 414,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 415,
+      "question_text": "Evidence transport procedure",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 415,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 416,
+      "question_text": "Chain of custody preservation procedure",
+      "guidance": "",
+      "aspect_id": 5.25,
+      "question_type": "multiple_choice",
+      "order_index": 416,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 417,
+      "question_text": "Você descreveu formalmente o serviço de inteligência de ameaças?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 417,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 418,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de inteligência de ameaças:",
+      "guidance": "",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 418,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 419,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 419,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 420,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 420,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 421,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 421,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 422,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 422,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 423,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 423,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 424,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 424,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 425,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 425,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 426,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 426,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 427,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 427,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 428,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 428,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 429,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 429,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 430,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.26,
+      "question_type": "multiple_choice",
+      "order_index": 430,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 431,
+      "question_text": "Coleta de inteligência de ameaças",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 431,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 432,
+      "question_text": "Análise de inteligência de ameaças",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 432,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 433,
+      "question_text": "Disseminação de inteligência de ameaças",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 433,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 434,
+      "question_text": "Compartilhamento de inteligência de ameaças",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 434,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 435,
+      "question_text": "Uso de inteligência de ameaças em monitoramento de segurança",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 435,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 436,
+      "question_text": "Uso de inteligência de ameaças em gerenciamento de incidentes",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 436,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 437,
+      "question_text": "Uso de inteligência de ameaças em caça a ameaças",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 437,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 438,
+      "question_text": "Uso de inteligência de ameaças em análise de segurança",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 438,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 439,
+      "question_text": "Uso de inteligência de ameaças em gerenciamento de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 439,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 440,
+      "question_text": "Uso de inteligência de ameaças em resposta a incidentes",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 440,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 441,
+      "question_text": "Unstructured data analysis",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 441,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 442,
+      "question_text": "Past incident analysis",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 442,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 443,
+      "question_text": "Trend analysis",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 443,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 444,
+      "question_text": "Automated alerting",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 444,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 445,
+      "question_text": "Adversary movement tracking",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 445,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 446,
+      "question_text": "Attacker identification",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 446,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 447,
+      "question_text": "Threat identification",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 447,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 448,
+      "question_text": "Threat prediction",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 448,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 449,
+      "question_text": "TTP extraction",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 449,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 450,
+      "question_text": "Deduplication",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 450,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 451,
+      "question_text": "Enrichment",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 451,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 452,
+      "question_text": "Contextualization",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 452,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 453,
+      "question_text": "Prioritization",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 453,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 454,
+      "question_text": "Threat intelligence reporting",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 454,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 455,
+      "question_text": "Threat landscaping",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 455,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 456,
+      "question_text": "Forecasting",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 456,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 457,
+      "question_text": "Sharing within the company",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 457,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 458,
+      "question_text": "Sharing with the industry",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 458,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 459,
+      "question_text": "Sharing outside the industry",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 459,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 460,
+      "question_text": "Sharing in standardized format (e.g. STIX)",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 460,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 461,
+      "question_text": "Management of the CTI infrastructure (Threat Intelligence Platform)",
+      "guidance": "",
+      "aspect_id": 5.27,
+      "question_type": "multiple_choice",
+      "order_index": 461,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 462,
+      "question_text": "Você descreveu formalmente o serviço de caça a ameaças?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 462,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 463,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de caça a ameaças:",
+      "guidance": "",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 463,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 464,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 464,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 465,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 465,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 466,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 466,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 467,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 467,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 468,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 468,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 469,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 469,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 470,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 470,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 471,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 471,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 472,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 472,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 473,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 473,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 474,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 474,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 475,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 475,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 476,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.28,
+      "question_type": "multiple_choice",
+      "order_index": 476,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 477,
+      "question_text": "Hash value hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 477,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 478,
+      "question_text": "IP address hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 478,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 479,
+      "question_text": "Domain name hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 479,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 480,
+      "question_text": "Network artefact hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 480,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 481,
+      "question_text": "Host-based artefact hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 481,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 482,
+      "question_text": "Adversary tools hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 482,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 483,
+      "question_text": "Adversary TTP hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 483,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 484,
+      "question_text": "Inbound threat hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 484,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 485,
+      "question_text": "Outbound threat hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 485,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 486,
+      "question_text": "Internal threat hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 486,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 487,
+      "question_text": "Outlier detection",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 487,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 488,
+      "question_text": "Hunting coverage",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 488,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 489,
+      "question_text": "Leveraging of existing tooling",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 489,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 490,
+      "question_text": "Custom hunting scripts and tools",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 490,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 491,
+      "question_text": "Dedicated hunting platform",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 491,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 492,
+      "question_text": "Continuous hunting data collection",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 492,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 493,
+      "question_text": "Historic hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 493,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 494,
+      "question_text": "Automated hunting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 494,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 495,
+      "question_text": "Hunt alerting",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 495,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 496,
+      "question_text": "Vulnerability information integration",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 496,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 497,
+      "question_text": "Threat intelligence integration",
+      "guidance": "",
+      "aspect_id": 5.29,
+      "question_type": "multiple_choice",
+      "order_index": 497,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 498,
+      "question_text": "Você descreveu formalmente o serviço de gerenciamento de vulnerabilidades?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 498,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 499,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de gerenciamento de vulnerabilidades:",
+      "guidance": "",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 499,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 500,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 500,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 501,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 501,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 502,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 502,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 503,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 503,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 504,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 504,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 505,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 505,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 506,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 506,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 507,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 507,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 508,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 508,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 509,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 509,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 510,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 510,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 511,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.3,
+      "question_type": "multiple_choice",
+      "order_index": 511,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 512,
+      "question_text": "Descoberta de ativos",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 512,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 513,
+      "question_text": "Varredura de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 513,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 514,
+      "question_text": "Análise de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 514,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 515,
+      "question_text": "Priorização de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 515,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 516,
+      "question_text": "Remediação de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 516,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 517,
+      "question_text": "Relatórios de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 517,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 518,
+      "question_text": "Painéis de vulnerabilidades",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 518,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 519,
+      "question_text": "Integração (ferramentas)",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 519,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 520,
+      "question_text": "Configuration management integration",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 520,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 521,
+      "question_text": "Patch management integration",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 521,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 522,
+      "question_text": "Trend identification",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 522,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 523,
+      "question_text": "Enterprise vulnerability repository",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 523,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 524,
+      "question_text": "Enterprise application inventory",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 524,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 525,
+      "question_text": "Vulnerability Management procedures",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 525,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 526,
+      "question_text": "Scanning policy tuning",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 526,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 527,
+      "question_text": "Detailed Vulnerability Reporting",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 527,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 528,
+      "question_text": "Management Reporting",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 528,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 529,
+      "question_text": "Scheduled scanning",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 529,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 530,
+      "question_text": "Ad-hoc specific scanning",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 530,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 531,
+      "question_text": "Vulnerability information gathering & analysis",
+      "guidance": "",
+      "aspect_id": 5.31,
+      "question_type": "multiple_choice",
+      "order_index": 531,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 532,
+      "question_text": "Você descreveu formalmente o serviço de gerenciamento de logs?",
+      "guidance": "Uma descrição do serviço deve estar em vigor",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 532,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 533,
+      "question_text": "Por favor, especifique os elementos do documento de serviço de gerenciamento de logs:",
+      "guidance": "",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 533,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 534,
+      "question_text": "O serviço é medido quanto à qualidade?",
+      "guidance": "Os indicadores de qualidade das perguntas anteriores são usados para relatar o serviço?",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 534,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 535,
+      "question_text": "O serviço é medido quanto à entrega do serviço de acordo com os níveis de serviço?",
+      "guidance": "Os níveis de serviço devem ser usados para comprometer formalmente o SOC com a entrega do serviço",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 535,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 536,
+      "question_text": "Clientes e/ou partes interessadas são atualizados regularmente sobre o serviço?",
+      "guidance": "Mudanças no escopo do serviço, entrega, etc.",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 536,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 537,
+      "question_text": "Existe um acordo contratual entre o SOC e os clientes?",
+      "guidance": "Os acordos contratuais também devem cobrir penalidades",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 537,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 538,
+      "question_text": "Pessoal suficiente é alocado ao processo para garantir a entrega do serviço necessária?",
+      "guidance": "A alocação de pessoal dedicado garantirá a mais alta qualidade de serviço",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 538,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 539,
+      "question_text": "O serviço está alinhado com outros processos relevantes?",
+      "guidance": "Ex: alinhamento com gerenciamento de configuração, gerenciamento de incidentes, gerenciamento de monitoramento de segurança, etc.",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 539,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 540,
+      "question_text": "Existe um processo de resolução de incidentes / continuidade de serviço implementado para este serviço?",
+      "guidance": "A continuidade do serviço é importante para cumprir os acordos contratuais, mesmo em caso de incidentes graves",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 540,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 541,
+      "question_text": "Um conjunto de procedimentos foi criado para este serviço?",
+      "guidance": "Os procedimentos apoiam a padronização e qualidade do processo. O pessoal deve ser treinado para usar os procedimentos de forma correta e estrutural",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 541,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 542,
+      "question_text": "Existe um procedimento de integração e desativação para este serviço?",
+      "guidance": "Os procedimentos de integração e desativação do cliente suportam a entrega eficiente do serviço e garantem que os clientes sejam (des)conectados corretamente",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 542,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 543,
+      "question_text": "As melhores práticas são aplicadas ao serviço?",
+      "guidance": "As melhores práticas devem ser usadas para otimizar este serviço",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 543,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 544,
+      "question_text": "Os dados do processo são coletados para previsão do desempenho do serviço?",
+      "guidance": "A medição do desempenho do serviço requer o estabelecimento de metas de desempenho",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 544,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 545,
+      "question_text": "O serviço está sendo continuamente aprimorado com base em metas de aprimoramento?",
+      "guidance": "Melhoria baseada em avaliação, avaliação (de maturidade), testes, etc.",
+      "aspect_id": 5.32,
+      "question_type": "multiple_choice",
+      "order_index": 545,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 546,
+      "question_text": "Coleta de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 546,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 547,
+      "question_text": "Armazenamento de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 547,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 548,
+      "question_text": "Retenção de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 548,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 549,
+      "question_text": "Arquivamento de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 549,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 550,
+      "question_text": "Exclusão de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 550,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 551,
+      "question_text": "Integridade de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 551,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 552,
+      "question_text": "Disponibilidade de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 552,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 553,
+      "question_text": "Confidencialidade de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 553,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 554,
+      "question_text": "Suporte para múltiplas fontes de log",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 554,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 555,
+      "question_text": "Suporte para múltiplos formatos de log",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 555,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 556,
+      "question_text": "Suporte para múltiplas técnicas de transferência",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 556,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 557,
+      "question_text": "Normalização de dados",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 557,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 558,
+      "question_text": "Pesquisa e filtragem de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 558,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 559,
+      "question_text": "Alertas",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 559,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 560,
+      "question_text": "Relatórios e painéis",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 560,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 561,
+      "question_text": "Detecção de adulteração de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 561,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 562,
+      "question_text": "Política de coleta de logs",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 562,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 563,
+      "question_text": "Política de registro",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 563,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 564,
+      "question_text": "Política de retenção de dados",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 564,
+      "needs_translation": false,
+      "translation_notes": ""
+    },
+    {
+      "id": 565,
+      "question_text": "Privacy and Sensitive data handling policy",
+      "guidance": "",
+      "aspect_id": 5.33,
+      "question_type": "multiple_choice",
+      "order_index": 565,
+      "needs_translation": false,
+      "translation_notes": ""
+    }
+  ]
+}
