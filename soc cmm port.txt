@@ -1,0 +1,2625 @@
+# SOC CMM Perguntas para RAG
+
+Este documento contém uma lista de perguntas do SOC CMM, formatadas para serem facilmente consumidas por um agente de IA para Retrieval Augmented Generation (RAG). Cada pergunta inclui seu ID, categoria, subcategoria, aspecto (se aplicável), texto da pergunta, tipo de campo, opções de resposta e orientação.
+
+---
+
+## Perguntas
+
+### Geral
+
+#### Perfil
+
+* **ID**: Detalhes da Avaliação.Data da avaliação
+    * **Pergunta**: Data da avaliação
+    * **Tipo de Campo**: date
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Detalhes da Avaliação.Nome(s)
+    * **Pergunta**: Nome(s)
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Detalhes da Avaliação.Departamento(s)
+    * **Pergunta**: Departamento(s)
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Detalhes da Avaliação.Propósito pretendido da avaliação
+    * **Pergunta**: Propósito pretendido da avaliação
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Detalhes da Avaliação.Tipo de avaliação
+    * **Pergunta**: Tipo de avaliação
+    * **Tipo de Campo**: dropdown
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Clique na caixa suspensa para mais informações
+* **ID**: Detalhes da Avaliação.Estilo de avaliação
+    * **Pergunta**: Estilo de avaliação
+    * **Tipo de Campo**: dropdown
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Clique na caixa suspensa para mais informações
+* **ID**: Perfil da Organização e SOC.Tamanho da empresa (FTE)
+    * **Pergunta**: Tamanho da empresa (FTE)
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Perfil da Organização e SOC.Setor
+    * **Pergunta**: Setor
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Perfil da Organização e SOC.Número de anos de operações do SOC
+    * **Pergunta**: Número de anos de operações do SOC
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Perfil da Organização e SOC.Tamanho do SOC (FTEs)
+    * **Pergunta**: Tamanho do SOC (FTEs)
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Perfil da Organização e SOC.Modelo organizacional do SOC
+    * **Pergunta**: Modelo organizacional do SOC
+    * **Tipo de Campo**: dropdown
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Clique na caixa suspensa para mais informações
+* **ID**: Perfil da Organização e SOC.Região do SOC
+    * **Pergunta**: Região do SOC
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Perfil da Organização e SOC.Operação geográfica
+    * **Pergunta**: Operação geográfica
+    * **Tipo de Campo**: text
+    * **Opções de Resposta**: N/A
+    * **Orientação**:
+* **ID**: Maturidade Alvo.Domínio de negócio
+    * **Pergunta**: Nível de maturidade alvo do domínio de negócio
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 5. Decimais podem ser usados
+* **ID**: Maturidade Alvo.Domínio de pessoas
+    * **Pergunta**: Nível de maturidade alvo do domínio de pessoas
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 5. Decimais podem ser usados
+* **ID**: Maturidade Alvo.Domínio de processo
+    * **Pergunta**: Nível de maturidade alvo do domínio de processo
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 5. Decimais podem ser usados
+* **ID**: Maturidade Alvo.Domínio de tecnologia
+    * **Pergunta**: Nível de maturidade alvo do domínio de tecnologia
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 5. Decimais podem ser usados
+* **ID**: Maturidade Alvo.Domínio de serviços
+    * **Pergunta**: Nível de maturidade alvo do domínio de serviços
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 5. Decimais podem ser usados
+* **ID**: Capacidade Alvo.Domínio de tecnologia
+    * **Pergunta**: Nível de capacidade alvo do domínio de tecnologia
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 3. Decimais podem ser usados
+* **ID**: Capacidade Alvo.Domínio de serviços
+    * **Pergunta**: Nível de capacidade alvo do domínio de serviços
+    * **Tipo de Campo**: numeric
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Indique uma pontuação de 1 a 3. Decimais podem ser usados
+
+#### Escopo
+
+**Ferramentas SOC (domínio de Tecnologia)**
+
+* **ID**: SIEM / UEBA
+    * **Pergunta**: SIEM / UEBA
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Ferramentas de Gerenciamento de Eventos e Informações de Segurança (SIEM). Usadas para coletar informações de log de ativos da empresa e correlacionar eventos. Também inclui Análise de Comportamento de Usuários e Entidades (UEBA)
+* **ID**: NDR
+    * **Pergunta**: NDR
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Solução de segurança de rede, usada para detectar exploits de rede e atividades de rede anômalas e realizar forense de rede
+* **ID**: EDR
+    * **Pergunta**: EDR
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Solução de segurança de endpoint, usada para prevenir, detectar e responder a ameaças em endpoints
+* **ID**: SOAR
+    * **Pergunta**: SOAR
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Usado para automatizar fluxos de trabalho e ações do SOC, suportar a resposta a incidentes e orquestrar entre diferentes produtos de segurança
+
+**Serviços SOC (domínio de serviços)**
+
+* **ID**: Monitoramento de Segurança
+    * **Pergunta**: Monitoramento de Segurança
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: O serviço de monitoramento de segurança visa detectar incidentes e
+* **ID**: Detecção de Ameaças
+    * **Pergunta**: Detecção de Ameaças
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A detecção de ameaças é o processo de identificar comportamentos maliciosos ou suspeitos dentro de uma rede ou sistema que podem indicar uma ameaça à segurança
+* **ID**: Resposta a Incidentes
+    * **Pergunta**: Resposta a Incidentes
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A resposta a incidentes (IR) é uma abordagem organizada para lidar e gerenciar as consequências de um ataque cibernético ou violação de segurança. O objetivo de um plano de resposta a incidentes é lidar com o incidente de forma a limitar os danos e reduzir o tempo e o custo de recuperação.
+* **ID**: Inteligência de Ameaças
+    * **Pergunta**: Inteligência de Ameaças
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A inteligência de ameaças é o processo de coleta e análise de informações sobre ameaças cibernéticas para entender os motivos, capacidades e planos dos adversários.
+* **ID**: Gestão de Vulnerabilidades
+    * **Pergunta**: Gestão de Vulnerabilidades
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A gestão de vulnerabilidades é o processo contínuo de identificação, avaliação, tratamento e comunicação de vulnerabilidades de segurança em sistemas e software.
+* **ID**: Análise Forense
+    * **Pergunta**: Análise Forense
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Análise forense é o processo de investigar e analisar vestígios digitais para coletar evidências em casos de crimes cibernéticos ou incidentes de segurança.
+* **ID**: Caça a Ameaças
+    * **Pergunta**: Caça a Ameaças
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A caça a ameaças é uma abordagem proativa para a segurança cibernética que busca detectar ameaças que já estão presentes em uma rede, mas que não foram detectadas por defesas de segurança existentes.
+* **ID**: Gestão de Identidade e Acesso (IAM)
+    * **Pergunta**: Gestão de Identidade e Acesso (IAM)
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: IAM é um framework de políticas e tecnologias para garantir que as pessoas certas tenham o acesso certo aos recursos certos no momento certo e para as razões certas.
+* **ID**: Gestão de Configuração de Segurança
+    * **Pergunta**: Gestão de Configuração de Segurança
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A gestão de configuração de segurança é a prática de gerenciar as configurações de segurança de sistemas e dispositivos para garantir que eles estejam configurados de forma segura e em conformidade com as políticas.
+* **ID**: Segurança de Aplicações
+    * **Pergunta**: Segurança de Aplicações
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança de aplicações é o processo de proteger o software de ameaças externas.
+* **ID**: Segurança de Dados
+    * **Pergunta**: Segurança de Dados
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança de dados é o processo de proteger os dados de acesso não autorizado, corrupção ou roubo.
+* **ID**: Segurança em Nuvem
+    * **Pergunta**: Segurança em Nuvem
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança em nuvem é a prática de proteger dados, aplicações e infraestrutura na nuvem.
+* **ID**: Gestão de Riscos
+    * **Pergunta**: Gestão de Riscos
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A gestão de riscos é o processo de identificar, avaliar e mitigar riscos para proteger os ativos de uma organização.
+* **ID**: Governança, Risco e Conformidade (GRC)
+    * **Pergunta**: Governança, Risco e Conformidade (GRC)
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: GRC é um termo guarda-chuva que cobre a governança de uma organização, gestão de riscos corporativos e conformidade com leis e regulamentos.
+* **ID**: Educação e Conscientização em Segurança
+    * **Pergunta**: Educação e Conscientização em Segurança
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A educação e conscientização em segurança é o processo de educar os funcionários sobre as melhores práticas de segurança cibernética e as políticas de segurança da organização.
+* **ID**: Testes de Penetração
+    * **Pergunta**: Testes de Penetração
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Testes de penetração são um ataque simulado contra um sistema de computador para verificar as vulnerabilidades de segurança que podem ser exploradas por hackers.
+* **ID**: Análise de Malware
+    * **Pergunta**: Análise de Malware
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A análise de malware é o processo de estudar software malicioso para entender sua funcionalidade, origem e possíveis impactos.
+* **ID**: Análise de Vulnerabilidades
+    * **Pergunta**: Análise de Vulnerabilidades
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A análise de vulnerabilidades é o processo de identificar e classificar as vulnerabilidades em um sistema, aplicação ou rede.
+* **ID**: Criptografia
+    * **Pergunta**: Criptografia
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A criptografia é o processo de converter informações ou dados em um código, para evitar acesso não autorizado.
+* **ID**: Gerenciamento de Chaves
+    * **Pergunta**: Gerenciamento de Chaves
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: Gerenciamento de chaves é o processo de gerenciamento de chaves criptográficas durante todo o seu ciclo de vida.
+* **ID**: Filtragem de Conteúdo
+    * **Pergunta**: Filtragem de Conteúdo
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A filtragem de conteúdo é o processo de usar software para impedir que os usuários visualizem conteúdo ou sites específicos.
+* **ID**: Prevenção de Perda de Dados (DLP)
+    * **Pergunta**: Prevenção de Perda de Dados (DLP)
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: DLP é uma estratégia para garantir que os usuários não enviem informações confidenciais ou críticas para fora da rede corporativa.
+* **ID**: Segurança de Rede
+    * **Pergunta**: Segurança de Rede
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança de rede é a prática de proteger sua rede de acesso, uso, modificação, destruição ou divulgação não autorizados.
+* **ID**: Segurança de E-mail
+    * **Pergunta**: Segurança de E-mail
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança de e-mail é a prática de proteger contas e comunicações de e-mail de acesso não autorizado, perda ou ataque.
+* **ID**: Segurança Sem Fio
+    * **Pergunta**: Segurança Sem Fio
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança sem fio é a prática de proteger redes sem fio de acesso não autorizado.
+* **ID**: Segurança Móvel
+    * **Pergunta**: Segurança Móvel
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança móvel é a prática de proteger dispositivos móveis e os dados neles contidos.
+* **ID**: Segurança IoT
+    * **Pergunta**: Segurança IoT
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança IoT é a prática de proteger dispositivos IoT de acesso não autorizado, uso ou ataque.
+* **ID**: Segurança Operacional (OT)
+    * **Pergunta**: Segurança Operacional (OT)
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança OT é a prática de proteger sistemas de tecnologia operacional (OT) de ameaças cibernéticas.
+* **ID**: Segurança Industrial (ICS/SCADA)
+    * **Pergunta**: Segurança Industrial (ICS/SCADA)
+    * **Tipo de Campo**: checkbox
+    * **Opções de Resposta**: N/A
+    * **Orientação**: A segurança ICS/SCADA é a prática de proteger sistemas de controle industrial (ICS) e sistemas de controle e aquisição de dados (SCADA) de ameaças cibernéticas.
+
+#### Domínio de Negócios
+
+* **ID**: 1.1 Você identificou os principais drivers de negócio?
+    * **Pergunta**: Você identificou os principais drivers de negócio?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.2 Você documentou os principais drivers de negócio?
+    * **Pergunta**: Você documentou os principais drivers de negócio?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.3 Você usa os drivers de negócio no processo de tomada de decisão?
+    * **Pergunta**: Você usa os drivers de negócio no processo de tomada de decisão?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.4 Você desenvolveu uma visão e missão do SOC?
+    * **Pergunta**: Você desenvolveu uma visão e missão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.5 Você documentou a visão e missão do SOC?
+    * **Pergunta**: Você documentou a visão e missão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.6 Você usa a visão e missão do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa a visão e missão do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.7 Você documentou as partes interessadas do SOC?
+    * **Pergunta**: Você documentou as partes interessadas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.8 Você se comunica com as partes interessadas do SOC?
+    * **Pergunta**: Você se comunica com as partes interessadas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.9 Você mede a satisfação das partes interessadas do SOC?
+    * **Pergunta**: Você mede a satisfação das partes interessadas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.10 Você desenvolveu uma estratégia para o SOC?
+    * **Pergunta**: Você desenvolveu uma estratégia para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.11 Você documentou a estratégia do SOC?
+    * **Pergunta**: Você documentou a estratégia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.12 Você comunica a estratégia do SOC?
+    * **Pergunta**: Você comunica a estratégia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.13 Você implementou a estratégia do SOC?
+    * **Pergunta**: Você implementou a estratégia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.14 Você mede o desempenho da estratégia do SOC?
+    * **Pergunta**: Você mede o desempenho da estratégia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.15 Você desenvolveu um plano de negócios para o SOC?
+    * **Pergunta**: Você desenvolveu um plano de negócios para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.16 Você documentou o plano de negócios do SOC?
+    * **Pergunta**: Você documentou o plano de negócios do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.17 Você usa o plano de negócios do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de negócios do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.18 Você gerencia o orçamento do SOC?
+    * **Pergunta**: Você gerencia o orçamento do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.19 Você mede o desempenho financeiro do SOC?
+    * **Pergunta**: Você mede o desempenho financeiro do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.20 Você desenvolveu um modelo de custo para o SOC?
+    * **Pergunta**: Você desenvolveu um modelo de custo para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.21 Você documentou o modelo de custo do SOC?
+    * **Pergunta**: Você documentou o modelo de custo do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.22 Você usa o modelo de custo do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o modelo de custo do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.23 Você desenvolveu um modelo de valor para o SOC?
+    * **Pergunta**: Você desenvolveu um modelo de valor para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.24 Você documentou o modelo de valor do SOC?
+    * **Pergunta**: Você documentou o modelo de valor do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.25 Você usa o modelo de valor do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o modelo de valor do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.26 Você desenvolveu um modelo de ROI para o SOC?
+    * **Pergunta**: Você desenvolveu um modelo de ROI para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.27 Você documentou o modelo de ROI do SOC?
+    * **Pergunta**: Você documentou o modelo de ROI do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.28 Você usa o modelo de ROI do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o modelo de ROI do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.29 Você desenvolveu um business case para o SOC?
+    * **Pergunta**: Você desenvolveu um business case para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.30 Você documentou o business case do SOC?
+    * **Pergunta**: Você documentou o business case do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.31 Você usa o business case do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o business case do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.32 Você estabeleceu métricas de negócios para o SOC?
+    * **Pergunta**: Você estabeleceu métricas de negócios para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.33 Você mede o desempenho das métricas de negócios do SOC?
+    * **Pergunta**: Você mede o desempenho das métricas de negócios do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.34 Você usa as métricas de negócios do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa as métricas de negócios do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.35 Você estabeleceu um plano de comunicação para o SOC?
+    * **Pergunta**: Você estabeleceu um plano de comunicação para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.36 Você documentou o plano de comunicação do SOC?
+    * **Pergunta**: Você documentou o plano de comunicação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.37 Você implementou o plano de comunicação do SOC?
+    * **Pergunta**: Você implementou o plano de comunicação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.38 Você mede o desempenho do plano de comunicação do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de comunicação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.39 Você usa o plano de comunicação do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de comunicação do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.40 Você estabeleceu um plano de marketing para o SOC?
+    * **Pergunta**: Você estabeleceu um plano de marketing para o SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.41 Você documentou o plano de marketing do SOC?
+    * **Pergunta**: Você documentou o plano de marketing do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.42 Você implementou o plano de marketing do SOC?
+    * **Pergunta**: Você implementou o plano de marketing do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.43 Você mede o desempenho do plano de marketing do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de marketing do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 1.44 Você usa o plano de marketing do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de marketing do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+#### Domínio de Pessoas
+
+* **ID**: 2.1 Você estabeleceu uma estrutura organizacional do SOC?
+    * **Pergunta**: Você estabeleceu uma estrutura organizacional do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.2 Você documentou a estrutura organizacional do SOC?
+    * **Pergunta**: Você documentou a estrutura organizacional do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.3 Você usa a estrutura organizacional do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa a estrutura organizacional do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.4 Você estabeleceu funções e responsabilidades do SOC?
+    * **Pergunta**: Você estabeleceu funções e responsabilidades do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.5 Você documentou as funções e responsabilidades do SOC?
+    * **Pergunta**: Você documentou as funções e responsabilidades do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.6 Você usa as funções e responsabilidades do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa as funções e responsabilidades do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.7 Você estabeleceu um plano de pessoal do SOC?
+    * **Pergunta**: Você estabeleceu um plano de pessoal do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.8 Você documentou o plano de pessoal do SOC?
+    * **Pergunta**: Você documentou o plano de pessoal do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.9 Você implementou o plano de pessoal do SOC?
+    * **Pergunta**: Você implementou o plano de pessoal do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.10 Você mede o desempenho do plano de pessoal do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de pessoal do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.11 Você usa o plano de pessoal do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de pessoal do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.12 Você estabeleceu um plano de carreira do SOC?
+    * **Pergunta**: Você estabeleceu um plano de carreira do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.13 Você documentou o plano de carreira do SOC?
+    * **Pergunta**: Você documentou o plano de carreira do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.14 Você implementou o plano de carreira do SOC?
+    * **Pergunta**: Você implementou o plano de carreira do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.15 Você mede o desempenho do plano de carreira do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de carreira do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.16 Você usa o plano de carreira do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de carreira do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.17 Você estabeleceu um plano de treinamento do SOC?
+    * **Pergunta**: Você estabeleceu um plano de treinamento do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.18 Você documentou o plano de treinamento do SOC?
+    * **Pergunta**: Você documentou o plano de treinamento do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.19 Você implementou o plano de treinamento do SOC?
+    * **Pergunta**: Você implementou o plano de treinamento do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.20 Você mede o desempenho do plano de treinamento do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de treinamento do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.21 Você usa o plano de treinamento do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de treinamento do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.22 Você estabeleceu um plano de sucessão do SOC?
+    * **Pergunta**: Você estabeleceu um plano de sucessão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.23 Você documentou o plano de sucessão do SOC?
+    * **Pergunta**: Você documentou o plano de sucessão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.24 Você implementou o plano de sucessão do SOC?
+    * **Pergunta**: Você implementou o plano de sucessão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.25 Você mede o desempenho do plano de sucessão do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de sucessão do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.26 Você usa o plano de sucessão do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de sucessão do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.27 Você estabeleceu um programa de mentoria do SOC?
+    * **Pergunta**: Você estabeleceu um programa de mentoria do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.28 Você documentou o programa de mentoria do SOC?
+    * **Pergunta**: Você documentou o programa de mentoria do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.29 Você implementou o programa de mentoria do SOC?
+    * **Pergunta**: Você implementou o programa de mentoria do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.30 Você mede o desempenho do programa de mentoria do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de mentoria do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.31 Você usa o programa de mentoria do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de mentoria do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.32 Você estabeleceu um programa de rotação de trabalho do SOC?
+    * **Pergunta**: Você estabeleceu um programa de rotação de trabalho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.33 Você documentou o programa de rotação de trabalho do SOC?
+    * **Pergunta**: Você documentou o programa de rotação de trabalho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.34 Você implementou o programa de rotação de trabalho do SOC?
+    * **Pergunta**: Você implementou o programa de rotação de trabalho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.35 Você mede o desempenho do programa de rotação de trabalho do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de rotação de trabalho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.36 Você usa o programa de rotação de trabalho do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de rotação de trabalho do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.37 Você estabeleceu um programa de engajamento de funcionários do SOC?
+    * **Pergunta**: Você estabeleceu um programa de engajamento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.38 Você documentou o programa de engajamento de funcionários do SOC?
+    * **Pergunta**: Você documentou o programa de engajamento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.39 Você implementou o programa de engajamento de funcionários do SOC?
+    * **Pergunta**: Você implementou o programa de engajamento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.40 Você mede o desempenho do programa de engajamento de funcionários do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de engajamento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.41 Você usa o programa de engajamento de funcionários do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de engajamento de funcionários do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.42 Você estabeleceu um programa de reconhecimento de funcionários do SOC?
+    * **Pergunta**: Você estabeleceu um programa de reconhecimento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.43 Você documentou o programa de reconhecimento de funcionários do SOC?
+    * **Pergunta**: Você documentou o programa de reconhecimento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.44 Você implementou o programa de reconhecimento de funcionários do SOC?
+    * **Pergunta**: Você implementou o programa de reconhecimento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.45 Você mede o desempenho do programa de reconhecimento de funcionários do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de reconhecimento de funcionários do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 2.46 Você usa o programa de reconhecimento de funcionários do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de reconhecimento de funcionários do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+#### Domínio de Processo
+
+* **ID**: 3.1 Você estabeleceu uma política de segurança da informação?
+    * **Pergunta**: Você estabeleceu uma política de segurança da informação?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.2 Você documentou a política de segurança da informação?
+    * **Pergunta**: Você documentou a política de segurança da informação?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.3 Você comunica a política de segurança da informação?
+    * **Pergunta**: Você comunica a política de segurança da informação?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.4 Você implementou a política de segurança da informação?
+    * **Pergunta**: Você implementou a política de segurança da informação?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.5 Você mede o desempenho da política de segurança da informação?
+    * **Pergunta**: Você mede o desempenho da política de segurança da informação?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.6 Você usa a política de segurança da informação para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa a política de segurança da informação para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.7 Você estabeleceu um programa de gestão de riscos?
+    * **Pergunta**: Você estabeleceu um programa de gestão de riscos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.8 Você documentou o programa de gestão de riscos?
+    * **Pergunta**: Você documentou o programa de gestão de riscos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.9 Você implementou o programa de gestão de riscos?
+    * **Pergunta**: Você implementou o programa de gestão de riscos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.10 Você mede o desempenho do programa de gestão de riscos?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de riscos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.11 Você usa o programa de gestão de riscos para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de riscos para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.12 Você estabeleceu um programa de gestão de incidentes?
+    * **Pergunta**: Você estabeleceu um programa de gestão de incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.13 Você documentou o programa de gestão de incidentes?
+    * **Pergunta**: Você documentou o programa de gestão de incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.14 Você implementou o programa de gestão de incidentes?
+    * **Pergunta**: Você implementou o programa de gestão de incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.15 Você mede o desempenho do programa de gestão de incidentes?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.16 Você usa o programa de gestão de incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.17 Você estabeleceu um programa de gestão de vulnerabilidades?
+    * **Pergunta**: Você estabeleceu um programa de gestão de vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.18 Você documentou o programa de gestão de vulnerabilidades?
+    * **Pergunta**: Você documentou o programa de gestão de vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.19 Você implementou o programa de gestão de vulnerabilidades?
+    * **Pergunta**: Você implementou o programa de gestão de vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.20 Você mede o desempenho do programa de gestão de vulnerabilidades?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.21 Você usa o programa de gestão de vulnerabilidades para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de vulnerabilidades para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.22 Você estabeleceu um programa de gestão de inteligência de ameaças?
+    * **Pergunta**: Você estabeleceu um programa de gestão de inteligência de ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.23 Você documentou o programa de gestão de inteligência de ameaças?
+    * **Pergunta**: Você documentou o programa de gestão de inteligência de ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.24 Você implementou o programa de gestão de inteligência de ameaças?
+    * **Pergunta**: Você implementou o programa de gestão de inteligência de ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.25 Você mede o desempenho do programa de gestão de inteligência de ameaças?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de inteligência de ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.26 Você usa o programa de gestão de inteligência de ameaças para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de inteligência de ameaças para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.27 Você estabeleceu um programa de gestão de ativos?
+    * **Pergunta**: Você estabeleceu um programa de gestão de ativos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.28 Você documentou o programa de gestão de ativos?
+    * **Pergunta**: Você documentou o programa de gestão de ativos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.29 Você implementou o programa de gestão de ativos?
+    * **Pergunta**: Você implementou o programa de gestão de ativos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.30 Você mede o desempenho do programa de gestão de ativos?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de ativos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.31 Você usa o programa de gestão de ativos para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de ativos para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.32 Você estabeleceu um programa de gestão de mudanças?
+    * **Pergunta**: Você estabeleceu um programa de gestão de mudanças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.33 Você documentou o programa de gestão de mudanças?
+    * **Pergunta**: Você documentou o programa de gestão de mudanças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.34 Você implementou o programa de gestão de mudanças?
+    * **Pergunta**: Você implementou o programa de gestão de mudanças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.35 Você mede o desempenho do programa de gestão de mudanças?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de mudanças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.36 Você usa o programa de gestão de mudanças para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de mudanças para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.37 Você estabeleceu um programa de gestão de configuração?
+    * **Pergunta**: Você estabeleceu um programa de gestão de configuração?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.38 Você documentou o programa de gestão de configuração?
+    * **Pergunta**: Você documentou o programa de gestão de configuração?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.39 Você implementou o programa de gestão de configuração?
+    * **Pergunta**: Você implementou o programa de gestão de configuração?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.40 Você mede o desempenho do programa de gestão de configuração?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de configuração?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.41 Você usa o programa de gestão de configuração para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de configuração para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.42 Você estabeleceu um programa de gestão de patches?
+    * **Pergunta**: Você estabeleceu um programa de gestão de patches?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.43 Você documentou o programa de gestão de patches?
+    * **Pergunta**: Você documentou o programa de gestão de patches?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.44 Você implementou o programa de gestão de patches?
+    * **Pergunta**: Você implementou o programa de gestão de patches?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.45 Você mede o desempenho do programa de gestão de patches?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de patches?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.46 Você usa o programa de gestão de patches para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de patches para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.47 Você estabeleceu um programa de gestão de logs?
+    * **Pergunta**: Você estabeleceu um programa de gestão de logs?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.48 Você documentou o programa de gestão de logs?
+    * **Pergunta**: Você documentou o programa de gestão de logs?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.49 Você implementou o programa de gestão de logs?
+    * **Pergunta**: Você implementou o programa de gestão de logs?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.50 Você mede o desempenho do programa de gestão de logs?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de logs?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.51 Você usa o programa de gestão de logs para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de logs para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.52 Você estabeleceu um programa de gestão de identidade e acesso?
+    * **Pergunta**: Você estabeleceu um programa de gestão de identidade e acesso?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.53 Você documentou o programa de gestão de identidade e acesso?
+    * **Pergunta**: Você documentou o programa de gestão de identidade e acesso?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.54 Você implementou o programa de gestão de identidade e acesso?
+    * **Pergunta**: Você implementou o programa de gestão de identidade e acesso?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.55 Você mede o desempenho do programa de gestão de identidade e acesso?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de identidade e acesso?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.56 Você usa o programa de gestão de identidade e acesso para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de identidade e acesso para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.57 Você estabeleceu um programa de segurança de aplicações?
+    * **Pergunta**: Você estabeleceu um programa de segurança de aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.58 Você documentou o programa de segurança de aplicações?
+    * **Pergunta**: Você documentou o programa de segurança de aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.59 Você implementou o programa de segurança de aplicações?
+    * **Pergunta**: Você implementou o programa de segurança de aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.60 Você mede o desempenho do programa de segurança de aplicações?
+    * **Pergunta**: Você mede o desempenho do programa de segurança de aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.61 Você usa o programa de segurança de aplicações para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de segurança de aplicações para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.62 Você estabeleceu um programa de segurança de dados?
+    * **Pergunta**: Você estabeleceu um programa de segurança de dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.63 Você documentou o programa de segurança de dados?
+    * **Pergunta**: Você documentou o programa de segurança de dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.64 Você implementou o programa de segurança de dados?
+    * **Pergunta**: Você implementou o programa de segurança de dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.65 Você mede o desempenho do programa de segurança de dados?
+    * **Pergunta**: Você mede o desempenho do programa de segurança de dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.66 Você usa o programa de segurança de dados para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de segurança de dados para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.67 Você estabeleceu um programa de segurança em nuvem?
+    * **Pergunta**: Você estabeleceu um programa de segurança em nuvem?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.68 Você documentou o programa de segurança em nuvem?
+    * **Pergunta**: Você documentou o programa de segurança em nuvem?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.69 Você implementou o programa de segurança em nuvem?
+    * **Pergunta**: Você implementou o programa de segurança em nuvem?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.70 Você mede o desempenho do programa de segurança em nuvem?
+    * **Pergunta**: Você mede o desempenho do programa de segurança em nuvem?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.71 Você usa o programa de segurança em nuvem para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de segurança em nuvem para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.72 Você estabeleceu um programa de gestão de fornecedores?
+    * **Pergunta**: Você estabeleceu um programa de gestão de fornecedores?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.73 Você documentou o programa de gestão de fornecedores?
+    * **Pergunta**: Você documentou o programa de gestão de fornecedores?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.74 Você implementou o programa de gestão de fornecedores?
+    * **Pergunta**: Você implementou o programa de gestão de fornecedores?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.75 Você mede o desempenho do programa de gestão de fornecedores?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de fornecedores?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.76 Você usa o programa de gestão de fornecedores para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de fornecedores para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.77 Você estabeleceu um programa de gestão de conformidade?
+    * **Pergunta**: Você estabeleceu um programa de gestão de conformidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.78 Você documentou o programa de gestão de conformidade?
+    * **Pergunta**: Você documentou o programa de gestão de conformidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.79 Você implementou o programa de gestão de conformidade?
+    * **Pergunta**: Você implementou o programa de gestão de conformidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.80 Você mede o desempenho do programa de gestão de conformidade?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de conformidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 3.81 Você usa o programa de gestão de conformidade para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de conformidade para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+#### Domínio de Tecnologia
+
+* **ID**: 4.1 Você estabeleceu uma arquitetura de segurança?
+    * **Pergunta**: Você estabeleceu uma arquitetura de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.2 Você documentou a arquitetura de segurança?
+    * **Pergunta**: Você documentou a arquitetura de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.3 Você usa a arquitetura de segurança para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa a arquitetura de segurança para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.4 Você estabeleceu uma estratégia de tecnologia do SOC?
+    * **Pergunta**: Você estabeleceu uma estratégia de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.5 Você documentou a estratégia de tecnologia do SOC?
+    * **Pergunta**: Você documentou a estratégia de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.6 Você usa a estratégia de tecnologia do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa a estratégia de tecnologia do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.7 Você estabeleceu um plano de tecnologia do SOC?
+    * **Pergunta**: Você estabeleceu um plano de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.8 Você documentou o plano de tecnologia do SOC?
+    * **Pergunta**: Você documentou o plano de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.9 Você implementou o plano de tecnologia do SOC?
+    * **Pergunta**: Você implementou o plano de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.10 Você mede o desempenho do plano de tecnologia do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de tecnologia do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.11 Você usa o plano de tecnologia do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de tecnologia do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.12 Você estabeleceu um programa de gestão de ferramentas do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão de ferramentas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.13 Você documentou o programa de gestão de ferramentas do SOC?
+    * **Pergunta**: Você documentou o programa de gestão de ferramentas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.14 Você implementou o programa de gestão de ferramentas do SOC?
+    * **Pergunta**: Você implementou o programa de gestão de ferramentas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.15 Você mede o desempenho do programa de gestão de ferramentas do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de ferramentas do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.16 Você usa o programa de gestão de ferramentas do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de ferramentas do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.17 Você estabeleceu um programa de gestão de automação do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão de automação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.18 Você documentou o programa de gestão de automação do SOC?
+    * **Pergunta**: Você documentou o programa de gestão de automação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.19 Você implementou o programa de gestão de automação do SOC?
+    * **Pergunta**: Você implementou o programa de gestão de automação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.20 Você mede o desempenho do programa de gestão de automação do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de automação do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.21 Você usa o programa de gestão de automação do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de automação do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.22 Você estabeleceu um programa de gestão de orquestração do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão de orquestração do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.23 Você documentou o programa de gestão de orquestração do SOC?
+    * **Pergunta**: Você documentou o programa de gestão de orquestração do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.24 Você implementou o programa de gestão de orquestração do SOC?
+    * **Pergunta**: Você implementou o programa de gestão de orquestração do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.25 Você mede o desempenho do programa de gestão de orquestração do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de orquestração do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 4.26 Você usa o programa de gestão de orquestração do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de orquestração do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+#### Domínio de Serviços
+
+* **ID**: 5.1 Você estabeleceu um catálogo de serviços do SOC?
+    * **Pergunta**: Você estabeleceu um catálogo de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.2 Você documentou o catálogo de serviços do SOC?
+    * **Pergunta**: Você documentou o catálogo de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.3 Você comunica o catálogo de serviços do SOC?
+    * **Pergunta**: Você comunica o catálogo de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.4 Você implementou o catálogo de serviços do SOC?
+    * **Pergunta**: Você implementou o catálogo de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.5 Você mede o desempenho do catálogo de serviços do SOC?
+    * **Pergunta**: Você mede o desempenho do catálogo de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.6 Você usa o catálogo de serviços do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o catálogo de serviços do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.7 Você estabeleceu um SLA para os serviços do SOC?
+    * **Pergunta**: Você estabeleceu um SLA para os serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.8 Você documentou o SLA para os serviços do SOC?
+    * **Pergunta**: Você documentou o SLA para os serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.9 Você comunica o SLA para os serviços do SOC?
+    * **Pergunta**: Você comunica o SLA para os serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.10 Você implementou o SLA para os serviços do SOC?
+    * **Pergunta**: Você implementou o SLA para os serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.11 Você mede o desempenho do SLA para os serviços do SOC?
+    * **Pergunta**: Você mede o desempenho do SLA para os serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.12 Você usa o SLA para os serviços do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o SLA para os serviços do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.13 Você estabeleceu um plano de melhoria de serviços do SOC?
+    * **Pergunta**: Você estabeleceu um plano de melhoria de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.14 Você documentou o plano de melhoria de serviços do SOC?
+    * **Pergunta**: Você documentou o plano de melhoria de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.15 Você implementou o plano de melhoria de serviços do SOC?
+    * **Pergunta**: Você implementou o plano de melhoria de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.16 Você mede o desempenho do plano de melhoria de serviços do SOC?
+    * **Pergunta**: Você mede o desempenho do plano de melhoria de serviços do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.17 Você usa o plano de melhoria de serviços do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de melhoria de serviços do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.18 Você estabeleceu um programa de gestão de capacidade do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão de capacidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.19 Você documentou o programa de gestão de capacidade do SOC?
+    * **Pergunta**: Você documentou o programa de gestão de capacidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.20 Você implementou o programa de gestão de capacidade do SOC?
+    * **Pergunta**: Você implementou o programa de gestão de capacidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.21 Você mede o desempenho do programa de gestão de capacidade do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de capacidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.22 Você usa o programa de gestão de capacidade do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de capacidade do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.23 Você estabeleceu um programa de gestão de desempenho do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão de desempenho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.24 Você documentou o programa de gestão de desempenho do SOC?
+    * **Pergunta**: Você documentou o programa de gestão de desempenho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.25 Você implementou o programa de gestão de desempenho do SOC?
+    * **Pergunta**: Você implementou o programa de gestão de desempenho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.26 Você mede o desempenho do programa de gestão de desempenho do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão de desempenho do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.27 Você usa o programa de gestão de desempenho do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão de desempenho do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.28 Você estabeleceu um programa de gestão da qualidade do SOC?
+    * **Pergunta**: Você estabeleceu um programa de gestão da qualidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.29 Você documentou o programa de gestão da qualidade do SOC?
+    * **Pergunta**: Você documentou o programa de gestão da qualidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.30 Você implementou o programa de gestão da qualidade do SOC?
+    * **Pergunta**: Você implementou o programa de gestão da qualidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.31 Você mede o desempenho do programa de gestão da qualidade do SOC?
+    * **Pergunta**: Você mede o desempenho do programa de gestão da qualidade do SOC?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 5.32 Você usa o programa de gestão da qualidade do SOC para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o programa de gestão da qualidade do SOC para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+### Detecção de Ameaças
+
+* **ID**: 6.1 Você monitora os logs de segurança?
+    * **Pergunta**: Você monitora os logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.2 Você monitora o tráfego de rede?
+    * **Pergunta**: Você monitora o tráfego de rede?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.3 Você monitora os endpoints?
+    * **Pergunta**: Você monitora os endpoints?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.4 Você monitora as aplicações?
+    * **Pergunta**: Você monitora as aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.5 Você monitora os dados?
+    * **Pergunta**: Você monitora os dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.6 Você monitora a nuvem?
+    * **Pergunta**: Você monitora a nuvem?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.7 Você monitora as atividades de usuários?
+    * **Pergunta**: Você monitora as atividades de usuários?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.8 Você monitora os ativos?
+    * **Pergunta**: Você monitora os ativos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.9 Você monitora as vulnerabilidades?
+    * **Pergunta**: Você monitora as vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.10 Você monitora as ameaças?
+    * **Pergunta**: Você monitora as ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.11 Você monitora o comportamento anômalo?
+    * **Pergunta**: Você monitora o comportamento anômalo?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.12 Você monitora as novas ameaças?
+    * **Pergunta**: Você monitora as novas ameaças?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.13 Você monitora os ataques cibernéticos?
+    * **Pergunta**: Você monitora os ataques cibernéticos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.14 Você monitora as campanhas de phishing?
+    * **Pergunta**: Você monitora as campanhas de phishing?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.15 Você monitora os ataques de ransomware?
+    * **Pergunta**: Você monitora os ataques de ransomware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.16 Você monitora os ataques de malware?
+    * **Pergunta**: Você monitora os ataques de malware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.17 Você monitora os ataques de dia zero?
+    * **Pergunta**: Você monitora os ataques de dia zero?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.18 Você monitora os ataques de engenharia social?
+    * **Pergunta**: Você monitora os ataques de engenharia social?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.19 Você monitora os ataques de negação de serviço (DoS)?
+    * **Pergunta**: Você monitora os ataques de negação de serviço (DoS)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.20 Você monitora os ataques de força bruta?
+    * **Pergunta**: Você monitora os ataques de força bruta?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.21 Você monitora os ataques de injeção de SQL?
+    * **Pergunta**: Você monitora os ataques de injeção de SQL?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.22 Você monitora os ataques de cross-site scripting (XSS)?
+    * **Pergunta**: Você monitora os ataques de cross-site scripting (XSS)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.23 Você monitora os ataques de buffer overflow?
+    * **Pergunta**: Você monitora os ataques de buffer overflow?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.24 Você monitora os ataques de dia zero?
+    * **Pergunta**: Você monitora os ataques de dia zero?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.25 Você monitora os ataques de negação de serviço distribuída (DDoS)?
+    * **Pergunta**: Você monitora os ataques de negação de serviço distribuída (DDoS)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.26 Você monitora os ataques de man-in-the-middle (MitM)?
+    * **Pergunta**: Você monitora os ataques de man-in-the-middle (MitM)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.27 Você monitora os ataques de falsificação de ARP?
+    * **Pergunta**: Você monitora os ataques de falsificação de ARP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.28 Você monitora os ataques de envenenamento de cache DNS?
+    * **Pergunta**: Você monitora os ataques de envenenamento de cache DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.29 Você monitora os ataques de passagem de hash?
+    * **Pergunta**: Você monitora os ataques de passagem de hash?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.30 Você monitora os ataques de passagem do ticket?
+    * **Pergunta**: Você monitora os ataques de passagem do ticket?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.31 Você monitora os ataques de escalonamento de privilégios?
+    * **Pergunta**: Você monitora os ataques de escalonamento de privilégios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.32 Você monitora os ataques de movimento lateral?
+    * **Pergunta**: Você monitora os ataques de movimento lateral?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.33 Você monitora os ataques de exfiltração de dados?
+    * **Pergunta**: Você monitora os ataques de exfiltração de dados?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.34 Você monitora os ataques de persistência?
+    * **Pergunta**: Você monitora os ataques de persistência?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.35 Você monitora os ataques de comando e controle (C2)?
+    * **Pergunta**: Você monitora os ataques de comando e controle (C2)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.36 Você monitora os ataques de infecção por malware?
+    * **Pergunta**: Você monitora os ataques de infecção por malware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.37 Você monitora os ataques de exploração de vulnerabilidades?
+    * **Pergunta**: Você monitora os ataques de exploração de vulnerabilidades?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.38 Você monitora os ataques de backdoor?
+    * **Pergunta**: Você monitora os ataques de backdoor?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.39 Você monitora os ataques de rootkit?
+    * **Pergunta**: Você monitora os ataques de rootkit?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.40 Você monitora os ataques de spyware?
+    * **Pergunta**: Você monitora os ataques de spyware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.41 Você monitora os ataques de adware?
+    * **Pergunta**: Você monitora os ataques de adware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.42 Você monitora os ataques de worms?
+    * **Pergunta**: Você monitora os ataques de worms?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.43 Você monitora os ataques de vírus?
+    * **Pergunta**: Você monitora os ataques de vírus?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.44 Você monitora os ataques de trojans?
+    * **Pergunta**: Você monitora os ataques de trojans?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.45 Você monitora os ataques de scareware?
+    * **Pergunta**: Você monitora os ataques de scareware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.46 Você monitora os ataques de ransomware?
+    * **Pergunta**: Você monitora os ataques de ransomware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.47 Você monitora os ataques de cryptojacking?
+    * **Pergunta**: Você monitora os ataques de cryptojacking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.48 Você monitora os ataques de fileless malware?
+    * **Pergunta**: Você monitora os ataques de fileless malware?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.49 Você monitora os ataques de living off the land?
+    * **Pergunta**: Você monitora os ataques de living off the land?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.50 Você monitora os ataques de spear phishing?
+    * **Pergunta**: Você monitora os ataques de spear phishing?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.51 Você monitora os ataques de whaling?
+    * **Pergunta**: Você monitora os ataques de whaling?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.52 Você monitora os ataques de vishing?
+    * **Pergunta**: Você monitora os ataques de vishing?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.53 Você monitora os ataques de smishing?
+    * **Pergunta**: Você monitora os ataques de smishing?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.54 Você monitora os ataques de comprometimento de e-mail comercial (BEC)?
+    * **Pergunta**: Você monitora os ataques de comprometimento de e-mail comercial (BEC)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.55 Você monitora os ataques de falsificação de domínio?
+    * **Pergunta**: Você monitora os ataques de falsificação de domínio?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.56 Você monitora os ataques de envenenamento de SEO?
+    * **Pergunta**: Você monitora os ataques de envenenamento de SEO?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.57 Você monitora os ataques de watering hole?
+    * **Pergunta**: Você monitora os ataques de watering hole?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.58 Você monitora os ataques de typosquatting?
+    * **Pergunta**: Você monitora os ataques de typosquatting?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.59 Você monitora os ataques de clickjacking?
+    * **Pergunta**: Você monitora os ataques de clickjacking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.60 Você monitora os ataques de roubo de sessão?
+    * **Pergunta**: Você monitora os ataques de roubo de sessão?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.61 Você monitora os ataques de cross-site request forgery (CSRF)?
+    * **Pergunta**: Você monitora os ataques de cross-site request forgery (CSRF)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.62 Você monitora os ataques de SSRF (Server-Side Request Forgery)?
+    * **Pergunta**: Você monitora os ataques de SSRF (Server-Side Request Forgery)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.63 Você monitora os ataques de inclusão de arquivo local (LFI)?
+    * **Pergunta**: Você monitora os ataques de inclusão de arquivo local (LFI)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.64 Você monitora os ataques de inclusão de arquivo remoto (RFI)?
+    * **Pergunta**: Você monitora os ataques de inclusão de arquivo remoto (RFI)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.65 Você monitora os ataques de desserialização insegura?
+    * **Pergunta**: Você monitora os ataques de desserialização insegura?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.66 Você monitora os ataques de injeção de XML?
+    * **Pergunta**: Você monitora os ataques de injeção de XML?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.67 Você monitora os ataques de injeção de LDAP?
+    * **Pergunta**: Você monitora os ataques de injeção de LDAP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.68 Você monitora os ataques de injeção de caminho?
+    * **Pergunta**: Você monitora os ataques de injeção de caminho?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.69 Você monitora os ataques de escalonamento de privilégios locais?
+    * **Pergunta**: Você monitora os ataques de escalonamento de privilégios locais?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.70 Você monitora os ataques de escalonamento de privilégios de rede?
+    * **Pergunta**: Você monitora os ataques de escalonamento de privilégios de rede?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.71 Você monitora os ataques de ataque de confiança?
+    * **Pergunta**: Você monitora os ataques de ataque de confiança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.72 Você monitora os ataques de reuso de credenciais?
+    * **Pergunta**: Você monitora os ataques de reuso de credenciais?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.73 Você monitora os ataques de pulverização de senha?
+    * **Pergunta**: Você monitora os ataques de pulverização de senha?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.74 Você monitora os ataques de recheio de credenciais?
+    * **Pergunta**: Você monitora os ataques de recheio de credenciais?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.75 Você monitora os ataques de quebra de senha?
+    * **Pergunta**: Você monitora os ataques de quebra de senha?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.76 Você monitora os ataques de tabela arco-íris?
+    * **Pergunta**: Você monitora os ataques de tabela arco-íris?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.77 Você monitora os ataques de colisão de hash?
+    * **Pergunta**: Você monitora os ataques de colisão de hash?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.78 Você monitora os ataques de predação de cache?
+    * **Pergunta**: Você monitora os ataques de predação de cache?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.79 Você monitora os ataques de inundação de DNS?
+    * **Pergunta**: Você monitora os ataques de inundação de DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.80 Você monitora os ataques de amplificação de DNS?
+    * **Pergunta**: Você monitora os ataques de amplificação de DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.81 Você monitora os ataques de reflexão de DNS?
+    * **Pergunta**: Você monitora os ataques de reflexão de DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.82 Você monitora os ataques de fragmentação de IP?
+    * **Pergunta**: Você monitora os ataques de fragmentação de IP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.83 Você monitora os ataques de fragmentação de TCP?
+    * **Pergunta**: Você monitora os ataques de fragmentação de TCP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.84 Você monitora os ataques de fragmentação de UDP?
+    * **Pergunta**: Você monitora os ataques de fragmentação de UDP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.85 Você monitora os ataques de SYN flood?
+    * **Pergunta**: Você monitora os ataques de SYN flood?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.86 Você monitora os ataques de RST flood?
+    * **Pergunta**: Você monitora os ataques de RST flood?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.87 Você monitora os ataques de FIN flood?
+    * **Pergunta**: Você monitora os ataques de FIN flood?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.88 Você monitora os ataques de ACK flood?
+    * **Pergunta**: Você monitora os ataques de ACK flood?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.89 Você monitora os ataques de HTTP flood?
+    * **Pergunta**: Você monitora os ataques de HTTP flood?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.90 Você monitora os ataques de Slowloris?
+    * **Pergunta**: Você monitora os ataques de Slowloris?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.91 Você monitora os ataques de ataques de negação de serviço distribuída (DDoS) baseados em aplicações?
+    * **Pergunta**: Você monitora os ataques de ataques de negação de serviço distribuída (DDoS) baseados em aplicações?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.92 Você monitora os ataques de negação de serviço distribuída (DDoS) baseados em protocolo?
+    * **Pergunta**: Você monitora os ataques de negação de serviço distribuída (DDoS) baseados em protocolo?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.93 Você monitora os ataques de negação de serviço distribuída (DDoS) volumétricos?
+    * **Pergunta**: Você monitora os ataques de negação de serviço distribuída (DDoS) volumétricos?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.94 Você monitora os ataques de injeção de código?
+    * **Pergunta**: Você monitora os ataques de injeção de código?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.95 Você monitora os ataques de injeção de shell?
+    * **Pergunta**: Você monitora os ataques de injeção de shell?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.96 Você monitora os ataques de injeção de comando?
+    * **Pergunta**: Você monitora os ataques de injeção de comando?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.97 Você monitora os ataques de injeção de script?
+    * **Pergunta**: Você monitora os ataques de injeção de script?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.98 Você monitora os ataques de injeção de XPATH?
+    * **Pergunta**: Você monitora os ataques de injeção de XPATH?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.99 Você monitora os ataques de injeção de XXE (XML External Entities)?
+    * **Pergunta**: Você monitora os ataques de injeção de XXE (XML External Entities)?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.100 Você monitora os ataques de sequestro de DNS?
+    * **Pergunta**: Você monitora os ataques de sequestro de DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.101 Você monitora os ataques de túnel de DNS?
+    * **Pergunta**: Você monitora os ataques de túnel de DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.102 Você monitora os ataques de exfiltração de dados por DNS?
+    * **Pergunta**: Você monitora os ataques de exfiltração de dados por DNS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.103 Você monitora os ataques de túnel de ICMP?
+    * **Pergunta**: Você monitora os ataques de túnel de ICMP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.104 Você monitora os ataques de túnel de HTTP?
+    * **Pergunta**: Você monitora os ataques de túnel de HTTP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.105 Você monitora os ataques de túnel de HTTPS?
+    * **Pergunta**: Você monitora os ataques de túnel de HTTPS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.106 Você monitora os ataques de túnel de TCP?
+    * **Pergunta**: Você monitora os ataques de túnel de TCP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.107 Você monitora os ataques de túnel de UDP?
+    * **Pergunta**: Você monitora os ataques de túnel de UDP?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.108 Você monitora os ataques de túnel de SSH?
+    * **Pergunta**: Você monitora os ataques de túnel de SSH?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.109 Você monitora os ataques de túnel de VPN?
+    * **Pergunta**: Você monitora os ataques de túnel de VPN?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.110 Você monitora os ataques de túnel de SOCKS?
+    * **Pergunta**: Você monitora os ataques de túnel de SOCKS?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.111 Você monitora os ataques de túnel de TOR?
+    * **Pergunta**: Você monitora os ataques de túnel de TOR?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.112 Você monitora os ataques de túnel de I2P?
+    * **Pergunta**: Você monitora os ataques de túnel de I2P?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 6.113 Você monitora os ataques de túnel de Freenet?
+    * **Pergunta**: Você monitora os ataques de túnel de Freenet?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+### Análise
+
+* **ID**: 7.1 Você coleta logs de segurança?
+    * **Pergunta**: Você coleta logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.2 Você armazena logs de segurança?
+    * **Pergunta**: Você armazena logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.3 Você retém logs de segurança?
+    * **Pergunta**: Você retém logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.4 Você analisa logs de segurança?
+    * **Pergunta**: Você analisa logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.5 Você correlaciona logs de segurança?
+    * **Pergunta**: Você correlaciona logs de segurança?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.6 Você usa inteligência de ameaças em sua análise?
+    * **Pergunta**: Você usa inteligência de ameaças em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.7 Você usa automação em sua análise?
+    * **Pergunta**: Você usa automação em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.8 Você usa orquestração em sua análise?
+    * **Pergunta**: Você usa orquestração em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.9 Você usa machine learning em sua análise?
+    * **Pergunta**: Você usa machine learning em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.10 Você usa inteligência artificial em sua análise?
+    * **Pergunta**: Você usa inteligência artificial em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.11 Você usa análise de comportamento de usuários e entidades (UEBA) em sua análise?
+    * **Pergunta**: Você usa análise de comportamento de usuários e entidades (UEBA) em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.12 Você usa análise de rede em sua análise?
+    * **Pergunta**: Você usa análise de rede em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.13 Você usa análise de endpoint em sua análise?
+    * **Pergunta**: Você usa análise de endpoint em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.14 Você usa análise de aplicações em sua análise?
+    * **Pergunta**: Você usa análise de aplicações em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.15 Você usa análise de dados em sua análise?
+    * **Pergunta**: Você usa análise de dados em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.16 Você usa análise de nuvem em sua análise?
+    * **Pergunta**: Você usa análise de nuvem em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.17 Você usa análise de vulnerabilidades em sua análise?
+    * **Pergunta**: Você usa análise de vulnerabilidades em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.18 Você usa análise de ameaças em sua análise?
+    * **Pergunta**: Você usa análise de ameaças em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.19 Você usa análise forense em sua análise?
+    * **Pergunta**: Você usa análise forense em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.20 Você usa caça a ameaças em sua análise?
+    * **Pergunta**: Você usa caça a ameaças em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.21 Você usa engenharia reversa em sua análise?
+    * **Pergunta**: Você usa engenharia reversa em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.22 Você usa sandboxing em sua análise?
+    * **Pergunta**: Você usa sandboxing em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.23 Você usa análise de malware em sua análise?
+    * **Pergunta**: Você usa análise de malware em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.24 Você usa análise de rede em sua análise?
+    * **Pergunta**: Você usa análise de rede em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.25 Você usa análise de memória em sua análise?
+    * **Pergunta**: Você usa análise de memória em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.26 Você usa análise de disco em sua análise?
+    * **Pergunta**: Você usa análise de disco em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.27 Você usa análise de sistema de arquivos em sua análise?
+    * **Pergunta**: Você usa análise de sistema de arquivos em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.28 Você usa análise de registro em sua análise?
+    * **Pergunta**: Você usa análise de registro em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.29 Você usa análise de artefatos em sua análise?
+    * **Pergunta**: Você usa análise de artefatos em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.30 Você usa análise de linha do tempo em sua análise?
+    * **Pergunta**: Você usa análise de linha do tempo em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.31 Você usa análise de metadados em sua análise?
+    * **Pergunta**: Você usa análise de metadados em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.32 Você usa análise de tráfego de rede em sua análise?
+    * **Pergunta**: Você usa análise de tráfego de rede em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.33 Você usa análise de pacotes em sua análise?
+    * **Pergunta**: Você usa análise de pacotes em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.34 Você usa análise de fluxo em sua análise?
+    * **Pergunta**: Você usa análise de fluxo em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.35 Você usa análise de protocolo em sua análise?
+    * **Pergunta**: Você usa análise de protocolo em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.36 Você usa análise de sessões em sua análise?
+    * **Pergunta**: Você usa análise de sessões em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.37 Você usa análise de credenciais em sua análise?
+    * **Pergunta**: Você usa análise de credenciais em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.38 Você usa análise de vulnerabilidades em sua análise?
+    * **Pergunta**: Você usa análise de vulnerabilidades em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.39 Você usa análise de configurações em sua análise?
+    * **Pergunta**: Você usa análise de configurações em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 7.40 Você usa análise de conformidade em sua análise?
+    * **Pergunta**: Você usa análise de conformidade em sua análise?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+### Resposta
+
+* **ID**: 8.1 Você tem um plano de resposta a incidentes?
+    * **Pergunta**: Você tem um plano de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.2 Você documentou o plano de resposta a incidentes?
+    * **Pergunta**: Você documentou o plano de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.3 Você comunica o plano de resposta a incidentes?
+    * **Pergunta**: Você comunica o plano de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.4 Você implementou o plano de resposta a incidentes?
+    * **Pergunta**: Você implementou o plano de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.5 Você mede o desempenho do plano de resposta a incidentes?
+    * **Pergunta**: Você mede o desempenho do plano de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.6 Você usa o plano de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.7 Você tem uma equipe de resposta a incidentes?
+    * **Pergunta**: Você tem uma equipe de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.8 Você documentou a equipe de resposta a incidentes?
+    * **Pergunta**: Você documentou a equipe de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.9 Você treina a equipe de resposta a incidentes?
+    * **Pergunta**: Você treina a equipe de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.10 Você testa a equipe de resposta a incidentes?
+    * **Pergunta**: Você testa a equipe de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.11 Você mede o desempenho da equipe de resposta a incidentes?
+    * **Pergunta**: Você mede o desempenho da equipe de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.12 Você usa o desempenho da equipe de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho da equipe de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.13 Você tem um processo de resposta a incidentes?
+    * **Pergunta**: Você tem um processo de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.14 Você documentou o processo de resposta a incidentes?
+    * **Pergunta**: Você documentou o processo de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.15 Você comunica o processo de resposta a incidentes?
+    * **Pergunta**: Você comunica o processo de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.16 Você implementou o processo de resposta a incidentes?
+    * **Pergunta**: Você implementou o processo de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.17 Você mede o desempenho do processo de resposta a incidentes?
+    * **Pergunta**: Você mede o desempenho do processo de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.18 Você usa o desempenho do processo de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do processo de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.19 Você tem um kit de ferramentas de resposta a incidentes?
+    * **Pergunta**: Você tem um kit de ferramentas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.20 Você documentou o kit de ferramentas de resposta a incidentes?
+    * **Pergunta**: Você documentou o kit de ferramentas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.21 Você mantém o kit de ferramentas de resposta a incidentes?
+    * **Pergunta**: Você mantém o kit de ferramentas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.22 Você usa o kit de ferramentas de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o kit de ferramentas de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.23 Você tem um programa de exercícios de resposta a incidentes?
+    * **Pergunta**: Você tem um programa de exercícios de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.24 Você documentou o programa de exercícios de resposta a incidentes?
+    * **Pergunta**: Você documentou o programa de exercícios de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.25 Você implementou o programa de exercícios de resposta a incidentes?
+    * **Pergunta**: Você implementou o programa de exercícios de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.26 Você mede o desempenho do programa de exercícios de resposta a incidentes?
+    * **Pergunta**: Você mede o desempenho do programa de exercícios de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.27 Você usa o desempenho do programa de exercícios de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de exercícios de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.28 Você tem um programa de lições aprendidas de resposta a incidentes?
+    * **Pergunta**: Você tem um programa de lições aprendidas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.29 Você documentou o programa de lições aprendidas de resposta a incidentes?
+    * **Pergunta**: Você documentou o programa de lições aprendidas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.30 Você implementou o programa de lições aprendidas de resposta a incidentes?
+    * **Pergunta**: Você implementou o programa de lições aprendidas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.31 Você mede o desempenho do programa de lições aprendidas de resposta a incidentes?
+    * **Pergunta**: Você mede o desempenho do programa de lições aprendidas de resposta a incidentes?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 8.32 Você usa o desempenho do programa de lições aprendidas de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de lições aprendidas de resposta a incidentes para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+### Recuperação
+
+* **ID**: 9.1 Você tem um plano de recuperação de desastres?
+    * **Pergunta**: Você tem um plano de recuperação de desastres?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.2 Você documentou o plano de recuperação de desastres?
+    * **Pergunta**: Você documentou o plano de recuperação de desastres?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.3 Você comunica o plano de recuperação de desastres?
+    * **Pergunta**: Você comunica o plano de recuperação de desastres?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.4 Você implementou o plano de recuperação de desastres?
+    * **Pergunta**: Você implementou o plano de recuperação de desastres?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.5 Você mede o desempenho do plano de recuperação de desastres?
+    * **Pergunta**: Você mede o desempenho do plano de recuperação de desastres?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.6 Você usa o plano de recuperação de desastres para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de recuperação de desastres para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.7 Você tem um plano de continuidade de negócios?
+    * **Pergunta**: Você tem um plano de continuidade de negócios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.8 Você documentou o plano de continuidade de negócios?
+    * **Pergunta**: Você documentou o plano de continuidade de negócios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.9 Você comunica o plano de continuidade de negócios?
+    * **Pergunta**: Você comunica o plano de continuidade de negócios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.10 Você implementou o plano de continuidade de negócios?
+    * **Pergunta**: Você implementou o plano de continuidade de negócios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.11 Você mede o desempenho do plano de continuidade de negócios?
+    * **Pergunta**: Você mede o desempenho do plano de continuidade de negócios?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.12 Você usa o plano de continuidade de negócios para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de continuidade de negócios para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.13 Você tem um plano de gestão de crises?
+    * **Pergunta**: Você tem um plano de gestão de crises?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.14 Você documentou o plano de gestão de crises?
+    * **Pergunta**: Você documentou o plano de gestão de crises?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.15 Você comunica o plano de gestão de crises?
+    * **Pergunta**: Você comunica o plano de gestão de crises?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.16 Você implementou o plano de gestão de crises?
+    * **Pergunta**: Você implementou o plano de gestão de crises?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.17 Você mede o desempenho do plano de gestão de crises?
+    * **Pergunta**: Você mede o desempenho do plano de gestão de crises?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 9.18 Você usa o plano de gestão de crises para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o plano de gestão de crises para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+
+### Melhoria Contínua
+
+* **ID**: 10.1 Você tem um programa de melhoria contínua?
+    * **Pergunta**: Você tem um programa de melhoria contínua?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.2 Você documentou o programa de melhoria contínua?
+    * **Pergunta**: Você documentou o programa de melhoria contínua?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.3 Você implementou o programa de melhoria contínua?
+    * **Pergunta**: Você implementou o programa de melhoria contínua?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.4 Você mede o desempenho do programa de melhoria contínua?
+    * **Pergunta**: Você mede o desempenho do programa de melhoria contínua?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.5 Você usa o desempenho do programa de melhoria contínua para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de melhoria contínua para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.6 Você tem um programa de auditoria interna?
+    * **Pergunta**: Você tem um programa de auditoria interna?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.7 Você documentou o programa de auditoria interna?
+    * **Pergunta**: Você documentou o programa de auditoria interna?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.8 Você implementou o programa de auditoria interna?
+    * **Pergunta**: Você implementou o programa de auditoria interna?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.9 Você mede o desempenho do programa de auditoria interna?
+    * **Pergunta**: Você mede o desempenho do programa de auditoria interna?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.10 Você usa o desempenho do programa de auditoria interna para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de auditoria interna para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.11 Você tem um programa de auditoria externa?
+    * **Pergunta**: Você tem um programa de auditoria externa?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.12 Você documentou o programa de auditoria externa?
+    * **Pergunta**: Você documentou o programa de auditoria externa?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.13 Você implementou o programa de auditoria externa?
+    * **Pergunta**: Você implementou o programa de auditoria externa?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.14 Você mede o desempenho do programa de auditoria externa?
+    * **Pergunta**: Você mede o desempenho do programa de auditoria externa?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.15 Você usa o desempenho do programa de auditoria externa para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de auditoria externa para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.16 Você tem um programa de análise de lacunas?
+    * **Pergunta**: Você tem um programa de análise de lacunas?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.17 Você documentou o programa de análise de lacunas?
+    * **Pergunta**: Você documentou o programa de análise de lacunas?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.18 Você implementou o programa de análise de lacunas?
+    * **Pergunta**: Você implementou o programa de análise de lacunas?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.19 Você mede o desempenho do programa de análise de lacunas?
+    * **Pergunta**: Você mede o desempenho do programa de análise de lacunas?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.20 Você usa o desempenho do programa de análise de lacunas para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de análise de lacunas para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.21 Você tem um programa de benchmarking?
+    * **Pergunta**: Você tem um programa de benchmarking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.22 Você documentou o programa de benchmarking?
+    * **Pergunta**: Você documentou o programa de benchmarking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.23 Você implementou o programa de benchmarking?
+    * **Pergunta**: Você implementou o programa de benchmarking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.24 Você mede o desempenho do programa de benchmarking?
+    * **Pergunta**: Você mede o desempenho do programa de benchmarking?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.25 Você usa o desempenho do programa de benchmarking para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de benchmarking para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.26 Você tem um programa de medição de maturidade?
+    * **Pergunta**: Você tem um programa de medição de maturidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.27 Você documentou o programa de medição de maturidade?
+    * **Pergunta**: Você documentou o programa de medição de maturidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.28 Você implementou o programa de medição de maturidade?
+    * **Pergunta**: Você implementou o programa de medição de maturidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.29 Você mede o desempenho do programa de medição de maturidade?
+    * **Pergunta**: Você mede o desempenho do programa de medição de maturidade?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
+* **ID**: 10.30 Você usa o desempenho do programa de medição de maturidade para impulsionar a tomada de decisões?
+    * **Pergunta**: Você usa o desempenho do programa de medição de maturidade para impulsionar a tomada de decisões?
+    * **Tipo de Campo**: multiple_choice
+    * **Opções de Resposta**: Não sei, Não, Parcialmente, Sim
+    * **Orientação**:
