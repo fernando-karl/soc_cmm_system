@@ -1,14 +1,17 @@
-from fastapi import FastAPI, HTTPException, Request, Form
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi import FastAPI, HTTPException, Request, Form, Depends, status
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import HTTPBearer
 from pydantic import BaseModel
 from typing import Optional, List
 import uvicorn
 import os
+from datetime import timedelta
 
 from database import DatabaseManager
+from auth import auth_manager, create_access_token, get_current_active_user, UserCreate, UserLogin, Token
 
 app = FastAPI(title="SOC CMM Assessment System", version="1.0.0")
 
@@ -44,47 +47,163 @@ class AnswerSubmit(BaseModel):
     answer_option_id: Optional[int] = None
     answer_text: Optional[str] = None
 
+# Authentication token dependency
+security = HTTPBearer(auto_error=False)
+
+# Authentication helper function
+async def get_current_user_from_request(request: Request):
+    """Get current user from request cookies or headers"""
+    token = request.cookies.get("access_token")
+    if not token:
+        return None
+    
+    try:
+        # Decode JWT token to get username
+        from jose import jwt
+        payload = jwt.decode(token, auth_manager.SECRET_KEY, algorithms=["HS256"])
+        username = payload.get("sub")
+        if username:
+            user = auth_manager.get_user_by_username(username)
+            return user
+    except:
+        return None
+    
+    return None
+
 # API Routes
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     """Home page"""
-    return templates.TemplateResponse("index.html", {"request": request})
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("index.html", {"request": request, "user": user})
+
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request):
+    """Login page"""
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@app.get("/register", response_class=HTMLResponse)
+async def register_page(request: Request):
+    """Register page"""
+    return templates.TemplateResponse("register.html", {"request": request})
+
+@app.post("/api/auth/register")
+async def register(user: UserCreate):
+    """Register a new user"""
+    try:
+        user_id = auth_manager.create_user(
+            username=user.username,
+            email=user.email,
+            password=user.password,
+            full_name=user.full_name
+        )
+        return {"message": "User registered successfully", "user_id": user_id}
+    except HTTPException as e:
+        return JSONResponse(status_code=e.status_code, content={"detail": e.detail})
+
+@app.post("/api/auth/login")
+async def login(user_credentials: UserLogin):
+    """Login user"""
+    user = auth_manager.authenticate_user(user_credentials.username, user_credentials.password)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect username or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    access_token_expires = timedelta(minutes=30)
+    access_token = create_access_token(
+        data={"sub": user["username"]}, expires_delta=access_token_expires
+    )
+    
+    response = JSONResponse(content={
+        "access_token": access_token, 
+        "token_type": "bearer", 
+        "user": user
+    })
+    
+    # Set cookie
+    response.set_cookie(
+        key="access_token",
+        value=access_token,
+        max_age=1800,  # 30 minutes
+        httponly=True,
+        secure=False,  # Set to True in production with HTTPS
+        samesite="lax"
+    )
+    
+    return response
+
+@app.post("/api/auth/logout")
+async def logout():
+    """Logout user"""
+    response = JSONResponse(content={"message": "Logged out successfully"})
+    response.delete_cookie(
+        key="access_token",
+        httponly=True,
+        secure=False,
+        samesite="lax"
+    )
+    return response
 
 @app.get("/customers", response_class=HTMLResponse)
 async def customers_page(request: Request):
     """Customers management page"""
-    customers = db.get_customers()
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    customers = db.get_customers(user_id=user["id"])
     return templates.TemplateResponse("customers.html", {
         "request": request, 
-        "customers": customers
+        "customers": customers,
+        "user": user
     })
 
 @app.get("/assessment/{assessment_id}", response_class=HTMLResponse)
 async def assessment_page(request: Request, assessment_id: int):
     """Assessment questionnaire page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
     assessment = db.get_assessment(assessment_id)
     if not assessment:
         raise HTTPException(status_code=404, detail="Assessment not found")
     
     customer = db.get_customer(assessment['customer_id'])
+    # Check if customer belongs to current user
+    if customer['user_id'] != user['id']:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     domains = db.get_domains()
     
     return templates.TemplateResponse("assessment.html", {
         "request": request,
         "assessment": assessment,
         "customer": customer,
-        "domains": domains
+        "domains": domains,
+        "user": user
     })
 
 @app.get("/results/{assessment_id}", response_class=HTMLResponse)
 async def results_page(request: Request, assessment_id: int):
     """Assessment results page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
     assessment = db.get_assessment(assessment_id)
     if not assessment:
         raise HTTPException(status_code=404, detail="Assessment not found")
     
     customer = db.get_customer(assessment['customer_id'])
+    # Check if customer belongs to current user
+    if customer['user_id'] != user['id']:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     scores = db.get_assessment_scores(assessment_id)
     radar_data = db.get_radar_chart_data(assessment_id)
     
@@ -93,15 +212,17 @@ async def results_page(request: Request, assessment_id: int):
         "assessment": assessment,
         "customer": customer,
         "scores": scores,
-        "radar_data": radar_data
+        "radar_data": radar_data,
+        "user": user
     })
 
 # API Endpoints
 
 @app.post("/api/customers")
-async def create_customer(customer: CustomerCreate):
+async def create_customer(customer: CustomerCreate, current_user: dict = Depends(get_current_active_user)):
     """Create a new customer"""
     customer_id = db.create_customer(
+        user_id=current_user["id"],
         name=customer.name,
         email=customer.email,
         organization=customer.organization
@@ -109,22 +230,32 @@ async def create_customer(customer: CustomerCreate):
     return {"id": customer_id, "message": "Customer created successfully"}
 
 @app.get("/api/customers")
-async def get_customers():
-    """Get all customers"""
-    customers = db.get_customers()
+async def get_customers(current_user: dict = Depends(get_current_active_user)):
+    """Get all customers for the current user"""
+    customers = db.get_customers(user_id=current_user["id"])
     return {"customers": customers}
 
 @app.get("/api/customers/{customer_id}")
-async def get_customer(customer_id: int):
+async def get_customer(customer_id: int, current_user: dict = Depends(get_current_active_user)):
     """Get customer details"""
     customer = db.get_customer(customer_id)
     if not customer:
         raise HTTPException(status_code=404, detail="Customer not found")
+    
+    # Check if customer belongs to current user
+    if customer['user_id'] != current_user['id']:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     return {"customer": customer}
 
 @app.post("/api/assessments")
-async def create_assessment(assessment: AssessmentCreate):
+async def create_assessment(assessment: AssessmentCreate, current_user: dict = Depends(get_current_active_user)):
     """Create a new assessment"""
+    # Verify customer belongs to current user
+    customer = db.get_customer(assessment.customer_id)
+    if not customer or customer['user_id'] != current_user['id']:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     assessment_id = db.create_assessment(
         customer_id=assessment.customer_id,
         name=assessment.name
@@ -132,8 +263,13 @@ async def create_assessment(assessment: AssessmentCreate):
     return {"id": assessment_id, "message": "Assessment created successfully"}
 
 @app.get("/api/customers/{customer_id}/assessments")
-async def get_customer_assessments(customer_id: int):
+async def get_customer_assessments(customer_id: int, current_user: dict = Depends(get_current_active_user)):
     """Get all assessments for a customer"""
+    # Verify customer belongs to current user
+    customer = db.get_customer(customer_id)
+    if not customer or customer['user_id'] != current_user['id']:
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     assessments = db.get_customer_assessments(customer_id)
     return {"assessments": assessments}
 

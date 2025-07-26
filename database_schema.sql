@@ -1,13 +1,27 @@
 -- SOC CMM Assessment System Database Schema
 
--- Customers table
+-- Users table for authentication
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    hashed_password VARCHAR(255) NOT NULL,
+    full_name VARCHAR(255),
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Customers table (now associated with users)
 CREATE TABLE customers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255),
     organization VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 -- Domains table (Business, People, Process, Technology, Services, Results)
@@ -90,6 +104,9 @@ CREATE TABLE assessment_scores (
 );
 
 -- Create indexes for better performance
+CREATE INDEX idx_users_username ON users(username);
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_customers_user ON customers(user_id);
 CREATE INDEX idx_customers_email ON customers(email);
 CREATE INDEX idx_aspects_domain ON aspects(domain_id);
 CREATE INDEX idx_questions_aspect ON questions(aspect_id);
