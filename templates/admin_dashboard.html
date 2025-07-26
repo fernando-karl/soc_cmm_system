@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - SOC CMM{% endblock %}
+
+{% block extra_head %}
+<style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-left: 4px solid #007bff;
+    }
+    
+    .stat-card h3 {
+        margin: 0 0 0.5rem 0;
+        color: #333;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .stat-card .stat-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff;
+        margin: 0;
+    }
+    
+    .stat-card .stat-change {
+        font-size: 0.8rem;
+        color: #28a745;
+        margin-top: 0.5rem;
+    }
+    
+    .chart-container {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 1.5rem;
+    }
+    
+    .chart-container h3 {
+        margin: 0 0 1rem 0;
+        color: #333;
+        font-size: 1.2rem;
+    }
+    
+    .recent-assessments {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .assessment-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .assessment-item:last-child {
+        border-bottom: none;
+    }
+    
+    .assessment-info h4 {
+        margin: 0 0 0.25rem 0;
+        color: #333;
+    }
+    
+    .assessment-info p {
+        margin: 0;
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .status-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
+    .status-in_progress {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .status-completed {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .users-table {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .users-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .users-table th,
+    .users-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .users-table th {
+        background: #f8f9fa;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .active-badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
+    .active-true {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .active-false {
+        background: #f8d7da;
+        color: #721c24;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1><i class="fas fa-chart-line"></i> Admin Dashboard</h1>
+        <p>Visão geral do sistema SOC CMM</p>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <h3>Total de Usuários</h3>
+            <p class="stat-value">{{ stats.total_users }}</p>
+            <p class="stat-change">{{ stats.active_users }} ativos</p>
+        </div>
+        
+        <div class="stat-card">
+            <h3>Total de Clientes</h3>
+            <p class="stat-value">{{ stats.total_customers }}</p>
+            <p class="stat-change">Clientes registrados</p>
+        </div>
+        
+        <div class="stat-card">
+            <h3>Total de Avaliações</h3>
+            <p class="stat-value">{{ stats.total_assessments }}</p>
+            <p class="stat-change">
+                {% if stats.assessments_by_status.completed %}
+                    {{ stats.assessments_by_status.completed }} concluídas
+                {% endif %}
+            </p>
+        </div>
+        
+        <div class="stat-card">
+            <h3>Avaliações em Andamento</h3>
+            <p class="stat-value">
+                {% if stats.assessments_by_status.in_progress %}
+                    {{ stats.assessments_by_status.in_progress }}
+                {% else %}
+                    0
+                {% endif %}
+            </p>
+            <p class="stat-change">Em progresso</p>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- Assessments by Status Chart -->
+        <div class="chart-container">
+            <h3>Avaliações por Status</h3>
+            <canvas id="assessmentsChart" width="400" height="200"></canvas>
+        </div>
+        
+        <!-- Monthly Growth Chart -->
+        <div class="chart-container">
+            <h3>Crescimento Mensal</h3>
+            <canvas id="growthChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- Recent Assessments -->
+        <div class="recent-assessments">
+            <h3>Avaliações Recentes</h3>
+            {% if stats.recent_assessments %}
+                {% for assessment in stats.recent_assessments %}
+                <div class="assessment-item">
+                    <div class="assessment-info">
+                        <h4>{{ assessment.customer_name }}</h4>
+                        <p>{{ assessment.username }} • {{ assessment.started_at[:10] }}</p>
+                    </div>
+                    <span class="status-badge status-{{ assessment.status }}">
+                        {% if assessment.status == 'in_progress' %}
+                            Em Progresso
+                        {% elif assessment.status == 'completed' %}
+                            Concluída
+                        {% else %}
+                            {{ assessment.status }}
+                        {% endif %}
+                    </span>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nenhuma avaliação encontrada.</p>
+            {% endif %}
+        </div>
+
+        <!-- Top Users by Customers -->
+        <div class="users-table">
+            <h3>Usuários por Número de Clientes</h3>
+            {% if stats.customers_by_user %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Clientes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in stats.customers_by_user %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.customer_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Nenhum usuário encontrado.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Assessments by Status Chart
+    const assessmentsCtx = document.getElementById('assessmentsChart').getContext('2d');
+    const assessmentsData = {
+        labels: ['Em Progresso', 'Concluídas'],
+        datasets: [{
+            data: [
+                {{ stats.assessments_by_status.get('in_progress', 0) }},
+                {{ stats.assessments_by_status.get('completed', 0) }}
+            ],
+            backgroundColor: ['#ffc107', '#28a745'],
+            borderColor: ['#e0a800', '#1e7e34'],
+            borderWidth: 2
+        }]
+    };
+    
+    new Chart(assessmentsCtx, {
+        type: 'doughnut',
+        data: assessmentsData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    // Monthly Growth Chart
+    const growthCtx = document.getElementById('growthChart').getContext('2d');
+    const monthlyData = {
+        labels: [
+            {% for user in stats.monthly_users %}
+                '{{ user.month }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            label: 'Novos Usuários',
+            data: [
+                {% for user in stats.monthly_users %}
+                    {{ user.new_users }},
+                {% endfor %}
+            ],
+            borderColor: '#007bff',
+            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+            tension: 0.4
+        }, {
+            label: 'Novos Clientes',
+            data: [
+                {% for customer in stats.monthly_customers %}
+                    {{ customer.new_customers }},
+                {% endfor %}
+            ],
+            borderColor: '#28a745',
+            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+            tension: 0.4
+        }]
+    };
+    
+    new Chart(growthCtx, {
+        type: 'line',
+        data: monthlyData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
