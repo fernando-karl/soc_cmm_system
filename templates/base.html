@@ -30,12 +30,27 @@
             </div>
             <div class="nav-auth">
                 {% if user %}
-                <div class="user-info">
-                    <span class="user-name">{{ user.full_name or user.username }}</span>
-                    <button class="btn-logout" onclick="logout()">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
+                <div class="user-dropdown">
+                    <button class="user-dropdown-toggle" onclick="toggleUserDropdown()">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="user-name">{{ user.full_name or user.username }}</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
+                    <div class="user-dropdown-menu" id="userDropdown">
+                        <div class="dropdown-header">
+                            <strong>{{ user.full_name or user.username }}</strong>
+                            <small>{{ user.email }}</small>
+                        </div>
+                        <a href="/change-password" class="dropdown-item">
+                            <i class="fas fa-key"></i>
+                            <span>Change Password</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item logout-item" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
                 </div>
                 {% else %}
                 <div class="auth-buttons">
@@ -84,6 +99,21 @@
                 window.location.href = '/';
             }
         }
+
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('userDropdown');
+            const toggle = document.querySelector('.user-dropdown-toggle');
+            
+            if (dropdown && !dropdown.contains(event.target) && !toggle.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
     </script>
     {% block extra_scripts %}{% endblock %}
 </body>
