@@ -11,9 +11,10 @@ import os
 from datetime import timedelta
 
 from database import DatabaseManager
-from auth import auth_manager, create_access_token, get_current_active_user, UserCreate, UserLogin, Token
+from auth import auth_manager, create_access_token, get_current_active_user, UserCreate, UserLogin, Token, include_auth_routes
 
 app = FastAPI(title="SOC CMM Assessment System", version="1.0.0")
+include_auth_routes(app)
 
 # Enable CORS
 app.add_middleware(
@@ -215,6 +216,13 @@ async def results_page(request: Request, assessment_id: int):
         "radar_data": radar_data,
         "user": user
     })
+
+@app.get("/change-password", response_class=HTMLResponse)
+async def change_password_page(request: Request):
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    return templates.TemplateResponse("change_password.html", {"request": request, "user": user})
 
 # API Endpoints
 

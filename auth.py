@@ -1,12 +1,13 @@
 from datetime import datetime, timedelta
 from typing import Optional
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, status, APIRouter
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 import sqlite3
 import os
+from fastapi import FastAPI
 
 # Security configuration
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-here-change-in-production")
@@ -174,3 +175,32 @@ def get_current_active_user(current_user: dict = Depends(get_current_user)) -> d
     if not current_user.get("is_active"):
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
+
+router = APIRouter()
+
+class PasswordChangeRequest(BaseModel):
+    current_password: str
+    new_password: str
+    confirm_password: str
+
+@router.post("/api/auth/change-password")
+def change_password(request: PasswordChangeRequest, current_user: dict = Depends(get_current_active_user)):
+    """Change the password for the current user"""
+    if request.new_password != request.confirm_password:
+        raise HTTPException(status_code=400, detail="New passwords do not match")
+    if len(request.new_password) < 8:
+        raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
+    if not auth_manager.verify_password(request.current_password, current_user['hashed_password']):
+        raise HTTPException(status_code=400, detail="Current password is incorrect")
+    
+    # Update password
+    hashed_password = auth_manager.get_password_hash(request.new_password)
+    conn = auth_manager.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE users SET hashed_password = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (hashed_password, current_user['id']))
+    conn.commit()
+    conn.close()
+    return {"message": "Password changed successfully"}
+
+def include_auth_routes(app: FastAPI):
+    app.include_router(router)
