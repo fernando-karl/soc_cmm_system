@@ -3,6 +3,29 @@
 {% block title %}SOC CMM Assessment System - Home{% endblock %}
 
 {% block content %}
+{% if user and user.username == 'admin' %}
+<div class="alert alert-warning" style="margin-bottom: 2rem;">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+            <strong>Security Notice:</strong> You are using the default admin account. 
+            <a href="/change-password" style="color: inherit; text-decoration: underline;">Please change your password immediately</a> for security.
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if request.query_params.get('password_changed') == 'true' %}
+<div class="alert alert-success" style="margin-bottom: 2rem;">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-check-circle"></i>
+        <div>
+            <strong>Success!</strong> Your password has been changed successfully.
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <div class="text-center mb-3">
     <h1 class="card-title" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">
         <i class="fas fa-shield-alt"></i>
