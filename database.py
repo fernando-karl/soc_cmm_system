@@ -80,25 +80,29 @@ class DatabaseManager:
         conn.close()
     
     # Customer methods
-    def create_customer(self, name: str, email: str = None, organization: str = None) -> int:
+    def create_customer(self, user_id: int, name: str, email: str = None, organization: str = None) -> int:
         conn = self.get_connection()
         cursor = conn.cursor()
         
         cursor.execute("""
-            INSERT INTO customers (name, email, organization)
-            VALUES (?, ?, ?)
-        """, (name, email, organization))
+            INSERT INTO customers (user_id, name, email, organization)
+            VALUES (?, ?, ?, ?)
+        """, (user_id, name, email, organization))
         
         customer_id = cursor.lastrowid
         conn.commit()
         conn.close()
         return customer_id
     
-    def get_customers(self) -> List[Dict]:
+    def get_customers(self, user_id: int = None) -> List[Dict]:
         conn = self.get_connection()
         cursor = conn.cursor()
         
-        cursor.execute("SELECT * FROM customers ORDER BY created_at DESC")
+        if user_id:
+            cursor.execute("SELECT * FROM customers WHERE user_id = ? ORDER BY created_at DESC", (user_id,))
+        else:
+            cursor.execute("SELECT * FROM customers ORDER BY created_at DESC")
+        
         customers = [dict(row) for row in cursor.fetchall()]
         
         conn.close()
