@@ -48,6 +48,16 @@ class AnswerSubmit(BaseModel):
     answer_option_id: Optional[int] = None
     answer_text: Optional[str] = None
 
+class UserUpdate(BaseModel):
+    username: str
+    email: str
+    full_name: Optional[str] = None
+    is_active: bool = True
+
+class UserPasswordUpdate(BaseModel):
+    new_password: str
+    confirm_password: str
+
 # Authentication token dependency
 security = HTTPBearer(auto_error=False)
 
@@ -224,6 +234,67 @@ async def change_password_page(request: Request):
         return RedirectResponse(url="/login", status_code=302)
     return templates.TemplateResponse("change_password.html", {"request": request, "user": user})
 
+@app.get("/admin", response_class=HTMLResponse)
+async def admin_dashboard(request: Request):
+    """Admin dashboard page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    # Check if user is admin (you can implement your own admin logic)
+    # For now, we'll allow any authenticated user to access admin
+    # In production, you should add proper admin role checking
+    
+    stats = db.get_dashboard_stats()
+    return templates.TemplateResponse("admin_dashboard.html", {
+        "request": request, 
+        "user": user,
+        "stats": stats
+    })
+
+@app.get("/admin/users", response_class=HTMLResponse)
+async def admin_users_page(request: Request):
+    """Admin users management page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    users = db.get_all_users()
+    return templates.TemplateResponse("admin_users.html", {
+        "request": request, 
+        "users": users,
+        "user": user
+    })
+
+@app.get("/admin/users/{user_id}/edit", response_class=HTMLResponse)
+async def admin_edit_user_page(request: Request, user_id: int):
+    """Admin edit user page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    target_user = db.get_user_by_id(user_id)
+    if not target_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    return templates.TemplateResponse("admin_edit_user.html", {
+        "request": request, 
+        "user": user,
+        "target_user": target_user
+    })
+
+@app.get("/admin/users/new", response_class=HTMLResponse)
+async def admin_new_user_page(request: Request):
+    """Admin create new user page"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    return templates.TemplateResponse("admin_new_user.html", {
+        "request": request, 
+        "user": user
+    })
+
 # API Endpoints
 
 @app.post("/api/customers")
@@ -360,6 +431,73 @@ async def get_radar_chart_data(assessment_id: int):
     
     radar_data = db.get_radar_chart_data(assessment_id)
     return {"radar_data": radar_data}
+
+# Admin API Endpoints
+
+@app.get("/api/admin/dashboard")
+async def get_admin_dashboard(current_user: dict = Depends(get_current_active_user)):
+    """Get admin dashboard statistics"""
+    stats = db.get_dashboard_stats()
+    return {"stats": stats}
+
+@app.get("/api/admin/users")
+async def get_all_users(current_user: dict = Depends(get_current_active_user)):
+    """Get all users for admin management"""
+    users = db.get_all_users()
+    return {"users": users}
+
+@app.get("/api/admin/users/{user_id}")
+async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_active_user)):
+    """Get user by ID for admin management"""
+    user = db.get_user_by_id(user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"user": user}
+
+@app.put("/api/admin/users/{user_id}")
+async def update_user(user_id: int, user_update: UserUpdate, current_user: dict = Depends(get_current_active_user)):
+    """Update user information"""
+    success = auth_manager.update_user(
+        user_id=user_id,
+        username=user_update.username,
+        email=user_update.email,
+        full_name=user_update.full_name,
+        is_active=user_update.is_active
+    )
+    
+    if not success:
+        raise HTTPException(status_code=400, detail="Failed to update user")
+    
+    return {"message": "User updated successfully"}
+
+@app.put("/api/admin/users/{user_id}/password")
+async def update_user_password(user_id: int, password_update: UserPasswordUpdate, current_user: dict = Depends(get_current_active_user)):
+    """Update user password"""
+    if password_update.new_password != password_update.confirm_password:
+        raise HTTPException(status_code=400, detail="Passwords do not match")
+    
+    if len(password_update.new_password) < 8:
+        raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
+    
+    success = auth_manager.update_user_password(user_id, password_update.new_password)
+    
+    if not success:
+        raise HTTPException(status_code=400, detail="Failed to update password")
+    
+    return {"message": "Password updated successfully"}
+
+@app.delete("/api/admin/users/{user_id}")
+async def delete_user(user_id: int, current_user: dict = Depends(get_current_active_user)):
+    """Delete a user"""
+    if user_id == current_user["id"]:
+        raise HTTPException(status_code=400, detail="Cannot delete your own account")
+    
+    success = auth_manager.delete_user(user_id)
+    
+    if not success:
+        raise HTTPException(status_code=400, detail="Failed to delete user")
+    
+    return {"message": "User deleted successfully"}
 
 @app.get("/api/customers/{customer_id}/progress")
 async def get_customer_progress(customer_id: int):

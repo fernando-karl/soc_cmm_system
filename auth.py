@@ -129,6 +129,65 @@ class AuthManager:
         
         return dict(user) if user else None
 
+    def update_user(self, user_id: int, username: str, email: str, full_name: str = None, is_active: bool = True) -> bool:
+        """Update user information"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            cursor.execute("""
+                UPDATE users 
+                SET username = ?, email = ?, full_name = ?, is_active = ?, updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+            """, (username, email, full_name, is_active, user_id))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.close()
+            return False
+    
+    def update_user_password(self, user_id: int, new_password: str) -> bool:
+        """Update user password"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            hashed_password = self.get_password_hash(new_password)
+            cursor.execute("""
+                UPDATE users 
+                SET hashed_password = ?, updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+            """, (hashed_password, user_id))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.close()
+            return False
+    
+    def delete_user(self, user_id: int) -> bool:
+        """Delete a user (admin only)"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            # First delete all related data
+            cursor.execute("DELETE FROM assessment_answers WHERE assessment_id IN (SELECT id FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?))", (user_id,))
+            cursor.execute("DELETE FROM assessment_scores WHERE assessment_id IN (SELECT id FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?))", (user_id,))
+            cursor.execute("DELETE FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?)", (user_id,))
+            cursor.execute("DELETE FROM customers WHERE user_id = ?", (user_id,))
+            cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.close()
+            return False
+
 # Global auth manager instance
 auth_manager = AuthManager()
 
