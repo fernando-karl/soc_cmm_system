@@ -374,3 +374,161 @@ class DatabaseManager:
             }]
         }
 
+    # Admin methods
+    def get_all_users(self) -> List[Dict]:
+        """Get all users for admin management"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT id, username, email, full_name, is_active, created_at, updated_at
+            FROM users
+            ORDER BY created_at DESC
+        """)
+        
+        users = [dict(row) for row in cursor.fetchall()]
+        conn.close()
+        return users
+    
+    def get_user_by_id(self, user_id: int) -> Optional[Dict]:
+        """Get user by ID for admin management"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT id, username, email, full_name, is_active, created_at, updated_at
+            FROM users
+            WHERE id = ?
+        """, (user_id,))
+        
+        user = cursor.fetchone()
+        conn.close()
+        
+        return dict(user) if user else None
+    
+    def update_user(self, user_id: int, username: str, email: str, full_name: str = None, is_active: bool = True) -> bool:
+        """Update user information"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            cursor.execute("""
+                UPDATE users 
+                SET username = ?, email = ?, full_name = ?, is_active = ?, updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+            """, (username, email, full_name, is_active, user_id))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.close()
+            return False
+    
+    def delete_user(self, user_id: int) -> bool:
+        """Delete a user (admin only)"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        try:
+            # First delete all related data
+            cursor.execute("DELETE FROM assessment_answers WHERE assessment_id IN (SELECT id FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?))", (user_id,))
+            cursor.execute("DELETE FROM assessment_scores WHERE assessment_id IN (SELECT id FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?))", (user_id,))
+            cursor.execute("DELETE FROM assessments WHERE customer_id IN (SELECT id FROM customers WHERE user_id = ?)", (user_id,))
+            cursor.execute("DELETE FROM customers WHERE user_id = ?", (user_id,))
+            cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            conn.close()
+            return False
+    
+    def get_dashboard_stats(self) -> Dict:
+        """Get dashboard statistics for admin"""
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        
+        # Total users
+        cursor.execute("SELECT COUNT(*) as total FROM users")
+        total_users = cursor.fetchone()[0]
+        
+        # Active users
+        cursor.execute("SELECT COUNT(*) as active FROM users WHERE is_active = 1")
+        active_users = cursor.fetchone()[0]
+        
+        # Total customers
+        cursor.execute("SELECT COUNT(*) as total FROM customers")
+        total_customers = cursor.fetchone()[0]
+        
+        # Total assessments
+        cursor.execute("SELECT COUNT(*) as total FROM assessments")
+        total_assessments = cursor.fetchone()[0]
+        
+        # Assessments by status
+        cursor.execute("""
+            SELECT status, COUNT(*) as count
+            FROM assessments
+            GROUP BY status
+        """)
+        assessments_by_status = {row[0]: row[1] for row in cursor.fetchall()}
+        
+        # Customers by user
+        cursor.execute("""
+            SELECT u.username, COUNT(c.id) as customer_count
+            FROM users u
+            LEFT JOIN customers c ON u.id = c.user_id
+            GROUP BY u.id, u.username
+            ORDER BY customer_count DESC
+        """)
+        customers_by_user = [dict(zip(['username', 'customer_count'], row)) for row in cursor.fetchall()]
+        
+        # Recent assessments
+        cursor.execute("""
+            SELECT a.id, a.name, a.status, a.started_at, a.completed_at, c.name as customer_name, u.username
+            FROM assessments a
+            JOIN customers c ON a.customer_id = c.id
+            JOIN users u ON c.user_id = u.id
+            ORDER BY a.started_at DESC
+            LIMIT 10
+        """)
+        recent_assessments = [dict(zip(['id', 'name', 'status', 'started_at', 'completed_at', 'customer_name', 'username'], row)) for row in cursor.fetchall()]
+        
+        # Monthly statistics
+        cursor.execute("""
+            SELECT 
+                strftime('%Y-%m', created_at) as month,
+                COUNT(*) as new_users
+            FROM users
+            WHERE created_at >= date('now', '-6 months')
+            GROUP BY strftime('%Y-%m', created_at)
+            ORDER BY month DESC
+        """)
+        monthly_users = [dict(zip(['month', 'new_users'], row)) for row in cursor.fetchall()]
+        
+        cursor.execute("""
+            SELECT 
+                strftime('%Y-%m', created_at) as month,
+                COUNT(*) as new_customers
+            FROM customers
+            WHERE created_at >= date('now', '-6 months')
+            GROUP BY strftime('%Y-%m', created_at)
+            ORDER BY month DESC
+        """)
+        monthly_customers = [dict(zip(['month', 'new_customers'], row)) for row in cursor.fetchall()]
+        
+        conn.close()
+        
+        return {
+            'total_users': total_users,
+            'active_users': active_users,
+            'total_customers': total_customers,
+            'total_assessments': total_assessments,
+            'assessments_by_status': assessments_by_status,
+            'customers_by_user': customers_by_user,
+            'recent_assessments': recent_assessments,
+            'monthly_users': monthly_users,
+            'monthly_customers': monthly_customers
+        }
+
