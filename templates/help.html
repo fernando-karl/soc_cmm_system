@@ -1,0 +1,809 @@
+{% extends "base.html" %}
+
+{% block title %}Help & Documentation - SOC CMM{% endblock %}
+
+{% block content %}
+<div class="help-container">
+    <!-- Header -->
+    <div class="help-header">
+        <h1 class="help-title">
+            <i class="fas fa-question-circle"></i>
+            SOC CMM Assessment System - Help & Documentation
+        </h1>
+        <p class="help-subtitle">Complete guide to using the Security Operations Center Capability Maturity Model assessment system</p>
+    </div>
+
+    <!-- Navigation TOC -->
+    <div class="help-nav">
+        <div class="toc-container">
+            <h3><i class="fas fa-list"></i> Table of Contents</h3>
+            <ul class="toc-list">
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#getting-started">2. Getting Started</a></li>
+                <li><a href="#assessment-workflow">3. Assessment Workflow</a></li>
+                <li><a href="#domains-maturity">4. SOC CMM Domains & Maturity Levels</a></li>
+                <li><a href="#results-analysis">5. Understanding Results</a></li>
+                <li><a href="#troubleshooting">6. Troubleshooting</a></li>
+                <li><a href="#faq">7. Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="help-content">
+        
+        <!-- Introduction Section -->
+        <section id="introduction" class="help-section">
+            <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+            
+            <div class="info-card">
+                <h3>What is SOC CMM?</h3>
+                <p>The Security Operations Center Capability Maturity Model (SOC CMM) is a comprehensive framework designed to assess and improve the maturity of Security Operations Centers across organizations. It provides a structured approach to evaluating SOC capabilities and identifying areas for improvement.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Customer Management</h4>
+                        <p>Create and manage multiple customers/organizations</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h4>Step-by-Step Assessment</h4>
+                        <p>Guided questionnaire broken into manageable sections</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Maturity Evaluation</h4>
+                        <p>5-level maturity scale assessment</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-radar"></i>
+                        <h4>Visual Results</h4>
+                        <p>Interactive radar charts and progress tracking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="help-section">
+            <h2><i class="fas fa-play-circle"></i> 2. Getting Started</h2>
+            
+            <div class="step-by-step">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Customer Management</h3>
+                        <p>Navigate to the <strong>Customers</strong> page and click "Add Customer" to create a new organization. Fill in the customer details including name, email, and organization.</p>
+                        <div class="tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Tip:</strong> You can create multiple customers to manage assessments for different organizations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create Assessment</h3>
+                        <p>From the customer list, click "New Assessment" to start a new evaluation. The system will create a new assessment and redirect you to the questionnaire.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Complete Assessment</h3>
+                        <p>Follow the guided process through all domains and aspects. Answer questions using the 5-level maturity scale and track your progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Workflow Section -->
+        <section id="assessment-workflow" class="help-section">
+            <h2><i class="fas fa-route"></i> 3. Assessment Workflow</h2>
+            
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4>Domain Selection</h4>
+                    <p>Start with the Business domain and work through each domain systematically. Use the progress bar and step indicator to track your position.</p>
+                </div>
+
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h4>Aspect Selection</h4>
+                    <p>Within each domain, select specific aspects to evaluate. Each aspect contains related questions that assess different capabilities.</p>
+                </div>
+
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>Answer Questions</h4>
+                    <p>Answer all questions in each aspect using the 5-level maturity scale. Complete all aspects in a domain before proceeding to the next.</p>
+                </div>
+
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>View Results</h4>
+                    <p>After completing all domains, view your results including radar charts, domain scores, and detailed breakdowns.</p>
+                </div>
+            </div>
+
+            <div class="assessment-tips">
+                <h3><i class="fas fa-tips"></i> Assessment Tips</h3>
+                <ul>
+                    <li><strong>Save Progress:</strong> Your progress is automatically saved as you complete aspects</li>
+                    <li><strong>Resume Later:</strong> You can return to incomplete assessments at any time</li>
+                    <li><strong>Review Answers:</strong> Use the "Back to Aspects" button to review and modify answers</li>
+                    <li><strong>Complete All:</strong> Ensure all questions in an aspect are answered before proceeding</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Domains & Maturity Levels Section -->
+        <section id="domains-maturity" class="help-section">
+            <h2><i class="fas fa-layer-group"></i> 4. SOC CMM Domains & Maturity Levels</h2>
+            
+            <div class="domains-grid">
+                <div class="domain-card">
+                    <div class="domain-icon business">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Business</h3>
+                    <p>Strategy, governance, cost management, and privacy considerations for SOC operations.</p>
+                    <ul>
+                        <li>Strategic Planning</li>
+                        <li>Governance Framework</li>
+                        <li>Cost Management</li>
+                        <li>Privacy & Compliance</li>
+                    </ul>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon people">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>People</h3>
+                    <p>Employment practices, training programs, performance management, and knowledge sharing.</p>
+                    <ul>
+                        <li>Employment & Retention</li>
+                        <li>Training & Development</li>
+                        <li>Performance Management</li>
+                        <li>Knowledge Management</li>
+                    </ul>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon process">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Process</h3>
+                    <p>Management processes, operational procedures, reporting mechanisms, and use case management.</p>
+                    <ul>
+                        <li>Process Management</li>
+                        <li>Operational Procedures</li>
+                        <li>Reporting & Communication</li>
+                        <li>Use Case Management</li>
+                    </ul>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon technology">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>Security information management, detection capabilities, and analytical tools.</p>
+                    <ul>
+                        <li>Security Information Management</li>
+                        <li>Detection & Monitoring</li>
+                        <li>Analytics & Intelligence</li>
+                        <li>Technology Integration</li>
+                    </ul>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon services">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Services</h3>
+                    <p>Service catalog management, analysis services, threat hunting, and vulnerability management.</p>
+                    <ul>
+                        <li>Service Catalog</li>
+                        <li>Analysis Services</li>
+                        <li>Threat Hunting</li>
+                        <li>Vulnerability Management</li>
+                    </ul>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-icon results">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Results</h3>
+                    <p>Overview of SOC performance, critical success factors, and knowledge sharing practices.</p>
+                    <ul>
+                        <li>Performance Overview</li>
+                        <li>Critical Success Factors</li>
+                        <li>Knowledge Sharing</li>
+                        <li>Continuous Improvement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="maturity-levels">
+                <h3><i class="fas fa-star"></i> Maturity Levels</h3>
+                <div class="maturity-grid">
+                    <div class="maturity-level">
+                        <div class="level-number">1</div>
+                        <h4>Initial</h4>
+                        <p>Ad hoc processes, inconsistent execution, limited documentation</p>
+                    </div>
+                    <div class="maturity-level">
+                        <div class="level-number">2</div>
+                        <h4>Developing</h4>
+                        <p>Basic processes defined, some consistency, initial documentation</p>
+                    </div>
+                    <div class="maturity-level">
+                        <div class="level-number">3</div>
+                        <h4>Defined</h4>
+                        <p>Standardized processes, consistent execution, comprehensive documentation</p>
+                    </div>
+                    <div class="maturity-level">
+                        <div class="level-number">4</div>
+                        <h4>Managed</h4>
+                        <p>Measured processes, quantitative management, continuous monitoring</p>
+                    </div>
+                    <div class="maturity-level">
+                        <div class="level-number">5</div>
+                        <h4>Optimized</h4>
+                        <p>Continuous improvement, innovation focus, predictive capabilities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Analysis Section -->
+        <section id="results-analysis" class="help-section">
+            <h2><i class="fas fa-chart-pie"></i> 5. Understanding Results</h2>
+            
+            <div class="results-explanation">
+                <div class="result-component">
+                    <h3><i class="fas fa-chart-radar"></i> Radar Chart</h3>
+                    <p>The radar chart provides a visual representation of your SOC's maturity across all six domains. Each axis represents a domain, and the shape shows your relative strengths and areas for improvement.</p>
+                    <div class="chart-tips">
+                        <h4>How to Read:</h4>
+                        <ul>
+                            <li><strong>Larger area:</strong> Higher overall maturity</li>
+                            <li><strong>Balanced shape:</strong> Even development across domains</li>
+                            <li><strong>Spikes:</strong> Areas of strength</li>
+                            <li><strong>Dips:</strong> Areas needing improvement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="result-component">
+                    <h3><i class="fas fa-list-alt"></i> Domain Breakdown</h3>
+                    <p>Detailed scores for each domain show your maturity level and provide specific insights into your SOC's capabilities.</p>
+                </div>
+
+                <div class="result-component">
+                    <h3><i class="fas fa-microscope"></i> Aspect Details</h3>
+                    <p>Drill down into specific aspects within each domain to understand detailed performance and identify specific improvement opportunities.</p>
+                </div>
+            </div>
+
+            <div class="interpretation-guide">
+                <h3><i class="fas fa-search"></i> Interpreting Your Results</h3>
+                <div class="interpretation-grid">
+                    <div class="interpretation-item">
+                        <h4>Level 1-2 (Initial/Developing)</h4>
+                        <p>Focus on establishing basic processes and documentation. Prioritize foundational capabilities.</p>
+                    </div>
+                    <div class="interpretation-item">
+                        <h4>Level 3 (Defined)</h4>
+                        <p>Good foundation established. Focus on consistency and standardization across all areas.</p>
+                    </div>
+                    <div class="interpretation-item">
+                        <h4>Level 4-5 (Managed/Optimized)</h4>
+                        <p>Advanced capabilities. Focus on continuous improvement and innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section id="troubleshooting" class="help-section">
+            <h2><i class="fas fa-tools"></i> 6. Troubleshooting</h2>
+            
+            <div class="troubleshooting-grid">
+                <div class="trouble-item">
+                    <h3><i class="fas fa-database"></i> Database Issues</h3>
+                    <p><strong>Problem:</strong> Database errors or corruption</p>
+                    <p><strong>Solution:</strong> Delete the database file and restart the application. The system will recreate the database automatically.</p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3><i class="fas fa-network-wired"></i> Port Conflicts</h3>
+                    <p><strong>Problem:</strong> Application won't start due to port conflicts</p>
+                    <p><strong>Solution:</strong> Change the port number in the main.py file or stop other services using the same port.</p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3><i class="fas fa-download"></i> Missing Dependencies</h3>
+                    <p><strong>Problem:</strong> Import errors or missing modules</p>
+                    <p><strong>Solution:</strong> Run <code>pip install -r requirements.txt</code> to install all required packages.</p>
+                </div>
+
+                <div class="trouble-item">
+                    <h3><i class="fas fa-save"></i> Progress Not Saving</h3>
+                    <p><strong>Problem:</strong> Assessment progress is lost</p>
+                    <p><strong>Solution:</strong> Ensure you complete aspects fully before moving to the next. Use the "Save & Exit" button if needed.</p>
+                </div>
+            </div>
+
+            <div class="support-info">
+                <h3><i class="fas fa-headset"></i> Getting Support</h3>
+                <p>If you continue to experience issues:</p>
+                <ul>
+                    <li>Check the browser console for JavaScript errors</li>
+                    <li>Review server logs for backend issues</li>
+                    <li>Ensure all dependencies are properly installed</li>
+                    <li>Verify database file permissions</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="help-section">
+            <h2><i class="fas fa-question"></i> 7. Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>Can I resume an incomplete assessment?</h3>
+                    <p>Yes, your progress is automatically saved as you complete aspects. You can return to incomplete assessments from the customer or assessment list.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I export my results?</h3>
+                    <p>Use the "Export" button on the results page to download your assessment results in a standard format.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is the system mobile-friendly?</h3>
+                    <p>Yes, the interface is fully responsive and optimized for both desktop and mobile devices.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I compare multiple assessments?</h3>
+                    <p>Yes, you can complete multiple assessments for the same customer to track progress over time and compare results.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How accurate are the maturity assessments?</h3>
+                    <p>The accuracy depends on honest and thorough responses. The system provides guidance for each question to help ensure consistent evaluation.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I customize the assessment questions?</h3>
+                    <p>Yes, you can modify questions by editing the data files and restarting the application. See the technical documentation for details.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+.help-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px;
+}
+
+.help-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.help-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.help-nav {
+    position: sticky;
+    top: 20px;
+    margin-bottom: 30px;
+}
+
+.toc-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li {
+    margin: 10px 0;
+}
+
+.toc-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.toc-list a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.help-section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.help-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.step-by-step {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.tip {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.workflow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.workflow-step {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.workflow-icon {
+    background: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+}
+
+.workflow-arrow {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.assessment-tips {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.domain-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--primary-color);
+}
+
+.domain-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.domain-icon.business { background: #2196F3; }
+.domain-icon.people { background: #4CAF50; }
+.domain-icon.process { background: #FF9800; }
+.domain-icon.technology { background: #9C27B0; }
+.domain-icon.services { background: #F44336; }
+.domain-icon.results { background: #607D8B; }
+
+.maturity-levels {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.maturity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.maturity-level {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.level-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+}
+
+.results-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.result-component {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chart-tips {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.interpretation-guide {
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.interpretation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.interpretation-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.troubleshooting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.trouble-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.support-info {
+    background: #e3f2fd;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #2196F3;
+}
+
+.faq-container {
+    display: grid;
+    gap: 20px;
+}
+
+.faq-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .help-container {
+        padding: 10px;
+    }
+    
+    .help-title {
+        font-size: 2rem;
+    }
+    
+    .workflow-container {
+        flex-direction: column;
+    }
+    
+    .workflow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .domains-grid,
+    .maturity-grid,
+    .results-explanation,
+    .interpretation-grid,
+    .troubleshooting-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Highlight current section in navigation
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('.help-section');
+    const navLinks = document.querySelectorAll('.toc-list a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+{% endblock %}
