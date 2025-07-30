@@ -99,6 +99,11 @@ async def register_page(request: Request):
     """Register page"""
     return templates.TemplateResponse("register.html", {"request": request})
 
+@app.get("/privacy-policy", response_class=HTMLResponse)
+async def privacy_policy_page(request: Request):
+    """Privacy Policy page"""
+    return templates.TemplateResponse("privacy_policy.html", {"request": request})
+
 @app.post("/api/auth/register")
 async def register(user: UserCreate):
     """Register a new user"""
