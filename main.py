@@ -99,6 +99,12 @@ async def register_page(request: Request):
     """Register page"""
     return templates.TemplateResponse("register.html", {"request": request})
 
+@app.get("/terms", response_class=HTMLResponse)
+async def terms_page(request: Request):
+    """Terms and conditions page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("terms.html", {"request": request, "user": user})
+
 @app.post("/api/auth/register")
 async def register(user: UserCreate):
     """Register a new user"""
