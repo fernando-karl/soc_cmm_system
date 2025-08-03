@@ -6,11 +6,11 @@
 <div class="flex justify-between items-center mb-3">
     <h1 class="card-title" style="font-size: 2rem; margin: 0;">
         <i class="fas fa-users"></i>
-        Customer Management
+        Gerenciamento de Clientes
     </h1>
     <button onclick="showCreateCustomer()" class="btn btn-primary">
         <i class="fas fa-plus"></i>
-        Add Customer
+        Adicionar Cliente
     </button>
 </div>
 
@@ -38,17 +38,17 @@
                     {% endif %}
                     <p style="color: var(--text-secondary); font-size: 0.875rem;">
                         <i class="fas fa-calendar"></i>
-                        Created: {{ customer.created_at }}
+                        Criado: {{ customer.created_at }}
                     </p>
                 </div>
                 <div class="flex gap-2">
                     <button onclick="createAssessment({{ customer.id }})" class="btn btn-primary btn-sm">
                         <i class="fas fa-clipboard-list"></i>
-                        New Assessment
+                        Nova Avaliação
                     </button>
                     <button onclick="viewAssessments({{ customer.id }})" class="btn btn-secondary btn-sm">
                         <i class="fas fa-history"></i>
-                        Assessment History
+                        Histórico de Avaliações
                     </button>
                 </div>
             </div>
@@ -60,13 +60,13 @@
 <div class="card">
     <div class="card-body text-center">
         <i class="fas fa-users" style="font-size: 4rem; color: var(--text-secondary); margin-bottom: 1rem;"></i>
-        <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">No customers found</h3>
+        <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Nenhum cliente encontrado</h3>
         <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-            Create your first customer to start security operations maturity assessments
+            Crie seu primeiro cliente para começar as avaliações de maturidade de operações de segurança
         </p>
         <button onclick="showCreateCustomer()" class="btn btn-primary btn-lg">
             <i class="fas fa-plus"></i>
-            Add First Customer
+            Adicionar Primeiro Cliente
         </button>
     </div>
 </div>
@@ -76,13 +76,13 @@
 <div id="createCustomerModal" class="modal hidden">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Add New Customer</h2>
+            <h2>Criar Novo Cliente</h2>
             <button onclick="hideCreateCustomer()" class="modal-close">&times;</button>
         </div>
         <form id="createCustomerForm" onsubmit="submitCustomer(event)">
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="customerName" class="form-label">Customer Name *</label>
+                    <label for="customerName" class="form-label">Nome do Cliente *</label>
                     <input type="text" id="customerName" name="name" class="form-input" required>
                 </div>
                 
@@ -92,18 +92,18 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="customerOrganization" class="form-label">Organization</label>
+                    <label for="customerOrganization" class="form-label">Organização</label>
                     <input type="text" id="customerOrganization" name="organization" class="form-input">
                 </div>
             </div>
             <div class="card-footer">
                 <div class="flex justify-between gap-2">
                     <button type="button" onclick="hideCreateCustomer()" class="btn btn-secondary">
-                        Cancel
+                        Cancelar
                     </button>
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-save"></i>
-                        Add Customer
+                        Criar Cliente
                     </button>
                 </div>
             </div>
@@ -115,7 +115,7 @@
 <div id="assessmentsModal" class="modal hidden">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Assessment History</h2>
+            <h2>Histórico de Avaliações</h2>
             <button onclick="hideAssessments()" class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
@@ -240,10 +240,10 @@ async function submitCustomer(event) {
             hideCreateCustomer();
             location.reload();
         } else {
-            alert('Error adding customer');
+            alert('Erro ao criar cliente');
         }
     } catch (error) {
-        alert('Error adding customer');
+        alert('Erro ao criar cliente');
     }
 }
 
@@ -263,10 +263,10 @@ async function createAssessment(customerId) {
             const result = await response.json();
             window.location.href = `/assessment/${result.id}`;
         } else {
-            alert('Error creating assessment');
+            alert('Erro ao criar avaliação');
         }
     } catch (error) {
-        alert('Error creating assessment');
+        alert('Erro ao criar avaliação');
     }
 }
 
@@ -280,7 +280,7 @@ async function viewAssessments(customerId) {
         if (data.assessments.length === 0) {
             assessmentsList.innerHTML = `
                 <div class="text-center">
-                    <p style="color: var(--text-secondary);">No assessments found for this customer.</p>
+                    <p style="color: var(--text-secondary);">Nenhuma avaliação encontrada para este cliente.</p>
                 </div>
             `;
         } else {
@@ -294,15 +294,15 @@ async function viewAssessments(customerId) {
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem;">
                         Iniciada: ${new Date(assessment.started_at).toLocaleDateString()}
-                        ${assessment.completed_at ? `<br>Completed: ${new Date(assessment.completed_at).toLocaleDateString()}` : ''}
+                        ${assessment.completed_at ? `<br>Concluída: ${new Date(assessment.completed_at).toLocaleDateString()}` : ''}
                     </p>
                     <div class="flex gap-2">
                         ${assessment.status === 'completed' ? 
                             `<a href="/results/${assessment.id}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-chart-line"></i> View Results
+                                <i class="fas fa-chart-line"></i> Ver Resultados
                             </a>` : 
                             `<a href="/assessment/${assessment.id}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-play"></i> Continue
+                                <i class="fas fa-play"></i> Continuar
                             </a>`
                         }
                     </div>
@@ -312,7 +312,7 @@ async function viewAssessments(customerId) {
         
         document.getElementById('assessmentsModal').classList.remove('hidden');
     } catch (error) {
-        alert('Error loading assessments');
+        alert('Erro ao carregar avaliações');
     }
 }
 
