@@ -6,7 +6,9 @@
     <title>{% block title %}SOC CMM Assessment System{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -40,22 +42,15 @@
             </div>
             <div class="nav-auth">
                 <!-- Language Selector -->
-                <div class="language-selector">
-                    <button class="language-toggle" onclick="toggleLanguageDropdown()">
-                        <i class="fas fa-globe"></i>
-                        <span class="language-text">
-                            {% if language == 'pt_br' %}PT-BR{% else %}EN{% endif %}
-                        </span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="language-dropdown-menu" id="languageDropdown">
+                <div class="language-selector" style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <a href="/change-language/en" class="dropdown-item {% if language == 'en' %}active{% endif %}">
-                            <i class="fas fa-flag"></i>
-                            <span>English</span>
+                            <div class="flag-icon fi fi-gb"></div>
+                            <span>Eng</span>
                         </a>
                         <a href="/change-language/pt_br" class="dropdown-item {% if language == 'pt_br' %}active{% endif %}">
-                            <i class="fas fa-flag"></i>
-                            <span>Português</span>
+                            <div class="flag-icon fi fi-br"></div>
+                            <span>Port</span>
                         </a>
                     </div>
                 </div>
@@ -156,24 +151,13 @@
             dropdown.classList.toggle('show');
         }
 
-        function toggleLanguageDropdown() {
-            const dropdown = document.getElementById('languageDropdown');
-            dropdown.classList.toggle('show');
-        }
-
         // Close dropdowns when clicking outside
         document.addEventListener('click', function(event) {
             const userDropdown = document.getElementById('userDropdown');
             const userToggle = document.querySelector('.user-dropdown-toggle');
-            const languageDropdown = document.getElementById('languageDropdown');
-            const languageToggle = document.querySelector('.language-toggle');
             
             if (userDropdown && !userDropdown.contains(event.target) && !userToggle.contains(event.target)) {
                 userDropdown.classList.remove('show');
-            }
-            
-            if (languageDropdown && !languageDropdown.contains(event.target) && !languageToggle.contains(event.target)) {
-                languageDropdown.classList.remove('show');
             }
         });
     </script>
