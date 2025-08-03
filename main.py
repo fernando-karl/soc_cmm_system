@@ -11,7 +11,7 @@ import os
 from datetime import timedelta
 
 from database import DatabaseManager
-from auth import auth_manager, create_access_token, get_current_active_user, UserCreate, UserLogin, Token, include_auth_routes
+from auth import auth_manager, create_access_token, get_current_active_user, get_current_admin_user, UserCreate, UserLogin, Token, include_auth_routes
 
 app = FastAPI(title="SOC CMM Assessment System", version="1.0.0")
 include_auth_routes(app)
@@ -53,6 +53,7 @@ class UserUpdate(BaseModel):
     email: str
     full_name: Optional[str] = None
     is_active: bool = True
+    is_admin: bool = False
 
 class UserPasswordUpdate(BaseModel):
     current_password: str
@@ -117,6 +118,15 @@ async def get_current_active_user_flexible(current_user: dict = Depends(get_curr
     """Get current active user with flexible authentication"""
     if not current_user.get("is_active"):
         raise HTTPException(status_code=400, detail="Usuário inativo")
+    return current_user
+
+async def get_current_admin_user_flexible(current_user: dict = Depends(get_current_active_user_flexible)) -> dict:
+    """Get current admin user with flexible authentication"""
+    if not current_user.get("is_admin"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Acesso negado. Apenas administradores podem acessar esta funcionalidade."
+        )
     return current_user
 
 # API Routes
@@ -328,9 +338,9 @@ async def admin_dashboard(request: Request):
     if not user:
         return RedirectResponse(url="/login", status_code=302)
     
-    # Check if user is admin (you can implement your own admin logic)
-    # For now, we'll allow any authenticated user to access admin
-    # In production, you should add proper admin role checking
+    # Check if user is admin
+    if not user.get("is_admin"):
+        return RedirectResponse(url="/", status_code=302)
     
     stats = db.get_dashboard_stats()
     return templates.TemplateResponse("admin_dashboard.html", {
@@ -346,6 +356,10 @@ async def admin_users_page(request: Request):
     if not user:
         return RedirectResponse(url="/login", status_code=302)
     
+    # Check if user is admin
+    if not user.get("is_admin"):
+        return RedirectResponse(url="/", status_code=302)
+    
     users = db.get_all_users()
     return templates.TemplateResponse("admin_users.html", {
         "request": request, 
@@ -359,6 +373,10 @@ async def admin_edit_user_page(request: Request, user_id: int):
     user = await get_current_user_from_request(request)
     if not user:
         return RedirectResponse(url="/login", status_code=302)
+    
+    # Check if user is admin
+    if not user.get("is_admin"):
+        return RedirectResponse(url="/", status_code=302)
     
     target_user = db.get_user_by_id(user_id)
     if not target_user:
@@ -376,6 +394,10 @@ async def admin_new_user_page(request: Request):
     user = await get_current_user_from_request(request)
     if not user:
         return RedirectResponse(url="/login", status_code=302)
+    
+    # Check if user is admin
+    if not user.get("is_admin"):
+        return RedirectResponse(url="/", status_code=302)
     
     return templates.TemplateResponse("admin_new_user.html", {
         "request": request, 
@@ -522,19 +544,19 @@ async def get_radar_chart_data(assessment_id: int):
 # Admin API Endpoints
 
 @app.get("/api/admin/dashboard")
-async def get_admin_dashboard(current_user: dict = Depends(get_current_active_user_flexible)):
+async def get_admin_dashboard(current_user: dict = Depends(get_current_admin_user_flexible)):
     """Get admin dashboard statistics"""
     stats = db.get_dashboard_stats()
     return {"stats": stats}
 
 @app.get("/api/admin/users")
-async def get_all_users(current_user: dict = Depends(get_current_active_user_flexible)):
+async def get_all_users(current_user: dict = Depends(get_current_admin_user_flexible)):
     """Get all users for admin management"""
     users = db.get_all_users()
     return {"users": users}
 
 @app.get("/api/admin/users/{user_id}")
-async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
+async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_admin_user_flexible)):
     """Get user by ID for admin management"""
     user = db.get_user_by_id(user_id)
     if not user:
@@ -542,14 +564,15 @@ async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_
     return {"user": user}
 
 @app.put("/api/admin/users/{user_id}")
-async def update_user(user_id: int, user_update: UserUpdate, current_user: dict = Depends(get_current_active_user_flexible)):
+async def update_user(user_id: int, user_update: UserUpdate, current_user: dict = Depends(get_current_admin_user_flexible)):
     """Update user information"""
     success = auth_manager.update_user(
         user_id=user_id,
         username=user_update.username,
         email=user_update.email,
         full_name=user_update.full_name,
-        is_active=user_update.is_active
+        is_active=user_update.is_active,
+        is_admin=user_update.is_admin
     )
     
     if not success:
@@ -558,7 +581,7 @@ async def update_user(user_id: int, user_update: UserUpdate, current_user: dict 
     return {"message": "Usuário atualizado com sucesso"}
 
 @app.put("/api/admin/users/{user_id}/password")
-async def update_user_password(user_id: int, password_update: UserPasswordUpdate, current_user: dict = Depends(get_current_active_user_flexible)):
+async def update_user_password(user_id: int, password_update: UserPasswordUpdate, current_user: dict = Depends(get_current_admin_user_flexible)):
     """Update user password"""
     if password_update.new_password != password_update.confirm_password:
         raise HTTPException(status_code=400, detail="As senhas não coincidem")
@@ -574,15 +597,12 @@ async def update_user_password(user_id: int, password_update: UserPasswordUpdate
     return {"message": "Senha atualizada com sucesso"}
 
 @app.delete("/api/admin/users/{user_id}")
-async def delete_user(user_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
+async def delete_user(user_id: int, current_user: dict = Depends(get_current_admin_user_flexible)):
     """Delete a user"""
     if user_id == current_user["id"]:
         raise HTTPException(status_code=400, detail="Não é possível deletar sua própria conta")
     
     success = auth_manager.delete_user(user_id)
-    
-    if not success:
-        raise HTTPException(status_code=400, detail="Falha ao deletar o usuário")
     
     return {"message": "Usuário deletado com sucesso"}
 

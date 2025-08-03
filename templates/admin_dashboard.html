@@ -46,12 +46,20 @@
         padding: 1.5rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         margin-bottom: 1.5rem;
+        height: 400px;
+        position: relative;
     }
     
     .chart-container h3 {
         margin: 0 0 1rem 0;
         color: #333;
         font-size: 1.2rem;
+    }
+    
+    .chart-container canvas {
+        max-height: 300px !important;
+        height: 300px !important;
+        width: 100% !important;
     }
     
     .recent-assessments {
@@ -260,85 +268,187 @@
 
 {% block extra_scripts %}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Assessments by Status Chart
-    const assessmentsCtx = document.getElementById('assessmentsChart').getContext('2d');
-    const assessmentsData = {
-        labels: ['Em Progresso', 'Concluídas'],
-        datasets: [{
-            data: [
-                {{ stats.assessments_by_status.get('in_progress', 0) }},
-                {{ stats.assessments_by_status.get('completed', 0) }}
-            ],
-            backgroundColor: ['#ffc107', '#28a745'],
-            borderColor: ['#e0a800', '#1e7e34'],
-            borderWidth: 2
-        }]
-    };
+// Dados do dashboard passados do servidor
+const dashboardData = {
+    assessmentsByStatus: {{ stats.assessments_by_status | tojson }},
+    monthlyUsers: {{ stats.monthly_users | tojson }},
+    monthlyCustomers: {{ stats.monthly_customers | tojson }}
+};
+
+// Variáveis globais para os gráficos
+let assessmentsChart = null;
+let growthChart = null;
+let chartsInitialized = false;
+
+// Função para inicializar os gráficos
+function initializeCharts() {
+    // Evitar inicialização múltipla
+    if (chartsInitialized) {
+        console.log('Gráficos já inicializados');
+        return;
+    }
+    // Verificar se Chart.js está disponível
+    if (typeof Chart === 'undefined') {
+        console.error('Chart.js não está carregado');
+        return;
+    }
     
-    new Chart(assessmentsCtx, {
-        type: 'doughnut',
-        data: assessmentsData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
+    // Destruir gráficos existentes se houver
+    if (assessmentsChart) {
+        assessmentsChart.destroy();
+    }
+    if (growthChart) {
+        growthChart.destroy();
+    }
+    
+    // Assessments by Status Chart
+    const assessmentsCtx = document.getElementById('assessmentsChart');
+    if (assessmentsCtx) {
+        // Forçar tamanho fixo do canvas
+        assessmentsCtx.style.height = '300px';
+        assessmentsCtx.style.width = '100%';
+        assessmentsCtx.height = 300;
+        assessmentsCtx.width = assessmentsCtx.offsetWidth;
+        
+        const assessmentsByStatus = dashboardData.assessmentsByStatus || {};
+        assessmentsChart = new Chart(assessmentsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Em Progresso', 'Concluídas'],
+                datasets: [{
+                    data: [
+                        assessmentsByStatus.in_progress || 0,
+                        assessmentsByStatus.completed || 0
+                    ],
+                    backgroundColor: ['#ffc107', '#28a745'],
+                    borderColor: ['#e0a800', '#1e7e34'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 
     // Monthly Growth Chart
-    const growthCtx = document.getElementById('growthChart').getContext('2d');
-    const monthlyData = {
-        labels: [
-            {% for user in stats.monthly_users %}
-                '{{ user.month }}',
-            {% endfor %}
-        ],
-        datasets: [{
-            label: 'Novos Usuários',
-            data: [
-                {% for user in stats.monthly_users %}
-                    {{ user.new_users }},
-                {% endfor %}
-            ],
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0, 123, 255, 0.1)',
-            tension: 0.4
-        }, {
-            label: 'Novos Clientes',
-            data: [
-                {% for customer in stats.monthly_customers %}
-                    {{ customer.new_customers }},
-                {% endfor %}
-            ],
-            borderColor: '#28a745',
-            backgroundColor: 'rgba(40, 167, 69, 0.1)',
-            tension: 0.4
-        }]
-    };
-    
-    new Chart(growthCtx, {
-        type: 'line',
-        data: monthlyData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                }
+    const growthCtx = document.getElementById('growthChart');
+    if (growthCtx) {
+        // Forçar tamanho fixo do canvas
+        growthCtx.style.height = '300px';
+        growthCtx.style.width = '100%';
+        growthCtx.height = 300;
+        growthCtx.width = growthCtx.offsetWidth;
+        
+        try {
+            // Preparar dados para o gráfico de crescimento com verificações robustas
+            const monthlyUsers = Array.isArray(dashboardData.monthlyUsers) ? dashboardData.monthlyUsers : [];
+            const monthlyCustomers = Array.isArray(dashboardData.monthlyCustomers) ? dashboardData.monthlyCustomers : [];
+            
+            // Garantir que temos dados válidos
+            if (monthlyUsers.length === 0 && monthlyCustomers.length === 0) {
+                console.log('Nenhum dado disponível para o gráfico de crescimento');
+                return;
             }
+            
+            // Preparar labels (usar dados de usuários ou clientes, o que tiver mais dados)
+            const sourceData = monthlyUsers.length >= monthlyCustomers.length ? monthlyUsers : monthlyCustomers;
+            const monthlyLabels = sourceData.map(item => item.month || '').filter(label => label !== '');
+            
+            // Preparar dados de usuários
+            const userData = monthlyLabels.map(label => {
+                const userItem = monthlyUsers.find(user => user.month === label);
+                return userItem ? (userItem.new_users || 0) : 0;
+            });
+            
+            // Preparar dados de clientes
+            const customerData = monthlyLabels.map(label => {
+                const customerItem = monthlyCustomers.find(customer => customer.month === label);
+                return customerItem ? (customerItem.new_customers || 0) : 0;
+            });
+            
+            console.log('Dados do gráfico de crescimento:', {
+                labels: monthlyLabels,
+                userData: userData,
+                customerData: customerData
+            });
+            
+            growthChart = new Chart(growthCtx, {
+                type: 'line',
+                data: {
+                    labels: monthlyLabels,
+                    datasets: [{
+                        label: 'Novos Usuários',
+                        data: userData,
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        tension: 0.4,
+                        fill: false,
+                        borderWidth: 2
+                    }, {
+                        label: 'Novos Clientes',
+                        data: customerData,
+                        borderColor: '#28a745',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        tension: 0.4,
+                        fill: false,
+                        borderWidth: 2
+                    }]
+                },
+                            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1000
+                },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1,
+                                precision: 0
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    },
+                    elements: {
+                        point: {
+                            radius: 4,
+                            hoverRadius: 6
+                        },
+                        line: {
+                            borderWidth: 2
+                        }
+                    }
+                }
+            });
+            
+            console.log('Gráfico de crescimento criado com sucesso');
+        } catch (error) {
+            console.error('Erro ao criar gráfico de crescimento:', error);
         }
-    });
-});
+    }
+    
+    // Marcar como inicializado
+    chartsInitialized = true;
+    console.log('Gráficos inicializados com sucesso');
+}
+
+// Aguardar o DOM estar pronto e inicializar os gráficos
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCharts);
+} else {
+    initializeCharts();
+}
 </script>
 {% endblock %}

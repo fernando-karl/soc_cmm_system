@@ -63,7 +63,7 @@ class AuthManager:
         """Hash a password"""
         return pwd_context.hash(password)
     
-    def create_user(self, username: str, email: str, password: str, full_name: str = None) -> int:
+    def create_user(self, username: str, email: str, password: str, full_name: str = None, is_admin: bool = False) -> int:
         """Create a new user"""
         conn = self.get_connection()
         cursor = conn.cursor()
@@ -81,9 +81,9 @@ class AuthManager:
         hashed_password = self.get_password_hash(password)
         
         cursor.execute("""
-            INSERT INTO users (username, email, hashed_password, full_name)
-            VALUES (?, ?, ?, ?)
-        """, (username, email, hashed_password, full_name))
+            INSERT INTO users (username, email, hashed_password, full_name, is_admin)
+            VALUES (?, ?, ?, ?, ?)
+        """, (username, email, hashed_password, full_name, is_admin))
         
         user_id = cursor.lastrowid
         conn.commit()
@@ -129,7 +129,7 @@ class AuthManager:
         
         return dict(user) if user else None
 
-    def update_user(self, user_id: int, username: str, email: str, full_name: str = None, is_active: bool = True) -> bool:
+    def update_user(self, user_id: int, username: str, email: str, full_name: str = None, is_active: bool = True, is_admin: bool = False) -> bool:
         """Update user information"""
         conn = self.get_connection()
         cursor = conn.cursor()
@@ -137,9 +137,9 @@ class AuthManager:
         try:
             cursor.execute("""
                 UPDATE users 
-                SET username = ?, email = ?, full_name = ?, is_active = ?, updated_at = CURRENT_TIMESTAMP
+                SET username = ?, email = ?, full_name = ?, is_active = ?, is_admin = ?, updated_at = CURRENT_TIMESTAMP
                 WHERE id = ?
-            """, (username, email, full_name, is_active, user_id))
+            """, (username, email, full_name, is_active, is_admin, user_id))
             
             conn.commit()
             conn.close()
@@ -233,6 +233,15 @@ def get_current_active_user(current_user: dict = Depends(get_current_user)) -> d
     """Get current active user"""
     if not current_user.get("is_active"):
         raise HTTPException(status_code=400, detail="Inactive user")
+    return current_user
+
+def get_current_admin_user(current_user: dict = Depends(get_current_active_user)) -> dict:
+    """Get current admin user"""
+    if not current_user.get("is_admin"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Acesso negado. Apenas administradores podem acessar esta funcionalidade."
+        )
     return current_user
 
 router = APIRouter()
