@@ -381,7 +381,7 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         cursor.execute("""
-            SELECT id, username, email, full_name, is_active, created_at, updated_at
+            SELECT id, username, email, full_name, is_active, is_admin, created_at, updated_at
             FROM users
             ORDER BY created_at DESC
         """)
@@ -396,7 +396,7 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         cursor.execute("""
-            SELECT id, username, email, full_name, is_active, created_at, updated_at
+            SELECT id, username, email, full_name, is_active, is_admin, created_at, updated_at
             FROM users
             WHERE id = ?
         """, (user_id,))
