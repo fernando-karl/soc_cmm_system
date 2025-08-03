@@ -1,0 +1,471 @@
+{% extends "base.html" %}
+
+{% block title %}Perguntas Frequentes - Sistema de Avaliação SOC CMM{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">
+                <i class="fas fa-question-circle"></i>
+                Perguntas Frequentes
+            </h1>
+            <p class="card-subtitle">Encontre respostas para perguntas comuns sobre o Sistema de Avaliação SOC CMM</p>
+        </div>
+        <div class="card-body">
+            <div class="faq-container">
+                <!-- General Questions -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i>
+                        Perguntas Gerais
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            O que é o Sistema de Avaliação SOC CMM?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>O Sistema de Avaliação SOC CMM é uma plataforma web abrangente projetada para ajudar organizações a avaliar e melhorar seus níveis de maturidade do Centro de Operações de Segurança (SOC). Ele fornece ferramentas de avaliação, questionários e capacidades de relatório baseadas no framework do Modelo de Maturidade de Capacidades do SOC (CMM).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Quem deve usar este sistema?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Este sistema é projetado para:</p>
+                            <ul>
+                                <li>Profissionais de segurança e gerentes de SOC</li>
+                                <li>Consultores de segurança de TI e auditores</li>
+                                <li>Organizações que buscam avaliar a maturidade de suas operações de segurança</li>
+                                <li>Empresas que planejam estabelecer ou melhorar suas capacidades de SOC</li>
+                                <li>Equipes de segurança que buscam comparar seu estado atual</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Quanto tempo leva para completar uma avaliação?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>O tempo para completar uma avaliação varia dependendo do tamanho e complexidade da organização:</p>
+                            <ul>
+                                <li><strong>Pequenas organizações:</strong> 2-4 horas</li>
+                                <li><strong>Organizações médias:</strong> 4-8 horas</li>
+                                <li><strong>Grandes organizações:</strong> 8-16 horas</li>
+                            </ul>
+                            <p>Você pode salvar seu progresso e retornar para completar a avaliação a qualquer momento.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account & Registration -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-user"></i>
+                        Conta e Registro
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Como crio uma conta?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Para criar uma conta:</p>
+                            <ol>
+                                <li>Clique no botão "Registrar" na navegação superior</li>
+                                <li>Preencha seu nome de usuário, email e senha</li>
+                                <li>Forneça seu nome completo (opcional)</li>
+                                <li>Clique em "Criar Conta"</li>
+                                <li>Você será automaticamente logado e poderá começar a usar o sistema</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Esqueci minha senha. Como posso redefini-la?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Atualmente, a funcionalidade de redefinição de senha não está disponível. Entre em contato com seu administrador de sistema ou equipe de suporte para redefinir sua senha. No futuro, planejamos implementar funcionalidade automatizada de redefinição de senha.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Posso compartilhar minha conta com colegas?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Não, o compartilhamento de conta não é permitido por razões de segurança. Cada usuário deve ter sua própria conta. Isso garante trilhas de auditoria adequadas e mantém a integridade dos dados de avaliação. Se múltiplas pessoas precisam de acesso, cada uma deve criar sua própria conta.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Assessment Process -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-clipboard-list"></i>
+                        Processo de Avaliação
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Como inicio uma nova avaliação?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Para iniciar uma nova avaliação:</p>
+                            <ol>
+                                <li>Navegue até a página "Clientes"</li>
+                                <li>Crie um novo cliente ou selecione um existente</li>
+                                <li>Clique em "Nova Avaliação" para esse cliente</li>
+                                <li>O sistema criará uma nova avaliação e redirecionará você para o questionário</li>
+                                <li>Comece respondendo perguntas no domínio Business</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Posso salvar meu progresso e continuar depois?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Sim! Seu progresso é salvo automaticamente conforme você completa aspectos dentro de cada domínio. Você pode:</p>
+                            <ul>
+                                <li>Fechar seu navegador e retornar depois</li>
+                                <li>Navegar entre domínios e aspectos</li>
+                                <li>Revisar e modificar respostas anteriores</li>
+                                <li>Retomar de onde parou</li>
+                            </ul>
+                            <p>Sua avaliação permanecerá disponível até você completá-la ou deletá-la.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            E se eu precisar mudar uma resposta?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Você pode modificar respostas a qualquer momento antes de completar a avaliação:</p>
+                            <ul>
+                                <li>Use o botão "Voltar aos Aspectos" para retornar a domínios anteriores</li>
+                                <li>Navegue até o aspecto específico que deseja modificar</li>
+                                <li>Mude suas respostas e salve</li>
+                                <li>Suas respostas atualizadas serão refletidas nos resultados finais</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Como sei qual nível de maturidade escolher?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Cada pergunta inclui orientação para ajudá-lo a determinar o nível de maturidade apropriado:</p>
+                            <ul>
+                                <li><strong>Nível 1 (Inicial):</strong> Processos ad hoc, execução inconsistente</li>
+                                <li><strong>Nível 2 (Em Desenvolvimento):</strong> Processos básicos definidos, alguma consistência</li>
+                                <li><strong>Nível 3 (Definido):</strong> Processos padronizados, execução consistente</li>
+                                <li><strong>Nível 4 (Gerenciado):</strong> Processos medidos, gestão quantitativa</li>
+                                <li><strong>Nível 5 (Otimizado):</strong> Melhoria contínua, foco em inovação</li>
+                            </ul>
+                            <p>Seja honesto em sua avaliação - isso ajuda a identificar oportunidades reais de melhoria.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results & Reports -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-chart-line"></i>
+                        Resultados e Relatórios
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Como interpreto meus resultados de avaliação?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Seus resultados incluem:</p>
+                            <ul>
+                                <li><strong>Gráfico de Radar:</strong> Representação visual da maturidade em todos os domínios</li>
+                                <li><strong>Pontuações por Domínio:</strong> Detalhamento de cada nível de maturidade por domínio</li>
+                                <li><strong>Detalhes dos Aspectos:</strong> Áreas específicas dentro de cada domínio</li>
+                                <li><strong>Recomendações:</strong> Melhorias sugeridas baseadas em suas pontuações</li>
+                            </ul>
+                            <p>Foque em domínios com pontuações mais baixas para oportunidades imediatas de melhoria.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Posso exportar meus resultados?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Sim, você pode exportar seus resultados de avaliação:</p>
+                            <ul>
+                                <li>Use o botão "Exportar" na página de resultados</li>
+                                <li>Os resultados estão disponíveis em formatos padrão</li>
+                                <li>Você pode compartilhar relatórios com stakeholders</li>
+                                <li>A exportação inclui gráficos, pontuações e recomendações</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Posso comparar múltiplas avaliações?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Sim! Você pode:</p>
+                            <ul>
+                                <li>Completar múltiplas avaliações para o mesmo cliente</li>
+                                <li>Acompanhar o progresso ao longo do tempo</li>
+                                <li>Comparar resultados entre diferentes períodos de avaliação</li>
+                                <li>Medir melhoria em domínios específicos</li>
+                                <li>Gerar relatórios de tendência</li>
+                            </ul>
+                            <p>Isso é especialmente útil para medir o impacto de iniciativas de melhoria.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Support -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-tools"></i>
+                        Suporte Técnico
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Quais navegadores são suportados?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>O sistema suporta todos os navegadores modernos:</p>
+                            <ul>
+                                <li>Chrome (recomendado)</li>
+                                <li>Firefox</li>
+                                <li>Safari</li>
+                                <li>Edge</li>
+                            </ul>
+                            <p>Para a melhor experiência, use a versão mais recente do seu navegador e certifique-se de que o JavaScript está habilitado.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            O sistema é compatível com dispositivos móveis?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Sim! O sistema é totalmente responsivo e otimizado para:</p>
+                            <ul>
+                                <li>Computadores desktop</li>
+                                <li>Tablets</li>
+                                <li>Telefones móveis</li>
+                                <li>Todos os tamanhos de tela</li>
+                            </ul>
+                            <p>Você pode completar avaliações em qualquer dispositivo com conexão à internet.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            O que devo fazer se encontrar um erro?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Se você encontrar um erro:</p>
+                            <ol>
+                                <li>Tente atualizar a página</li>
+                                <li>Limpe o cache e cookies do seu navegador</li>
+                                <li>Verifique sua conexão com a internet</li>
+                                <li>Tente usar um navegador diferente</li>
+                                <li>Entre em contato com o suporte se o problema persistir</li>
+                            </ol>
+                            <p>A maioria dos problemas pode ser resolvida atualizando a página ou limpando os dados do navegador.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security & Privacy -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-shield-alt"></i>
+                        Segurança e Privacidade
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Meus dados estão seguros?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Sim, levamos a segurança de dados a sério:</p>
+                            <ul>
+                                <li>Todos os dados são criptografados em trânsito e em repouso</li>
+                                <li>Autenticação e autorização seguras</li>
+                                <li>Avaliações de segurança regulares</li>
+                                <li>Controles de acesso e registro de auditoria</li>
+                                <li>Conformidade com regulamentações de proteção de dados</li>
+                            </ul>
+                            <p>Veja nossa <a href="/privacy-policy" style="color: var(--primary-color);">Política de Privacidade</a> para mais detalhes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Quem pode acessar meus dados de avaliação?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Seus dados de avaliação são privados e seguros:</p>
+                            <ul>
+                                <li>Apenas você e usuários autorizados em sua organização podem acessar seus dados</li>
+                                <li>Administradores do sistema têm acesso limitado para fins de suporte</li>
+                                <li>Os dados não são compartilhados com terceiros sem seu consentimento</li>
+                                <li>Você controla quem pode visualizar seus resultados de avaliação</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.faq-container {
+    max-width: 100%;
+}
+
+.faq-section {
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.faq-question {
+    background: var(--surface-color);
+    padding: 1rem 1.5rem;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.faq-question:hover {
+    background: var(--surface-secondary);
+    color: var(--primary-color);
+}
+
+.faq-question.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.faq-answer ul, .faq-answer ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-answer li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .faq-answer.active {
+        padding: 0.75rem 1rem;
+    }
+}
+</style>
+
+<script>
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-question').forEach(question => {
+        if (question !== element) {
+            question.classList.remove('active');
+            question.nextElementSibling.classList.remove('active');
+        }
+    });
+    
+    // Toggle current FAQ item
+    element.classList.toggle('active');
+    answer.classList.toggle('active');
+}
+
+// Auto-open first FAQ item
+document.addEventListener('DOMContentLoaded', function() {
+    const firstFAQ = document.querySelector('.faq-question');
+    if (firstFAQ) {
+        firstFAQ.click();
+    }
+});
+</script>
+{% endblock %} 

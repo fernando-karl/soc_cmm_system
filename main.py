@@ -153,11 +153,24 @@ async def terms_page(request: Request):
     user = await get_current_user_from_request(request)
     return templates.TemplateResponse("terms.html", {"request": request, "user": user})
 
+@app.get("/terms_pt_br", response_class=HTMLResponse)
+async def terms_page(request: Request):
+    """Terms and conditions page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("terms_pt_br.html", {"request": request, "user": user})
+
 @app.get("/help", response_class=HTMLResponse)
 async def help_page(request: Request):
     """Help page"""
     user = await get_current_user_from_request(request)
     return templates.TemplateResponse("help.html", {"request": request, "user": user})
+
+@app.get("/help_pt_br", response_class=HTMLResponse)
+async def help_page(request: Request):
+    """Help page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("help_pt_br.html", {"request": request, "user": user})
+
 
 @app.get("/privacy-policy", response_class=HTMLResponse)
 async def privacy_policy_page(request: Request):
@@ -165,11 +178,23 @@ async def privacy_policy_page(request: Request):
     user = await get_current_user_from_request(request)
     return templates.TemplateResponse("privacy_policy.html", {"request": request, "user": user})
 
+@app.get("/privacy_policy_pt_br", response_class=HTMLResponse)
+async def privacy_policy_page(request: Request):
+    """Privacy Policy page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("privacy_policy_pt_br.html", {"request": request, "user": user})
+
 @app.get("/faq", response_class=HTMLResponse)
 async def faq_page(request: Request):
     """FAQ page"""
     user = await get_current_user_from_request(request)
     return templates.TemplateResponse("faq.html", {"request": request, "user": user})
+
+@app.get("/faq_pt_br", response_class=HTMLResponse)
+async def faq_page(request: Request):
+    """FAQ page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("faq_pt_br.html", {"request": request, "user": user})
 
 @app.post("/api/auth/register")
 async def register(user: UserCreate):

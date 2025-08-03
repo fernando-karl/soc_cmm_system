@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Help & Documentation - SOC CMM{% endblock %}
+{% block title %}Ajuda e Documentação - SOC CMM{% endblock %}
 
 {% block content %}
 <div class="help-container">
@@ -8,23 +8,23 @@
     <div class="help-header">
         <h1 class="help-title">
             <i class="fas fa-question-circle"></i>
-            SOC CMM Assessment System - Help & Documentation
+            Sistema de Avaliação SOC CMM - Ajuda e Documentação
         </h1>
-        <p class="help-subtitle">Complete guide to using the Security Operations Center Capability Maturity Model assessment system</p>
+        <p class="help-subtitle">Guia completo para usar o sistema de avaliação do Modelo de Maturidade de Capacidades do Centro de Operações de Segurança</p>
     </div>
 
     <!-- Navigation TOC -->
     <div class="help-nav">
         <div class="toc-container">
-            <h3><i class="fas fa-list"></i> Table of Contents</h3>
+            <h3><i class="fas fa-list"></i> Índice</h3>
             <ul class="toc-list">
-                <li><a href="#introduction">1. Introduction</a></li>
-                <li><a href="#getting-started">2. Getting Started</a></li>
-                <li><a href="#assessment-workflow">3. Assessment Workflow</a></li>
-                <li><a href="#domains-maturity">4. SOC CMM Domains & Maturity Levels</a></li>
-                <li><a href="#results-analysis">5. Understanding Results</a></li>
-                <li><a href="#troubleshooting">6. Troubleshooting</a></li>
-                <li><a href="#faq">7. Frequently Asked Questions</a></li>
+                <li><a href="#introduction">1. Introdução</a></li>
+                <li><a href="#getting-started">2. Começando</a></li>
+                <li><a href="#assessment-workflow">3. Fluxo de Avaliação</a></li>
+                <li><a href="#domains-maturity">4. Domínios SOC CMM e Níveis de Maturidade</a></li>
+                <li><a href="#results-analysis">5. Entendendo os Resultados</a></li>
+                <li><a href="#troubleshooting">6. Solução de Problemas</a></li>
+                <li><a href="#faq">7. Perguntas Frequentes</a></li>
             </ul>
         </div>
     </div>
@@ -34,32 +34,32 @@
         
         <!-- Introduction Section -->
         <section id="introduction" class="help-section">
-            <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+            <h2><i class="fas fa-info-circle"></i> 1. Introdução</h2>
             
             <div class="info-card">
-                <h3>What is SOC CMM?</h3>
-                <p>The Security Operations Center Capability Maturity Model (SOC CMM) is a comprehensive framework designed to assess and improve the maturity of Security Operations Centers across organizations. It provides a structured approach to evaluating SOC capabilities and identifying areas for improvement.</p>
+                <h3>O que é o SOC CMM?</h3>
+                <p>O Modelo de Maturidade de Capacidades do Centro de Operações de Segurança (SOC CMM) é um framework abrangente projetado para avaliar e melhorar a maturidade dos Centros de Operações de Segurança em organizações. Ele fornece uma abordagem estruturada para avaliar as capacidades do SOC e identificar áreas para melhoria.</p>
                 
                 <div class="feature-grid">
                     <div class="feature-item">
                         <i class="fas fa-users"></i>
-                        <h4>Customer Management</h4>
-                        <p>Create and manage multiple customers/organizations</p>
+                        <h4>Gestão de Clientes</h4>
+                        <p>Criar e gerenciar múltiplos clientes/organizações</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-clipboard-list"></i>
-                        <h4>Step-by-Step Assessment</h4>
-                        <p>Guided questionnaire broken into manageable sections</p>
+                        <h4>Avaliação Passo a Passo</h4>
+                        <p>Questionário guiado dividido em seções gerenciáveis</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-chart-line"></i>
-                        <h4>Maturity Evaluation</h4>
-                        <p>5-level maturity scale assessment</p>
+                        <h4>Avaliação de Maturidade</h4>
+                        <p>Avaliação em escala de maturidade de 5 níveis</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-chart-radar"></i>
-                        <h4>Visual Results</h4>
-                        <p>Interactive radar charts and progress tracking</p>
+                        <h4>Resultados Visuais</h4>
+                        <p>Gráficos de radar interativos e acompanhamento de progresso</p>
                     </div>
                 </div>
             </div>
@@ -67,17 +67,17 @@
 
         <!-- Getting Started Section -->
         <section id="getting-started" class="help-section">
-            <h2><i class="fas fa-play-circle"></i> 2. Getting Started</h2>
+            <h2><i class="fas fa-play-circle"></i> 2. Começando</h2>
             
             <div class="step-by-step">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Customer Management</h3>
-                        <p>Navigate to the <strong>Customers</strong> page and click "Add Customer" to create a new organization. Fill in the customer details including name, email, and organization.</p>
+                        <h3>Gestão de Clientes</h3>
+                        <p>Navegue até a página <strong>Clientes</strong> e clique em "Adicionar Cliente" para criar uma nova organização. Preencha os detalhes do cliente incluindo nome, email e organização.</p>
                         <div class="tip">
                             <i class="fas fa-lightbulb"></i>
-                            <strong>Tip:</strong> You can create multiple customers to manage assessments for different organizations.
+                            <strong>Dica:</strong> Você pode criar múltiplos clientes para gerenciar avaliações para diferentes organizações.
                         </div>
                     </div>
                 </div>
@@ -85,16 +85,16 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Create Assessment</h3>
-                        <p>From the customer list, click "New Assessment" to start a new evaluation. The system will create a new assessment and redirect you to the questionnaire.</p>
+                        <h3>Criar Avaliação</h3>
+                        <p>Na lista de clientes, clique em "Nova Avaliação" para iniciar uma nova avaliação. O sistema criará uma nova avaliação e redirecionará você para o questionário.</p>
                     </div>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Complete Assessment</h3>
-                        <p>Follow the guided process through all domains and aspects. Answer questions using the 5-level maturity scale and track your progress.</p>
+                        <h3>Completar Avaliação</h3>
+                        <p>Siga o processo guiado através de todos os domínios e aspectos. Responda às perguntas usando a escala de maturidade de 5 níveis e acompanhe seu progresso.</p>
                     </div>
                 </div>
             </div>
@@ -102,15 +102,15 @@
 
         <!-- Assessment Workflow Section -->
         <section id="assessment-workflow" class="help-section">
-            <h2><i class="fas fa-route"></i> 3. Assessment Workflow</h2>
+            <h2><i class="fas fa-route"></i> 3. Fluxo de Avaliação</h2>
             
             <div class="workflow-container">
                 <div class="workflow-step">
                     <div class="workflow-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h4>Domain Selection</h4>
-                    <p>Start with the Business domain and work through each domain systematically. Use the progress bar and step indicator to track your position.</p>
+                    <h4>Seleção de Domínio</h4>
+                    <p>Comece com o domínio Business e trabalhe através de cada domínio sistematicamente. Use a barra de progresso e indicador de etapa para acompanhar sua posição.</p>
                 </div>
 
                 <div class="workflow-arrow">
@@ -121,8 +121,8 @@
                     <div class="workflow-icon">
                         <i class="fas fa-list-ul"></i>
                     </div>
-                    <h4>Aspect Selection</h4>
-                    <p>Within each domain, select specific aspects to evaluate. Each aspect contains related questions that assess different capabilities.</p>
+                    <h4>Seleção de Aspecto</h4>
+                    <p>Dentro de cada domínio, selecione aspectos específicos para avaliar. Cada aspecto contém perguntas relacionadas que avaliam diferentes capacidades.</p>
                 </div>
 
                 <div class="workflow-arrow">
@@ -133,8 +133,8 @@
                     <div class="workflow-icon">
                         <i class="fas fa-question-circle"></i>
                     </div>
-                    <h4>Answer Questions</h4>
-                    <p>Answer all questions in each aspect using the 5-level maturity scale. Complete all aspects in a domain before proceeding to the next.</p>
+                    <h4>Responder Perguntas</h4>
+                    <p>Responda todas as perguntas em cada aspecto usando a escala de maturidade de 5 níveis. Complete todos os aspectos em um domínio antes de prosseguir para o próximo.</p>
                 </div>
 
                 <div class="workflow-arrow">
@@ -145,25 +145,25 @@
                     <div class="workflow-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h4>View Results</h4>
-                    <p>After completing all domains, view your results including radar charts, domain scores, and detailed breakdowns.</p>
+                    <h4>Ver Resultados</h4>
+                    <p>Após completar todos os domínios, visualize seus resultados incluindo gráficos de radar, pontuações por domínio e detalhamentos específicos.</p>
                 </div>
             </div>
 
             <div class="assessment-tips">
-                <h3><i class="fas fa-tips"></i> Assessment Tips</h3>
+                <h3><i class="fas fa-tips"></i> Dicas para Avaliação</h3>
                 <ul>
-                    <li><strong>Save Progress:</strong> Your progress is automatically saved as you complete aspects</li>
-                    <li><strong>Resume Later:</strong> You can return to incomplete assessments at any time</li>
-                    <li><strong>Review Answers:</strong> Use the "Back to Aspects" button to review and modify answers</li>
-                    <li><strong>Complete All:</strong> Ensure all questions in an aspect are answered before proceeding</li>
+                    <li><strong>Salvar Progresso:</strong> Seu progresso é salvo automaticamente conforme você completa os aspectos</li>
+                    <li><strong>Retomar Depois:</strong> Você pode retornar a avaliações incompletas a qualquer momento</li>
+                    <li><strong>Revisar Respostas:</strong> Use o botão "Voltar aos Aspectos" para revisar e modificar respostas</li>
+                    <li><strong>Completar Tudo:</strong> Certifique-se de que todas as perguntas em um aspecto sejam respondidas antes de prosseguir</li>
                 </ul>
             </div>
         </section>
 
         <!-- Domains & Maturity Levels Section -->
         <section id="domains-maturity" class="help-section">
-            <h2><i class="fas fa-layer-group"></i> 4. SOC CMM Domains & Maturity Levels</h2>
+            <h2><i class="fas fa-layer-group"></i> 4. Domínios SOC CMM e Níveis de Maturidade</h2>
             
             <div class="domains-grid">
                 <div class="domain-card">
@@ -171,12 +171,12 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Business</h3>
-                    <p>Strategy, governance, cost management, and privacy considerations for SOC operations.</p>
+                    <p>Estratégia, governança, gestão de custos e considerações de privacidade para operações do SOC.</p>
                     <ul>
-                        <li>Strategic Planning</li>
-                        <li>Governance Framework</li>
-                        <li>Cost Management</li>
-                        <li>Privacy & Compliance</li>
+                        <li>Planejamento Estratégico</li>
+                        <li>Framework de Governança</li>
+                        <li>Gestão de Custos</li>
+                        <li>Privacidade e Conformidade</li>
                     </ul>
                 </div>
 
@@ -185,12 +185,12 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>People</h3>
-                    <p>Employment practices, training programs, performance management, and knowledge sharing.</p>
+                    <p>Práticas de emprego, programas de treinamento, gestão de performance e compartilhamento de conhecimento.</p>
                     <ul>
-                        <li>Employment & Retention</li>
-                        <li>Training & Development</li>
-                        <li>Performance Management</li>
-                        <li>Knowledge Management</li>
+                        <li>Emprego e Retenção</li>
+                        <li>Treinamento e Desenvolvimento</li>
+                        <li>Gestão de Performance</li>
+                        <li>Gestão do Conhecimento</li>
                     </ul>
                 </div>
 
@@ -199,12 +199,12 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Process</h3>
-                    <p>Management processes, operational procedures, reporting mechanisms, and use case management.</p>
+                    <p>Processos de gestão, procedimentos operacionais, mecanismos de relatório e gestão de casos de uso.</p>
                     <ul>
-                        <li>Process Management</li>
-                        <li>Operational Procedures</li>
-                        <li>Reporting & Communication</li>
-                        <li>Use Case Management</li>
+                        <li>Gestão de Processos</li>
+                        <li>Procedimentos Operacionais</li>
+                        <li>Relatórios e Comunicação</li>
+                        <li>Gestão de Casos de Uso</li>
                     </ul>
                 </div>
 
@@ -213,12 +213,12 @@
                         <i class="fas fa-microchip"></i>
                     </div>
                     <h3>Technology</h3>
-                    <p>Security information management, detection capabilities, and analytical tools.</p>
+                    <p>Gestão de informações de segurança, capacidades de detecção e ferramentas analíticas.</p>
                     <ul>
-                        <li>Security Information Management</li>
-                        <li>Detection & Monitoring</li>
-                        <li>Analytics & Intelligence</li>
-                        <li>Technology Integration</li>
+                        <li>Gestão de Informações de Segurança</li>
+                        <li>Detecção e Monitoramento</li>
+                        <li>Análise e Inteligência</li>
+                        <li>Integração Tecnológica</li>
                     </ul>
                 </div>
 
@@ -227,12 +227,12 @@
                         <i class="fas fa-concierge-bell"></i>
                     </div>
                     <h3>Services</h3>
-                    <p>Service catalog management, analysis services, threat hunting, and vulnerability management.</p>
+                    <p>Gestão de catálogo de serviços, serviços de análise, caça a ameaças e gestão de vulnerabilidades.</p>
                     <ul>
-                        <li>Service Catalog</li>
-                        <li>Analysis Services</li>
-                        <li>Threat Hunting</li>
-                        <li>Vulnerability Management</li>
+                        <li>Catálogo de Serviços</li>
+                        <li>Serviços de Análise</li>
+                        <li>Caça a Ameaças</li>
+                        <li>Gestão de Vulnerabilidades</li>
                     </ul>
                 </div>
 
@@ -241,43 +241,43 @@
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Results</h3>
-                    <p>Overview of SOC performance, critical success factors, and knowledge sharing practices.</p>
+                    <p>Visão geral do desempenho do SOC, fatores críticos de sucesso e práticas de compartilhamento de conhecimento.</p>
                     <ul>
-                        <li>Performance Overview</li>
-                        <li>Critical Success Factors</li>
-                        <li>Knowledge Sharing</li>
-                        <li>Continuous Improvement</li>
+                        <li>Visão Geral de Performance</li>
+                        <li>Fatores Críticos de Sucesso</li>
+                        <li>Compartilhamento de Conhecimento</li>
+                        <li>Melhoria Contínua</li>
                     </ul>
                 </div>
             </div>
 
             <div class="maturity-levels">
-                <h3><i class="fas fa-star"></i> Maturity Levels</h3>
+                <h3><i class="fas fa-star"></i> Níveis de Maturidade</h3>
                 <div class="maturity-grid">
                     <div class="maturity-level">
                         <div class="level-number">1</div>
-                        <h4>Initial</h4>
-                        <p style="color: #000;">Ad hoc processes, inconsistent execution, limited documentation</p>
+                        <h4>Inicial</h4>
+                        <p style="color: #000;">Processos ad hoc, execução inconsistente, documentação limitada</p>
                     </div>
                     <div class="maturity-level">
                         <div class="level-number">2</div>
-                        <h4>Developing</h4>
-                        <p style="color: #000;">Basic processes defined, some consistency, initial documentation</p>
+                        <h4>Em Desenvolvimento</h4>
+                        <p style="color: #000;">Processos básicos definidos, alguma consistência, documentação inicial</p>
                     </div>
                     <div class="maturity-level">
                         <div class="level-number">3</div>
-                        <h4>Defined</h4>
-                        <p style="color: #000;">Standardized processes, consistent execution, comprehensive documentation</p>
+                        <h4>Definido</h4>
+                        <p style="color: #000;">Processos padronizados, execução consistente, documentação abrangente</p>
                     </div>
                     <div class="maturity-level">
                         <div class="level-number">4</div>
-                        <h4>Managed</h4>
-                        <p style="color: #000;">Measured processes, quantitative management, continuous monitoring</p>
+                        <h4>Gerenciado</h4>
+                        <p style="color: #000;">Processos medidos, gestão quantitativa, monitoramento contínuo</p>
                     </div>
                     <div class="maturity-level">
                         <div class="level-number">5</div>
-                        <h4>Optimized</h4>
-                        <p style="color: #000;">Continuous improvement, innovation focus, predictive capabilities</p>
+                        <h4>Otimizado</h4>
+                        <p style="color: #000;">Melhoria contínua, foco em inovação, capacidades preditivas</p>
                     </div>
                 </div>
             </div>
@@ -285,48 +285,48 @@
 
         <!-- Results Analysis Section -->
         <section id="results-analysis" class="help-section">
-            <h2><i class="fas fa-chart-pie"></i> 5. Understanding Results</h2>
+            <h2><i class="fas fa-chart-pie"></i> 5. Entendendo os Resultados</h2>
             
             <div class="results-explanation">
                 <div class="result-component">
-                    <h3><i class="fas fa-chart-radar"></i> Radar Chart</h3>
-                    <p>The radar chart provides a visual representation of your SOC's maturity across all six domains. Each axis represents a domain, and the shape shows your relative strengths and areas for improvement.</p>
+                    <h3><i class="fas fa-chart-radar"></i> Gráfico de Radar</h3>
+                    <p>O gráfico de radar fornece uma representação visual da maturidade do seu SOC em todos os seis domínios. Cada eixo representa um domínio, e a forma mostra seus pontos fortes relativos e áreas para melhoria.</p>
                     <div class="chart-tips">
-                        <h4>How to Read:</h4>
+                        <h4>Como Interpretar:</h4>
                         <ul>
-                            <li><strong>Larger area:</strong> Higher overall maturity</li>
-                            <li><strong>Balanced shape:</strong> Even development across domains</li>
-                            <li><strong>Spikes:</strong> Areas of strength</li>
-                            <li><strong>Dips:</strong> Areas needing improvement</li>
+                            <li><strong>Área maior:</strong> Maior maturidade geral</li>
+                            <li><strong>Forma equilibrada:</strong> Desenvolvimento uniforme entre domínios</li>
+                            <li><strong>Picos:</strong> Áreas de força</li>
+                            <li><strong>Vales:</strong> Áreas que precisam de melhoria</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="result-component">
-                    <h3><i class="fas fa-list-alt"></i> Domain Breakdown</h3>
-                    <p>Detailed scores for each domain show your maturity level and provide specific insights into your SOC's capabilities.</p>
+                    <h3><i class="fas fa-list-alt"></i> Detalhamento por Domínio</h3>
+                    <p>Pontuações detalhadas para cada domínio mostram seu nível de maturidade e fornecem insights específicos sobre as capacidades do seu SOC.</p>
                 </div>
 
                 <div class="result-component">
-                    <h3><i class="fas fa-microscope"></i> Aspect Details</h3>
-                    <p>Drill down into specific aspects within each domain to understand detailed performance and identify specific improvement opportunities.</p>
+                    <h3><i class="fas fa-microscope"></i> Detalhes dos Aspectos</h3>
+                    <p>Explore aspectos específicos dentro de cada domínio para entender o desempenho detalhado e identificar oportunidades específicas de melhoria.</p>
                 </div>
             </div>
 
             <div class="interpretation-guide">
-                <h3><i class="fas fa-search"></i> Interpreting Your Results</h3>
+                <h3><i class="fas fa-search"></i> Interpretando Seus Resultados</h3>
                 <div class="interpretation-grid">
                     <div class="interpretation-item">
-                        <h4>Level 1-2 (Initial/Developing)</h4>
-                        <p>Focus on establishing basic processes and documentation. Prioritize foundational capabilities.</p>
+                        <h4>Nível 1-2 (Inicial/Em Desenvolvimento)</h4>
+                        <p>Foque em estabelecer processos básicos e documentação. Priorize capacidades fundamentais.</p>
                     </div>
                     <div class="interpretation-item">
-                        <h4>Level 3 (Defined)</h4>
-                        <p>Good foundation established. Focus on consistency and standardization across all areas.</p>
+                        <h4>Nível 3 (Definido)</h4>
+                        <p>Boa base estabelecida. Foque em consistência e padronização em todas as áreas.</p>
                     </div>
                     <div class="interpretation-item">
-                        <h4>Level 4-5 (Managed/Optimized)</h4>
-                        <p>Advanced capabilities. Focus on continuous improvement and innovation.</p>
+                        <h4>Nível 4-5 (Gerenciado/Otimizado)</h4>
+                        <p>Capacidades avançadas. Foque em melhoria contínua e inovação.</p>
                     </div>
                 </div>
             </div>
@@ -334,79 +334,79 @@
 
         <!-- Troubleshooting Section -->
         <section id="troubleshooting" class="help-section">
-            <h2><i class="fas fa-tools"></i> 6. Troubleshooting</h2>
+            <h2><i class="fas fa-tools"></i> 6. Solução de Problemas</h2>
             
             <div class="troubleshooting-grid">
                 <div class="trouble-item">
-                    <h3><i class="fas fa-database"></i> Database Issues</h3>
-                    <p><strong>Problem:</strong> Database errors or corruption</p>
-                    <p><strong>Solution:</strong> Delete the database file and restart the application. The system will recreate the database automatically.</p>
+                    <h3><i class="fas fa-database"></i> Problemas de Banco de Dados</h3>
+                    <p><strong>Problema:</strong> Erros de banco de dados ou corrupção</p>
+                    <p><strong>Solução:</strong> Delete o arquivo do banco de dados e reinicie a aplicação. O sistema recriará o banco de dados automaticamente.</p>
                 </div>
 
                 <div class="trouble-item">
-                    <h3><i class="fas fa-network-wired"></i> Port Conflicts</h3>
-                    <p><strong>Problem:</strong> Application won't start due to port conflicts</p>
-                    <p><strong>Solution:</strong> Change the port number in the main.py file or stop other services using the same port.</p>
+                    <h3><i class="fas fa-network-wired"></i> Conflitos de Porta</h3>
+                    <p><strong>Problema:</strong> Aplicação não inicia devido a conflitos de porta</p>
+                    <p><strong>Solução:</strong> Altere o número da porta no arquivo main.py ou pare outros serviços usando a mesma porta.</p>
                 </div>
 
                 <div class="trouble-item">
-                    <h3><i class="fas fa-download"></i> Missing Dependencies</h3>
-                    <p><strong>Problem:</strong> Import errors or missing modules</p>
-                    <p><strong>Solution:</strong> Run <code>pip install -r requirements.txt</code> to install all required packages.</p>
+                    <h3><i class="fas fa-download"></i> Dependências Ausentes</h3>
+                    <p><strong>Problema:</strong> Erros de importação ou módulos ausentes</p>
+                    <p><strong>Solução:</strong> Execute <code>pip install -r requirements.txt</code> para instalar todos os pacotes necessários.</p>
                 </div>
 
                 <div class="trouble-item">
-                    <h3><i class="fas fa-save"></i> Progress Not Saving</h3>
-                    <p><strong>Problem:</strong> Assessment progress is lost</p>
-                    <p><strong>Solution:</strong> Ensure you complete aspects fully before moving to the next. Use the "Save & Exit" button if needed.</p>
+                    <h3><i class="fas fa-save"></i> Progresso Não Salva</h3>
+                    <p><strong>Problema:</strong> Progresso da avaliação é perdido</p>
+                    <p><strong>Solução:</strong> Certifique-se de completar aspectos totalmente antes de passar para o próximo. Use o botão "Salvar e Sair" se necessário.</p>
                 </div>
             </div>
 
             <div class="support-info">
-                <h3><i class="fas fa-headset"></i> Getting Support</h3>
-                <p>If you continue to experience issues:</p>
+                <h3><i class="fas fa-headset"></i> Obtendo Suporte</h3>
+                <p>Se você continuar enfrentando problemas:</p>
                 <ul>
-                    <li>Check the browser console for JavaScript errors</li>
-                    <li>Review server logs for backend issues</li>
-                    <li>Ensure all dependencies are properly installed</li>
-                    <li>Verify database file permissions</li>
+                    <li>Verifique o console do navegador para erros JavaScript</li>
+                    <li>Revise os logs do servidor para problemas de backend</li>
+                    <li>Certifique-se de que todas as dependências estão instaladas corretamente</li>
+                    <li>Verifique as permissões do arquivo do banco de dados</li>
                 </ul>
             </div>
         </section>
 
         <!-- FAQ Section -->
         <section id="faq" class="help-section">
-            <h2><i class="fas fa-question"></i> 7. Frequently Asked Questions</h2>
+            <h2><i class="fas fa-question"></i> 7. Perguntas Frequentes</h2>
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <h3>Can I resume an incomplete assessment?</h3>
-                    <p>Yes, your progress is automatically saved as you complete aspects. You can return to incomplete assessments from the customer or assessment list.</p>
+                    <h3>Posso retomar uma avaliação incompleta?</h3>
+                    <p>Sim, seu progresso é salvo automaticamente conforme você completa os aspectos. Você pode retornar a avaliações incompletas na lista de clientes ou avaliações.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How do I export my results?</h3>
-                    <p>Use the "Export" button on the results page to download your assessment results in a standard format.</p>
+                    <h3>Como exporto meus resultados?</h3>
+                    <p>Use o botão "Exportar" na página de resultados para baixar seus resultados de avaliação em um formato padrão.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Is the system mobile-friendly?</h3>
-                    <p>Yes, the interface is fully responsive and optimized for both desktop and mobile devices.</p>
+                    <h3>O sistema é compatível com dispositivos móveis?</h3>
+                    <p>Sim, a interface é totalmente responsiva e otimizada para dispositivos desktop e móveis.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I compare multiple assessments?</h3>
-                    <p>Yes, you can complete multiple assessments for the same customer to track progress over time and compare results.</p>
+                    <h3>Posso comparar múltiplas avaliações?</h3>
+                    <p>Sim, você pode completar múltiplas avaliações para o mesmo cliente para acompanhar o progresso ao longo do tempo e comparar resultados.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How accurate are the maturity assessments?</h3>
-                    <p>The accuracy depends on honest and thorough responses. The system provides guidance for each question to help ensure consistent evaluation.</p>
+                    <h3>Quão precisas são as avaliações de maturidade?</h3>
+                    <p>A precisão depende de respostas honestas e completas. O sistema fornece orientação para cada pergunta para ajudar a garantir avaliação consistente.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I customize the assessment questions?</h3>
-                    <p>Yes, you can modify questions by editing the data files and restarting the application. See the technical documentation for details.</p>
+                    <h3>Posso personalizar as perguntas da avaliação?</h3>
+                    <p>Sim, você pode modificar perguntas editando os arquivos de dados e reiniciando a aplicação. Veja a documentação técnica para detalhes.</p>
                 </div>
             </div>
         </section>
@@ -836,4 +836,4 @@ window.addEventListener('scroll', () => {
     });
 });
 </script>
-{% endblock %}
+{% endblock %} 

@@ -11,19 +11,19 @@
         </h1>
         <button onclick="saveAndExit()" class="btn btn-secondary btn-sm">
             <i class="fas fa-save"></i>
-            Save & Exit
+            Salvar & Sair
         </button>
     </div>
     <p style="color: var(--text-secondary);">
-        Customer: <strong>{{ customer.name }}</strong>
-        {% if customer.organization %} | Organization: <strong>{{ customer.organization }}</strong>{% endif %}
+        Cliente: <strong>{{ customer.name }}</strong>
+        {% if customer.organization %} | Organização: <strong>{{ customer.organization }}</strong>{% endif %}
     </p>
 </div>
 
 <!-- Progress Bar -->
 <div class="card mb-3">
     <div class="card-body">
-        <div class="progress-text" id="progressText">Step 1 of 6: Business Domain</div>
+        <div class="progress-text" id="progressText">Passo 1 de 6: Domínio de Negócio</div>
         <div class="progress-container">
             <div class="progress-bar" id="progressBar" style="width: 16.67%;"></div>
         </div>
@@ -48,14 +48,14 @@
     <div class="card-header">
         <h2 class="card-title" id="currentDomainTitle">
             <i class="fas fa-building"></i>
-            Business Domain
+            Domínio de Negócio
         </h2>
-        <p class="card-subtitle" id="currentDomainSubtitle">Evaluating business strategy and governance aspects</p>
+        <p class="card-subtitle" id="currentDomainSubtitle">Avaliando aspectos de estratégia e governança de negócio</p>
     </div>
     <div class="card-body">
         <!-- Domain/Aspect Selection -->
         <div id="domainSelection" class="mb-3">
-            <h3 style="margin-bottom: 1rem;">Select an aspect to evaluate:</h3>
+            <h3 style="margin-bottom: 1rem;">Selecione um aspecto para avaliar:</h3>
             <div id="aspectsList" class="grid grid-cols-1 gap-2">
                 <!-- Aspects will be loaded here -->
             </div>
@@ -64,10 +64,10 @@
         <!-- Questions Container -->
         <div id="questionsContainer" class="hidden">
             <div class="flex justify-between items-center mb-3">
-                <h3 id="currentAspectTitle">Current Aspect</h3>
+                <h3 id="currentAspectTitle">Aspecto Atual</h3>
                 <button onclick="backToAspects()" class="btn btn-secondary btn-sm">
                     <i class="fas fa-arrow-left"></i>
-                    Back to Aspects
+                    Voltar para Aspectos
                 </button>
             </div>
             
@@ -78,11 +78,11 @@
             <div class="flex justify-between mt-3">
                 <button onclick="backToAspects()" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i>
-                    Back to Aspects
+                    Voltar para Aspectos
                 </button>
                 <button onclick="completeAspect()" class="btn btn-success" id="completeAspectBtn" disabled>
                     <i class="fas fa-check"></i>
-                    Complete Aspect
+                    Completar Aspecto
                 </button>
             </div>
         </div>
@@ -91,15 +91,15 @@
         <div class="flex justify-between">
             <button onclick="previousDomain()" class="btn btn-secondary" id="prevDomainBtn" disabled>
                 <i class="fas fa-chevron-left"></i>
-                Previous Domain
+                Domínio Anterior
             </button>
             <button onclick="nextDomain()" class="btn btn-primary" id="nextDomainBtn">
-                Next Domain
+                Próximo Domínio
                 <i class="fas fa-chevron-right"></i>
             </button>
             <button onclick="completeAssessment()" class="btn btn-success hidden" id="completeAssessmentBtn">
                 <i class="fas fa-flag-checkered"></i>
-                Complete Assessment
+                Completar Avaliação
             </button>
         </div>
     </div>
@@ -141,19 +141,19 @@ async function loadExistingAnswers() {
                             answers[answer.question_id] = answer.answer_text;
                         }
                     } catch (e) {
-                        // If parsing fails, it's simple text
+                        // Se não conseguir fazer parse, é texto simples
                         answers[answer.question_id] = answer.answer_text;
                     }
                 }
             });
             
-            console.log('Answers loaded:', answers);
+            console.log('Respostas carregadas:', answers);
         } else {
-            console.log('No answers found for this assessment');
+            console.log('Nenhuma resposta encontrada para este assessment');
         }
         
     } catch (error) {
-        console.error('Error loading existing answers:', error);
+        console.error('Erro ao carregar respostas existentes:', error);
     }
 }
 
@@ -215,7 +215,7 @@ async function loadDomainAspects(domainId) {
         updateDomainProgressDisplay();
         
     } catch (error) {
-        console.error('Error loading aspects:', error);
+        console.error('Erro ao carregar aspectos:', error);
     }
 }
 
@@ -241,7 +241,7 @@ function displayAspects(aspects) {
                             </p>
                             <div class="aspect-progress" style="margin-top: 0.5rem;">
                                 <div class="progress-text-small">
-                                    ${aspectProgress.answered} of ${aspectProgress.total} questions answered
+                                    ${aspectProgress.answered} de ${aspectProgress.total} questões respondidas
                                 </div>
                                 <div class="progress-bar-small">
                                     <div class="progress-fill" style="width: ${aspectProgress.percentage}%;"></div>
@@ -269,17 +269,17 @@ async function selectAspect(aspectId) {
     try {
         const response = await fetch(`/api/aspects/${aspectId}/questions`);
         const data = await response.json();
-        console.log('Data received from API:', data);
+        console.log('Dados recebidos da API:', data);
         
         questionsData[aspectId] = data.questions;
         
         // Find aspect name
         const currentDomain = domains[currentDomainIndex];
         const aspects = aspectsData[currentDomain.id];
-        console.log('Aspects loaded:', aspects);
+        console.log('Aspectos carregados:', aspects);
         const aspect = aspects.find(a => String(a.id) === String(aspectId));
         
-        console.log('Displaying questions:', data.questions.length);
+        console.log('Exibindo questões:', data.questions.length);
         displayQuestions(data.questions);
         updateAspectProgressDisplay();
         
@@ -294,10 +294,10 @@ async function selectAspect(aspectId) {
         document.getElementById('domainSelection').classList.add('hidden');
         document.getElementById('questionsContainer').classList.remove('hidden');
         
-        console.log('Aspect selected successfully');
+        console.log('Aspecto selecionado com sucesso');
         
     } catch (error) {
-        console.error('Error loading questions:', error);
+        console.error('Erro ao carregar questões:', error);
     }
 }
 
@@ -310,7 +310,7 @@ function displayQuestions(questions) {
         if (question.question_type === 'multiple_choice') {
             inputHtml = `
                 <select id="q${question.id}" name="question_${question.id}" onchange="saveAnswer(${question.id}, this.value)">
-                    <option value="">Select an option...</option>
+                    <option value="">Selecione uma opção...</option>
                     ${question.options ? question.options.map(option => `
                         <option value="${option.id}" ${answers[question.id] == option.id ? 'selected' : ''}>${option.option_text}</option>
                     `).join('') : ''}
@@ -321,14 +321,14 @@ function displayQuestions(questions) {
                 <input type="number" id="q${question.id}" name="question_${question.id}" 
                        value="${answers[question.id] || ''}" 
                        onchange="saveAnswer(${question.id}, this.value)" 
-                       placeholder="Enter a number">
+                       placeholder="Digite um número">
             `;
         } else if (question.question_type === 'text') {
             inputHtml = `
                 <input type="text" id="q${question.id}" name="question_${question.id}" 
                        value="${answers[question.id] || ''}" 
                        onchange="saveAnswer(${question.id}, this.value)" 
-                       placeholder="Enter your answer">
+                       placeholder="Digite sua resposta">
             `;
         } else if (question.question_type === 'checkbox') {
             inputHtml = `
@@ -401,7 +401,7 @@ async function saveAnswer(questionId, value) {
         
         checkAspectCompletion();
     } catch (error) {
-        console.error('Error saving answer:', error);
+        console.error('Erro ao salvar resposta:', error);
     }
 }
 
@@ -439,7 +439,7 @@ async function saveCheckboxAnswer(questionId, optionId, checked) {
         
         checkAspectCompletion();
     } catch (error) {
-        console.error('Error saving checkbox answer:', error);
+        console.error('Erro ao salvar resposta de checkbox:', error);
     }
 }
 
@@ -614,7 +614,7 @@ function updateAspectProgressDisplay() {
     const aspect = aspects.find(a => String(a.id) === String(currentAspectId));
     
     if (!aspect) {
-        console.error('Aspect not found:', currentAspectId);
+        console.error('Aspecto não encontrado:', currentAspectId);
         aspectTitle.innerHTML = `Aspecto ${currentAspectId}`;
         return;
     }
@@ -642,8 +642,8 @@ function updateDomainProgressDisplay() {
     
     progressBar.style.width = `${totalProgress}%`;
     progressText.innerHTML = `
-        Step ${currentDomainIndex + 1} of ${domains.length}: ${currentDomain.name} Domain
-        <br><small>${domainProgress.answered} of ${domainProgress.total} questions answered (${domainProgress.percentage}%)</small>
+        Passo ${currentDomainIndex + 1} de ${domains.length}: ${currentDomain.name} Domínio
+        <br><small>${domainProgress.answered} de ${domainProgress.total} questões respondidas (${domainProgress.percentage}%)</small>
     `;
 }
 
@@ -653,7 +653,7 @@ function updateDomainUI() {
     
     document.getElementById('currentDomainTitle').innerHTML = `
         <i class="${icon}"></i>
-        ${domain.name} Domain
+        ${domain.name} Domínio
     `;
     document.getElementById('currentDomainSubtitle').textContent = domain.description;
     
@@ -686,10 +686,10 @@ async function completeAssessment() {
         if (response.ok) {
             window.location.href = `/results/${assessmentId}`;
         } else {
-            alert('Error completing assessment');
+            alert('Erro ao completar avaliação');
         }
     } catch (error) {
-        alert('Error completing assessment');
+        alert('Erro ao completar avaliação');
     }
 }
 
