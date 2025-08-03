@@ -7,9 +7,10 @@ Foi implementado um sistema completo de alternância de idiomas para o Sistema d
 ## 🌍 Funcionalidades Implementadas
 
 ### 1. **Seletor de Idioma na Navegação**
-- **Localização**: Barra de navegação superior (ícone de globo)
-- **Funcionalidade**: Dropdown com opções "English" e "Português"
-- **Indicador Visual**: Mostra o idioma atual (EN/PT-BR)
+- **Localização**: Barra de navegação superior (bandeira do idioma atual)
+- **Funcionalidade**: Dropdown com opções "English" e "Português" com bandeiras
+- **Indicador Visual**: Bandeira do idioma atual + texto (EN/PT-BR)
+- **Estado Ativo**: Opção selecionada destacada com fundo azul e checkmark
 - **Responsivo**: Adapta-se a dispositivos móveis
 
 ### 2. **Sistema de Detecção de Idioma**
@@ -108,20 +109,21 @@ async def change_language(request: Request, language: str):
 ## 🎨 Interface do Usuário
 
 ### Seletor de Idioma
-- **Ícone**: 🌐 (globo)
-- **Texto**: EN / PT-BR
-- **Dropdown**: Opções "English" e "Português"
-- **Indicador**: Opção ativa destacada
+- **Ícone**: 🇺🇸 / 🇧🇷 (bandeiras dos países)
+- **Texto**: Eng / Port
+- **Interface**: Seletor direto sem dropdown
+- **Indicador**: Opção ativa destacada com fundo azul e checkmark (✓)
 
 ### Comportamento Responsivo
-- **Desktop**: Mostra texto completo "EN" / "PT-BR"
-- **Mobile**: Mostra apenas ícone do globo
-- **Dropdown**: Adapta largura para mobile
+- **Desktop**: Mostra bandeira + texto "Eng" / "Port"
+- **Mobile**: Mostra bandeira + texto menor
+- **Interface**: Seletor direto sempre visível
 
 ## 🧪 Testes
 
-### Script de Teste Automatizado
-- **Arquivo**: `test_language_system.py`
+### Scripts de Teste Automatizado
+- **Arquivo**: `test_language_system.py` - Testes gerais do sistema
+- **Arquivo**: `test_language_dropdown.py` - Testes específicos do dropdown
 - **Funcionalidades testadas**:
   - Detecção de idioma padrão
   - Alternância para português
@@ -129,14 +131,18 @@ async def change_language(request: Request, language: str):
   - Alternância para inglês
   - Funcionamento em diferentes páginas
   - Parâmetros de query
+  - Visibilidade do dropdown (deve estar oculto por padrão)
+  - Presença das bandeiras
+  - Estado ativo das opções
 
 ### Teste Manual
 1. Acesse `http://localhost:8400`
-2. Clique no seletor de idioma (ícone de globo)
-3. Escolha "Português"
-4. Verifique se o conteúdo mudou para português
-5. Navegue entre as páginas
-6. Verifique se o idioma persiste
+2. Verifique se o seletor de idioma está visível: [🇺🇸 Eng] / [🇧🇷 Port]
+3. Verifique se o idioma atual está destacado (fundo azul + checkmark)
+4. Clique em "Port" para mudar para português
+5. Verifique se o conteúdo mudou para português
+6. Navegue entre as páginas
+7. Verifique se o idioma persiste
 
 ## 🔒 Segurança e Performance
 
@@ -176,4 +182,22 @@ O sistema de alternância de idiomas foi implementado com sucesso, oferecendo:
 - ✅ **Performance otimizada** sem impacto na velocidade
 - ✅ **Segurança** com validação adequada
 
-O sistema está pronto para uso em produção e pode ser facilmente expandido para suportar idiomas adicionais no futuro. 
+O sistema está pronto para uso em produção e pode ser facilmente expandido para suportar idiomas adicionais no futuro.
+
+## 🔧 Correções Recentes
+
+### Problema do Dropdown Visível
+- **Problema**: Dropdown aparecia por padrão sem clicar
+- **Solução**: Simplificado para seletor direto sem dropdown
+- **Arquivos modificados**: 
+  - `templates/base.html` - Removido dropdown, adicionado seletor direto
+  - `templates/base_pt_br.html` - Removido dropdown, adicionado seletor direto
+  - `static/css/style.css` - Estilos para novo seletor e bandeiras
+- **Resultado**: Interface mais simples e intuitiva
+
+### Melhoria das Bandeiras
+- **Problema**: Bandeiras não apareciam no novo seletor
+- **Solução**: Adicionados estilos CSS específicos para `.language-selector .dropdown-item .flag-icon`
+- **Arquivos modificados**:
+  - `static/css/style.css` - Estilos para bandeiras no seletor simplificado
+- **Teste**: `test_flag_icons.py` para verificar bandeiras 
