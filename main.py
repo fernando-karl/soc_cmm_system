@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.security import HTTPBearer
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from typing import Optional, List
 import uvicorn
@@ -55,6 +55,7 @@ class UserUpdate(BaseModel):
     is_active: bool = True
 
 class UserPasswordUpdate(BaseModel):
+    current_password: str
     new_password: str
     confirm_password: str
 
@@ -76,10 +77,47 @@ async def get_current_user_from_request(request: Request):
         if username:
             user = auth_manager.get_user_by_username(username)
             return user
-    except:
+    except Exception as e:
+        print(f"Erro ao decodificar o token: {e}")
         return None
     
     return None
+
+# New authentication dependency that supports both cookies and Bearer tokens
+async def get_current_user_flexible(request: Request, credentials: HTTPAuthorizationCredentials = Depends(security)):
+    """Get current user from either cookies or Bearer token"""
+    # First try to get from cookies
+    user = await get_current_user_from_request(request)
+    if user:
+        return user
+    
+    # If no user from cookies, try Bearer token
+    if credentials:
+        try:
+            # Verify Bearer token directly
+            from jose import jwt, JWTError
+            payload = jwt.decode(credentials.credentials, auth_manager.SECRET_KEY, algorithms=["HS256"])
+            username: str = payload.get("sub")
+            if username:
+                user = auth_manager.get_user_by_username(username)
+                if user:
+                    return user
+        except Exception as e:
+            print(f"Erro na verificação do token Bearer: {e}")
+            pass
+    
+    # If neither works, raise authentication error
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Não autenticado",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+
+async def get_current_active_user_flexible(current_user: dict = Depends(get_current_user_flexible)) -> dict:
+    """Get current active user with flexible authentication"""
+    if not current_user.get("is_active"):
+        raise HTTPException(status_code=400, detail="Usuário inativo")
+    return current_user
 
 # API Routes
 
@@ -105,6 +143,24 @@ async def terms_page(request: Request):
     user = await get_current_user_from_request(request)
     return templates.TemplateResponse("terms.html", {"request": request, "user": user})
 
+@app.get("/help", response_class=HTMLResponse)
+async def help_page(request: Request):
+    """Help page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("help.html", {"request": request, "user": user})
+
+@app.get("/privacy-policy", response_class=HTMLResponse)
+async def privacy_policy_page(request: Request):
+    """Privacy Policy page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("privacy_policy.html", {"request": request, "user": user})
+
+@app.get("/faq", response_class=HTMLResponse)
+async def faq_page(request: Request):
+    """FAQ page"""
+    user = await get_current_user_from_request(request)
+    return templates.TemplateResponse("faq.html", {"request": request, "user": user})
+
 @app.post("/api/auth/register")
 async def register(user: UserCreate):
     """Register a new user"""
@@ -115,7 +171,7 @@ async def register(user: UserCreate):
             password=user.password,
             full_name=user.full_name
         )
-        return {"message": "User registered successfully", "user_id": user_id}
+        return {"message": "Usuário registrado com sucesso", "user_id": user_id}
     except HTTPException as e:
         return JSONResponse(status_code=e.status_code, content={"detail": e.detail})
 
@@ -126,11 +182,11 @@ async def login(user_credentials: UserLogin):
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
+            detail="Usuário ou senha incorretos",
             headers={"WWW-Authenticate": "Bearer"},
         )
     
-    access_token_expires = timedelta(minutes=30)
+    access_token_expires = timedelta(hours=24)  # Aumentado para 24 horas
     access_token = create_access_token(
         data={"sub": user["username"]}, expires_delta=access_token_expires
     )
@@ -145,7 +201,7 @@ async def login(user_credentials: UserLogin):
     response.set_cookie(
         key="access_token",
         value=access_token,
-        max_age=1800,  # 30 minutes
+        max_age=86400,  # 24 hours (24 * 60 * 60)
         httponly=True,
         secure=False,  # Set to True in production with HTTPS
         samesite="lax"
@@ -156,7 +212,7 @@ async def login(user_credentials: UserLogin):
 @app.post("/api/auth/logout")
 async def logout():
     """Logout user"""
-    response = JSONResponse(content={"message": "Logged out successfully"})
+    response = JSONResponse(content={"message": "Deslogado com sucesso"})
     response.delete_cookie(
         key="access_token",
         httponly=True,
@@ -164,6 +220,31 @@ async def logout():
         samesite="lax"
     )
     return response
+
+@app.post("/api/auth/change-password")
+async def change_password(password_update: UserPasswordUpdate, request: Request):
+    """Change user password"""
+    user = await get_current_user_from_request(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Não autorizado")
+    
+    # Verify current password
+    if not auth_manager.verify_password(password_update.current_password, user["hashed_password"]):
+        raise HTTPException(status_code=400, detail="Senha atual incorreta")
+    
+    # Verify new password confirmation
+    if password_update.new_password != password_update.confirm_password:
+        raise HTTPException(status_code=400, detail="As senhas não coincidem")
+    
+    # Verify new password length
+    if len(password_update.new_password) < 8:
+        raise HTTPException(status_code=400, detail="A senha deve ter pelo menos 8 caracteres")
+    
+    user_id = user["id"]
+    success = auth_manager.update_user_password(user_id, password_update.new_password)
+    if not success:
+        raise HTTPException(status_code=400, detail="Falha ao atualizar a senha")
+    return {"message": "Senha atualizada com sucesso"}
 
 @app.get("/customers", response_class=HTMLResponse)
 async def customers_page(request: Request):
@@ -188,12 +269,12 @@ async def assessment_page(request: Request, assessment_id: int):
     
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     customer = db.get_customer(assessment['customer_id'])
     # Check if customer belongs to current user
     if customer['user_id'] != user['id']:
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(status_code=403, detail="Acesso negado")
     
     domains = db.get_domains()
     
@@ -214,12 +295,12 @@ async def results_page(request: Request, assessment_id: int):
     
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     customer = db.get_customer(assessment['customer_id'])
     # Check if customer belongs to current user
     if customer['user_id'] != user['id']:
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(status_code=403, detail="Acesso negado")
     
     scores = db.get_assessment_scores(assessment_id)
     radar_data = db.get_radar_chart_data(assessment_id)
@@ -281,7 +362,7 @@ async def admin_edit_user_page(request: Request, user_id: int):
     
     target_user = db.get_user_by_id(user_id)
     if not target_user:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
     
     return templates.TemplateResponse("admin_edit_user.html", {
         "request": request, 
@@ -304,7 +385,7 @@ async def admin_new_user_page(request: Request):
 # API Endpoints
 
 @app.post("/api/customers")
-async def create_customer(customer: CustomerCreate, current_user: dict = Depends(get_current_active_user)):
+async def create_customer(customer: CustomerCreate, current_user: dict = Depends(get_current_active_user_flexible)):
     """Create a new customer"""
     customer_id = db.create_customer(
         user_id=current_user["id"],
@@ -312,48 +393,48 @@ async def create_customer(customer: CustomerCreate, current_user: dict = Depends
         email=customer.email,
         organization=customer.organization
     )
-    return {"id": customer_id, "message": "Customer created successfully"}
+    return {"id": customer_id, "message": "Cliente criado com sucesso"}
 
 @app.get("/api/customers")
-async def get_customers(current_user: dict = Depends(get_current_active_user)):
+async def get_customers(current_user: dict = Depends(get_current_active_user_flexible)):
     """Get all customers for the current user"""
     customers = db.get_customers(user_id=current_user["id"])
     return {"customers": customers}
 
 @app.get("/api/customers/{customer_id}")
-async def get_customer(customer_id: int, current_user: dict = Depends(get_current_active_user)):
+async def get_customer(customer_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get customer details"""
     customer = db.get_customer(customer_id)
     if not customer:
-        raise HTTPException(status_code=404, detail="Customer not found")
+        raise HTTPException(status_code=404, detail="Cliente não encontrado")
     
     # Check if customer belongs to current user
     if customer['user_id'] != current_user['id']:
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(status_code=403, detail="Acesso negado")
     
     return {"customer": customer}
 
 @app.post("/api/assessments")
-async def create_assessment(assessment: AssessmentCreate, current_user: dict = Depends(get_current_active_user)):
+async def create_assessment(assessment: AssessmentCreate, current_user: dict = Depends(get_current_active_user_flexible)):
     """Create a new assessment"""
     # Verify customer belongs to current user
     customer = db.get_customer(assessment.customer_id)
     if not customer or customer['user_id'] != current_user['id']:
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(status_code=403, detail="Acesso negado")
     
     assessment_id = db.create_assessment(
         customer_id=assessment.customer_id,
         name=assessment.name
     )
-    return {"id": assessment_id, "message": "Assessment created successfully"}
+    return {"id": assessment_id, "message": "Avaliação criada com sucesso"}
 
 @app.get("/api/customers/{customer_id}/assessments")
-async def get_customer_assessments(customer_id: int, current_user: dict = Depends(get_current_active_user)):
+async def get_customer_assessments(customer_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get all assessments for a customer"""
     # Verify customer belongs to current user
     customer = db.get_customer(customer_id)
     if not customer or customer['user_id'] != current_user['id']:
-        raise HTTPException(status_code=403, detail="Access denied")
+        raise HTTPException(status_code=403, detail="Acesso negado")
     
     assessments = db.get_customer_assessments(customer_id)
     return {"assessments": assessments}
@@ -363,7 +444,7 @@ async def get_assessment(assessment_id: int):
     """Get assessment details"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     return {"assessment": assessment}
 
 @app.put("/api/assessments/{assessment_id}/complete")
@@ -371,13 +452,13 @@ async def complete_assessment(assessment_id: int):
     """Mark assessment as complete"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     # Calculate scores before completing
     db.calculate_assessment_scores(assessment_id)
     db.complete_assessment(assessment_id)
     
-    return {"message": "Assessment completed successfully"}
+    return {"message": "Avaliação concluída com sucesso"}
 
 @app.get("/api/domains")
 async def get_domains():
@@ -402,7 +483,7 @@ async def get_assessment_answers(assessment_id: int):
     """Get all answers for an assessment"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     answers = db.get_assessment_answers(assessment_id)
     return {"answers": answers}
@@ -416,14 +497,14 @@ async def submit_answer(answer: AnswerSubmit):
         answer_option_id=answer.answer_option_id,
         answer_text=answer.answer_text
     )
-    return {"message": "Answer saved successfully"}
+    return {"message": "Resposta salva com sucesso"}
 
 @app.get("/api/assessments/{assessment_id}/scores")
 async def get_assessment_scores(assessment_id: int):
     """Get assessment scores"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     scores = db.get_assessment_scores(assessment_id)
     return {"scores": scores}
@@ -433,7 +514,7 @@ async def get_radar_chart_data(assessment_id: int):
     """Get radar chart data for assessment"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
-        raise HTTPException(status_code=404, detail="Assessment not found")
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
     
     radar_data = db.get_radar_chart_data(assessment_id)
     return {"radar_data": radar_data}
@@ -441,27 +522,27 @@ async def get_radar_chart_data(assessment_id: int):
 # Admin API Endpoints
 
 @app.get("/api/admin/dashboard")
-async def get_admin_dashboard(current_user: dict = Depends(get_current_active_user)):
+async def get_admin_dashboard(current_user: dict = Depends(get_current_active_user_flexible)):
     """Get admin dashboard statistics"""
     stats = db.get_dashboard_stats()
     return {"stats": stats}
 
 @app.get("/api/admin/users")
-async def get_all_users(current_user: dict = Depends(get_current_active_user)):
+async def get_all_users(current_user: dict = Depends(get_current_active_user_flexible)):
     """Get all users for admin management"""
     users = db.get_all_users()
     return {"users": users}
 
 @app.get("/api/admin/users/{user_id}")
-async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_active_user)):
+async def get_user_by_id(user_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get user by ID for admin management"""
     user = db.get_user_by_id(user_id)
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
     return {"user": user}
 
 @app.put("/api/admin/users/{user_id}")
-async def update_user(user_id: int, user_update: UserUpdate, current_user: dict = Depends(get_current_active_user)):
+async def update_user(user_id: int, user_update: UserUpdate, current_user: dict = Depends(get_current_active_user_flexible)):
     """Update user information"""
     success = auth_manager.update_user(
         user_id=user_id,
@@ -472,38 +553,38 @@ async def update_user(user_id: int, user_update: UserUpdate, current_user: dict 
     )
     
     if not success:
-        raise HTTPException(status_code=400, detail="Failed to update user")
+        raise HTTPException(status_code=400, detail="Falha ao atualizar o usuário")
     
-    return {"message": "User updated successfully"}
+    return {"message": "Usuário atualizado com sucesso"}
 
 @app.put("/api/admin/users/{user_id}/password")
-async def update_user_password(user_id: int, password_update: UserPasswordUpdate, current_user: dict = Depends(get_current_active_user)):
+async def update_user_password(user_id: int, password_update: UserPasswordUpdate, current_user: dict = Depends(get_current_active_user_flexible)):
     """Update user password"""
     if password_update.new_password != password_update.confirm_password:
-        raise HTTPException(status_code=400, detail="Passwords do not match")
+        raise HTTPException(status_code=400, detail="As senhas não coincidem")
     
     if len(password_update.new_password) < 8:
-        raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
+        raise HTTPException(status_code=400, detail="A senha deve ter pelo menos 8 caracteres")
     
     success = auth_manager.update_user_password(user_id, password_update.new_password)
     
     if not success:
-        raise HTTPException(status_code=400, detail="Failed to update password")
+        raise HTTPException(status_code=400, detail="Falha ao atualizar a senha")
     
-    return {"message": "Password updated successfully"}
+    return {"message": "Senha atualizada com sucesso"}
 
 @app.delete("/api/admin/users/{user_id}")
-async def delete_user(user_id: int, current_user: dict = Depends(get_current_active_user)):
+async def delete_user(user_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Delete a user"""
     if user_id == current_user["id"]:
-        raise HTTPException(status_code=400, detail="Cannot delete your own account")
+        raise HTTPException(status_code=400, detail="Não é possível deletar sua própria conta")
     
     success = auth_manager.delete_user(user_id)
     
     if not success:
-        raise HTTPException(status_code=400, detail="Failed to delete user")
+        raise HTTPException(status_code=400, detail="Falha ao deletar o usuário")
     
-    return {"message": "User deleted successfully"}
+    return {"message": "Usuário deletado com sucesso"}
 
 @app.get("/api/customers/{customer_id}/progress")
 async def get_customer_progress(customer_id: int):
