@@ -242,24 +242,6 @@ class PasswordChangeRequest(BaseModel):
     new_password: str
     confirm_password: str
 
-@router.post("/api/auth/change-password")
-def change_password(request: PasswordChangeRequest, current_user: dict = Depends(get_current_active_user)):
-    """Change the password for the current user"""
-    if request.new_password != request.confirm_password:
-        raise HTTPException(status_code=400, detail="New passwords do not match")
-    if len(request.new_password) < 8:
-        raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
-    if not auth_manager.verify_password(request.current_password, current_user['hashed_password']):
-        raise HTTPException(status_code=400, detail="Current password is incorrect")
-    
-    # Update password
-    hashed_password = auth_manager.get_password_hash(request.new_password)
-    conn = auth_manager.get_connection()
-    cursor = conn.cursor()
-    cursor.execute("UPDATE users SET hashed_password = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (hashed_password, current_user['id']))
-    conn.commit()
-    conn.close()
-    return {"message": "Password changed successfully"}
 
 def include_auth_routes(app: FastAPI):
     app.include_router(router)

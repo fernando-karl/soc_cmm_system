@@ -1,0 +1,471 @@
+{% extends "base.html" %}
+
+{% block title %}Frequently Asked Questions - SOC CMM Assessment System{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">
+                <i class="fas fa-question-circle"></i>
+                Frequently Asked Questions
+            </h1>
+            <p class="card-subtitle">Find answers to common questions about the SOC CMM Assessment System</p>
+        </div>
+        <div class="card-body">
+            <div class="faq-container">
+                <!-- General Questions -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i>
+                        General Questions
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            What is the SOC CMM Assessment System?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>The SOC CMM Assessment System is a comprehensive web-based platform designed to help organizations evaluate and improve their Security Operations Center (SOC) maturity levels. It provides assessment tools, questionnaires, and reporting capabilities based on the SOC Capability Maturity Model (CMM) framework.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Who should use this system?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>This system is designed for:</p>
+                            <ul>
+                                <li>Security professionals and SOC managers</li>
+                                <li>IT security consultants and auditors</li>
+                                <li>Organizations looking to assess their security operations maturity</li>
+                                <li>Companies planning to establish or improve their SOC capabilities</li>
+                                <li>Security teams seeking to benchmark their current state</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            How long does an assessment take to complete?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>The time to complete an assessment varies depending on the organization's size and complexity:</p>
+                            <ul>
+                                <li><strong>Small organizations:</strong> 2-4 hours</li>
+                                <li><strong>Medium organizations:</strong> 4-8 hours</li>
+                                <li><strong>Large organizations:</strong> 8-16 hours</li>
+                            </ul>
+                            <p>You can save your progress and return to complete the assessment at any time.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account & Registration -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-user"></i>
+                        Account & Registration
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            How do I create an account?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>To create an account:</p>
+                            <ol>
+                                <li>Click the "Register" button in the top navigation</li>
+                                <li>Fill in your username, email, and password</li>
+                                <li>Provide your full name (optional)</li>
+                                <li>Click "Create Account"</li>
+                                <li>You'll be automatically logged in and can start using the system</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            I forgot my password. How can I reset it?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Currently, password reset functionality is not available. Please contact your system administrator or support team to reset your password. In the future, we plan to implement automated password reset functionality.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Can I share my account with colleagues?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>No, account sharing is not permitted for security reasons. Each user should have their own account. This ensures proper audit trails and maintains the integrity of assessment data. If multiple people need access, each should create their own account.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Assessment Process -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-clipboard-list"></i>
+                        Assessment Process
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            How do I start a new assessment?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>To start a new assessment:</p>
+                            <ol>
+                                <li>Navigate to the "Customers" page</li>
+                                <li>Create a new customer or select an existing one</li>
+                                <li>Click "New Assessment" for that customer</li>
+                                <li>The system will create a new assessment and redirect you to the questionnaire</li>
+                                <li>Begin answering questions in the Business domain</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Can I save my progress and continue later?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Yes! Your progress is automatically saved as you complete aspects within each domain. You can:</p>
+                            <ul>
+                                <li>Close your browser and return later</li>
+                                <li>Navigate between domains and aspects</li>
+                                <li>Review and modify previous answers</li>
+                                <li>Resume from where you left off</li>
+                            </ul>
+                            <p>Your assessment will remain available until you complete it or delete it.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            What if I need to change an answer?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>You can modify answers at any time before completing the assessment:</p>
+                            <ul>
+                                <li>Use the "Back to Aspects" button to return to previous domains</li>
+                                <li>Navigate to the specific aspect you want to modify</li>
+                                <li>Change your answers and save</li>
+                                <li>Your updated responses will be reflected in the final results</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            How do I know which maturity level to choose?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Each question includes guidance to help you determine the appropriate maturity level:</p>
+                            <ul>
+                                <li><strong>Level 1 (Initial):</strong> Ad hoc processes, inconsistent execution</li>
+                                <li><strong>Level 2 (Developing):</strong> Basic processes defined, some consistency</li>
+                                <li><strong>Level 3 (Defined):</strong> Standardized processes, consistent execution</li>
+                                <li><strong>Level 4 (Managed):</strong> Measured processes, quantitative management</li>
+                                <li><strong>Level 5 (Optimized):</strong> Continuous improvement, innovation focus</li>
+                            </ul>
+                            <p>Be honest in your assessment - this helps identify real improvement opportunities.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results & Reports -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-chart-line"></i>
+                        Results & Reports
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            How do I interpret my assessment results?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Your results include:</p>
+                            <ul>
+                                <li><strong>Radar Chart:</strong> Visual representation of maturity across all domains</li>
+                                <li><strong>Domain Scores:</strong> Detailed breakdown of each domain's maturity level</li>
+                                <li><strong>Aspect Details:</strong> Specific areas within each domain</li>
+                                <li><strong>Recommendations:</strong> Suggested improvements based on your scores</li>
+                            </ul>
+                            <p>Focus on domains with lower scores for immediate improvement opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Can I export my results?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Yes, you can export your assessment results:</p>
+                            <ul>
+                                <li>Use the "Export" button on the results page</li>
+                                <li>Results are available in standard formats</li>
+                                <li>You can share reports with stakeholders</li>
+                                <li>Export includes charts, scores, and recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Can I compare multiple assessments?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Yes! You can:</p>
+                            <ul>
+                                <li>Complete multiple assessments for the same customer</li>
+                                <li>Track progress over time</li>
+                                <li>Compare results between different assessment periods</li>
+                                <li>Measure improvement in specific domains</li>
+                                <li>Generate trend reports</li>
+                            </ul>
+                            <p>This is especially useful for measuring the impact of improvement initiatives.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Support -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-tools"></i>
+                        Technical Support
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            What browsers are supported?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>The system supports all modern browsers:</p>
+                            <ul>
+                                <li>Chrome (recommended)</li>
+                                <li>Firefox</li>
+                                <li>Safari</li>
+                                <li>Edge</li>
+                            </ul>
+                            <p>For the best experience, use the latest version of your browser and ensure JavaScript is enabled.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Is the system mobile-friendly?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Yes! The system is fully responsive and optimized for:</p>
+                            <ul>
+                                <li>Desktop computers</li>
+                                <li>Tablets</li>
+                                <li>Mobile phones</li>
+                                <li>All screen sizes</li>
+                            </ul>
+                            <p>You can complete assessments on any device with an internet connection.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            What should I do if I encounter an error?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>If you encounter an error:</p>
+                            <ol>
+                                <li>Try refreshing the page</li>
+                                <li>Clear your browser cache and cookies</li>
+                                <li>Check your internet connection</li>
+                                <li>Try using a different browser</li>
+                                <li>Contact support if the issue persists</li>
+                            </ol>
+                            <p>Most issues can be resolved by refreshing the page or clearing browser data.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security & Privacy -->
+                <section class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem;">
+                        <i class="fas fa-shield-alt"></i>
+                        Security & Privacy
+                    </h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Is my data secure?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Yes, we take data security seriously:</p>
+                            <ul>
+                                <li>All data is encrypted in transit and at rest</li>
+                                <li>Secure authentication and authorization</li>
+                                <li>Regular security assessments</li>
+                                <li>Access controls and audit logging</li>
+                                <li>Compliance with data protection regulations</li>
+                            </ul>
+                            <p>See our <a href="/privacy-policy" style="color: var(--primary-color);">Privacy Policy</a> for more details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Who can access my assessment data?
+                        </h3>
+                        <div class="faq-answer">
+                            <p>Your assessment data is private and secure:</p>
+                            <ul>
+                                <li>Only you and authorized users in your organization can access your data</li>
+                                <li>System administrators have limited access for support purposes</li>
+                                <li>Data is not shared with third parties without your consent</li>
+                                <li>You control who can view your assessment results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.faq-container {
+    max-width: 100%;
+}
+
+.faq-section {
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.faq-question {
+    background: var(--surface-color);
+    padding: 1rem 1.5rem;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.faq-question:hover {
+    background: var(--surface-secondary);
+    color: var(--primary-color);
+}
+
+.faq-question.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.faq-answer ul, .faq-answer ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-answer li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .faq-answer.active {
+        padding: 0.75rem 1rem;
+    }
+}
+</style>
+
+<script>
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-question').forEach(question => {
+        if (question !== element) {
+            question.classList.remove('active');
+            question.nextElementSibling.classList.remove('active');
+        }
+    });
+    
+    // Toggle current FAQ item
+    element.classList.toggle('active');
+    answer.classList.toggle('active');
+}
+
+// Auto-open first FAQ item
+document.addEventListener('DOMContentLoaded', function() {
+    const firstFAQ = document.querySelector('.faq-question');
+    if (firstFAQ) {
+        firstFAQ.click();
+    }
+});
+</script>
+{% endblock %} 
