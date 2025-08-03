@@ -95,6 +95,84 @@ body {
     gap: 1rem;
 }
 
+/* Language Selector */
+.language-selector {
+    position: relative;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.language-toggle:hover {
+    background: var(--background-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.language-text {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.language-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    min-width: 150px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+}
+
+.language-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.language-dropdown-menu .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.language-dropdown-menu .dropdown-item:hover {
+    background: var(--background-color);
+    color: var(--primary-color);
+}
+
+.language-dropdown-menu .dropdown-item.active {
+    background: var(--primary-color);
+    color: white;
+}
+
 .user-info {
     display: flex;
     align-items: center;
@@ -646,6 +724,19 @@ body {
     
     .nav-auth {
         gap: 0.5rem;
+    }
+    
+    .language-toggle {
+        padding: 0.5rem;
+    }
+    
+    .language-toggle .language-text {
+        display: none;
+    }
+    
+    .language-dropdown-menu {
+        right: 0;
+        min-width: 120px;
     }
     
     .user-name {

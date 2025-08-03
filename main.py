@@ -84,6 +84,28 @@ async def get_current_user_from_request(request: Request):
     
     return None
 
+# Language helper function
+def get_language_from_request(request: Request) -> str:
+    """Get language from request query parameters or cookies"""
+    # First check query parameter
+    lang = request.query_params.get("lang")
+    if lang in ["en", "pt_br"]:
+        return lang
+    
+    # Then check cookie
+    lang = request.cookies.get("language")
+    if lang in ["en", "pt_br"]:
+        return lang
+    
+    # Default to English
+    return "en"
+
+def get_template_name(base_name: str, language: str) -> str:
+    """Get template name based on language"""
+    if language == "pt_br":
+        return f"{base_name}_pt_br.html"
+    return f"{base_name}.html"
+
 # New authentication dependency that supports both cookies and Bearer tokens
 async def get_current_user_flexible(request: Request, credentials: HTTPAuthorizationCredentials = Depends(security)):
     """Get current user from either cookies or Bearer token"""
@@ -135,66 +157,141 @@ async def get_current_admin_user_flexible(current_user: dict = Depends(get_curre
 async def home(request: Request):
     """Home page"""
     user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("index.html", {"request": request, "user": user})
+    language = get_language_from_request(request)
+    template_name = get_template_name("index", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    # Set language cookie if not already set
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)  # 1 year
+    
+    return response
 
 @app.get("/login", response_class=HTMLResponse)
 async def login_page(request: Request):
     """Login page"""
-    return templates.TemplateResponse("login.html", {"request": request})
+    language = get_language_from_request(request)
+    template_name = get_template_name("login", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/register", response_class=HTMLResponse)
 async def register_page(request: Request):
     """Register page"""
-    return templates.TemplateResponse("register.html", {"request": request})
+    language = get_language_from_request(request)
+    template_name = get_template_name("register", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/terms", response_class=HTMLResponse)
 async def terms_page(request: Request):
     """Terms and conditions page"""
     user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("terms.html", {"request": request, "user": user})
-
-@app.get("/terms_pt_br", response_class=HTMLResponse)
-async def terms_page(request: Request):
-    """Terms and conditions page"""
-    user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("terms_pt_br.html", {"request": request, "user": user})
+    language = get_language_from_request(request)
+    template_name = get_template_name("terms", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/help", response_class=HTMLResponse)
 async def help_page(request: Request):
     """Help page"""
     user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("help.html", {"request": request, "user": user})
-
-@app.get("/help_pt_br", response_class=HTMLResponse)
-async def help_page(request: Request):
-    """Help page"""
-    user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("help_pt_br.html", {"request": request, "user": user})
-
+    language = get_language_from_request(request)
+    template_name = get_template_name("help", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/privacy-policy", response_class=HTMLResponse)
 async def privacy_policy_page(request: Request):
     """Privacy Policy page"""
     user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("privacy_policy.html", {"request": request, "user": user})
-
-@app.get("/privacy_policy_pt_br", response_class=HTMLResponse)
-async def privacy_policy_page(request: Request):
-    """Privacy Policy page"""
-    user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("privacy_policy_pt_br.html", {"request": request, "user": user})
+    language = get_language_from_request(request)
+    template_name = get_template_name("privacy_policy", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/faq", response_class=HTMLResponse)
 async def faq_page(request: Request):
     """FAQ page"""
     user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("faq.html", {"request": request, "user": user})
+    language = get_language_from_request(request)
+    template_name = get_template_name("faq", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
-@app.get("/faq_pt_br", response_class=HTMLResponse)
-async def faq_page(request: Request):
-    """FAQ page"""
-    user = await get_current_user_from_request(request)
-    return templates.TemplateResponse("faq_pt_br.html", {"request": request, "user": user})
+@app.get("/change-language/{language}")
+async def change_language(request: Request, language: str):
+    """Change language and redirect back to previous page"""
+    if language not in ["en", "pt_br"]:
+        language = "en"
+    
+    # Get the referer URL or default to home
+    referer = request.headers.get("referer", "/")
+    
+    # Create response that redirects back
+    response = RedirectResponse(url=referer, status_code=302)
+    
+    # Set the language cookie
+    response.set_cookie("language", language, max_age=31536000)  # 1 year
+    
+    return response
 
 @app.post("/api/auth/register")
 async def register(user: UserCreate):
@@ -288,12 +385,21 @@ async def customers_page(request: Request):
     if not user:
         return RedirectResponse(url="/login", status_code=302)
     
+    language = get_language_from_request(request)
+    template_name = get_template_name("customers", language)
     customers = db.get_customers(user_id=user["id"])
-    return templates.TemplateResponse("customers.html", {
+    
+    response = templates.TemplateResponse(template_name, {
         "request": request, 
         "customers": customers,
-        "user": user
+        "user": user,
+        "language": language
     })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/assessment/{assessment_id}", response_class=HTMLResponse)
 async def assessment_page(request: Request, assessment_id: int):
@@ -311,15 +417,23 @@ async def assessment_page(request: Request, assessment_id: int):
     if customer['user_id'] != user['id']:
         raise HTTPException(status_code=403, detail="Acesso negado")
     
+    language = get_language_from_request(request)
+    template_name = get_template_name("assessment", language)
     domains = db.get_domains()
     
-    return templates.TemplateResponse("assessment.html", {
+    response = templates.TemplateResponse(template_name, {
         "request": request,
         "assessment": assessment,
         "customer": customer,
         "domains": domains,
-        "user": user
+        "user": user,
+        "language": language
     })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/results/{assessment_id}", response_class=HTMLResponse)
 async def results_page(request: Request, assessment_id: int):
@@ -337,24 +451,45 @@ async def results_page(request: Request, assessment_id: int):
     if customer['user_id'] != user['id']:
         raise HTTPException(status_code=403, detail="Acesso negado")
     
+    language = get_language_from_request(request)
+    template_name = get_template_name("results", language)
     scores = db.get_assessment_scores(assessment_id)
     radar_data = db.get_radar_chart_data(assessment_id)
     
-    return templates.TemplateResponse("results.html", {
+    response = templates.TemplateResponse(template_name, {
         "request": request,
         "assessment": assessment,
         "customer": customer,
         "scores": scores,
         "radar_data": radar_data,
-        "user": user
+        "user": user,
+        "language": language
     })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/change-password", response_class=HTMLResponse)
 async def change_password_page(request: Request):
     user = await get_current_user_from_request(request)
     if not user:
         return RedirectResponse(url="/login", status_code=302)
-    return templates.TemplateResponse("change_password.html", {"request": request, "user": user})
+    
+    language = get_language_from_request(request)
+    template_name = get_template_name("change_password", language)
+    
+    response = templates.TemplateResponse(template_name, {
+        "request": request, 
+        "user": user,
+        "language": language
+    })
+    
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+    
+    return response
 
 @app.get("/admin", response_class=HTMLResponse)
 async def admin_dashboard(request: Request):
