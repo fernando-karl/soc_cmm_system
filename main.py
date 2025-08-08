@@ -276,6 +276,24 @@ async def faq_page(request: Request):
     
     return response
 
+@app.get("/about", response_class=HTMLResponse)
+async def about_page(request: Request):
+    """About Us page"""
+    user = await get_current_user_from_request(request)
+    language = get_language_from_request(request)
+    template_name = get_template_name("about", language)
+
+    response = templates.TemplateResponse(template_name, {
+        "request": request,
+        "user": user,
+        "language": language
+    })
+
+    if not request.cookies.get("language"):
+        response.set_cookie("language", language, max_age=31536000)
+
+    return response
+
 @app.get("/change-language/{language}")
 async def change_language(request: Request, language: str):
     """Change language and redirect back to previous page"""
