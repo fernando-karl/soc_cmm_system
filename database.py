@@ -1,15 +1,23 @@
+"""
+Camada de Acesso a Dados (SQLite) para o SOC CMM Assessment System.
+
+Responsável por CRUD de clientes, avaliações, domínios, aspectos, questões,
+opções de resposta, respostas e pontuações.
+"""
 import sqlite3
 import json
 from datetime import datetime
 from typing import List, Dict, Optional
 
 class DatabaseManager:
+    """Gerencia conexões e operações no banco SQLite."""
     def __init__(self, db_path: str = "soc_cmm_translated.db"):
         self.db_path = db_path
         #self.init_database()
         #self.populate_initial_data()
     
     def get_connection(self):
+        """Abre uma conexão com o SQLite e retorna um cursor com linhas nomeadas."""
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         return conn

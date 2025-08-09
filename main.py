@@ -1,3 +1,11 @@
+"""
+Aplicação FastAPI do SOC CMM Assessment System.
+
+- Rotas web (templates Jinja2) e rotas de API REST
+- Autenticação via JWT e cookies (isolamento por usuário)
+- Suporte a idiomas (EN/PT-BR) com seletor e cookie de preferência
+- Integração com SQLite via `database.py`
+"""
 from fastapi import FastAPI, HTTPException, Request, Form, Depends, status
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -16,7 +24,7 @@ from auth import auth_manager, create_access_token, get_current_active_user, get
 app = FastAPI(title="SOC CMM Assessment System", version="1.0.0")
 include_auth_routes(app)
 
-# Enable CORS
+# Habilita CORS para facilitar consumo da API no ambiente local
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -28,11 +36,11 @@ app.add_middleware(
 # Initialize database
 db = DatabaseManager()
 
-# Setup templates and static files
+# Configura templates e arquivos estáticos
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Pydantic models
+# Modelos Pydantic (validação de payloads da API)
 class CustomerCreate(BaseModel):
     name: str
     email: Optional[str] = None
@@ -60,12 +68,12 @@ class UserPasswordUpdate(BaseModel):
     new_password: str
     confirm_password: str
 
-# Authentication token dependency
+# Dependência de segurança (Bearer opcional; também suporta cookie)
 security = HTTPBearer(auto_error=False)
 
-# Authentication helper function
+# Função auxiliar de autenticação
 async def get_current_user_from_request(request: Request):
-    """Get current user from request cookies or headers"""
+    """Obtém o usuário atual pelos cookies (ou headers)."""
     token = request.cookies.get("access_token")
     if not token:
         return None
@@ -84,9 +92,9 @@ async def get_current_user_from_request(request: Request):
     
     return None
 
-# Language helper function
+# Função auxiliar de idioma
 def get_language_from_request(request: Request) -> str:
-    """Get language from request query parameters or cookies"""
+    """Obtém o idioma pelos parâmetros de query ou cookies (padrão: en)."""
     # First check query parameter
     lang = request.query_params.get("lang")
     if lang in ["en", "pt_br"]:
@@ -101,7 +109,7 @@ def get_language_from_request(request: Request) -> str:
     return "en"
 
 def get_template_name(base_name: str, language: str) -> str:
-    """Get template name based on language"""
+    """Retorna o nome do template conforme o idioma."""
     if language == "pt_br":
         return f"{base_name}_pt_br.html"
     return f"{base_name}.html"

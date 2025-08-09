@@ -1,3 +1,11 @@
+"""
+Módulo de Autenticação (JWT + Bcrypt)
+
+- Registro, login e gerenciamento de usuários
+- Geração/validação de tokens JWT
+- Hash de senha com bcrypt
+- Funções utilitárias para obter usuário atual e verificar permissões
+"""
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import Depends, HTTPException, status, APIRouter
@@ -46,6 +54,7 @@ class User(BaseModel):
     is_active: bool
 
 class AuthManager:
+    """Fornece operações de autenticação e gerenciamento de usuários."""
     def __init__(self, db_path: str = "soc_cmm_translated.db"):
         self.db_path = db_path
         self.SECRET_KEY = SECRET_KEY
@@ -192,7 +201,7 @@ class AuthManager:
 auth_manager = AuthManager()
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
-    """Create a JWT access token"""
+    """Cria um token JWT de acesso com expiração."""
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
@@ -203,7 +212,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     return encoded_jwt
 
 def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)) -> dict:
-    """Verify JWT token and return user data"""
+    """Valida o token JWT e retorna os dados do usuário."""
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -226,17 +235,17 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)) 
     return user
 
 def get_current_user(token: str = Depends(security)) -> dict:
-    """Get current authenticated user"""
+    """Retorna o usuário autenticado atual."""
     return verify_token(token)
 
 def get_current_active_user(current_user: dict = Depends(get_current_user)) -> dict:
-    """Get current active user"""
+    """Garante que o usuário atual está ativo."""
     if not current_user.get("is_active"):
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
 
 def get_current_admin_user(current_user: dict = Depends(get_current_active_user)) -> dict:
-    """Get current admin user"""
+    """Garante que o usuário atual é administrador."""
     if not current_user.get("is_admin"):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
