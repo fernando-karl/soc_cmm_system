@@ -2,14 +2,14 @@
 """
 SOC CMM Assessment MCP Server
 
-This MCP server provides tools to interact with the SOC CMM Assessment API.
-It allows AI models to:
-- Identify customers
-- Get assessments in progress
-- Create customers
-- Create assessments
-- Request next questions
-- Register answers
+Servidor MCP em Python para interação com a API do SOC CMM.
+Permite a modelos de IA:
+- Identificar clientes
+- Obter avaliações em andamento
+- Criar clientes
+- Criar avaliações
+- Solicitar próximas questões
+- Registrar respostas
 """
 
 import asyncio
