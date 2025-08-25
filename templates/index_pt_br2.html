@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block title %}SOC CMM Assessment System - Home{% endblock %}
+
+{% block content %}
+{% if user and user.username == 'admin' %}
+<div class="alert alert-warning" style="margin-bottom: 2rem;">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+            <strong>Aviso de Segurança:</strong> Você está usando a conta de administrador padrão. 
+            <a href="/change-password" style="color: inherit; text-decoration: underline;">Por favor, altere sua senha imediatamente</a> para segurança.
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if request.query_params.get('password_changed') == 'true' %}
+<div class="alert alert-success" style="margin-bottom: 2rem;">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-check-circle"></i>
+        <div>
+            <strong>Sucesso!</strong> Sua senha foi alterada com sucesso.
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="text-center mb-3">
+    <h1 class="card-title" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">
+        <i class="fas fa-shield-alt"></i>
+        SOC CMM Assessment System
+    </h1>
+    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+        Avalie e melhore a maturidade da sua Central de Operações de Segurança (SOC) com nosso framework de avaliação abrangente
+    </p>
+</div>
+
+<div class="grid grid-cols-1" style="max-width: 800px; margin: 0 auto;">
+    <!-- Welcome Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <i class="fas fa-rocket"></i>
+                Começar
+            </h2>
+            <p class="card-subtitle">Comece sua jornada de avaliação de maturidade da SOC</p>
+        </div>
+        <div class="card-body">
+            <p style="margin-bottom: 1.5rem;">
+                O Modelo de Capacidade de Maturidade da SOC (CMM) ajuda organizações a avaliar e melhorar suas capacidades de operações de segurança em seis domínios-chave:
+            </p>
+            
+            <div class="grid grid-cols-2" style="margin-bottom: 2rem;">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-building" style="color: var(--primary-color);"></i>
+                    <span>Negócio</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users" style="color: var(--primary-color);"></i>
+                    <span>Pessoas</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cogs" style="color: var(--primary-color);"></i>
+                    <span>Processo</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-microchip" style="color: var(--primary-color);"></i>
+                    <span>Tecnologia</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-server" style="color: var(--primary-color);"></i>
+                    <span>Serviços</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-chart-line" style="color: var(--primary-color);"></i>
+                    <span>Resultados</span>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-2">
+                <a href="/customers" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play"></i>
+                    Iniciar Avaliação
+                </a>
+                <button onclick="showAbout()" class="btn btn-outline btn-lg">
+                    <i class="fas fa-info-circle"></i>
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <i class="fas fa-star"></i>
+                Principais Recursos
+            </h2>
+        </div>
+        <div class="card-body">
+            <div class="grid grid-cols-1 gap-3">
+                <div class="flex items-center gap-3">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-list-check" style="color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.25rem;">Avaliação Passo a Passo</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Questionário guiado dividido em seções gerenciáveis</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--success-color), #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-chart-radar" style="color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.25rem;">Resultados Visuais</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Gráficos interativos que mostram os níveis de maturidade</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--warning-color), #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-trending-up" style="color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.25rem;">Acompanhamento de Progresso</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Monitorar melhorias ao longo do tempo com várias avaliações</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--secondary-color), #475569); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-mobile-alt" style="color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.25rem;">Otimizado para Celular</h3>
+                        <p style="color: var(--text-secondary); margin: 0;">Complete avaliações em qualquer dispositivo, em qualquer lugar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Modal -->
+<div id="aboutModal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Sobre o SOC CMM</h2>
+            <button onclick="hideAbout()" class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>O Modelo de Capacidade de Maturidade da SOC (SOC CMM) é um framework projetado para ajudar organizações a avaliar e melhorar suas capacidades de operações de segurança.</p>
+            
+            <h3>Níveis de Maturidade</h3>
+            <ul>
+                <li><strong>Nível 1 - Inicial:</strong> Abordagem ad hoc, reativa com documentação mínima</li>
+                <li><strong>Nível 2 - Em Desenvolvimento:</strong> Alguns processos definidos, mas inconsistentemente aplicados</li>
+                <li><strong>Nível 3 - Definido:</strong> Processos documentados que são consistentemente seguidos</li>
+                <li><strong>Nível 4 - Gerenciado:</strong> Processos são medidos e controlados</li>
+                <li><strong>Nível 5 - Otimizado:</strong> Melhorias contínuas e otimização</li>
+            </ul>
+            
+            <h3>Processo de Avaliação</h3>
+            <p>A avaliação cobre seis domínios com vários aspectos cada, fornecendo uma visão abrangente da maturidade da sua SOC em todas as áreas críticas.</p>
+        </div>
+    </div>
+
+    <!-- Legal Information Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">
+                <i class="fas fa-info-circle"></i>
+                Informações Legais
+            </h2>
+        </div>
+        <div class="card-body">
+            <p style="margin-bottom: 1rem;">
+                Antes de usar nosso sistema de avaliação, recomendamos que você leia nossos termos e condições para entender completamente os direitos e responsabilidades de todas as partes.
+            </p>
+            <div class="flex justify-center">
+                <a href="/terms" class="btn btn-outline">
+                    <i class="fas fa-gavel"></i>
+                    Ver Termos e Condições
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-body h3 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body li {
+    margin-bottom: 0.5rem;
+}
+.hidden {
+    display: none;
+}
+</style>
+
+<script>
+function showAbout() {
+    document.getElementById('aboutModal').classList.remove('hidden');
+}
+
+function hideAbout() {
+    document.getElementById('aboutModal').classList.add('hidden');
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('aboutModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideAbout();
+            }
+        });
+    }
+});
+</script>
+{% endblock %}
+
