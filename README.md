@@ -1,6 +1,15 @@
 # SOC CMM Assessment System
 
-A comprehensive Security Operations Center Capability Maturity Model assessment system built with FastAPI, SQLite, and modern web technologies.
+A comprehensive Security Operations Center Capability Maturity Model assessment
+system built with FastAPI, SQLite, and modern web technologies.
+
+> **Attribution:** This project is a derivative work of the **SOC-CMM®
+> framework** created by **Rob van Os** (<https://www.soc-cmm.com>) and
+> distributed under the [Creative Commons Attribution-ShareAlike 4.0
+> International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+> license. In compliance with the ShareAlike requirement, this entire
+> project is also licensed under **CC BY-SA 4.0**. See [`LICENSE`](LICENSE)
+> and [`NOTICE`](NOTICE) for full details.
 
 ## Features
 
@@ -25,70 +34,126 @@ The assessment covers six key domains:
 
 ## Technology Stack
 
-- **Backend**: FastAPI (Python 3.11)
+- **Backend**: FastAPI (Python 3.11+)
 - **Database**: SQLite3
 - **Frontend**: HTML5, CSS3, JavaScript with Jinja2 templates
 - **Visualization**: Chart.js for radar charts and progress tracking
 - **Styling**: Modern CSS with responsive design
 - **Icons**: Font Awesome
 
+## Documentation
+
+Full documentation is available in two languages:
+
+- 🇬🇧 **English:** [`docs/en/`](docs/en/README.md)
+- 🇧🇷 **Português:** [`docs/pt-br/`](docs/pt-br/README.md)
+
+Both indexes cover installation, usage, API reference, authentication,
+administration, MCP, database schema, Docker deployment, and
+troubleshooting.
+
 ## Installation
+
+> **Looking for a deeper guide?** See
+> [`docs/en/installation.md`](docs/en/installation.md) (English) or
+> [`docs/pt-br/instalacao.md`](docs/pt-br/instalacao.md) (Portuguese).
 
 ### Prerequisites
 
-- Python 3.11 or higher
-- pip package manager
+- Python **3.11** or higher
+- `pip`
+- Optional: Docker + Docker Compose (containerised flow)
 
-### Setup
+### Quick start
 
-1. Clone or download the system files
-2. Install dependencies:
-   ```bash
-   pip install fastapi uvicorn jinja2 python-multipart aiofiles
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/fernando-karl/soc_cmm_system.git
+cd soc_cmm_system
 
-3. Run the application:
-   ```bash
-   cd soc_cmm_system
-   python main.py
-   ```
+# 2. Install dependencies (use a virtualenv if you prefer)
+pip install -r requirements.txt
 
-4. Open your browser and navigate to `http://localhost:8000`
+# 3. Configure environment variables
+cp .env.example .env
+# edit .env and set at least SECRET_KEY and ADMIN_PASSWORD
+# generate SECRET_KEY:
+#   python -c "import secrets; print(secrets.token_urlsafe(48))"
+
+# 4. Bootstrap the database (creates the admin user from $ADMIN_PASSWORD)
+export ADMIN_PASSWORD="your-strong-password"
+python migrate_to_auth.py
+
+# 5. Start the application
+python main.py
+```
+
+The application listens on **port 8400** by default. Override with
+`PORT=9000 python main.py`. Browse to <http://localhost:8400>, log in as
+`admin` with `$ADMIN_PASSWORD`, and **change the password right away**.
+
+### Required environment variables
+
+| Variable                      | Required | Description                                                                                                          |
+| ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `SECRET_KEY`                  | **Yes**  | Secret used to sign JWT tokens. The application refuses to start without it.                                          |
+| `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `migrate_to_auth.py`.                                     |
+| `ALLOWED_ORIGINS`             | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:8400`. Use `*` only in trusted networks.          |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | No       | JWT lifetime in minutes (default: `30`).                                                                              |
+| `HOST`, `PORT`                | No       | Network interface and port (defaults: `0.0.0.0` and `8400`).                                                          |
+| `ADMIN_EMAIL`                 | No       | Email for the bootstrap admin user (default: `admin@soc-cmm.local`).                                                  |
+
+¹ Required only for the initial migration. Unset it after the first login
+and password change.
+
+### Docker
+
+```bash
+cp .env.example .env             # set SECRET_KEY, ADMIN_PASSWORD
+docker compose up -d --build
+docker compose exec soc-cmm python migrate_to_auth.py
+```
+
+See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
 
 ## Usage
 
-### 1. Customer Management
+> **Detailed walkthrough:** [`docs/en/usage.md`](docs/en/usage.md) (English)
+> or [`docs/pt-br/uso.md`](docs/pt-br/uso.md) (Portuguese).
 
-- Navigate to the Customers page
-- Click "Add Customer" to create a new customer
-- Fill in customer details (name, email, organization)
+### 1. Log in or register
 
-### 2. Starting an Assessment
+- Browse to <http://localhost:8400>.
+- Log in as `admin` with the password you set in `ADMIN_PASSWORD` (first
+  run only) or register a new account at `/register`.
+- Each user only sees their **own** customers and assessments.
+- Change the admin password from the profile page after the first login.
 
-- From the customer list, click "New Assessment"
-- The system will create a new assessment and redirect to the questionnaire
+### 2. Manage customers
 
-### 3. Completing the Assessment
+- Navigate to **Customers** and click **Add Customer**.
+- Provide a name (required) plus optional email and organisation.
 
-- The assessment is organized by domains (Business, People, Process, Technology, Services, Results)
-- Each domain contains multiple aspects with specific questions
-- Select an aspect to view its questions
-- Answer all questions using the 5-level maturity scale
-- Complete all aspects in a domain before moving to the next
-- Use the progress indicator to track completion
+### 3. Run an assessment
 
-### 4. Viewing Results
+- From the customer list, click **New Assessment**.
+- Answer the questionnaire by domain and aspect (Business, People,
+  Process, Technology, Services, Results).
+- The assessment supports multiple question types: maturity scale (1–5),
+  multiple choice, numeric, free text, and checkboxes.
+- Answers autosave; the progress bar shows what is still pending.
+- When every aspect is complete, click **Complete Assessment**.
 
-- After completing all domains, click "Complete Assessment"
-- View the radar chart showing maturity levels across all domains
-- Review detailed scores by domain and aspect
-- Export results if needed
+### 4. View results
 
-### 5. Progress Tracking
+- The results page shows a **radar chart** with maturity per domain,
+  detailed per-aspect scores, and an export option.
+- Run multiple assessments per customer to track progress over time.
 
-- Complete multiple assessments for the same customer
-- View progress over time with trend charts
-- Compare current and previous assessments
+### 5. Switch language (EN/PT-BR)
+
+- Use the 🇺🇸 / 🇧🇷 flags in the top bar.
+- The choice is stored in a `language` cookie (1 year).
 
 ## API Endpoints
 
@@ -129,20 +194,28 @@ The system uses SQLite with the following main tables:
 
 ## Customization
 
-### Adding Questions
+### Adding or editing questions
 
-1. Edit `soc_cmm_complete_data.json` to add new questions
-2. Restart the application to reload the database
+The questionnaire data lives directly in the SQLite database (the
+`domains`, `aspects`, `questions`, and `answer_options` tables — see
+[`docs/en/database.md`](docs/en/database.md)). Edit it via SQL, via the
+admin pages, or rebuild the database from the seed scripts
+(`run_populate_database_fixed.py`, `complete_populate_database.sql`).
+
+> Editing `soc_cmm_complete_data.json` after the first install will **not**
+> be reloaded automatically — the database is the source of truth at
+> runtime.
 
 ### Styling
 
-- Modify `static/css/style.css` for visual customization
-- Update CSS variables in `:root` for color scheme changes
+- Modify `static/css/style.css` for visual customisation.
+- Update CSS variables under `:root` to change the colour scheme.
 
 ### Functionality
 
-- Extend `static/js/main.js` for additional JavaScript functionality
-- Modify templates in `templates/` for layout changes
+- Extend `static/js/main.js` for additional JavaScript functionality.
+- Modify templates in `templates/` for layout changes (templates exist in
+  EN and `*_pt_br.html` variants).
 
 ## Mobile Optimization
 
@@ -156,51 +229,61 @@ The system is fully responsive and optimized for mobile devices:
 
 ## Security Considerations
 
-- Input validation and sanitization
-- SQL injection prevention through parameterized queries
-- CORS configuration for API access
-- No authentication required (designed for internal/integrated use)
+- **Authentication is required.** All assessment data is scoped per user via
+  JWT-based authentication (`auth.py`).
+- The application **refuses to start** if `SECRET_KEY` is not configured —
+  there is no insecure fallback.
+- The bootstrap admin password must be supplied through the
+  `ADMIN_PASSWORD` environment variable; there is **no hard-coded default**.
+- **CORS** is restricted to the origins listed in the `ALLOWED_ORIGINS`
+  environment variable (default: `http://localhost:8000`).
+- All database queries use parameterized statements to prevent SQL
+  injection.
+- **Never commit `.env` files or `*.db` files** — both are excluded by
+  `.gitignore`.
+- For production: run behind a reverse proxy (nginx/Caddy) with TLS, set
+  short `ACCESS_TOKEN_EXPIRE_MINUTES`, and rotate `SECRET_KEY` periodically.
 
 ## Deployment
 
-### Local Development
+### Local development
+
 ```bash
 python main.py
 ```
 
-### Production Deployment
-For production deployment, consider:
+### Docker
 
-1. Using a production WSGI server (e.g., Gunicorn)
-2. Setting up a reverse proxy (e.g., Nginx)
-3. Using environment variables for configuration
-4. Implementing proper logging
-5. Setting up database backups
+A production-style `Dockerfile` and `docker-compose.yml` are included.
+See [`docs/en/docker.md`](docs/en/docker.md) for details.
 
-### Docker Deployment
-Create a Dockerfile for containerized deployment:
+### Production checklist
 
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8000
-CMD ["python", "main.py"]
-```
+1. Run behind a reverse proxy (nginx, Caddy, Traefik) terminating TLS.
+2. Restrict `ALLOWED_ORIGINS` to your real domains (never `*`).
+3. Set a strong `SECRET_KEY` and rotate it periodically.
+4. Change the admin password and unset `ADMIN_PASSWORD` after the
+   migration.
+5. Persist the database under a mounted volume (or migrate to PostgreSQL/
+   MySQL for multi-user installs).
+6. Configure structured logging and regular backups.
+7. Consider running uvicorn with multiple workers behind the proxy
+   (`uvicorn main:app --workers 4`) instead of `python main.py`.
 
 ## Troubleshooting
 
-### Common Issues
+Common issues and fixes — see also
+[`docs/en/troubleshooting.md`](docs/en/troubleshooting.md):
 
-1. **Database errors**: Delete `soc_cmm.db` and restart the application
-2. **Port conflicts**: Change the port in `main.py` (default: 8000)
-3. **Missing dependencies**: Run `pip install -r requirements.txt`
-
-### Logs
-
-Check the console output for detailed error messages and API request logs.
+- **`SECRET_KEY environment variable is required`** — define it in `.env`
+  or export it before starting.
+- **`ADMIN_PASSWORD environment variable is required`** — set it before
+  running `migrate_to_auth.py`.
+- **Port conflict** — change with `PORT=9000 python main.py`.
+- **CORS errors** — list your origin in `ALLOWED_ORIGINS`.
+- **Missing dependencies** — `pip install -r requirements.txt`.
+- **Logs** — check the uvicorn console; for Docker, run
+  `docker compose logs -f soc-cmm`.
 
 ## Support
 
@@ -210,9 +293,38 @@ For issues or questions:
 3. Examine browser console for JavaScript errors
 4. Check server logs for backend issues
 
-## License
+## License & Attribution
 
-This system is built for SOC maturity assessment purposes. Ensure compliance with your organization's security and data handling policies.
+This software is distributed under the **Creative Commons
+Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+
+The SOC-CMM® framework on which this project is based was created by
+**Rob van Os** and is also published under CC BY-SA 4.0
+(<https://www.soc-cmm.com>). Because the SOC-CMM ShareAlike clause requires
+derivative works to be released under the same license, the entirety of this
+repository — source code, documentation, translations and database content
+derived from the SOC-CMM® materials — is licensed under CC BY-SA 4.0.
+
+Summary of your rights and obligations:
+
+- You may **share** and **adapt** the material, including for commercial
+  purposes.
+- You **must give credit** to Rob van Os and to the SOC-CMM® framework, link
+  to the license, and indicate any changes you have made.
+- You **must distribute** any derivative work under the same CC BY-SA 4.0
+  license.
+
+See [`LICENSE`](LICENSE) for the full license summary and
+[`NOTICE`](NOTICE) for the complete third-party attribution. The full legal
+text of CC BY-SA 4.0 is available at
+<https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
+
+> "SOC-CMM" is a trademark of Rob van Os. This project is **not affiliated
+> with or endorsed by** Rob van Os or soc-cmm.com. The CC BY-SA 4.0 license
+> does not grant trademark rights.
+
+You remain responsible for ensuring compliance with your organisation's
+security and data-handling policies when deploying this software.
 
 ## Version History
 

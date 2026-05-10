@@ -1,5 +1,12 @@
 # Sistema de Alternância de Idiomas - SOC CMM
 
+> **Documentação de usuário** com o mesmo conteúdo em formato resumido:
+> - 🇬🇧 [`docs/en/languages.md`](docs/en/languages.md)
+> - 🇧🇷 [`docs/pt-br/idiomas.md`](docs/pt-br/idiomas.md)
+>
+> Este arquivo descreve o **design e a implementação** do subsistema. Para
+> uso corriqueiro, prefira os documentos acima.
+
 ## 📋 Resumo
 
 Foi implementado um sistema completo de alternância de idiomas para o Sistema de Avaliação SOC CMM, permitindo aos usuários alternar entre **Inglês** e **Português do Brasil** em todas as páginas do sistema (exceto as páginas administrativas).
@@ -136,7 +143,7 @@ async def change_language(request: Request, language: str):
   - Estado ativo das opções
 
 ### Teste Manual
-1. Acesse `http://localhost:8400`
+1. Acesse `http://localhost:8400` (ou na porta definida em `PORT`)
 2. Verifique se o seletor de idioma está visível: [🇺🇸 Eng] / [🇧🇷 Port]
 3. Verifique se o idioma atual está destacado (fundo azul + checkmark)
 4. Clique em "Port" para mudar para português

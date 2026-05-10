@@ -83,7 +83,7 @@ Successfully implemented a comprehensive authentication system for the SOC CMM A
 
 ### Migration Results
 - Successfully migrated existing database
-- Created default admin user (admin/(use-ADMIN_PASSWORD))
+- Created default admin user (`admin` / value of `$ADMIN_PASSWORD`)
 - Preserved all existing customer data
 - Added necessary indexes for performance
 
@@ -119,10 +119,12 @@ Successfully implemented a comprehensive authentication system for the SOC CMM A
 ## Default Credentials
 
 After migration, the system creates a default admin user:
-- **Username**: admin
-- **Password**: (use-ADMIN_PASSWORD)
+- **Username**: `admin`
+- **Password**: the value supplied via the `ADMIN_PASSWORD` environment variable
+  (the migration aborts if this variable is not set)
 
-**Important**: These credentials should be changed immediately after first login.
+**Important**: change this password immediately after the first login and
+remove `ADMIN_PASSWORD` from the environment.
 
 ## Files Created/Modified
 

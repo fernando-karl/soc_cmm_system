@@ -3,13 +3,16 @@
 Script para testar autenticação e criar cliente como admin
 """
 
+import os
 import requests
 import json
 
-# Configuração
-BASE_URL = "http://127.0.0.1:8400"
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "(use-ADMIN_PASSWORD)"  # Assumindo que a senha é 'admin'
+# Configuração — credenciais via variáveis de ambiente
+BASE_URL = os.getenv("BASE_URL", "http://127.0.0.1:8400")
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+if not ADMIN_PASSWORD:
+    raise SystemExit("Set ADMIN_PASSWORD env var before running this test script.")
 
 def test_auth():
     """Testa o processo de autenticação completo"""

@@ -1,17 +1,20 @@
-version: '3.8'
-
 services:
   soc-cmm:
     build: .
+    # Map host:container. Override on the host with: PORT=9000 docker compose up
     ports:
-      - "8000:8000"
+      - "${PORT:-8400}:8400"
     volumes:
       - ./data:/app/data
+    env_file:
+      - .env
     environment:
       - PYTHONUNBUFFERED=1
+      # SECRET_KEY and ADMIN_PASSWORD must come from .env (see .env.example).
+      # The application aborts on startup if SECRET_KEY is not set.
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      test: ["CMD-SHELL", "curl -fsS http://localhost:${PORT:-8400}/ || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -19,4 +22,3 @@ services:
 
 volumes:
   data:
-

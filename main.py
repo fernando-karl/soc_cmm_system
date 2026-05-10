@@ -24,11 +24,16 @@ from auth import auth_manager, create_access_token, get_current_active_user, get
 app = FastAPI(title="SOC CMM Assessment System", version="1.0.0")
 include_auth_routes(app)
 
-# Habilita CORS para facilitar consumo da API no ambiente local
+# CORS: lista de origens vem de ALLOWED_ORIGINS (CSV). Default seguro = localhost.
+# Para liberar tudo em redes confiáveis, defina ALLOWED_ORIGINS=*
+_allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "http://localhost:8000")
+allowed_origins = [o.strip() for o in _allowed_origins_env.split(",") if o.strip()]
+# allow_credentials só é compatível com lista explícita — desliga se for wildcard
+allow_credentials = allowed_origins != ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -811,5 +816,7 @@ async def get_customer_progress(customer_id: int):
     return {"progress": progress_data}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8400)
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8400"))
+    uvicorn.run(app, host=host, port=port)
 
