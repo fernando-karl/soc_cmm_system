@@ -14,8 +14,29 @@ O **SOC CMM Assessment System** é uma API desenvolvida com FastAPI que permite 
 ### 🌐 Configuração
 
 - **URL Base**: `http://localhost:8400`
-- **Porta**: 8400
-- **CORS**: Habilitado para todas as origens
+- **Porta**: `8400` por padrão — configurável via variável de ambiente `PORT`
+  (e `HOST` para a interface de rede). Exemplo: `PORT=9000 python main.py`.
+- **CORS**: restrito à lista definida em `ALLOWED_ORIGINS` (padrão:
+  `http://localhost:8400`). Use `*` apenas em redes confiáveis — quando `*`
+  é o único valor, o servidor desabilita automaticamente o envio de
+  credenciais.
+- **Documentação interativa**: `/docs` (Swagger) e `/redoc`.
+
+### 🔐 Autenticação
+
+Todos os endpoints fora de `/`, `/login`, `/register`, `/api/auth/*` e
+estáticos exigem autenticação.
+
+- A aplicação emite um JWT (HS256) assinado com `SECRET_KEY` ao logar.
+- O token é entregue via cookie `access_token` (HTTP-only) **e** pode ser
+  enviado no header `Authorization: Bearer <token>`.
+- Tempo de vida padrão: **30 minutos** (configurável via
+  `ACCESS_TOKEN_EXPIRE_MINUTES`).
+- Cada usuário só vê seus próprios `customers`/`assessments`
+  (escopo via `user_id`).
+
+Ver `AUTHENTICATION_SETUP.md` para detalhes da configuração inicial e do
+fluxo de migração.
 
 ---
 
@@ -87,6 +108,51 @@ GET /results/{assessment_id}
 ---
 
 ## 🔌 API Endpoints
+
+### 🔐 Autenticação
+
+#### Registrar usuário
+```
+POST /api/auth/register
+```
+**Body**:
+```json
+{
+    "username": "alice",
+    "email": "alice@example.com",
+    "password": "senha-forte"
+}
+```
+**Resposta**: `201 Created` com os dados do usuário (sem o hash da senha).
+
+#### Login
+```
+POST /api/auth/login
+```
+Aceita `application/x-www-form-urlencoded` (campos `username`, `password`)
+ou JSON com os mesmos campos.
+**Resposta**:
+```json
+{
+    "access_token": "<jwt>",
+    "token_type": "bearer"
+}
+```
+Também grava o cookie `access_token` (HTTP-only).
+
+#### Logout
+```
+POST /api/auth/logout
+```
+Limpa o cookie `access_token`.
+
+#### Usuário atual
+```
+GET /api/auth/me
+```
+Requer autenticação. Retorna `{ id, username, email, is_admin, ... }`.
+
+---
 
 ### 👥 Gerenciamento de Clientes
 
@@ -477,17 +543,36 @@ GET /api/customers/{customer_id}/progress
 ### Requisitos
 ```bash
 pip install -r requirements.txt
+cp .env.example .env   # defina SECRET_KEY e ADMIN_PASSWORD
+```
+
+A aplicação **não inicia** sem `SECRET_KEY`. Gere uma com:
+```bash
+python -c "import secrets; print(secrets.token_urlsafe(48))"
+```
+
+### Migração inicial (cria tabelas de auth e usuário admin)
+```bash
+export ADMIN_PASSWORD="senha-forte"
+python migrate_to_auth.py
 ```
 
 ### Execução Local
 ```bash
 python main.py
+# Para mudar a porta:
+PORT=9000 python main.py
 ```
 
 ### Execução com Docker
 ```bash
-docker-compose up -d
+docker compose up -d --build
+docker compose exec soc-cmm python migrate_to_auth.py
 ```
+
+A porta exposta no host é controlada pelo `PORT` no `.env`
+(`PORT=9000 docker compose up -d`). Detalhes em
+`docs/en/docker.md` / `docs/pt-br/docker.md`.
 
 ### Acesso à Documentação Interativa
 - **Swagger UI**: `http://localhost:8400/docs`
