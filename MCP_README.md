@@ -24,7 +24,7 @@ AI Model/Client
        ↓
    SOC CMM API (main.py)
        ↓
-   SQLite Database (soc_cmm.db)
+   SQLite Database (soc_cmm_translated.db)
 ```
 
 ## Installation
@@ -34,13 +34,27 @@ AI Model/Client
    pip install -r requirements.txt
    ```
 
-2. **Start the API server**:
+2. **Configure the environment** (the API refuses to start without
+   `SECRET_KEY`):
+   ```bash
+   cp .env.example .env
+   # edit .env: set SECRET_KEY and ADMIN_PASSWORD
+   ```
+
+3. **Run the bootstrap migration** (first time only):
+   ```bash
+   export ADMIN_PASSWORD="strong-password"
+   python migrate_to_auth.py
+   ```
+
+4. **Start the API server**:
    ```bash
    python main.py
+   # default port: 8400 — override with PORT=9000 python main.py
    ```
-   The API will be available at `http://localhost:8400`
+   The API will be available at `http://localhost:8400` (or your custom port).
 
-3. **Test the setup**:
+5. **Test the setup**:
    ```bash
    python test_mcp_server.py
    ```
@@ -56,7 +70,14 @@ python mcp_server.py
 ### Configuration
 
 The MCP server can be configured via environment variables:
-- `API_BASE_URL`: Base URL of the SOC CMM API (default: `http://localhost:8400`)
+- `API_BASE_URL`: Base URL of the SOC CMM API (default: `http://localhost:8400`).
+  If you changed the API's `PORT`, update `API_BASE_URL` accordingly.
+
+> **Note on authentication:** the SOC CMM API requires user authentication
+> (JWT). The MCP server currently targets a locally trusted deployment and
+> does not negotiate JWTs on behalf of the AI model. For multi-user
+> deployments, run the API behind an authenticated proxy or extend the MCP
+> server to forward an `Authorization: Bearer <token>` header.
 
 ### MCP Client Configuration
 
@@ -240,22 +261,24 @@ Get detailed results and scores for a completed assessment.
 
 ## SOC CMM Assessment Model
 
-The system implements a comprehensive Security Operations Center Capability Maturity Model with:
+The system implements the **SOC-CMM®** framework by Rob van Os
+(<https://www.soc-cmm.com>):
 
 ### Maturity Levels
-1. **Level 1 - Initial**: Ad-hoc, unstructured processes
-2. **Level 2 - Managed**: Basic documented processes
-3. **Level 3 - Defined**: Standardized processes across organization
-4. **Level 4 - Quantitatively Managed**: Metrics-driven processes
-5. **Level 5 - Optimizing**: Continuous improvement processes
+1. **Level 1 — Initial**: Ad-hoc, unstructured processes
+2. **Level 2 — Developing**: Basic documented processes
+3. **Level 3 — Defined**: Standardised processes across the organisation
+4. **Level 4 — Managed**: Metrics-driven processes
+5. **Level 5 — Optimised**: Continuous improvement processes
 
 ### Domains
-The assessment covers multiple domains including:
-- **Governance**: Organizational structure and policies
-- **Operations**: SOC operational processes
-- **Technology**: Technical capabilities and tools
-- **People**: Human resources and training
-- **Processes**: Workflow and procedures
+The assessment covers the six SOC-CMM® domains:
+- **Business** — strategy, governance, cost management, privacy
+- **People** — employment, training, performance, knowledge management
+- **Process** — management, operations, reporting, use case management
+- **Technology** — security information management, detection, analytics
+- **Services** — service catalogue, threat hunting, vulnerability management
+- **Results** — overview, critical success factors, sharing
 
 ### Assessment Flow
 1. **Customer Registration**: Create customer profile
@@ -311,7 +334,8 @@ The test script validates:
    - Verify Python version compatibility
 
 3. **Database Errors**
-   - Ensure `soc_cmm.db` exists and is accessible
+   - Ensure `soc_cmm_translated.db` exists and is accessible
+   - Re-run `python migrate_to_auth.py` if the `users` table is missing
    - Check database permissions
 
 4. **MCP Client Issues**
@@ -335,11 +359,20 @@ logging.basicConfig(level=logging.DEBUG)
 
 ## License
 
-This project is licensed under the MIT License.
+This project is distributed under the **Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)** license — the
+same license used by the SOC-CMM® framework on which it is based. See
+[`LICENSE`](LICENSE) and [`NOTICE`](NOTICE) at the repository root for the
+full attribution text.
+
+> "SOC-CMM" is a trademark of Rob van Os. This project is **not affiliated
+> with or endorsed by** Rob van Os or soc-cmm.com.
 
 ## Support
 
 For issues and questions:
-- Check the API documentation: `API_DOCUMENTATION.md`
+- Check the API documentation: [`API_DOCUMENTATION.md`](API_DOCUMENTATION.md)
 - Run the test suite: `python test_mcp_server.py`
-- Review the main README: `README.md`
+- Review the main README: [`README.md`](README.md)
+- Bilingual user docs: [`docs/en/`](docs/en/README.md) /
+  [`docs/pt-br/`](docs/pt-br/README.md)
