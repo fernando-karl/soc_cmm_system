@@ -816,5 +816,7 @@ async def get_customer_progress(customer_id: int):
     return {"progress": progress_data}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8400)
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8400"))
+    uvicorn.run(app, host=host, port=port)
 
