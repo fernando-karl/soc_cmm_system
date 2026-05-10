@@ -3,13 +3,16 @@
 Script para debugar o problema com Bearer token
 """
 
+import os
 import requests
 import json
 
-# Configuração
-BASE_URL = "http://127.0.0.1:8400"
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "(use-ADMIN_PASSWORD)"
+# Configuração — credenciais via variáveis de ambiente
+BASE_URL = os.getenv("BASE_URL", "http://127.0.0.1:8400")
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+if not ADMIN_PASSWORD:
+    raise SystemExit("Set ADMIN_PASSWORD env var before running this debug script.")
 
 def debug_bearer():
     """Debuga o problema com Bearer token"""

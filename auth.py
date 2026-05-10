@@ -18,9 +18,15 @@ import os
 from fastapi import FastAPI
 
 # Security configuration
-SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-here-change-in-production")
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    raise RuntimeError(
+        "SECRET_KEY environment variable is required. "
+        "Generate one with: python -c \"import secrets; print(secrets.token_urlsafe(48))\" "
+        "and export it before starting the application. See .env.example."
+    )
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
 
 # Password hashing
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

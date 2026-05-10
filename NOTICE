@@ -1,0 +1,73 @@
+SOC CMM Assessment System
+Copyright (c) 2024-2026 SOC CMM Assessment System contributors.
+
+================================================================================
+Third-party attribution
+================================================================================
+
+This software is a derivative work of the SOC-CMM® framework.
+
+  Original work : SOC-CMM® (Security Operations Center Capability Maturity
+                  Model), version 2.3.3 (basic)
+  Author        : Rob van Os, MSc.
+  Website       : https://www.soc-cmm.com
+  License       : Creative Commons Attribution-ShareAlike 4.0 International
+                  (CC BY-SA 4.0)
+                  https://creativecommons.org/licenses/by-sa/4.0/
+
+The following components of this repository contain content derived from the
+SOC-CMM® framework and are therefore subject to the CC BY-SA 4.0 license:
+
+  - soc-cmm2.3.3-basic.xlsx          (original SOC-CMM® source spreadsheet)
+  - soc_cmm_complete_data.json       (extracted domains/aspects/questions)
+  - soc_cmm_complete_data-v2.json
+  - soc_cmm_questions.json           (English questionnaire)
+  - soc_cmm_questions-port.json      (Portuguese translation of questionnaire)
+  - soc cmm port.txt
+  - traduzido.json
+  - questions_for_gemini_translation.json
+  - All SQLite databases (*.db) populated from the above
+  - The structure of: domains, aspects, questions, maturity levels and
+    guidance text used by the application
+
+In compliance with the ShareAlike clause, the entire project — including the
+application source code, templates, stylesheets, documentation, and any
+translations — is distributed under the CC BY-SA 4.0 license.
+
+Modifications made by this project relative to the original SOC-CMM®
+materials include (non-exhaustive list):
+
+  - Implementation of a web-based assessment workflow (FastAPI + SQLite)
+  - Translation of questions and guidance into Portuguese (PT-BR)
+  - Bilingual user interface (EN / PT-BR)
+  - Multi-tenant user authentication and customer scoping
+  - REST API and Model Context Protocol (MCP) server integrations
+  - Visual reporting (radar charts, progress over time)
+
+================================================================================
+Trademarks
+================================================================================
+
+"SOC-CMM" and the SOC-CMM® logo are trademarks of Rob van Os. The CC BY-SA 4.0
+license granted over the SOC-CMM® content does NOT grant any trademark rights.
+This project is not affiliated with, endorsed by, or sponsored by Rob van Os
+or soc-cmm.com. Any reference to the SOC-CMM® name in this project is made
+solely to comply with the attribution requirement of the CC BY-SA 4.0 license.
+
+================================================================================
+Other dependencies
+================================================================================
+
+This project also depends on the following open-source software (each governed
+by its own license; see the individual project pages for details):
+
+  - FastAPI                (MIT)
+  - Uvicorn                (BSD-3-Clause)
+  - Jinja2                 (BSD-3-Clause)
+  - Pydantic               (MIT)
+  - python-jose            (MIT)
+  - passlib                (BSD)
+  - Chart.js               (MIT)
+  - Font Awesome (Free)    (CC BY 4.0 / SIL OFL 1.1 / MIT)
+
+================================================================================

@@ -1,6 +1,15 @@
 # SOC CMM Assessment System
 
-A comprehensive Security Operations Center Capability Maturity Model assessment system built with FastAPI, SQLite, and modern web technologies.
+A comprehensive Security Operations Center Capability Maturity Model assessment
+system built with FastAPI, SQLite, and modern web technologies.
+
+> **Attribution:** This project is a derivative work of the **SOC-CMM®
+> framework** created by **Rob van Os** (<https://www.soc-cmm.com>) and
+> distributed under the [Creative Commons Attribution-ShareAlike 4.0
+> International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+> license. In compliance with the ShareAlike requirement, this entire
+> project is also licensed under **CC BY-SA 4.0**. See [`LICENSE`](LICENSE)
+> and [`NOTICE`](NOTICE) for full details.
 
 ## Features
 
@@ -41,19 +50,38 @@ The assessment covers six key domains:
 
 ### Setup
 
-1. Clone or download the system files
+1. Clone or download the system files.
+
 2. Install dependencies:
    ```bash
-   pip install fastapi uvicorn jinja2 python-multipart aiofiles
+   pip install -r requirements.txt
    ```
 
-3. Run the application:
+3. **Configure the required environment variables.** Copy
+   `.env.example` to `.env` and fill in real values:
+   ```bash
+   cp .env.example .env
+   ```
+
+   The application will refuse to start if `SECRET_KEY` is not set.
+
+4. Run the application:
    ```bash
    cd soc_cmm_system
    python main.py
    ```
 
-4. Open your browser and navigate to `http://localhost:8000`
+5. Open your browser and navigate to `http://localhost:8000`.
+
+### Required environment variables
+
+| Variable           | Required | Description                                                                                                  |
+| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------ |
+| `SECRET_KEY`       | **Yes**  | Secret used to sign JWT tokens. Generate with `python -c "import secrets; print(secrets.token_urlsafe(48))"`. |
+| `ADMIN_PASSWORD`   | **Yes**¹ | Initial password for the bootstrap admin account created by `migrate_to_auth.py`.                             |
+| `ALLOWED_ORIGINS`  | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:8000`. Use `*` only in trusted networks. |
+
+¹ Required only when running the initial migration / bootstrap.
 
 ## Usage
 
@@ -156,10 +184,20 @@ The system is fully responsive and optimized for mobile devices:
 
 ## Security Considerations
 
-- Input validation and sanitization
-- SQL injection prevention through parameterized queries
-- CORS configuration for API access
-- No authentication required (designed for internal/integrated use)
+- **Authentication is required.** All assessment data is scoped per user via
+  JWT-based authentication (`auth.py`).
+- The application **refuses to start** if `SECRET_KEY` is not configured —
+  there is no insecure fallback.
+- The bootstrap admin password must be supplied through the
+  `ADMIN_PASSWORD` environment variable; there is **no hard-coded default**.
+- **CORS** is restricted to the origins listed in the `ALLOWED_ORIGINS`
+  environment variable (default: `http://localhost:8000`).
+- All database queries use parameterized statements to prevent SQL
+  injection.
+- **Never commit `.env` files or `*.db` files** — both are excluded by
+  `.gitignore`.
+- For production: run behind a reverse proxy (nginx/Caddy) with TLS, set
+  short `ACCESS_TOKEN_EXPIRE_MINUTES`, and rotate `SECRET_KEY` periodically.
 
 ## Deployment
 
@@ -210,9 +248,38 @@ For issues or questions:
 3. Examine browser console for JavaScript errors
 4. Check server logs for backend issues
 
-## License
+## License & Attribution
 
-This system is built for SOC maturity assessment purposes. Ensure compliance with your organization's security and data handling policies.
+This software is distributed under the **Creative Commons
+Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+
+The SOC-CMM® framework on which this project is based was created by
+**Rob van Os** and is also published under CC BY-SA 4.0
+(<https://www.soc-cmm.com>). Because the SOC-CMM ShareAlike clause requires
+derivative works to be released under the same license, the entirety of this
+repository — source code, documentation, translations and database content
+derived from the SOC-CMM® materials — is licensed under CC BY-SA 4.0.
+
+Summary of your rights and obligations:
+
+- You may **share** and **adapt** the material, including for commercial
+  purposes.
+- You **must give credit** to Rob van Os and to the SOC-CMM® framework, link
+  to the license, and indicate any changes you have made.
+- You **must distribute** any derivative work under the same CC BY-SA 4.0
+  license.
+
+See [`LICENSE`](LICENSE) for the full license summary and
+[`NOTICE`](NOTICE) for the complete third-party attribution. The full legal
+text of CC BY-SA 4.0 is available at
+<https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
+
+> "SOC-CMM" is a trademark of Rob van Os. This project is **not affiliated
+> with or endorsed by** Rob van Os or soc-cmm.com. The CC BY-SA 4.0 license
+> does not grant trademark rights.
+
+You remain responsible for ensuring compliance with your organisation's
+security and data-handling policies when deploying this software.
 
 ## Version History
 
