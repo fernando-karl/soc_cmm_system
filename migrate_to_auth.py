@@ -69,12 +69,20 @@ def migrate_database(db_path="soc_cmm_translated.db"):
         # Create a default admin user
         print("Creating default admin user...")
         from auth import auth_manager
-        
+
+        admin_password = os.getenv("ADMIN_PASSWORD")
+        if not admin_password:
+            raise RuntimeError(
+                "ADMIN_PASSWORD environment variable is required to create the "
+                "initial admin user. Set it (e.g. via .env) before running this "
+                "migration. See .env.example."
+            )
+
         try:
             admin_user_id = auth_manager.create_user(
                 username="admin",
-                email="admin@soc-cmm.com",
-                password="admin123",
+                email=os.getenv("ADMIN_EMAIL", "admin@soc-cmm.local"),
+                password=admin_password,
                 full_name="System Administrator"
             )
             print(f"Created admin user with ID: {admin_user_id}")
@@ -112,16 +120,22 @@ def create_default_user(db_path="soc_cmm_translated.db"):
         user_count = cursor.fetchone()[0]
         
         if user_count == 0:
+            admin_password = os.getenv("ADMIN_PASSWORD")
+            if not admin_password:
+                raise RuntimeError(
+                    "ADMIN_PASSWORD environment variable is required to create "
+                    "the initial admin user. See .env.example."
+                )
             print("No users found. Creating default admin user...")
             admin_user_id = auth_manager.create_user(
                 username="admin",
-                email="admin@soc-cmm.com",
-                password="admin123",
+                email=os.getenv("ADMIN_EMAIL", "admin@soc-cmm.local"),
+                password=admin_password,
                 full_name="System Administrator"
             )
             print(f"Created admin user with ID: {admin_user_id}")
-            print("Default credentials: admin / admin123")
-            print("Please change these credentials after first login!")
+            print("Admin user created with the password from $ADMIN_PASSWORD.")
+            print("Please change it after first login and unset the variable.")
         else:
             print(f"Found {user_count} existing user(s)")
             

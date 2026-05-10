@@ -25,32 +25,50 @@ The system now includes user authentication with the following features:
 pip install -r requirements.txt
 ```
 
-### 2. Run Database Migration
+### 2. Configure environment variables
+
+Copy `.env.example` to `.env` and define **at minimum**:
+
+```bash
+cp .env.example .env
+# then edit .env and set:
+#   SECRET_KEY=...      (required for the app to start)
+#   ADMIN_PASSWORD=...  (required for the initial admin user)
+```
+
+Generate a strong `SECRET_KEY` with:
+
+```bash
+python -c "import secrets; print(secrets.token_urlsafe(48))"
+```
+
+### 3. Run Database Migration
 
 The migration script will:
 - Add user authentication tables to your existing database
 - Create a backup of your current database
-- Create a default admin user
+- Create the initial admin user using the password from `$ADMIN_PASSWORD`
 - Migrate existing customers to the admin user
 
 ```bash
 python migrate_to_auth.py
 ```
 
-### 3. Start the Application
+### 4. Start the Application
 
 ```bash
 python main.py
 ```
 
-## Default Credentials
+## Initial Credentials
 
-After running the migration, you can log in with:
+After running the migration, log in with:
 
-- **Username:** admin
-- **Password:** admin123
+- **Username:** `admin`
+- **Password:** the value you exported in `ADMIN_PASSWORD`
 
-**Important:** Change these credentials immediately after your first login!
+**Important:** Change the password immediately after the first login and
+unset/remove `ADMIN_PASSWORD` from your environment.
 
 ## User Management
 
@@ -104,10 +122,13 @@ Authorization: Bearer <your-jwt-token>
 
 ## Environment Variables
 
-Set these environment variables for production:
+Set these environment variables for any deployment (the application will
+**refuse to start** without `SECRET_KEY`):
 
 ```bash
-export SECRET_KEY="your-secure-secret-key-here"
+export SECRET_KEY="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+export ADMIN_PASSWORD="<strong password — only needed for the initial migration>"
+export ALLOWED_ORIGINS="https://your-domain.example"  # comma-separated
 ```
 
 ## Troubleshooting

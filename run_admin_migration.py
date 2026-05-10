@@ -47,20 +47,26 @@ def run_admin_migration(db_path="soc_cmm_translated.db"):
         admin_exists = cursor.fetchone()[0] > 0
         
         if not admin_exists:
+            admin_password = os.getenv("ADMIN_PASSWORD")
+            if not admin_password:
+                raise RuntimeError(
+                    "Variável de ambiente ADMIN_PASSWORD é obrigatória para "
+                    "criar o usuário admin inicial. Veja .env.example."
+                )
             print("Criando usuário administrador padrão...")
             from auth import auth_manager
-            
+
             try:
                 admin_user_id = auth_manager.create_user(
                     username="admin",
-                    email="admin@soc-cmm.com",
-                    password="admin123",
+                    email=os.getenv("ADMIN_EMAIL", "admin@soc-cmm.local"),
+                    password=admin_password,
                     full_name="System Administrator",
                     is_admin=True
                 )
                 print(f"Usuário admin criado com ID: {admin_user_id}")
-                print("Credenciais padrão: admin / admin123")
-                print("IMPORTANTE: Altere essas credenciais após o primeiro login!")
+                print("Senha definida a partir de $ADMIN_PASSWORD.")
+                print("IMPORTANTE: Altere a senha após o primeiro login e remova a variável de ambiente.")
             except Exception as e:
                 print(f"Aviso: Não foi possível criar usuário admin: {e}")
         else:

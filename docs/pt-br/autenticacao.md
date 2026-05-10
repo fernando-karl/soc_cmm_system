@@ -10,13 +10,17 @@ O sistema utiliza autenticação de usuários com tokens JWT e cookies HTTP-only
 
 ## Instalação e Migração
 1. Instale dependências: `pip install -r requirements.txt`
-2. Rode a migração: `python migrate_to_auth.py`
+2. Configure o ambiente: `cp .env.example .env` e defina **`SECRET_KEY`** e
+   **`ADMIN_PASSWORD`** (a aplicação não inicia sem `SECRET_KEY` e a migração
+   aborta sem `ADMIN_PASSWORD`).
+3. Rode a migração: `python migrate_to_auth.py`
    - Cria tabelas de usuários e índices
    - Faz backup do banco atual
-   - Cria usuário admin padrão (admin/admin123)
-3. Inicie a aplicação: `python main.py`
+   - Cria usuário `admin` com a senha definida em `$ADMIN_PASSWORD`
+4. Inicie a aplicação: `python main.py`
 
-Altere a senha padrão após o primeiro login.
+Altere a senha do admin após o primeiro login e remova `ADMIN_PASSWORD` do
+ambiente.
 
 ## API
 Inclua o token JWT no header:
