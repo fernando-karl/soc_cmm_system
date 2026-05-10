@@ -1,29 +1,28 @@
 FROM python:3.11-slim
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+# System packages required by python deps and the healthcheck (curl)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
+# Python deps
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files
+# Application source
 COPY . .
 
-# Create directory for database
+# Persistent data (mounted as a volume in docker-compose)
 RUN mkdir -p /app/data
 
-# Expose port
-EXPOSE 8000
+# Network port — overridable at runtime via the PORT env var
+ENV PORT=8400 \
+    HOST=0.0.0.0
+EXPOSE 8400
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8000/ || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD curl -fsS "http://localhost:${PORT}/" || exit 1
 
-# Run the application
 CMD ["python", "main.py"]
-
