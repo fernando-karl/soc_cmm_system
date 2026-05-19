@@ -61,7 +61,7 @@ class User(BaseModel):
 
 class AuthManager:
     """Fornece operações de autenticação e gerenciamento de usuários."""
-    def __init__(self, db_path: str = "soc_cmm_translated.db"):
+    def __init__(self, db_path: str = "soc_cmm_bilingual.db"):
         self.db_path = db_path
         self.SECRET_KEY = SECRET_KEY
     

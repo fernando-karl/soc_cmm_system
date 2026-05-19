@@ -11,7 +11,7 @@ from typing import List, Dict, Optional
 
 class DatabaseManager:
     """Gerencia conexões e operações no banco SQLite."""
-    def __init__(self, db_path: str = "soc_cmm_translated.db"):
+    def __init__(self, db_path: str = "soc_cmm_bilingual.db"):
         self.db_path = db_path
         #self.init_database()
         #self.populate_initial_data()
@@ -182,54 +182,100 @@ class DatabaseManager:
         conn.close()
     
     # Domain and question methods
-    def get_domains(self) -> List[Dict]:
+    #
+    # Sistema bilíngue: as colunas `name`/`description`/`question_text`/`option_text`/`guidance`
+    # nas tabelas base ficam em inglês (baseline canônico). As traduções vivem em
+    # `*_translations` (language='en' duplica o baseline; 'pt_br' tem o conteúdo PT).
+    # Todo método público que retorna conteúdo aceita `language` (default 'en')
+    # e faz LEFT JOIN + COALESCE para cair no base se a tradução faltar.
+
+    def get_domains(self, language: str = "en") -> List[Dict]:
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("SELECT * FROM domains ORDER BY order_index")
+
+        cursor.execute(
+            """
+            SELECT d.id, d.order_index,
+                   COALESCE(dt.name, d.name) AS name,
+                   COALESCE(dt.description, d.description) AS description
+            FROM domains d
+            LEFT JOIN domain_translations dt
+              ON dt.domain_id = d.id AND dt.language = ?
+            ORDER BY d.order_index
+            """,
+            (language,),
+        )
         domains = [dict(row) for row in cursor.fetchall()]
-        
+
         conn.close()
         return domains
-    
-    def get_domain_aspects(self, domain_id: int) -> List[Dict]:
+
+    def get_domain_aspects(self, domain_id: int, language: str = "en") -> List[Dict]:
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT * FROM aspects 
-            WHERE domain_id = ? 
-            ORDER BY order_index
-        """, (domain_id,))
-        
+
+        cursor.execute(
+            """
+            SELECT a.id, a.domain_id, a.order_index,
+                   COALESCE(at.name, a.name) AS name,
+                   COALESCE(at.description, a.description) AS description
+            FROM aspects a
+            LEFT JOIN aspect_translations at
+              ON at.aspect_id = a.id AND at.language = ?
+            WHERE a.domain_id = ?
+            ORDER BY a.order_index
+            """,
+            (language, domain_id),
+        )
+
         aspects = [dict(row) for row in cursor.fetchall()]
         conn.close()
         return aspects
-    
-    def get_aspect_questions(self, aspect_id: str) -> List[Dict]:
+
+    def get_aspect_questions(self, aspect_id: str, language: str = "en") -> List[Dict]:
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT q.*, a.name as aspect_name, d.name as domain_name
+
+        cursor.execute(
+            """
+            SELECT q.id, q.aspect_id, q.question_type, q.order_index,
+                   COALESCE(qt.question_text, q.question_text) AS question_text,
+                   COALESCE(qt.guidance, q.guidance)           AS guidance,
+                   COALESCE(at.name, a.name)                   AS aspect_name,
+                   COALESCE(dt.name, d.name)                   AS domain_name
             FROM questions q
             JOIN aspects a ON q.aspect_id = a.id
             JOIN domains d ON a.domain_id = d.id
+            LEFT JOIN question_translations qt
+              ON qt.question_id = q.id AND qt.language = ?
+            LEFT JOIN aspect_translations at
+              ON at.aspect_id = a.id AND at.language = ?
+            LEFT JOIN domain_translations dt
+              ON dt.domain_id = d.id AND dt.language = ?
             WHERE q.aspect_id = ?
             ORDER BY q.order_index
-        """, (aspect_id,))
-        
+            """,
+            (language, language, language, aspect_id),
+        )
+
         questions = [dict(row) for row in cursor.fetchall()]
-        
-        # Get answer options for each question
+
+        # Get answer options for each question (translated)
         for question in questions:
-            cursor.execute("""
-                SELECT * FROM answer_options 
-                WHERE question_id = ? 
-                ORDER BY order_index
-            """, (question['id'],))
-            question['options'] = [dict(row) for row in cursor.fetchall()]
-        
+            cursor.execute(
+                """
+                SELECT o.id, o.question_id, o.maturity_level, o.order_index,
+                       COALESCE(ot.option_text, o.option_text) AS option_text
+                FROM answer_options o
+                LEFT JOIN answer_option_translations ot
+                  ON ot.answer_option_id = o.id AND ot.language = ?
+                WHERE o.question_id = ?
+                ORDER BY o.order_index
+                """,
+                (language, question["id"]),
+            )
+            question["options"] = [dict(row) for row in cursor.fetchall()]
+
         conn.close()
         return questions
     
@@ -330,43 +376,57 @@ class DatabaseManager:
         conn.commit()
         conn.close()
     
-    def get_assessment_scores(self, assessment_id: int) -> Dict:
+    def get_assessment_scores(self, assessment_id: int, language: str = "en") -> Dict:
         """Get assessment scores grouped by domain and aspect"""
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        # Get domain scores
-        cursor.execute("""
-            SELECT d.name, s.score, s.percentage
+
+        # Get domain scores (translated)
+        cursor.execute(
+            """
+            SELECT COALESCE(dt.name, d.name) AS name, s.score, s.percentage
             FROM assessment_scores s
             JOIN domains d ON s.domain_id = d.id
+            LEFT JOIN domain_translations dt
+              ON dt.domain_id = d.id AND dt.language = ?
             WHERE s.assessment_id = ? AND s.aspect_id IS NULL
             ORDER BY d.order_index
-        """, (assessment_id,))
-        
+            """,
+            (language, assessment_id),
+        )
+
         domain_scores = [dict(row) for row in cursor.fetchall()]
-        
-        # Get aspect scores
-        cursor.execute("""
-            SELECT d.name as domain_name, a.name as aspect_name, s.score, s.percentage
+
+        # Get aspect scores (translated)
+        cursor.execute(
+            """
+            SELECT COALESCE(dt.name, d.name) AS domain_name,
+                   COALESCE(at.name, a.name) AS aspect_name,
+                   s.score, s.percentage
             FROM assessment_scores s
             JOIN aspects a ON s.aspect_id = a.id
             JOIN domains d ON s.domain_id = d.id
+            LEFT JOIN domain_translations dt
+              ON dt.domain_id = d.id AND dt.language = ?
+            LEFT JOIN aspect_translations at
+              ON at.aspect_id = a.id AND at.language = ?
             WHERE s.assessment_id = ? AND s.aspect_id IS NOT NULL
             ORDER BY d.order_index, a.order_index
-        """, (assessment_id,))
-        
+            """,
+            (language, language, assessment_id),
+        )
+
         aspect_scores = [dict(row) for row in cursor.fetchall()]
-        
+
         conn.close()
         return {
             'domain_scores': domain_scores,
             'aspect_scores': aspect_scores
         }
-    
-    def get_radar_chart_data(self, assessment_id: int) -> Dict:
+
+    def get_radar_chart_data(self, assessment_id: int, language: str = "en") -> Dict:
         """Get data formatted for radar chart visualization"""
-        scores = self.get_assessment_scores(assessment_id)
+        scores = self.get_assessment_scores(assessment_id, language)
         
         labels = [score['name'] for score in scores['domain_scores']]
         data = [score['percentage'] for score in scores['domain_scores']]

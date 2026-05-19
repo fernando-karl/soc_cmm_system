@@ -150,6 +150,7 @@ if __name__ == "__main__":
     
     # Check for database file
     db_files = [
+        "soc_cmm_bilingual.db",
         "soc_cmm_translated.db",
         "soc_cmm.db",
         "soc_cmm_portuguese.db"

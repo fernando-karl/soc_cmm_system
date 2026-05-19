@@ -450,7 +450,7 @@ async def assessment_page(request: Request, assessment_id: int):
     
     language = get_language_from_request(request)
     template_name = get_template_name("assessment", language)
-    domains = db.get_domains()
+    domains = db.get_domains(language)
     
     response = templates.TemplateResponse(template_name, {
         "request": request,
@@ -484,8 +484,8 @@ async def results_page(request: Request, assessment_id: int):
     
     language = get_language_from_request(request)
     template_name = get_template_name("results", language)
-    scores = db.get_assessment_scores(assessment_id)
-    radar_data = db.get_radar_chart_data(assessment_id)
+    scores = db.get_assessment_scores(assessment_id, language)
+    radar_data = db.get_radar_chart_data(assessment_id, language)
     
     response = templates.TemplateResponse(template_name, {
         "request": request,
@@ -674,21 +674,24 @@ async def complete_assessment(assessment_id: int):
     return {"message": "Avaliação concluída com sucesso"}
 
 @app.get("/api/domains")
-async def get_domains():
+async def get_domains(request: Request):
     """Get all domains"""
-    domains = db.get_domains()
+    language = get_language_from_request(request)
+    domains = db.get_domains(language)
     return {"domains": domains}
 
 @app.get("/api/domains/{domain_id}/aspects")
-async def get_domain_aspects(domain_id: int):
+async def get_domain_aspects(domain_id: int, request: Request):
     """Get aspects for a domain"""
-    aspects = db.get_domain_aspects(domain_id)
+    language = get_language_from_request(request)
+    aspects = db.get_domain_aspects(domain_id, language)
     return {"aspects": aspects}
 
 @app.get("/api/aspects/{aspect_id}/questions")
-async def get_aspect_questions(aspect_id: str):
+async def get_aspect_questions(aspect_id: str, request: Request):
     """Get questions for an aspect"""
-    questions = db.get_aspect_questions(aspect_id)
+    language = get_language_from_request(request)
+    questions = db.get_aspect_questions(aspect_id, language)
     return {"questions": questions}
 
 @app.get("/api/assessments/{assessment_id}/answers")
@@ -713,23 +716,25 @@ async def submit_answer(answer: AnswerSubmit):
     return {"message": "Resposta salva com sucesso"}
 
 @app.get("/api/assessments/{assessment_id}/scores")
-async def get_assessment_scores(assessment_id: int):
+async def get_assessment_scores(assessment_id: int, request: Request):
     """Get assessment scores"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
         raise HTTPException(status_code=404, detail="Avaliação não encontrada")
-    
-    scores = db.get_assessment_scores(assessment_id)
+
+    language = get_language_from_request(request)
+    scores = db.get_assessment_scores(assessment_id, language)
     return {"scores": scores}
 
 @app.get("/api/assessments/{assessment_id}/radar-data")
-async def get_radar_chart_data(assessment_id: int):
+async def get_radar_chart_data(assessment_id: int, request: Request):
     """Get radar chart data for assessment"""
     assessment = db.get_assessment(assessment_id)
     if not assessment:
         raise HTTPException(status_code=404, detail="Avaliação não encontrada")
-    
-    radar_data = db.get_radar_chart_data(assessment_id)
+
+    language = get_language_from_request(request)
+    radar_data = db.get_radar_chart_data(assessment_id, language)
     return {"radar_data": radar_data}
 
 # Admin API Endpoints
@@ -798,14 +803,15 @@ async def delete_user(user_id: int, current_user: dict = Depends(get_current_adm
     return {"message": "Usuário deletado com sucesso"}
 
 @app.get("/api/customers/{customer_id}/progress")
-async def get_customer_progress(customer_id: int):
+async def get_customer_progress(customer_id: int, request: Request):
     """Get progress over time for a customer"""
+    language = get_language_from_request(request)
     assessments = db.get_customer_assessments(customer_id)
-    
+
     progress_data = []
     for assessment in assessments:
         if assessment['status'] == 'completed':
-            radar_data = db.get_radar_chart_data(assessment['id'])
+            radar_data = db.get_radar_chart_data(assessment['id'], language)
             progress_data.append({
                 'assessment_id': assessment['id'],
                 'name': assessment['name'],
