@@ -19,6 +19,8 @@ maturity assessments based on the **SOC-CMM®** framework by Rob van Os.
 - [Docker & deployment](./docker.md)
 - [Troubleshooting](./troubleshooting.md)
 
+Project-wide: [Contributing](../../CONTRIBUTING.md) · [Security](../../SECURITY.md) · [Changelog](../../CHANGELOG.md)
+
 ## Quick links
 
 - Application: <http://localhost:8400>

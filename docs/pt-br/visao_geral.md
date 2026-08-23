@@ -9,9 +9,11 @@ de maturidade de SOC (Security Operations Center) com base no framework
 - Cadastro e gestão de clientes (organizações avaliadas).
 - Criação de avaliações por cliente, com salvamento incremental.
 - Questionário guiado pelos seis domínios do SOC-CMM® (Business, People,
-  Process, Technology, Services, Results) e seus aspectos.
-- Cálculo automático de pontuações em escala de maturidade 1–5
-  (Inicial → Otimizado).
+  Process, Technology, Services, Results) e seus aspectos (baseado no
+  SOC-CMM® 2.3.3 basic).
+- Cálculo automático de pontuações na escala de maturidade do SOC-CMM®
+  (0–5: Inexistente → Otimizando), conforme as opções de resposta do
+  questionário.
 - Visualização em gráfico **radar**, com comparação histórica entre
   avaliações do mesmo cliente.
 - Autenticação por usuário (JWT + cookie HTTP-only) e isolamento total de
@@ -39,7 +41,11 @@ de maturidade de SOC (Security Operations Center) com base no framework
 O projeto deriva do framework SOC-CMM® (CC BY-SA 4.0) e, portanto, é
 distribuído sob a mesma licença **Creative Commons Attribution-ShareAlike
 4.0 International (CC BY-SA 4.0)**. Detalhes em `LICENSE` e `NOTICE` na
-raiz do repositório.
+raiz do repositório. Este projeto **não é afiliado, endossado ou
+patrocinado** por Rob van Os ou soc-cmm.com.
+
+Contato do mantenedor: fernando.karl@gmail.com ·
+[GitHub Issues](https://github.com/fernando-karl/soc_cmm_system/issues).
 
 ## Próximos passos
 

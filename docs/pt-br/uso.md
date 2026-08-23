@@ -42,8 +42,10 @@ o servidor, acesse <http://localhost:8400>:
 4. Cada domínio contém **aspectos** com perguntas. Selecione um aspecto para
    ver suas questões.
 5. Tipos de pergunta suportados:
-   - Escala de maturidade (1 — Inicial · 2 — Em desenvolvimento ·
-     3 — Definido · 4 — Gerenciado · 5 — Otimizado)
+   - Escala de maturidade alinhada ao SOC-CMM® (0 — Inexistente ·
+     1 — Inicial · 2 — Gerenciado · 3 — Definido ·
+     4 — Gerenciado quantitativamente · 5 — Otimizando; a interface
+     pode usar rótulos abreviados)
    - Múltipla escolha
    - Numérica
    - Texto livre
