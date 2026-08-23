@@ -19,6 +19,9 @@ maturidade de SOC (Security Operations Center) com base no framework
 - [Desenvolvimento](./desenvolvimento.md)
 - [Docker e Deploy](./docker.md)
 - [Solução de Problemas](./solucao_de_problemas.md)
+- [Contribuindo](./contribuindo.md)
+
+No repositório: [Contributing](../../CONTRIBUTING.md) · [Security](../../SECURITY.md) · [Changelog](../../CHANGELOG.md)
 
 ## Links rápidos
 

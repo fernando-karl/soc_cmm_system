@@ -43,8 +43,9 @@ and starting the server, browse to <http://localhost:8400>:
 4. Each domain contains **aspects** with their own questions. Pick an
    aspect to view its questions.
 5. Supported question types:
-   - Maturity scale (1 — Initial · 2 — Developing · 3 — Defined ·
-     4 — Managed · 5 — Optimised)
+   - Maturity scale aligned with SOC-CMM® (0 — Non-existent · 1 — Initial ·
+     2 — Managed · 3 — Defined · 4 — Quantitatively Managed ·
+     5 — Optimizing; some UI labels may use shorter names)
    - Multiple choice
    - Numeric
    - Free text

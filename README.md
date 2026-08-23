@@ -15,7 +15,7 @@ system built with FastAPI, SQLite, and modern web technologies.
 
 - **Customer Management**: Create and manage multiple customers/organizations
 - **Step-by-Step Assessment**: Guided questionnaire broken into manageable sections by domain and aspect
-- **Maturity Evaluation**: 5-level maturity scale (Initial, Developing, Defined, Managed, Optimized)
+- **Maturity Evaluation**: SOC-CMM® maturity scale (0–5: Non-existent through Optimizing), as implemented in the questionnaire scoring
 - **Visual Results**: Interactive radar charts showing maturity levels across all domains
 - **Progress Tracking**: Multiple assessments per customer to track improvements over time
 - **Mobile Optimized**: Responsive design for desktop and mobile devices
@@ -45,12 +45,16 @@ The assessment covers six key domains:
 
 Full documentation is available in two languages:
 
-- 🇬🇧 **English:** [`docs/en/`](docs/en/README.md)
-- 🇧🇷 **Português:** [`docs/pt-br/`](docs/pt-br/README.md)
+- **English:** [`docs/en/`](docs/en/README.md)
+- **Português (Brasil):** [`docs/pt-br/`](docs/pt-br/README.md)
 
-Both indexes cover installation, usage, API reference, authentication,
-administration, MCP, database schema, Docker deployment, and
-troubleshooting.
+Also see [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md),
+and [`CHANGELOG.md`](CHANGELOG.md).
+
+Documentação completa em dois idiomas:
+
+- **English:** [`docs/en/`](docs/en/README.md)
+- **Português (Brasil):** [`docs/pt-br/`](docs/pt-br/README.md)
 
 ## Installation
 
@@ -139,8 +143,8 @@ See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
 - From the customer list, click **New Assessment**.
 - Answer the questionnaire by domain and aspect (Business, People,
   Process, Technology, Services, Results).
-- The assessment supports multiple question types: maturity scale (1–5),
-  multiple choice, numeric, free text, and checkboxes.
+- The assessment supports multiple question types: maturity scale
+  (SOC-CMM® 0–5), multiple choice, numeric, free text, and checkboxes.
 - Answers autosave; the progress bar shows what is still pending.
 - When every aspect is complete, click **Complete Assessment**.
 
@@ -236,7 +240,7 @@ The system is fully responsive and optimized for mobile devices:
 - The bootstrap admin password must be supplied through the
   `ADMIN_PASSWORD` environment variable; there is **no hard-coded default**.
 - **CORS** is restricted to the origins listed in the `ALLOWED_ORIGINS`
-  environment variable (default: `http://localhost:8000`).
+  environment variable (default: `http://localhost:8400`).
 - All database queries use parameterized statements to prevent SQL
   injection.
 - **Never commit `.env` files or `*.db` files** — both are excluded by
@@ -287,10 +291,15 @@ Common issues and fixes — see also
 
 ## Support
 
-For issues or questions:
-1. Check the troubleshooting section
-2. Review the API documentation
-3. Examine browser console for JavaScript errors
+Maintainer contact for this project (not affiliated with soc-cmm.com):
+
+- **Email:** fernando.karl@gmail.com
+- **GitHub Issues:** <https://github.com/fernando-karl/soc_cmm_system/issues>
+
+For self-help:
+1. Check [Troubleshooting](docs/en/troubleshooting.md) / [Solução de problemas](docs/pt-br/solucao_de_problemas.md)
+2. Review the API docs (`docs/en/api.md` or Swagger at `/docs`)
+3. Examine the browser console for JavaScript errors
 4. Check server logs for backend issues
 
 ## License & Attribution
@@ -328,5 +337,5 @@ security and data-handling policies when deploying this software.
 
 ## Version History
 
-- **v1.0.0** - Initial release with full SOC CMM assessment functionality
+See [`CHANGELOG.md`](CHANGELOG.md).
 

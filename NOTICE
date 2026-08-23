@@ -26,7 +26,8 @@ SOC-CMM® framework and are therefore subject to the CC BY-SA 4.0 license:
   - soc cmm port.txt
   - traduzido.json
   - questions_for_gemini_translation.json
-  - All SQLite databases (*.db) populated from the above
+  - Runtime SQLite databases populated from the above (local only; not
+    shipped in this repository)
   - The structure of: domains, aspects, questions, maturity levels and
     guidance text used by the application
 
@@ -53,6 +54,19 @@ license granted over the SOC-CMM® content does NOT grant any trademark rights.
 This project is not affiliated with, endorsed by, or sponsored by Rob van Os
 or soc-cmm.com. Any reference to the SOC-CMM® name in this project is made
 solely to comply with the attribution requirement of the CC BY-SA 4.0 license.
+
+================================================================================
+Project contact
+================================================================================
+
+This derivative software is maintained independently of soc-cmm.com.
+
+  Maintainer email : fernando.karl@gmail.com
+  Issue tracker    : https://github.com/fernando-karl/soc_cmm_system/issues
+
+For attribution of the original SOC-CMM® framework, see the section above
+(Rob van Os, https://www.soc-cmm.com). Do not use soc-cmm.com addresses as
+contact points for this repository.
 
 ================================================================================
 Other dependencies
