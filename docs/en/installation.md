@@ -59,7 +59,7 @@ admin user:
 
 ```bash
 export ADMIN_PASSWORD="your-strong-password"
-python migrate_to_auth.py
+python scripts/migrate_to_auth.py
 ```
 
 The script creates the required `users` tables, backs up any existing

@@ -14,7 +14,7 @@ The system uses JWT-based user authentication with HTTP-only cookies.
    **`SECRET_KEY`** and **`ADMIN_PASSWORD`** (the application refuses to
    start without `SECRET_KEY` and the migration aborts without
    `ADMIN_PASSWORD`).
-3. Run the migration: `python migrate_to_auth.py`
+3. Run the migration: `python scripts/migrate_to_auth.py`
    - Creates the `users` tables and indexes
    - Backs up any existing database
    - Creates the `admin` user using the password from `$ADMIN_PASSWORD`

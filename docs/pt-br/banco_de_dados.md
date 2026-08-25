@@ -19,6 +19,6 @@ Relacionamentos principais:
 - Question 1:N AnswerOption
 
 Scripts relevantes:
-- `database_schema.sql` — esquema base
-- `complete_populate_database.sql` — população
+- `sql/schema/database_schema.sql` — esquema base
+- `sql/seed/complete_populate_database.sql` — população
 - Scripts `fix_*` — correções e migrações

@@ -22,6 +22,6 @@ Main relationships:
 
 Relevant scripts:
 
-- `database_schema.sql` — base schema
-- `complete_populate_database.sql` — data population
+- `sql/schema/database_schema.sql` — base schema
+- `sql/seed/complete_populate_database.sql` — data population
 - `fix_*` scripts — fixes and migrations

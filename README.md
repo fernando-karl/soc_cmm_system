@@ -41,6 +41,30 @@ The assessment covers six key domains:
 - **Styling**: Modern CSS with responsive design
 - **Icons**: Font Awesome
 
+## Project Structure
+
+```
+.
+├── main.py                 # FastAPI application and HTTP routes
+├── auth.py                 # Authentication, JWT handling, user management
+├── database.py             # SQLite data-access layer
+├── mcp_server.py           # Model Context Protocol server
+├── templates/              # Jinja2 templates (EN and PT-BR)
+├── static/                 # CSS and JavaScript assets
+├── dataset/                # SOC-CMM® source data (spreadsheet, JSON, translations)
+├── sql/
+│   ├── schema/             # Table definitions
+│   ├── seed/               # Questionnaire seed data
+│   └── migrations/         # Incremental schema changes and fixes
+├── scripts/                # Operational scripts (auth bootstrap, migrations)
+│   └── legacy/             # Historical one-off tooling — see scripts/legacy/README.md
+├── tests/                  # Manual integration scripts — see tests/README.md
+└── docs/                   # Documentation (en/, pt-br/, archive/)
+```
+
+Scripts under `scripts/` and `tests/` are written to be run from the
+repository root, e.g. `python scripts/migrate_to_auth.py`.
+
 ## Documentation
 
 Full documentation is available in two languages:
@@ -86,7 +110,7 @@ cp .env.example .env
 
 # 4. Bootstrap the database (creates the admin user from $ADMIN_PASSWORD)
 export ADMIN_PASSWORD="your-strong-password"
-python migrate_to_auth.py
+python scripts/migrate_to_auth.py
 
 # 5. Start the application
 python main.py
@@ -115,7 +139,7 @@ and password change.
 ```bash
 cp .env.example .env             # set SECRET_KEY, ADMIN_PASSWORD
 docker compose up -d --build
-docker compose exec soc-cmm python migrate_to_auth.py
+docker compose exec soc-cmm python scripts/migrate_to_auth.py
 ```
 
 See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
@@ -204,7 +228,7 @@ The questionnaire data lives directly in the SQLite database (the
 `domains`, `aspects`, `questions`, and `answer_options` tables — see
 [`docs/en/database.md`](docs/en/database.md)). Edit it via SQL, via the
 admin pages, or rebuild the database from the seed scripts
-(`run_populate_database_fixed.py`, `complete_populate_database.sql`).
+(`scripts/legacy/run_populate_database_fixed.py`, `sql/seed/complete_populate_database.sql`).
 
 > Editing `soc_cmm_complete_data.json` after the first install will **not**
 > be reloaded automatically — the database is the source of truth at

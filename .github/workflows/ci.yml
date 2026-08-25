@@ -26,7 +26,7 @@ jobs:
         run: |
           python -m compileall -q \
             auth.py database.py main.py mcp_server.py \
-            migrate_to_auth.py run_admin_migration.py
+            scripts/migrate_to_auth.py scripts/run_admin_migration.py
 
       - name: Import smoke check
         env:

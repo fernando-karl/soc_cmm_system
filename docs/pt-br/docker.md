@@ -35,7 +35,7 @@ Com o container rodando, execute a migração para criar as tabelas de
 autenticação e o usuário admin:
 
 ```bash
-docker compose exec soc-cmm python migrate_to_auth.py
+docker compose exec soc-cmm python scripts/migrate_to_auth.py
 ```
 
 ## Trocar a porta
