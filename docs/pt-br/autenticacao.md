@@ -13,7 +13,7 @@ O sistema utiliza autenticação de usuários com tokens JWT e cookies HTTP-only
 2. Configure o ambiente: `cp .env.example .env` e defina **`SECRET_KEY`** e
    **`ADMIN_PASSWORD`** (a aplicação não inicia sem `SECRET_KEY` e a migração
    aborta sem `ADMIN_PASSWORD`).
-3. Rode a migração: `python migrate_to_auth.py`
+3. Rode a migração: `python scripts/migrate_to_auth.py`
    - Cria tabelas de usuários e índices
    - Faz backup do banco atual
    - Cria usuário `admin` com a senha definida em `$ADMIN_PASSWORD`

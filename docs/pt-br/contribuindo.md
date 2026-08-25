@@ -15,7 +15,7 @@ Versão em inglês: [`../../CONTRIBUTING.md`](../../CONTRIBUTING.md).
 1. Faça fork e clone do repositório
 2. Crie um virtualenv e instale: `pip install -r requirements.txt`
 3. Copie `.env.example` para `.env` e defina `SECRET_KEY` e `ADMIN_PASSWORD`
-4. Bootstrap de auth: `python migrate_to_auth.py`
+4. Bootstrap de auth: `python scripts/migrate_to_auth.py`
 5. Execute: `python main.py` (porta padrão `8400`)
 
 **Não** faça commit de `.env`, `*.db` ou dados reais de avaliação.

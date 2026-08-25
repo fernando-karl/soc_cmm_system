@@ -17,7 +17,7 @@ A criação do usuário admin inicial exige `ADMIN_PASSWORD`:
 
 ```bash
 export ADMIN_PASSWORD="senha-forte"
-python migrate_to_auth.py
+python scripts/migrate_to_auth.py
 ```
 
 ## Conflito de porta
@@ -36,7 +36,7 @@ Em Docker: `PORT=9000 docker compose up -d`.
   escrita.
 - Confirme que a tabela `users` foi criada (rode `migrate_to_auth.py`).
 - Em ambiente local de testes, é possível apagar o `.db` e recriar a base
-  rodando os scripts de população (`run_populate_database_fixed.py`).
+  rodando os scripts de população (`scripts/legacy/run_populate_database_fixed.py`).
 
 ## Problemas de autenticação
 

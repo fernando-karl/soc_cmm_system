@@ -18,14 +18,14 @@ This software is a derivative work of the SOC-CMM® framework.
 The following components of this repository contain content derived from the
 SOC-CMM® framework and are therefore subject to the CC BY-SA 4.0 license:
 
-  - soc-cmm2.3.3-basic.xlsx          (original SOC-CMM® source spreadsheet)
-  - soc_cmm_complete_data.json       (extracted domains/aspects/questions)
-  - soc_cmm_complete_data-v2.json
-  - soc_cmm_questions.json           (English questionnaire)
-  - soc_cmm_questions-port.json      (Portuguese translation of questionnaire)
-  - soc cmm port.txt
-  - traduzido.json
-  - questions_for_gemini_translation.json
+  - dataset/soc-cmm2.3.3-basic.xlsx   (original SOC-CMM® source spreadsheet)
+  - dataset/soc_cmm_complete_data.json (extracted domains/aspects/questions)
+  - dataset/soc_cmm_questions.json     (English questionnaire)
+  - dataset/soc_cmm_questions-port.json (Portuguese translation of questionnaire)
+  - dataset/soc_cmm_port.txt
+  - dataset/traduzido.json
+  - dataset/questions_for_gemini_translation.json
+  - sql/seed/*.sql                     (SQL seed data generated from the above)
   - Runtime SQLite databases populated from the above (local only; not
     shipped in this repository)
   - The structure of: domains, aspects, questions, maturity levels and

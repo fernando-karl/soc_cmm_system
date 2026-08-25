@@ -17,7 +17,7 @@ The bootstrap admin requires `ADMIN_PASSWORD`:
 
 ```bash
 export ADMIN_PASSWORD="strong-password"
-python migrate_to_auth.py
+python scripts/migrate_to_auth.py
 ```
 
 ## Port conflict
@@ -35,7 +35,7 @@ For Docker: `PORT=9000 docker compose up -d`.
 - Make sure `soc_cmm_translated.db` exists and is writable.
 - Confirm the `users` table exists (run `migrate_to_auth.py`).
 - For local testing only, you may delete the `.db` file and re-run the
-  population scripts (`run_populate_database_fixed.py`).
+  population scripts (`scripts/legacy/run_populate_database_fixed.py`).
 
 ## Authentication issues
 

@@ -7,7 +7,13 @@ opções de resposta, respostas e pontuações.
 import sqlite3
 import json
 from datetime import datetime
+from pathlib import Path
 from typing import List, Dict, Optional
+
+# Repository root, so resource files resolve regardless of the current directory.
+BASE_DIR = Path(__file__).resolve().parent
+SCHEMA_FILE = BASE_DIR / "sql" / "schema" / "database_schema.sql"
+DATA_FILE = BASE_DIR / "dataset" / "soc_cmm_complete_data.json"
 
 class DatabaseManager:
     """Gerencia conexões e operações no banco SQLite."""
@@ -24,7 +30,7 @@ class DatabaseManager:
     
     def init_database(self):
         """Initialize the database with the schema"""
-        with open('database_schema.sql', 'r') as f:
+        with open(SCHEMA_FILE, 'r', encoding='utf-8') as f:
             schema = f.read()
         
         conn = self.get_connection()
@@ -50,7 +56,7 @@ class DatabaseManager:
             return
         
         # Load the extracted data
-        with open('soc_cmm_complete_data.json', 'r') as f:
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
         # Insert domains

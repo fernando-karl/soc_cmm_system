@@ -59,7 +59,7 @@ inicial:
 
 ```bash
 export ADMIN_PASSWORD="sua-senha-forte-aqui"
-python migrate_to_auth.py
+python scripts/migrate_to_auth.py
 ```
 
 O script cria as tabelas `users` necessárias, faz backup do banco existente e

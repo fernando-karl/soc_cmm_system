@@ -18,6 +18,8 @@ import uvicorn
 import os
 from datetime import timedelta
 
+from pathlib import Path
+
 from database import DatabaseManager
 from auth import auth_manager, create_access_token, get_current_active_user, get_current_admin_user, UserCreate, UserLogin, Token, include_auth_routes
 
@@ -42,8 +44,9 @@ app.add_middleware(
 db = DatabaseManager()
 
 # Configura templates e arquivos estáticos
-templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+BASE_DIR = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 # Modelos Pydantic (validação de payloads da API)
 class CustomerCreate(BaseModel):
