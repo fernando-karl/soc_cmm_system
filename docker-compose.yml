@@ -15,6 +15,10 @@ services:
       - DB_PATH=/app/data/soc_cmm_bilingual.db
       # SECRET_KEY and ADMIN_PASSWORD must come from .env (see .env.example).
       # The application aborts on startup if SECRET_KEY is not set.
+      # The container always listens on 8400; only the host port moves. If you
+      # publish it on a different host port and something cross-origin calls the
+      # API, set ALLOWED_ORIGINS in .env to the URL the browser actually uses —
+      # the default is derived from the port inside the container.
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://localhost:${PORT:-8400}/ || exit 1"]

@@ -21,7 +21,6 @@ from urllib.parse import urljoin
 
 import httpx
 from mcp.server import Server
-from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
 from mcp.types import (
     CallToolRequest,
@@ -112,7 +111,7 @@ class ApiClient:
 api_client = ApiClient()
 
 # Initialize MCP server
-server = Server("soc-cmm-assessment")
+server = Server("soc-cmm-assessment", version="2.0.0")
 
 @server.list_tools()
 async def handle_list_tools() -> ListToolsResult:
@@ -639,18 +638,15 @@ async def get_assessment_results(arguments: Dict[str, Any]) -> CallToolResult:
 
 async def main():
     """Main function to run the MCP server"""
+    # `create_initialization_options` derives the name, version and capabilities
+    # from the server instance. Building InitializationOptions by hand meant
+    # passing `notification_options=None` into `get_capabilities`, which reads
+    # attributes off it and raises.
     async with stdio_server() as (read_stream, write_stream):
         await server.run(
             read_stream,
             write_stream,
-            InitializationOptions(
-                server_name="soc-cmm-assessment",
-                server_version="2.0.0",
-                capabilities=server.get_capabilities(
-                    notification_options=None,
-                    experimental_capabilities=None,
-                ),
-            ),
+            server.create_initialization_options(),
         )
 
 if __name__ == "__main__":

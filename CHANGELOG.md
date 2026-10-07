@@ -6,6 +6,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Security
+
+- The session cookie's `Secure` flag is no longer hardcoded to `false`. It now
+  follows `ALLOWED_ORIGINS` — on when every origin is `https://`, off otherwise
+  — and `COOKIE_SECURE` forces it either way, which is what a deployment behind
+  a TLS-terminating proxy needs. `SameSite` is configurable through
+  `COOKIE_SAMESITE` (still `lax` by default)
+- `ACCESS_TOKEN_EXPIRE_MINUTES` now actually controls the session. Login
+  ignored it and issued a 24-hour token with a matching cookie; both now expire
+  together after `ACCESS_TOKEN_EXPIRE_MINUTES`, whose default drops from 24
+  hours to 8. `create_access_token` fell back to 15 minutes when given no
+  explicit lifetime, a third value nothing could configure; it now uses the
+  same setting
+- `python-jose` 3.3.0 → 3.5.0, fixing CVE-2024-33663 (algorithm confusion with
+  an OpenSSH ECDSA key) and CVE-2024-33664 (JWE decompression bomb)
+
+### Fixed
+
+- `ALLOWED_ORIGINS` defaulted to `http://localhost:8000` while the application
+  serves on 8400, so the documented default rejected every browser request it
+  was meant to allow. It now follows `PORT`
+- The MCP server built its `InitializationOptions` by hand and passed
+  `notification_options=None` into `get_capabilities`, which reads attributes
+  off it. The pinned 1.0.0 tolerated that; on 1.30.0 it raises `AttributeError`
+  before the server accepts a single request. It now uses
+  `server.create_initialization_options()`, which derives the name, version and
+  capabilities from the server instance
+
+### Changed
+
+- `mcp` 1.0.0 → 1.30.0 (the 2.x line moved the decorator API off the lowlevel
+  `Server` onto `FastMCP` and would need the server rewritten), and `httpx`
+  0.27.0 → 0.28.1, which `mcp` 1.30 requires
+
 ## [2.0.0] - 2026-10-07
 
 ### Upgrading from 1.x
