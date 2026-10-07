@@ -222,7 +222,20 @@ def read_sheet_questions(wb):
         if aspect_number is None:
             continue
 
-        for row in ws.iter_rows(min_row=10, max_col=16):
+        # The per-question remarks column moves between releases: column P in
+        # 2.3.3, column Q in 2.4.2 (where P became a dynamic Guidance lookup).
+        # Find it by its header rather than by position.
+        remarks_index = None
+        for row in ws.iter_rows(min_row=1, max_row=12, max_col=24):
+            for offset, cell in enumerate(row):
+                header = " ".join(str(cell.value).split()).lower() if cell.value else ""
+                if header == "remarks":
+                    remarks_index = offset
+                    break
+            if remarks_index is not None:
+                break
+
+        for row in ws.iter_rows(min_row=10, max_col=24):
             # Merged cells have no column_letter; index by position instead.
             cells = {}
             for offset, cell in enumerate(row):
@@ -238,7 +251,8 @@ def read_sheet_questions(wb):
             if not text or text.lower().startswith("specify rationale"):
                 continue
             qid = f"{letter} {number}"
-            remarks = cells.get("P")
+            remarks = row[remarks_index].value if (
+                remarks_index is not None and remarks_index < len(row)) else None
             found[qid] = {
                 "text": text,
                 "remarks": str(remarks).strip() if remarks else "",

@@ -961,7 +961,7 @@
       "code": "M 1.1",
       "question_text": "Is there a SOC management process in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A SOC management process is used to manage all aspects SOC service delivery and quality",
       "nist_csf": {},
       "order_index": 63
     },
@@ -971,7 +971,7 @@
       "code": "M 1.2",
       "question_text": "Are SOC management elements formally identified and documented?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Possible SOC management elements can be found in under 1.3",
       "nist_csf": {},
       "order_index": 64
     },
@@ -981,7 +981,7 @@
       "code": "M 1.4",
       "question_text": "Is the SOC management process regularly reviewed?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Regular review of the SOC management process ensures optimal performance",
       "nist_csf": {},
       "order_index": 65
     },
@@ -991,7 +991,7 @@
       "code": "M 1.5",
       "question_text": "Is the SOC management process aligned with all stakeholders?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Alignment with stakeholders will ensure the SOC delivers services that meet customer expectations",
       "nist_csf": {},
       "order_index": 66
     },
@@ -1001,7 +1001,7 @@
       "code": "M 2.1.3",
       "question_text": "Do you perform security operations exercises regularly?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Regularity should be matched to your own internal policy",
       "nist_csf": {
         "CSF 1.1": "PR.IP-10"
       },
@@ -1013,7 +1013,7 @@
       "code": "M 2.2.1",
       "question_text": "Do you have standard operating procedures?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Standard operating procedures are used to provide consistent output",
       "nist_csf": {},
       "order_index": 68
     },
@@ -1023,7 +1023,7 @@
       "code": "M 2.2.2",
       "question_text": "Do you use checklists for recurring activities?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Checklists can be useful to avoid recurring activities from being overlooked",
       "nist_csf": {},
       "order_index": 69
     },
@@ -1033,7 +1033,7 @@
       "code": "M 2.2.3",
       "question_text": "Do you use documented workflows?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Workflows are used to standardize steps in, for example, security analysis",
       "nist_csf": {},
       "order_index": 70
     },
@@ -1043,7 +1043,7 @@
       "code": "M 2.2.4",
       "question_text": "Do you have a SOC operational handbook?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A SOC operational handbook contains an overview of SOC tasks, as well as rules of engagement and expected behavior",
       "nist_csf": {},
       "order_index": 71
     },
@@ -1053,7 +1053,7 @@
       "code": "M 2.3.1",
       "question_text": "Is the configuration management process integrated in the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC services and procedures should be aligned and integrated with the organization's configuration management process",
       "nist_csf": {},
       "order_index": 72
     },
@@ -1063,7 +1063,7 @@
       "code": "M 2.3.2",
       "question_text": "Is the change management process integrated in the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC services and procedures should be aligned and integrated with the organization's change management process",
       "nist_csf": {
         "CSF 1.1": "PR.IP-3"
       },
@@ -1075,7 +1075,7 @@
       "code": "M 2.3.3",
       "question_text": "Is the problem management process integrated in the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC services and procedures should be aligned and integrated with the organization's problem management process",
       "nist_csf": {},
       "order_index": 74
     },
@@ -1085,7 +1085,7 @@
       "code": "M 2.3.4",
       "question_text": "Is the incident management process integrated in the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC services and procedures should be aligned and integrated with the organization's incident management process",
       "nist_csf": {},
       "order_index": 75
     },
@@ -1095,7 +1095,7 @@
       "code": "M 2.3.5",
       "question_text": "Is the asset management process integrated in the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC services and procedures should be aligned and integrated with the organization's asset management process",
       "nist_csf": {},
       "order_index": 76
     },
@@ -1105,7 +1105,7 @@
       "code": "M 2.4.1",
       "question_text": "Do you have a dedicated physical SOC location?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A dedicated physical location decreases likelihood of unauthorized access and provides confidentiality for security incidents",
       "nist_csf": {
         "CSF 1.1": "PR.IP-5"
       },
@@ -1117,7 +1117,7 @@
       "code": "M 2.4.3",
       "question_text": "Do you have a dedicated network for the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Given the confidentiality of the SOC and the importance of monitoring, it is recommended to use a separate network",
       "nist_csf": {
         "CSF 1.1": "PR.AC-5"
       },
@@ -1129,7 +1129,7 @@
       "code": "M 2.4.4",
       "question_text": "Do you have physical access control to the SOC location?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. key cards (badges) for access with access logging",
       "nist_csf": {
         "CSF 1.1": "PR.AC-2"
       },
@@ -1141,7 +1141,7 @@
       "code": "M 2.4.6",
       "question_text": "Do you have a video wall for monitoring purposes?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A video wall can be used to display the real-time security status and can be used for decision making as well as PR",
       "nist_csf": {},
       "order_index": 80
     },
@@ -1151,7 +1151,7 @@
       "code": "M 2.4.7",
       "question_text": "Do you have a call-center capability for the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Since communication and coordination are important features of a SOC, call-center capability may be required",
       "nist_csf": {},
       "order_index": 81
     },
@@ -1161,7 +1161,7 @@
       "code": "M 2.4.8",
       "question_text": "Do you have specialized analyst workstations?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. multiple screen setup, virtual machines, etc.",
       "nist_csf": {},
       "order_index": 82
     },
@@ -1171,7 +1171,7 @@
       "code": "M 2.5.1",
       "question_text": "Do you use shift schedules?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Shift schedules are used to ensure full shift coverage",
       "nist_csf": {},
       "order_index": 83
     },
@@ -1181,7 +1181,7 @@
       "code": "M 2.5.3",
       "question_text": "Do you have a shift log?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A shift log covers all exceptions found during the shift, running investigations, etc.",
       "nist_csf": {},
       "order_index": 84
     },
@@ -1191,7 +1191,7 @@
       "code": "M 2.5.4",
       "question_text": "Do you have a formally described shift turnover procedure?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "i.e. a procedure for handing over a shift and exchanging information regarding running tasks or issues for further follow-up",
       "nist_csf": {},
       "order_index": 85
     },
@@ -1201,7 +1201,7 @@
       "code": "M 2.5.5",
       "question_text": "Do you have a daily SOC operational stand-up?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "This can also be a call in case physical attendance is not possible for all attendees",
       "nist_csf": {},
       "order_index": 86
     },
@@ -1211,7 +1211,7 @@
       "code": "M 2.5.6",
       "question_text": "Do you have stand-by arrangements with employees within the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "i.e. is there a formal stand-by function that obligates employees to be able to be reached within a certain time?",
       "nist_csf": {},
       "order_index": 87
     },
@@ -1221,7 +1221,7 @@
       "code": "M 2.6.1",
       "question_text": "Do you have a Document Management System in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "The system should support different file types, authorizations and version management; possibly even encryption",
       "nist_csf": {},
       "order_index": 88
     },
@@ -1231,7 +1231,7 @@
       "code": "M 2.6.2",
       "question_text": "Do you have a knowledge & collaboration platform in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. a wiki space or SharePoint that allows collaboration and supports team efforts",
       "nist_csf": {},
       "order_index": 89
     },
@@ -1241,7 +1241,7 @@
       "code": "M 3.1",
       "question_text": "Do you regularly provide reports?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Regular reports help to keep customers informed of SOC activities",
       "nist_csf": {},
       "order_index": 90
     },
@@ -1251,7 +1251,7 @@
       "code": "M 3.2",
       "question_text": "Are these reports tailored to the recipients?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. management reports for senior management, technical reports for the IT organization",
       "nist_csf": {},
       "order_index": 91
     },
@@ -1261,7 +1261,7 @@
       "code": "M 3.3",
       "question_text": "Are the report contents approved by or reviewed by the recipients?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "formal sign-off can be part of a larger service delivery sign-off",
       "nist_csf": {},
       "order_index": 92
     },
@@ -1271,7 +1271,7 @@
       "code": "M 3.4",
       "question_text": "Do you have established reporting lines within the organization?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. reporting lines could be: SOC management, IT management, senior management",
       "nist_csf": {},
       "order_index": 93
     },
@@ -1281,7 +1281,7 @@
       "code": "M 3.5",
       "question_text": "Do you regularly revise and update the report templates?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Report templates should be regularly optimized to ensure continued",
       "nist_csf": {},
       "order_index": 94
     },
@@ -1291,7 +1291,7 @@
       "code": "M 3.6",
       "question_text": "Do you have formal agreements with the recipients regarding reports?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "For example: timelines of delivery, report contents, etc.",
       "nist_csf": {},
       "order_index": 95
     },
@@ -1301,7 +1301,7 @@
       "code": "M 3.7",
       "question_text": "Do you provide different types of reports to your recipients?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Different types of reports provide more insight into security operations",
       "nist_csf": {},
       "order_index": 96
     },
@@ -1311,7 +1311,7 @@
       "code": "M 3.9",
       "question_text": "Do you use different types of metrics in your reports?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Different types of metrics provide more insight into security operations",
       "nist_csf": {},
       "order_index": 97
     },
@@ -1321,7 +1321,7 @@
       "code": "M 4.1.1",
       "question_text": "Is there a use case management process or framework in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A framework, such as MaGMa UCF[1], can be used to guide use case lifecycle and document use case in a standardized format",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1333,7 +1333,7 @@
       "code": "M 4.1.2",
       "question_text": "Are use cases formally documented?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Formal documentation may include use case documentation templates",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1345,7 +1345,7 @@
       "code": "M 4.1.3",
       "question_text": "Are use cases approved by relevant stakeholders?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. business stakeholders, IT stakeholders, CISOs, audit & compliance, risk management, etc.",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1357,7 +1357,7 @@
       "code": "M 4.1.4",
       "question_text": "Is the use case management process aligned with other important processes?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. integration with the threat / risk management process to revise use cases when the threat landscape changes",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1369,7 +1369,7 @@
       "code": "M 4.1.5",
       "question_text": "Are use cases created using a standardized process?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "i.e. a standardized approach to derive use cases from threats or business requirements",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1381,7 +1381,7 @@
       "code": "M 4.1.6",
       "question_text": "Are use cases created using a top-down approach?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "e.g. use cases can be derived from business requirements, risk assessments, threat management / intelligence",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1393,7 +1393,7 @@
       "code": "M 4.1.7",
       "question_text": "Can use cases be traced from high-level drivers to low-level implementation?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Top-down traceability is important to determine completeness of implementation and demonstrable risk reduction",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1405,7 +1405,7 @@
       "code": "M 4.1.8",
       "question_text": "Can use cases be traced from low-level implementation to high-level drivers?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Bottom-up traceability is important for contextualizing use case output and business alignment",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1417,7 +1417,7 @@
       "code": "M 4.1.9",
       "question_text": "Are use cases measured for implementation and effectiveness?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Metrics can be applied to use cases to determine growth and maturity by measuring effectiveness and implementation",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1429,7 +1429,7 @@
       "code": "M 4.1.10",
       "question_text": "Are use cases scored and prioritized based on risk levels?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Risks can be (cyber)threats, but also non-compliance or penalties (laws & regulations)",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -1441,7 +1441,7 @@
       "code": "M 4.1.11",
       "question_text": "Are use cases regularly revised and updated?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Use cases should be subjected to life cycle management and may require updates or may be outdated and decommissioned",
       "nist_csf": {
         "CSF 1.1": "ID.RA-3"
       },
@@ -5481,7 +5481,7 @@
       "code": "M 2.4.2",
       "question_text": "Do you have a war room for the SOC?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A dedicated facility for coordination of major security incidents",
       "nist_csf": {},
       "order_index": 458
     },
@@ -5491,7 +5491,7 @@
       "code": "M 3.12.1",
       "question_text": "Do you provide education and security awareness to the organization?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "The SOC may be involved in security awareness and education to make users in the organisation aware of their role in cyber security",
       "nist_csf": {
         "CSF 1.1": "PR.AT-1"
       },
@@ -5503,7 +5503,7 @@
       "code": "M 3.12.2",
       "question_text": "Do you measure the effect of education and security awareness efforts?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Measuring the efforts is necessary for improvement of the security awareness function",
       "nist_csf": {},
       "order_index": 460
     },
@@ -5513,7 +5513,7 @@
       "code": "M 3.13.1",
       "question_text": "Do you use communication templates?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Communication templates help to standardize and professionalize SOC communication to stakeholders",
       "nist_csf": {},
       "order_index": 461
     },
@@ -5523,7 +5523,7 @@
       "code": "M 3.13.2",
       "question_text": "Do you have a communication matrix in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A communication matrix can be used to decide when, how and with whom to communicate",
       "nist_csf": {},
       "order_index": 462
     },
@@ -5533,7 +5533,7 @@
       "code": "M 3.13.3",
       "question_text": "Is communication training (verbal/written) available for SOC personnel?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Communication training helps SOC personnel to communicate effectively",
       "nist_csf": {
         "CSF 1.1": "PR.AT-1"
       },
@@ -5545,7 +5545,7 @@
       "code": "M 3.13.4",
       "question_text": "Are communication skills element of SOC role descriptions?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Communication skills are important for analysts to explain their findings and recommendations",
       "nist_csf": {},
       "order_index": 464
     },
@@ -5555,7 +5555,7 @@
       "code": "M 4.2.1",
       "question_text": "Do you measure use cases against the MITRE ATT&CK® framework for gap analysis purposes?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "By measuring use cases against MITRE ATT&CK®, it is possible to determine strengths and weaknesses in your layered detection approach",
       "nist_csf": {},
       "order_index": 465
     },
@@ -5565,7 +5565,7 @@
       "code": "M 4.2.2",
       "question_text": "Are monitoring rules tagged with MITRE ATT&CK® framework identifiers? [2]",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Tagging monitoring rules with MITRE ATT&CK® identifiers allows for reporting on sightings of attack techniques",
       "nist_csf": {},
       "order_index": 466
     },
@@ -5575,7 +5575,7 @@
       "code": "M 4.2.3",
       "question_text": "Have you created a MITRE ATT&CK® risk profile for your organization?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "The creation of a risk profile in MITRE ATT&CK® can help to identify relevant attack techniques",
       "nist_csf": {},
       "order_index": 467
     },
@@ -5585,7 +5585,7 @@
       "code": "M 4.2.4",
       "question_text": "Have you prioritized MITRE ATT&CK® techniques for relevance? [3]",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Using organizational context (protection and detection mechanisms), ATT&CK® techniques can be prioritized",
       "nist_csf": {},
       "order_index": 468
     },
@@ -5595,7 +5595,7 @@
       "code": "M 4.2.5",
       "question_text": "Is use case output (alerts) used in threat intelligence activities?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Using MITRE ATT&CK®, it is possible to connect alerts to specific threat actors, or potentially even active campaigns",
       "nist_csf": {},
       "order_index": 469
     },
@@ -5605,7 +5605,7 @@
       "code": "M 4.2.6",
       "question_text": "Is threat intelligence used for the creation and updates of use cases?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Threat intelligence can provide input into security monitoring, especially when using MITRE ATT&CK® to connect both",
       "nist_csf": {
         "CSF 1.1": "DE.DP-5"
       },
@@ -5617,7 +5617,7 @@
       "code": "M 4.3.1",
       "question_text": "Do you determine and document visibility requirements for each use case?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Data source requirements should be part of use case design",
       "nist_csf": {},
       "order_index": 471
     },
@@ -5627,7 +5627,7 @@
       "code": "M 4.3.2",
       "question_text": "Do you measure visibility status for your use cases for gap analysis purposes?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Measuring visibility status of use cases will help to identify use cases that require additional data sources for detection optimization",
       "nist_csf": {
         "CSF 1.1": "DE.DP-5"
       },
@@ -5639,7 +5639,7 @@
       "code": "M 4.3.3",
       "question_text": "Do you map data source visibility to the MITRE ATT&CK® framework? [4]",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Mapping available data sources to MITRE ATT&CK® data source requirements will help identify gaps in visibility of attack techniques",
       "nist_csf": {
         "CSF 1.1": "DE.DP-5"
       },
@@ -5651,7 +5651,7 @@
       "code": "M 5.1.1",
       "question_text": "Do you have a detection engineering process in place?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A detection engineering process supports the creation and deployment of detection rules for security monitoring purposes",
       "nist_csf": {},
       "order_index": 474
     },
@@ -5661,7 +5661,7 @@
       "code": "M 5.1.2",
       "question_text": "Is the detection engineering process formally documented?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Formal documentation supports process standardisation, and allows for faster training of new engineers",
       "nist_csf": {},
       "order_index": 475
     },
@@ -5671,7 +5671,7 @@
       "code": "M 5.1.3",
       "question_text": "Are there specific roles and requirements for detection engineers?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Detection engineers have a skillset that is different from security analysts and security engineers",
       "nist_csf": {
         "CSF 1.1": "DE.DP-1"
       },
@@ -5683,7 +5683,7 @@
       "code": "M 5.1.4",
       "question_text": "Is there active cooperation between the SOC analysts and the detection engineers?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "SOC analyst deal with alerts resulting from detections created by engineers, so a tight interaction is required to optimize the ruleset",
       "nist_csf": {},
       "order_index": 477
     },
@@ -5693,7 +5693,7 @@
       "code": "M 5.1.5",
       "question_text": "Is there active cooperation between the Threat Intelligence analysts and detection engineers?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Threat intelligence is a major input into the creation or updating of detection rules",
       "nist_csf": {},
       "order_index": 478
     },
@@ -5703,7 +5703,7 @@
       "code": "M 5.1.6",
       "question_text": "Are there formal hand-over to the analyst team?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Once the detections are created, they must be operationalized. This should be done with a formal hand-over to production",
       "nist_csf": {},
       "order_index": 479
     },
@@ -5713,7 +5713,7 @@
       "code": "M 5.1.7",
       "question_text": "Is there a testing enviroment to test and validate detections before deploying them?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A testing environment allows for thorough testing of new detections, which ensures a higher level of quality",
       "nist_csf": {
         "CSF 1.1": "PR.DS-7"
       },
@@ -5725,7 +5725,7 @@
       "code": "M 5.1.8",
       "question_text": "Is there a formal release process in place for new detections?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A formal release process includes automated deployment of rules and adheres to organizational change management procedures",
       "nist_csf": {},
       "order_index": 481
     },
@@ -5735,7 +5735,7 @@
       "code": "M 5.1.9",
       "question_text": "Do you apply a versioning system to detections?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A versioning system will allow to revert back to previous versions of detections",
       "nist_csf": {},
       "order_index": 482
     },
@@ -5745,7 +5745,7 @@
       "code": "M 5.1.10",
       "question_text": "Do you have a roll-back procedure in place in case of problems with detections?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A roll-back procedure enabled reverting abck to a good state if a deployment has an adverse effect on security monitoring",
       "nist_csf": {},
       "order_index": 483
     },
@@ -5755,7 +5755,7 @@
       "code": "M 5.2.1",
       "question_text": "Do you perform adversary emulation or automated detection testing? [1]",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "These validation activities provides insights into how well security monitoring is able to detect certain adversaries or attack techniques",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -5767,7 +5767,7 @@
       "code": "M 5.2.2",
       "question_text": "Do you test for detection of MITRE ATT&CK® techniques?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Testing for MITRE ATT&CK® techniques can augment mapping of use cases and visibility in Mitre ATT&CK",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -5779,7 +5779,7 @@
       "code": "M 5.2.3",
       "question_text": "Do you test detection analytics not directly associated with MITRE ATT&CK®?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Not all use cases and risks have a relationship to MITRE ATT&CK®. These use cases should be tested as well",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -5791,7 +5791,7 @@
       "code": "M 5.2.4",
       "question_text": "Do you test response playbooks?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Testing both detection and response provides a more complete view of SOC capabilities",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -5803,7 +5803,7 @@
       "code": "M 5.2.5",
       "question_text": "Is detection validation fully integrated in the detection engineering process / pipeline?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "When deploying new or updated detection, automated detection testing should be executed as a quality gate",
       "nist_csf": {},
       "order_index": 488
     },
@@ -5813,7 +5813,7 @@
       "code": "M 5.2.6",
       "question_text": "Is the outcome from detection validation used as input into monitoring and detection engineering?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Output should lead to updates in detections and new detections, as well as instructions for SOC analysts",
       "nist_csf": {
         "CSF 1.1": "DE.DP-5"
       },
@@ -6197,7 +6197,7 @@
       "code": "M 1.6",
       "question_text": "Have you implemented a process for continuous improvement (CI)?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Continuous improvement is a vital process for SOCs to evolve their capabilities",
       "nist_csf": {},
       "order_index": 523
     },
@@ -6207,7 +6207,7 @@
       "code": "M 1.8",
       "question_text": "Have you implemented a process to manage SOC quality assurance (QA)?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Quality assurance is aimed at ensuring SOC processes, technology and services meet their quality requirements",
       "nist_csf": {
         "CSF 1.1": "DE.DP-5"
       },
@@ -6219,7 +6219,7 @@
       "code": "M 2.1.1",
       "question_text": "Do you have a documented exercise plan?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "An exercise plan lists the type of exercises to be conducted, the frequency and the exercise goals",
       "nist_csf": {
         "CSF 1.1": "PR.IP-9"
       },
@@ -6231,7 +6231,7 @@
       "code": "M 2.1.4",
       "question_text": "Are the results from exercises documented?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Results from exercisess should be structurally documented for future reference and identification of improvements",
       "nist_csf": {
         "CSF 1.1": "PR.IP-10"
       },
@@ -6243,7 +6243,7 @@
       "code": "M 2.1.5",
       "question_text": "Is the output from exercises actively used to improve security operations?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Exercise output should be used to structurally improve security operations",
       "nist_csf": {
         "CSF 1.1": "PR.IP-10"
       },
@@ -6255,7 +6255,7 @@
       "code": "M 5.2.7",
       "question_text": "Do you monitor the data ingestion status for data sources?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Monitoring data ingestion is used to identify data ingestion problems or inactive data sources",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -6267,7 +6267,7 @@
       "code": "M 5.2.8",
       "question_text": "Do you actively measure and improve data source coverage?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "Data source coverage should be optimized to avoid blind spots in monitoring",
       "nist_csf": {
         "CSF 1.1": "DE.DP-3"
       },
@@ -7691,7 +7691,7 @@
       "code": "M 1.10",
       "question_text": "Have you implemented a SOC architecture process?",
       "question_type": "multiple_choice",
-      "guidance": "",
+      "guidance": "A SOC architecture describes how different components",
       "nist_csf": {},
       "order_index": 663
     },
