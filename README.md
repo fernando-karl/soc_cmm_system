@@ -58,12 +58,27 @@ The assessment covers six key domains:
 │   └── migrations/         # Incremental schema changes and fixes
 ├── scripts/                # Operational scripts (auth bootstrap, migrations)
 │   └── legacy/             # Historical one-off tooling — see scripts/legacy/README.md
-├── tests/manual/           # Manual check scripts — see tests/manual/README.md
+├── tests/                  # Automated pytest suite (+ manual/ check scripts)
 └── docs/                   # Documentation (en/, pt-br/, archive/)
 ```
 
 Scripts under `scripts/` and `tests/manual/` are written to be run from the
 repository root, e.g. `python scripts/migrate_to_auth.py`.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+SECRET_KEY=test-secret pytest tests/ -v
+```
+
+`tests/` holds the automated suite, which covers access control on the
+customer- and assessment-scoped API: every such endpoint is checked against an
+anonymous caller, a different authenticated tenant, and the owner. The suite
+builds its own throwaway database, so it needs no running server.
+
+`tests/manual/` holds older interactive check scripts that do require a running
+instance — see [`tests/manual/README.md`](tests/manual/README.md).
 
 ## Documentation
 
@@ -266,8 +281,17 @@ The system is fully responsive and optimized for mobile devices:
 
 ## Security Considerations
 
-- **Authentication is required.** All assessment data is scoped per user via
-  JWT-based authentication (`auth.py`).
+- **Authentication is required.** Every customer- and assessment-scoped
+  endpoint requires a valid session or bearer token and verifies that the
+  record belongs to the caller, via `assert_customer_owner` /
+  `assert_assessment_owner` in `main.py`. This is covered by
+  `tests/test_assessment_access_control.py`, which asserts a 403 for a
+  different tenant and a 401/403 for anonymous callers on each one.
+
+  > Versions before this fix left seven of these endpoints unauthenticated.
+  > Because customer and assessment ids are sequential integers, anyone who
+  > could reach the server could read — and write — any tenant's assessment
+  > data. If you are running an older deployment, update.
 - The application **refuses to start** if `SECRET_KEY` is not configured —
   there is no insecure fallback.
 - The bootstrap admin password must be supplied through the

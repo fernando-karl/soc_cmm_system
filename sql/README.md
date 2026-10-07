@@ -2,7 +2,7 @@
 
 | Directory | Contents |
 | --- | --- |
-| `schema/` | Table definitions. `schema/database_schema.sql` is what `DatabaseManager.init_database()` reads. |
+| `schema/` | Table definitions. `schema/database_schema.sql` is what `DatabaseManager.init_database()` reads; `schema/bilingual_schema.sql` adds the translation tables `database.py` queries for non-default languages. |
 | `seed/` | `INSERT` statements for the questionnaire, generated from `dataset/`. These contain **no** `CREATE TABLE` — they assume the schema already exists. |
 | `migrations/` | Incremental schema changes and data fixes. |
 
@@ -21,3 +21,6 @@ database first.
   but `database.py` selects it. That column is added by
   `migrations/add_admin_field.sql`, so the base schema alone is not sufficient
   for the application to run.
+- A complete schema therefore needs all three of `schema/database_schema.sql`,
+  `schema/bilingual_schema.sql` and `migrations/add_admin_field.sql`. See
+  `tests/conftest.py`, which builds exactly that for the test suite.

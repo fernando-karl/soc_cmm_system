@@ -292,16 +292,29 @@ class DatabaseManager:
         return questions
     
     # Answer methods
-    def save_answer(self, assessment_id: int, question_id: int, answer_option_id: int):
+    def save_answer(self, assessment_id: int, question_id: int,
+                    answer_option_id: Optional[int] = None,
+                    answer_text: Optional[str] = None):
+        """Store (or replace) the answer to one question of an assessment.
+
+        `answer_option_id` is optional so free-text answers can be saved; when
+        it is given it must name a real option, and its maturity level becomes
+        this answer's score.
+        """
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT maturity_level FROM answer_options WHERE id = ?
-        """, (answer_option_id,))
-        
-        maturity_score = cursor.fetchone()[0]
-        
+
+        maturity_score = None
+        if answer_option_id is not None:
+            cursor.execute("""
+                SELECT maturity_level FROM answer_options WHERE id = ?
+            """, (answer_option_id,))
+            row = cursor.fetchone()
+            if row is None:
+                conn.close()
+                raise ValueError(f"Unknown answer_option_id: {answer_option_id}")
+            maturity_score = row[0]
+
         # Delete existing answer if any
         cursor.execute("""
             DELETE FROM assessment_answers 
@@ -311,9 +324,9 @@ class DatabaseManager:
         # Insert new answer
         cursor.execute("""
             INSERT INTO assessment_answers 
-            (assessment_id, question_id, answer_option_id, maturity_score)
-            VALUES (?, ?, ?, ?)
-        """, (assessment_id, question_id, answer_option_id, maturity_score))
+            (assessment_id, question_id, answer_option_id, answer_text, maturity_score)
+            VALUES (?, ?, ?, ?, ?)
+        """, (assessment_id, question_id, answer_option_id, answer_text, maturity_score))
         
         conn.commit()
         conn.close()

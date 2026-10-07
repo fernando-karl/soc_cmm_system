@@ -1,0 +1,6 @@
+# Test and development dependencies (not needed to run the application).
+-r requirements.txt
+pytest>=8.0
+# Used by the manual check scripts in tests/manual/
+requests>=2.31
+beautifulsoup4>=4.12

@@ -23,3 +23,19 @@ Configuração via `mcp_config.json` (variável `API_BASE_URL`).
 Erros são tratados com mensagens descritivas e logs.
 
 Consulte `MCP_README.md` e `MCP_IMPLEMENTATION_SUMMARY.md` para detalhes.
+
+## Autenticação
+
+Os endpoints de clientes e avaliações exigem autenticação, então o servidor MCP
+precisa de um token bearer. Obtenha um em `POST /api/auth/login` e informe-o
+como `API_TOKEN`:
+
+```bash
+export API_TOKEN='<token de /api/auth/login>'
+export API_BASE_URL='http://localhost:8400'   # opcional, este é o padrão
+python mcp_server.py
+```
+
+Sem `API_TOKEN` o servidor inicia mas registra um aviso, e toda chamada a
+clientes ou avaliações falha com 401. O token carrega as permissões do usuário
+que o emitiu, portanto o servidor MCP só vê os dados desse usuário.
