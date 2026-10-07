@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-10-07
+
+### Upgrading from 1.x
+
+The questionnaire has been replaced, so question and answer ids from 1.x do not
+map onto this release. **There is no in-place migration.** Seeding never
+overwrites existing content, so an existing database keeps its old questionnaire;
+`scripts/init_db.py` now detects this and says so. To move to the corrected
+questionnaire, export anything you need and rebuild with
+`python scripts/init_db.py --recreate`.
+
 ### Changed
 
 - **The questionnaire is now generated from the official SOC-CMM® workbook and

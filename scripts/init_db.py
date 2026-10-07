@@ -39,6 +39,12 @@ def log(message: str) -> None:
     print(f"[init-db] {message}", flush=True)
 
 
+def load_dataset():
+    import json
+    with open(DATA_FILE, "r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
 def apply_migration(db: DatabaseManager, path: Path) -> None:
     """Apply one migration, treating an already-applied one as success.
 
@@ -154,14 +160,33 @@ def main() -> int:
 
     conn = db.get_connection()
     try:
-        seeded = conn.execute("SELECT COUNT(*) FROM domains").fetchone()[0]
+        existing = [r[0] for r in conn.execute("SELECT name FROM domains ORDER BY id")]
     finally:
         conn.close()
-    if seeded:
-        log(f"questionnaire already seeded ({seeded} domains) — left as is")
-    else:
+
+    if not existing:
         db.populate_initial_data()
         log("seeded the questionnaire from the SOC-CMM dataset")
+    else:
+        log(f"questionnaire already seeded ({len(existing)} domains) — left as is")
+        expected = [d["name"] for d in load_dataset()["domains"]]
+        if existing != expected:
+            log("")
+            log("WARNING: this database holds a different questionnaire than the one")
+            log(f"  this version ships. Found {len(existing)} domains "
+                f"({', '.join(existing)});")
+            log(f"  expected {len(expected)} ({', '.join(expected)}).")
+            log("  Seeding never overwrites existing content, so it has been left")
+            log("  alone — but assessments scored against it do not match the")
+            log("  current SOC-CMM release.")
+            log("")
+            log("  Versions before 2.0.0 shipped a questionnaire that diverged from")
+            log("  the framework: aspects were misnamed (\"Cost\" for \"Customers\")")
+            log("  and Results was scored as a sixth domain. To move to the correct")
+            log("  questionnaire, export anything you need and rebuild:")
+            log("      python scripts/init_db.py --recreate")
+            log("  There is no in-place migration: question ids are not comparable")
+            log("  between the two, so old answers cannot be carried across.")
 
     create_admin(db)
     summarise(db)

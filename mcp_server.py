@@ -645,7 +645,7 @@ async def main():
             write_stream,
             InitializationOptions(
                 server_name="soc-cmm-assessment",
-                server_version="1.0.0",
+                server_version="2.0.0",
                 capabilities=server.get_capabilities(
                     notification_options=None,
                     experimental_capabilities=None,

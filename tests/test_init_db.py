@@ -165,3 +165,29 @@ def test_warns_when_the_dataset_cannot_score_every_question(built):
     if answerable and total > answerable:
         assert "WARNING" in result.stdout
         assert "answer options" in result.stdout
+
+
+def test_warns_when_the_database_holds_a_different_questionnaire(tmp_path):
+    """Upgrading from a release whose questionnaire diverged must not be silent.
+
+    Seeding never overwrites existing content, so a pre-2.0.0 database keeps its
+    wrong questionnaire. Saying so is the difference between a confusing upgrade
+    and a correct one.
+    """
+    db_path = tmp_path / "stale.db"
+    result = run_init_db(db_path)
+    assert result.returncode == 0, result.stderr
+
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute(
+            "INSERT INTO domains (id, name, description, order_index) "
+            "VALUES (99, 'Results', 'a domain this release does not ship', 99)")
+        conn.commit()
+    finally:
+        conn.close()
+
+    result = run_init_db(db_path)
+    assert result.returncode == 0, result.stderr
+    assert "WARNING" in result.stdout
+    assert "--recreate" in result.stdout
