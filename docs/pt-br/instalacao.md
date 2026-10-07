@@ -52,22 +52,36 @@ Gere uma `SECRET_KEY` forte com:
 python -c "import secrets; print(secrets.token_urlsafe(48))"
 ```
 
-## 4. Inicializar o banco de dados
+## 4. Criar o banco de dados
 
-A primeira execução exige criar as tabelas de autenticação e o usuário admin
-inicial:
+Um único comando monta um banco funcional do zero:
 
 ```bash
 export ADMIN_PASSWORD="sua-senha-forte-aqui"
-python scripts/migrate_to_auth.py
+python scripts/init_db.py
 ```
 
-O script cria as tabelas `users` necessárias, faz backup do banco existente e
-cadastra o usuário `admin` com a senha vinda de `$ADMIN_PASSWORD`.
+Ele aplica o esquema base, as tabelas de tradução e as migrações, popula o
+questionário a partir de `dataset/` e cria a conta `admin` com a senha de
+`$ADMIN_PASSWORD`. Sem essa variável o banco é criado da mesma forma e você
+registra o primeiro usuário pela interface web.
 
-> Caso já exista um banco populado em outro nome, edite a variável `db_path` em
-> `scripts/migrate_to_auth.py` ou renomeie o arquivo para
-> `soc_cmm_translated.db`.
+O script é **idempotente** — rodar de novo acrescenta o que faltar e preserva
+os dados existentes, então use-o também depois de atualizar o repositório com
+novas migrações. `--recreate` apaga o banco antes e pede confirmação; isso
+destrói todos os usuários, clientes e avaliações.
+
+O arquivo do banco é `soc_cmm_bilingual.db`, ao lado do código da aplicação, ou
+onde `DB_PATH` apontar.
+
+> **Cobertura do questionário:** o conjunto de dados distribuído define as 97
+> questões, mas opções de resposta para apenas 11 delas, então as demais ainda
+> não podem ser pontuadas. O script avisa sobre isso ao rodar. Veja
+> `sql/README.md`.
+
+> Atualizando um banco anterior à autenticação? Use
+> `python scripts/migrate_to_auth.py`, que acrescenta as tabelas `users` a um
+> banco já existente.
 
 ## 5. Iniciar a aplicação
 

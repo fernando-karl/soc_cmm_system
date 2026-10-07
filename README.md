@@ -119,14 +119,6 @@ Documentação completa em dois idiomas:
 
 ### Quick start
 
-> **Known limitation:** there is currently no command that creates a database
-> from scratch. `DatabaseManager.init_database()` and `populate_initial_data()`
-> exist and work, but their calls are commented out in `database.py`, and
-> `scripts/migrate_to_auth.py` expects an existing database file. On a fresh
-> clone the steps below will therefore fail at the migration step. See the
-> "Known gaps" section of [`sql/README.md`](sql/README.md). Contributions that
-> add a proper `scripts/init_db.py` bootstrap are very welcome.
-
 ```bash
 # 1. Clone the repository
 git clone https://github.com/fernando-karl/soc_cmm_system.git
@@ -141,13 +133,24 @@ cp .env.example .env
 # generate SECRET_KEY:
 #   python -c "import secrets; print(secrets.token_urlsafe(48))"
 
-# 4. Bootstrap the database (creates the admin user from $ADMIN_PASSWORD)
+# 4. Create the database (schema, questionnaire data, and the admin user)
 export ADMIN_PASSWORD="your-strong-password"
-python scripts/migrate_to_auth.py
+python scripts/init_db.py
 
 # 5. Start the application
 python main.py
 ```
+
+`scripts/init_db.py` is safe to re-run: it adds whatever is missing and leaves
+existing data alone. Use it on an existing database too, after pulling changes
+that add a migration. (`scripts/migrate_to_auth.py` is still there for upgrading
+a database that predates authentication.)
+
+> **Note on questionnaire coverage:** the shipped dataset defines all 97
+> questions but answer options for only 11 of them, so the rest cannot be scored
+> yet. A fuller set exists in `sql/seed/` but was generated for an older schema
+> and does not load as is — see [`sql/README.md`](sql/README.md). Help closing
+> that gap is very welcome.
 
 The application listens on **port 8400** by default. Override with
 `PORT=9000 python main.py`. Browse to <http://localhost:8400>, log in as
@@ -173,7 +176,7 @@ and password change.
 ```bash
 cp .env.example .env             # set SECRET_KEY, ADMIN_PASSWORD
 docker compose up -d --build
-docker compose exec soc-cmm python scripts/migrate_to_auth.py
+docker compose exec soc-cmm python scripts/init_db.py
 ```
 
 See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.

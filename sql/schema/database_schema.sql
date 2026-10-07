@@ -1,7 +1,7 @@
 -- SOC CMM Assessment System Database Schema
 
 -- Users table for authentication
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE users (
 );
 
 -- Customers table (now associated with users)
-CREATE TABLE customers (
+CREATE TABLE IF NOT EXISTS customers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE customers (
 );
 
 -- Domains table (Business, People, Process, Technology, Services, Results)
-CREATE TABLE domains (
+CREATE TABLE IF NOT EXISTS domains (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(100) NOT NULL,
     description TEXT,
@@ -33,7 +33,7 @@ CREATE TABLE domains (
 );
 
 -- Aspects table (subcategories within each domain)
-CREATE TABLE aspects (
+CREATE TABLE IF NOT EXISTS aspects (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     domain_id INTEGER NOT NULL,
     name VARCHAR(100) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE aspects (
 );
 
 -- Questions table
-CREATE TABLE questions (
+CREATE TABLE IF NOT EXISTS questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     aspect_id INTEGER NOT NULL,
     question_text TEXT NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE questions (
 );
 
 -- Answer options table (for multiple choice questions)
-CREATE TABLE answer_options (
+CREATE TABLE IF NOT EXISTS answer_options (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     question_id INTEGER NOT NULL,
     option_text TEXT NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE answer_options (
 );
 
 -- Assessments table (one assessment per customer per time)
-CREATE TABLE assessments (
+CREATE TABLE IF NOT EXISTS assessments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     customer_id INTEGER NOT NULL,
     name VARCHAR(255),
@@ -76,7 +76,7 @@ CREATE TABLE assessments (
 );
 
 -- Assessment answers table
-CREATE TABLE assessment_answers (
+CREATE TABLE IF NOT EXISTS assessment_answers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     assessment_id INTEGER NOT NULL,
     question_id INTEGER NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE assessment_answers (
 );
 
 -- Assessment scores table (aggregated scores by aspect and domain)
-CREATE TABLE assessment_scores (
+CREATE TABLE IF NOT EXISTS assessment_scores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     assessment_id INTEGER NOT NULL,
     aspect_id INTEGER,
@@ -104,14 +104,14 @@ CREATE TABLE assessment_scores (
 );
 
 -- Create indexes for better performance
-CREATE INDEX idx_users_username ON users(username);
-CREATE INDEX idx_users_email ON users(email);
-CREATE INDEX idx_customers_user ON customers(user_id);
-CREATE INDEX idx_customers_email ON customers(email);
-CREATE INDEX idx_aspects_domain ON aspects(domain_id);
-CREATE INDEX idx_questions_aspect ON questions(aspect_id);
-CREATE INDEX idx_answer_options_question ON answer_options(question_id);
-CREATE INDEX idx_assessments_customer ON assessments(customer_id);
-CREATE INDEX idx_assessment_answers_assessment ON assessment_answers(assessment_id);
-CREATE INDEX idx_assessment_scores_assessment ON assessment_scores(assessment_id);
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+CREATE INDEX IF NOT EXISTS idx_customers_user ON customers(user_id);
+CREATE INDEX IF NOT EXISTS idx_customers_email ON customers(email);
+CREATE INDEX IF NOT EXISTS idx_aspects_domain ON aspects(domain_id);
+CREATE INDEX IF NOT EXISTS idx_questions_aspect ON questions(aspect_id);
+CREATE INDEX IF NOT EXISTS idx_answer_options_question ON answer_options(question_id);
+CREATE INDEX IF NOT EXISTS idx_assessments_customer ON assessments(customer_id);
+CREATE INDEX IF NOT EXISTS idx_assessment_answers_assessment ON assessment_answers(assessment_id);
+CREATE INDEX IF NOT EXISTS idx_assessment_scores_assessment ON assessment_scores(assessment_id);
 

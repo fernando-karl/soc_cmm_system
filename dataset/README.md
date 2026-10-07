@@ -15,10 +15,9 @@ See [`../NOTICE`](../NOTICE) for the full attribution and license terms.
 | `questions_for_gemini_translation.json` | Export prepared for machine translation. |
 | `import_template.json` | Shape expected when importing translated questions. |
 
-`soc_cmm_complete_data.json` is the file `DatabaseManager.populate_initial_data()`
-reads, and `sql/schema/database_schema.sql` is the one `init_database()` reads.
-Note that **neither method is called automatically** — both calls are commented
-out in `DatabaseManager.__init__` (`database.py`), so a fresh clone does not get
-a seeded database on first run. See [`../sql/README.md`](../sql/README.md).
+`soc_cmm_complete_data.json` is what seeds a new database, via
+`python scripts/init_db.py`. It defines all 97 questions but answer options for
+only 11 of them, so most questions cannot be scored yet — see the "Known gaps"
+section of [`../sql/README.md`](../sql/README.md).
 
 These files contain no user or customer data — only framework content.

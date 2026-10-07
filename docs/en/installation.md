@@ -52,23 +52,35 @@ Generate a strong `SECRET_KEY` with:
 python -c "import secrets; print(secrets.token_urlsafe(48))"
 ```
 
-## 4. Bootstrap the database
+## 4. Create the database
 
-The first run requires creating the authentication tables and the initial
-admin user:
+One command builds a working database from nothing:
 
 ```bash
 export ADMIN_PASSWORD="your-strong-password"
-python scripts/migrate_to_auth.py
+python scripts/init_db.py
 ```
 
-The script creates the required `users` tables, backs up any existing
-database, and registers the `admin` account using the password supplied in
-`$ADMIN_PASSWORD`.
+It applies the base schema, the translation tables and the migrations, seeds
+the questionnaire from `dataset/`, and creates the `admin` account from
+`$ADMIN_PASSWORD`. Without that variable it still builds the database and you
+register the first user in the web interface instead.
 
-> If you already have a populated database under a different filename,
-> either rename it to `soc_cmm_translated.db` or edit the `db_path`
-> variable inside `scripts/migrate_to_auth.py`.
+The script is **idempotent** — re-running it adds whatever is missing and
+leaves existing data alone, so use it again after pulling changes that add a
+migration. `--recreate` deletes the database first and asks for confirmation;
+it destroys all users, customers and assessments.
+
+The database file is `soc_cmm_bilingual.db` next to the application code, or
+wherever `DB_PATH` points.
+
+> **Questionnaire coverage:** the shipped dataset defines all 97 questions but
+> answer options for only 11 of them, so the rest cannot be scored yet. The
+> script warns about this when it runs. See `sql/README.md`.
+
+> Upgrading a database that predates authentication? Use
+> `python scripts/migrate_to_auth.py` instead, which adds the `users` tables
+> to an existing database.
 
 ## 5. Start the application
 

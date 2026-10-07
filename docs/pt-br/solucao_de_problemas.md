@@ -34,7 +34,8 @@ Em Docker: `PORT=9000 docker compose up -d`.
 
 - Verifique se o arquivo `soc_cmm_translated.db` existe e tem permissão de
   escrita.
-- Confirme que a tabela `users` foi criada (rode `python scripts/migrate_to_auth.py`).
+- Confirme que a tabela `users` foi criada (rode `python scripts/init_db.py`,
+  seguro em um banco já existente).
 - Em ambiente local de testes, é possível apagar o `.db` e recriar a base
   rodando os scripts de população (`scripts/legacy/run_populate_database_fixed.py`).
 
