@@ -86,21 +86,22 @@ def log(message: str) -> None:
     print(f"[extract] {message}", flush=True)
 
 
-def load_workbook():
+def load_workbook(path=None):
     try:
         import openpyxl
     except ImportError:
         raise SystemExit(
             "openpyxl is required: pip install -r requirements-dev.txt"
         )
-    if not WORKBOOK.exists():
-        raise SystemExit(f"workbook not found: {WORKBOOK}")
+    path = Path(path) if path else WORKBOOK
+    if not path.exists():
+        raise SystemExit(f"workbook not found: {path}")
     import warnings
     with warnings.catch_warnings():
         # The workbook uses Excel extensions openpyxl drops on read; none of
         # them carry content this script needs.
         warnings.simplefilter("ignore")
-        return openpyxl.load_workbook(WORKBOOK, data_only=True)
+        return openpyxl.load_workbook(path, data_only=True), path
 
 
 def normalise_id(raw: str) -> str:
@@ -112,12 +113,27 @@ def normalise_id(raw: str) -> str:
 def read_output_spine(wb):
     """The five scored domains, their sections, and each question's metadata."""
     ws = wb["_Output"]
+
+    # Column positions move between releases: in 2.3.3 the NIST CSF 1.1 mapping
+    # sits in F/G with a CSF 2.0 mapping beside it, while in 2.4.2 F/G hold the
+    # CSF 2.0 mapping and H is the scoring factor. Locate the mapping columns by
+    # their header rather than by position, and take only the "NIST mapping"
+    # ones — never "NIST in scope" or "factor".
+    nist_columns = {}
+    for row in ws.iter_rows(min_row=1, max_row=1, max_col=20):
+        for index, cell in enumerate(row):
+            header = " ".join(str(cell.value).split()) if cell.value else ""
+            if header.lower().startswith("nist mapping"):
+                label = header[len("NIST mapping"):].strip(" ()") or "NIST"
+                nist_columns[index] = label
+    max_col = max([*nist_columns, 8]) + 1
+
     domain = None
     section = None
     sections = OrderedDict()   # (letter, number) -> {name, domain}
     questions = OrderedDict()  # qid -> {type, nist, section}
-    for row in ws.iter_rows(min_row=2, max_col=9, values_only=True):
-        cells = list(row) + [None] * 9
+    for row in ws.iter_rows(min_row=2, max_col=max_col, values_only=True):
+        cells = list(row) + [None] * (max_col + 1)
         label = str(cells[0]).strip() if cells[0] else ""
         if not label:
             continue
@@ -138,7 +154,11 @@ def read_output_spine(wb):
         qid = normalise_id(label)
         if qid and section and qid not in questions:
             qtype = str(cells[2]).strip() if cells[2] else ""
-            nist = [str(c).strip() for c in (cells[5], cells[7]) if c and str(c).strip()]
+            nist = {}
+            for index, label in nist_columns.items():
+                value = cells[index] if index < len(cells) else None
+                if value and str(value).strip():
+                    nist[label] = str(value).strip()
             questions[qid] = {"type": qtype, "nist": nist, "section": section}
     return sections, questions
 
@@ -227,7 +247,7 @@ def read_sheet_questions(wb):
     return found, aspect_names
 
 
-def build(wb):
+def build(wb, source_version=SOURCE_VERSION, workbook_name=WORKBOOK.name):
     sections, spine = read_output_spine(wb)
     guidance = read_guidance(wb)
     sheet_questions, sheet_aspect_names = read_sheet_questions(wb)
@@ -307,11 +327,11 @@ def build(wb):
     return {
         "source": {
             "framework": "SOC-CMM(R)",
-            "version": SOURCE_VERSION,
+            "version": source_version,
             "author": "Rob van Os",
             "url": "https://www.soc-cmm.com",
             "license": "CC BY-SA 4.0",
-            "workbook": WORKBOOK.name,
+            "workbook": workbook_name,
             "generated_by": "scripts/extract_soc_cmm.py",
         },
         "domains": domains,
@@ -323,20 +343,24 @@ def build(wb):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--workbook", default=None,
+                        help=f"SOC-CMM workbook to read (default: {WORKBOOK.name})")
+    parser.add_argument("--version", default=SOURCE_VERSION,
+                        help="version label recorded in the output")
     parser.add_argument("--out", default=str(OUTPUT), help="output JSON path")
     parser.add_argument("--check", action="store_true",
                         help="report what would be written without writing it")
     args = parser.parse_args()
 
-    wb = load_workbook()
-    data, skipped = build(wb)
+    wb, workbook_path = load_workbook(args.workbook)
+    data, skipped = build(wb, source_version=args.version, workbook_name=workbook_path.name)
 
     by_domain = {}
     for a in data["aspects"]:
         name = next(d["name"] for d in data["domains"] if d["id"] == a["domain_id"])
         by_domain.setdefault(name, []).append(a["name"])
 
-    log(f"source: {WORKBOOK.name} ({SOURCE_VERSION})")
+    log(f"source: {workbook_path.name} ({args.version})")
     for name, names in by_domain.items():
         log(f"  {name}: {len(names)} aspects — {', '.join(names)}")
     scorable = len({o['question_id'] for o in data["answer_options"]})

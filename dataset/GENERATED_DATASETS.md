@@ -1,7 +1,35 @@
-# Generated questionnaire dataset
+# Generated questionnaire datasets
 
-`soc_cmm_2.3.3_basic.json` is generated from the official workbook by
-`python scripts/extract_soc_cmm.py`. Do not edit it by hand — regenerate it.
+Generated from the official SOC-CMM® workbooks by
+`scripts/extract_soc_cmm.py`. Do not edit them by hand — regenerate.
+
+```bash
+# 2.3.3 basic (the default)
+python scripts/extract_soc_cmm.py
+
+# 2.4.2 advanced
+python scripts/extract_soc_cmm.py \
+    --workbook dataset/soc-cmm-2.4.2-advanced.xlsx \
+    --version "2.4.2 (advanced)" \
+    --out dataset/soc_cmm_2.4.2_advanced.json
+```
+
+| Version | Domains | Aspects | Questions | Options | NIST |
+| --- | --- | --- | --- | --- | --- |
+| 2.3.3 (basic) | 5 | 26 | 664 | 3320 | CSF 1.1 |
+| 2.4.2 (advanced) | 5 | 27 | 622 | 3110 | CSF 2.0 |
+
+Both are released by SOC-CMM® under CC BY-SA 4.0; the advanced workbook states
+this itself ("The SOC-CMM advanced version is part of the SOC-CMM®. The
+SOC-CMM® assessment tool is free software, released under the CC SA-BY
+license").
+
+The same extractor reads both without modification. 2.4.2 moves Log Management
+from Services into Process, adds Automation Engineering, renames the Technology
+aspects to Log / Network / Endpoint Monitoring and SecOps Automation, and
+broadens Business "Customers" to "Customers / Stakeholders". Column positions in
+`_Output` also moved, so the NIST columns are located by their header rather
+than by position.
 
 ## Why it was regenerated
 
