@@ -11,12 +11,12 @@ Captured from a local instance seeded with demo data (fictional customers —
 | **Dashboard** — assessment overview for the signed-in user.<br>![Dashboard](03-dashboard.png) | **Customers** — multiple client organisations, scoped per user.<br>![Customers](04-customers.png) |
 
 ### Guided questionnaire
-Step-by-step through the six SOC-CMM® domains, with per-aspect progress.
+Step-by-step through the five SOC-CMM® domains, with per-aspect progress.
 
 ![Questionnaire](05-assessment-questionnaire.png)
 
 ### Results
-Overall maturity gauge, radar chart across all six domains, per-domain and
+Overall maturity gauge, radar chart across all five domains, per-domain and
 per-aspect breakdown with maturity labels, and progress over time across
 repeated assessments.
 

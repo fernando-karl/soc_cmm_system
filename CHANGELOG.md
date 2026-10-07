@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- **The questionnaire is now generated from the official SOC-CMM® workbook and
+  tracks v2.4.2 (advanced)**, replacing a hand-built extract that diverged from
+  the framework. 5 scored domains (not 6 — `Results` is the workbook's output
+  section, not a domain), 27 aspects under their official names, 622 questions
+  and 3110 answer options, every one scorable. Each option is that question's
+  own description of its maturity level, taken from the workbook's `_Guidance`
+  sheet, and each question carries its NIST CSF 2.0 mapping
+- Attribution throughout — the in-app footer and About page in both languages,
+  `NOTICE`, and the docs — now names v2.4.2 (advanced)
+- Screenshots and the PDF deck regenerated against the corrected data
+
 ### Added
 
 - `scripts/init_db.py` — a one-command database bootstrap. It applies the base
@@ -66,6 +79,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `requirements-dev.txt` for test and development dependencies
 
 ### Fixed
+
+- The progress-over-time chart plotted assessments newest-first, so a client
+  whose maturity improved was drawn as declining. The series is now ordered
+  chronologically
 
 - `DatabaseManager.init_database()` split the schema file on `;`, which breaks
   on semicolons inside string literals; it now uses `executescript`. The schema

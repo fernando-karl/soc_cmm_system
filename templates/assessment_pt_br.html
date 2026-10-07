@@ -23,7 +23,7 @@
 <!-- Progress Bar -->
 <div class="card mb-3">
     <div class="card-body">
-        <div class="progress-text" id="progressText">Passo 1 de 6: Domínio de Negócio</div>
+        <div class="progress-text" id="progressText">Passo 1 de 5: Domínio de Negócio</div>
         <div class="progress-container">
             <div class="progress-bar" id="progressBar" style="width: 16.67%;"></div>
         </div>
@@ -642,7 +642,7 @@ function updateDomainProgressDisplay() {
     
     progressBar.style.width = `${totalProgress}%`;
     progressText.innerHTML = `
-        Passo ${currentDomainIndex + 1} de ${domains.length}: ${currentDomain.name} Domínio
+        Passo ${currentDomainIndex + 1} de ${domains.length}: Domínio ${currentDomain.name}
         <br><small>${domainProgress.answered} de ${domainProgress.total} questões respondidas (${domainProgress.percentage}%)</small>
     `;
 }
@@ -653,7 +653,7 @@ function updateDomainUI() {
     
     document.getElementById('currentDomainTitle').innerHTML = `
         <i class="${icon}"></i>
-        ${domain.name} Domínio
+        Domínio ${domain.name}
     `;
     document.getElementById('currentDomainSubtitle').textContent = domain.description;
     

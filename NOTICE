@@ -8,7 +8,7 @@ Third-party attribution
 This software is a derivative work of the SOC-CMM® framework.
 
   Original work : SOC-CMM® (Security Operations Center Capability Maturity
-                  Model), version 2.3.3 (basic)
+                  Model), version 2.4.2 (advanced)
   Author        : Rob van Os, MSc.
   Website       : https://www.soc-cmm.com
   License       : Creative Commons Attribution-ShareAlike 4.0 International
@@ -18,8 +18,11 @@ This software is a derivative work of the SOC-CMM® framework.
 The following components of this repository contain content derived from the
 SOC-CMM® framework and are therefore subject to the CC BY-SA 4.0 license:
 
-  - dataset/soc-cmm2.3.3-basic.xlsx   (original SOC-CMM® source spreadsheet)
-  - dataset/soc_cmm_complete_data.json (extracted domains/aspects/questions)
+  - dataset/soc-cmm-2.4.2-advanced.xlsx (original SOC-CMM® source spreadsheet)
+  - dataset/soc-cmm2.3.3-basic.xlsx   (the previous release, kept for reference)
+  - dataset/soc_cmm_2.4.2_advanced.json (generated from the workbook above)
+  - dataset/soc_cmm_2.3.3_basic.json  (generated from the 2.3.3 workbook)
+  - dataset/soc_cmm_complete_data.json (superseded hand-built extract)
   - dataset/soc_cmm_questions.json     (English questionnaire)
   - dataset/soc_cmm_questions-port.json (Portuguese translation of questionnaire)
   - dataset/soc_cmm_port.txt

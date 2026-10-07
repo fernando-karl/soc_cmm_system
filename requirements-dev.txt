@@ -4,3 +4,5 @@ pytest>=8.0
 # Used by the manual check scripts in tests/manual/
 requests>=2.31
 beautifulsoup4>=4.12
+# Reads the SOC-CMM workbook in scripts/extract_soc_cmm.py
+openpyxl>=3.1

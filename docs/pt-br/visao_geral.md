@@ -10,7 +10,7 @@ de maturidade de SOC (Security Operations Center) com base no framework
 - Criação de avaliações por cliente, com salvamento incremental.
 - Questionário guiado pelos seis domínios do SOC-CMM® (Business, People,
   Process, Technology, Services, Results) e seus aspectos (baseado no
-  SOC-CMM® 2.3.3 basic).
+  SOC-CMM® 2.4.2 advanced).
 - Cálculo automático de pontuações na escala de maturidade do SOC-CMM®
   (0–5: Inexistente → Otimizando), conforme as opções de resposta do
   questionário.

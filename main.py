@@ -831,7 +831,13 @@ async def get_customer_progress(customer_id: int, request: Request, current_user
     assert_customer_owner(customer_id, current_user)
 
     language = get_language_from_request(request)
-    assessments = db.get_customer_assessments(customer_id)
+    # get_customer_assessments returns newest first, which suits the list view.
+    # A progress chart has to read left to right in time, or an improving SOC
+    # is drawn as a decline.
+    assessments = sorted(
+        db.get_customer_assessments(customer_id),
+        key=lambda a: (a.get('completed_at') or a.get('started_at') or ''),
+    )
 
     progress_data = []
     for assessment in assessments:
