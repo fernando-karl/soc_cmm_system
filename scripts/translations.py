@@ -33,6 +33,15 @@ from database import DatabaseManager, DEFAULT_DB_PATH, DATA_FILE
 
 TRANSLATIONS_DIR = REPO_ROOT / "dataset" / "translations"
 
+# Descriptions are generated boilerplate in the dataset, so they are generated
+# per language here instead of being sent to a translator 32 times over.
+DESCRIPTION_PATTERNS = {
+    "pt_br": {
+        "domain": "Domínio {name} do framework SOC-CMM",
+        "aspect": "Aspecto {name} do domínio {domain}",
+    },
+}
+
 # Kinds map to the table that stores them and the column holding the text.
 KINDS = {
     "domain": ("domain_translations", "domain_id", ("name",)),
@@ -174,22 +183,34 @@ def do_import(language: str, path: Path, db_path: str) -> int:
 
     written = {k: 0 for k in KINDS}
 
+    # The extractor writes domain and aspect descriptions as generated
+    # boilerplate ("X aspect of the Y domain"), so the translation is generated
+    # too rather than asking a translator for 32 near-identical sentences.
+    boilerplate = DESCRIPTION_PATTERNS.get(language)
+
+    domain_name = {}
     for domain in data["domains"]:
         value = translated(domain["name"])
         if value:
+            domain_name[domain["id"]] = value
+            description = (boilerplate["domain"].format(name=value)
+                           if boilerplate else None)
             cursor.execute(
                 "INSERT OR REPLACE INTO domain_translations "
                 "(domain_id, language, name, description) VALUES (?,?,?,?)",
-                (domain["id"], language, value, None))
+                (domain["id"], language, value, description))
             written["domain"] += 1
 
     for aspect in data["aspects"]:
         value = translated(aspect["name"])
         if value:
+            owner = domain_name.get(aspect["domain_id"], "")
+            description = (boilerplate["aspect"].format(name=value, domain=owner)
+                           if boilerplate and owner else None)
             cursor.execute(
                 "INSERT OR REPLACE INTO aspect_translations "
                 "(aspect_id, language, name, description) VALUES (?,?,?,?)",
-                (aspect["id"], language, value, None))
+                (aspect["id"], language, value, description))
             written["aspect"] += 1
 
     for question in data["questions"]:
