@@ -3,8 +3,9 @@
 
     python scripts/extract_soc_cmm.py
 
-Reads `dataset/soc-cmm2.3.3-basic.xlsx` and writes
-`dataset/soc_cmm_2.3.3_basic.json`, which `scripts/init_db.py` seeds from.
+Reads `dataset/soc-cmm-2.4.2-advanced.xlsx` and writes
+`dataset/soc_cmm_2.4.2_advanced.json`, which `scripts/init_db.py` seeds from.
+Pass `--workbook` / `--version` / `--out` to generate another release.
 
 Why this exists
 ---------------
@@ -42,10 +43,10 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-WORKBOOK = REPO_ROOT / "dataset" / "soc-cmm2.3.3-basic.xlsx"
-OUTPUT = REPO_ROOT / "dataset" / "soc_cmm_2.3.3_basic.json"
+WORKBOOK = REPO_ROOT / "dataset" / "soc-cmm-2.4.2-advanced.xlsx"
+OUTPUT = REPO_ROOT / "dataset" / "soc_cmm_2.4.2_advanced.json"
 
-SOURCE_VERSION = "2.3.3 (basic)"
+SOURCE_VERSION = "2.4.2 (advanced)"
 
 # The spreadsheet keys questions by a domain letter that is not always the
 # domain's initial: the Process domain uses "M" (management).

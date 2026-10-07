@@ -14,7 +14,10 @@ from typing import List, Dict, Optional
 # Repository root, so resource files resolve regardless of the current directory.
 BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_FILE = BASE_DIR / "sql" / "schema" / "database_schema.sql"
-DATA_FILE = BASE_DIR / "dataset" / "soc_cmm_complete_data.json"
+# Questionnaire content, generated from the official workbook by
+# scripts/extract_soc_cmm.py. Override with DATASET to seed another release.
+DATA_FILE = Path(os.environ.get("DATASET") or
+                 BASE_DIR / "dataset" / "soc_cmm_2.4.2_advanced.json")
 
 # Database location. Override with DB_PATH (for example a mounted volume in
 # Docker). Defaults to a file next to the application rather than one relative
@@ -91,10 +94,12 @@ class DatabaseManager:
         # Insert questions
         for question in data['questions']:
             cursor.execute("""
-                INSERT INTO questions (id, aspect_id, question_text, question_type, order_index)
-                VALUES (?, ?, ?, ?, ?)
-            """, (question['id'], question['aspect_id'], question['question_text'], 
-                  question['question_type'], question['order_index']))
+                INSERT INTO questions (id, aspect_id, question_text, question_type,
+                                       guidance, order_index)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (question['id'], question['aspect_id'], question['question_text'],
+                  question['question_type'], question.get('guidance') or None,
+                  question['order_index']))
         
         # Insert answer options
         for option in data['answer_options']:

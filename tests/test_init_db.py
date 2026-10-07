@@ -77,9 +77,53 @@ def test_applies_the_is_admin_migration(built):
 
 
 def test_seeds_the_questionnaire(built):
-    assert count(built, "domains") == 6
-    assert count(built, "aspects") == 30
-    assert count(built, "questions") == 97
+    """SOC-CMM has five scored domains; Results is output, not a sixth domain."""
+    assert count(built, "domains") == 5
+    assert count(built, "aspects") == 27
+    assert count(built, "questions") == 622
+
+
+def test_every_question_is_scorable(built):
+    """A question with no answer options cannot be completed or scored."""
+    conn = sqlite3.connect(built)
+    try:
+        total = conn.execute("SELECT COUNT(*) FROM questions").fetchone()[0]
+        answerable = conn.execute(
+            "SELECT COUNT(DISTINCT question_id) FROM answer_options").fetchone()[0]
+    finally:
+        conn.close()
+    assert answerable == total, f"only {answerable} of {total} questions are scorable"
+
+
+def test_aspects_use_the_official_names(built):
+    """Guard against the names being reconstructed from the sheet codes again."""
+    conn = sqlite3.connect(built)
+    try:
+        names = {r[0] for r in conn.execute("SELECT name FROM aspects")}
+        domains = {r[0] for r in conn.execute("SELECT name FROM domains")}
+    finally:
+        conn.close()
+    assert domains == {"Business", "People", "Process", "Technology", "Services"}
+    for official in ("Customers / Stakeholders", "Roles and Hierarchy",
+                     "People Management", "Operations and Facilities",
+                     "Detection Engineering & Validation", "Security Monitoring",
+                     "Security Incident Management", "Threat Intelligence"):
+        assert official in names, f"missing official aspect name: {official}"
+    for wrong in ("Cost", "Retention & Hiring", "Performance Management",
+                  "Operations & Functions", "Data & Technology Exchange",
+                  "Service Catalog Management", "Threat Hunting & Research"):
+        assert wrong not in names, f"guessed-from-code aspect name is back: {wrong}"
+
+
+def test_a_fully_mature_assessment_scores_full_marks(built):
+    """The option scale must match the scoring divisor, or a perfect SOC is capped."""
+    conn = sqlite3.connect(built)
+    try:
+        levels = {r[0] for r in conn.execute(
+            "SELECT DISTINCT maturity_level FROM answer_options")}
+    finally:
+        conn.close()
+    assert max(levels) == 5, f"top maturity level is {max(levels)}, expected 5"
 
 
 def test_is_idempotent(built):

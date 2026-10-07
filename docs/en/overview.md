@@ -10,7 +10,7 @@ framework published by **Rob van Os** (<https://www.soc-cmm.com>).
 - Per-customer assessments with incremental autosave.
 - Guided questionnaire across the six SOC-CMM® domains (Business, People,
   Process, Technology, Services, Results) and their aspects (based on
-  SOC-CMM® 2.3.3 basic).
+  SOC-CMM® 2.4.2 advanced).
 - Automatic scoring on the SOC-CMM® maturity scale (0–5: Non-existent →
   Optimizing), as implemented by the questionnaire answer options.
 - **Radar-chart** visualisation with historical comparison between past
