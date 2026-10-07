@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `scripts/init_db.py` — a one-command database bootstrap. It applies the base
+  schema, the translation tables and the migrations, seeds the questionnaire,
+  and creates the admin user when `ADMIN_PASSWORD` is set. It is idempotent, so
+  it also brings an existing database up to date, and `--recreate` rebuilds from
+  scratch after confirmation. A fresh clone can now be run by following the
+  README, which it previously could not
+- Tests covering the bootstrap: every table the application queries is created,
+  the `is_admin` migration is applied, the questionnaire is seeded, re-running
+  changes nothing, and the admin user appears only when a password is given
+
+
 - **Visible SOC-CMM® attribution in the application itself**, as the CC BY-SA 4.0
   license requires. Previously the credit existed only in `LICENSE`, `NOTICE`
   and the README, so users of the running tool never saw it. Now: a notice in
@@ -55,6 +66,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `requirements-dev.txt` for test and development dependencies
 
 ### Fixed
+
+- `DatabaseManager.init_database()` split the schema file on `;`, which breaks
+  on semicolons inside string literals; it now uses `executescript`. The schema
+  also used plain `CREATE TABLE` / `CREATE INDEX`, so it could not be re-applied
+  — both now use `IF NOT EXISTS`
 
 - Every `*_pt_br.html` page extended the **English** `base.html`, so the
   Portuguese interface rendered an English navigation bar and footer and

@@ -35,20 +35,28 @@ class DatabaseManager:
         return conn
     
     def init_database(self):
-        """Initialize the database with the schema"""
-        with open(SCHEMA_FILE, 'r', encoding='utf-8') as f:
-            schema = f.read()
-        
+        """Create the base schema if it is not already there.
+
+        The schema file uses `IF NOT EXISTS` throughout, so this is safe to
+        call on an existing database. It creates the application's own tables
+        only — the translation tables and later migrations are applied by
+        `scripts/init_db.py`.
+        """
+        self.apply_sql_file(SCHEMA_FILE)
+
+    def apply_sql_file(self, path):
+        """Run every statement in one .sql file against the database."""
+        with open(path, 'r', encoding='utf-8') as f:
+            script = f.read()
+
         conn = self.get_connection()
-        cursor = conn.cursor()
-        
-        # Execute schema creation
-        for statement in schema.split(';'):
-            if statement.strip():
-                cursor.execute(statement)
-        
-        conn.commit()
-        conn.close()
+        try:
+            # executescript handles multi-statement files correctly, including
+            # semicolons inside string literals, which splitting on ';' did not.
+            conn.executescript(script)
+            conn.commit()
+        finally:
+            conn.close()
     
     def populate_initial_data(self):
         """Populate the database with SOC CMM data"""

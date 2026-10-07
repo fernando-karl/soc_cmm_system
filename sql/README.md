@@ -10,17 +10,28 @@ Migrations are **not** tracked by a migration framework and are not
 automatically ordered. Read a file before running it, and back up your
 database first.
 
+## Bootstrapping
+
+`python scripts/init_db.py` applies all of these in the right order —
+`schema/database_schema.sql`, then `schema/bilingual_schema.sql`, then the
+migrations — and seeds the questionnaire from `dataset/`. It is idempotent.
+Both schema files use `IF NOT EXISTS` throughout, so they are safe to re-apply.
+
+Note that the base schema alone is **not** enough to run the application: it
+does not define `users.is_admin`, which `database.py` selects, and it does not
+create the translation tables. `migrations/add_admin_field.sql` and
+`schema/bilingual_schema.sql` supply those.
+
 ## Known gaps
 
-- `DatabaseManager.__init__` has its `init_database()` and
-  `populate_initial_data()` calls commented out (`database.py`), so nothing
-  creates or seeds the database automatically. A fresh clone therefore has no
-  working database, and `scripts/migrate_to_auth.py` exits with
-  "No database file found!".
-- `schema/database_schema.sql` does not define the `users.is_admin` column,
-  but `database.py` selects it. That column is added by
-  `migrations/add_admin_field.sql`, so the base schema alone is not sufficient
-  for the application to run.
-- A complete schema therefore needs all three of `schema/database_schema.sql`,
-  `schema/bilingual_schema.sql` and `migrations/add_admin_field.sql`. See
-  `tests/conftest.py`, which builds exactly that for the test suite.
+- `seed/complete_populate_database.sql` holds a much larger questionnaire
+  (565 questions, 1269 answer options) than the JSON dataset the bootstrap
+  uses (97 questions, 12 options). It **cannot be loaded as is**: it was
+  generated for an older schema and conflicts with the current one — it omits
+  the `Results` domain, inserts `aspects` rows without the `code` column the
+  schema requires, and uses `field_type` where the schema has `question_type`.
+  Regenerating it against the current schema would make far more of the
+  questionnaire scorable, and is the single most valuable data contribution
+  this project could receive.
+- `seed/` files contain `INSERT` statements only — they assume the schema
+  already exists.
