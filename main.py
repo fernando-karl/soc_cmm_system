@@ -21,14 +21,18 @@ from datetime import timedelta
 from pathlib import Path
 
 from database import DatabaseManager
-from auth import auth_manager, create_access_token, get_current_active_user, get_current_admin_user, UserCreate, UserLogin, Token, include_auth_routes
+from auth import (auth_manager, create_access_token, get_current_active_user,
+                  get_current_admin_user, UserCreate, UserLogin, Token,
+                  include_auth_routes, ACCESS_TOKEN_EXPIRE_MINUTES)
 
 app = FastAPI(title="SOC CMM Assessment System", version="2.0.0")
 include_auth_routes(app)
 
-# CORS: lista de origens vem de ALLOWED_ORIGINS (CSV). Default seguro = localhost.
+# CORS: lista de origens vem de ALLOWED_ORIGINS (CSV). Default seguro = localhost
+# na porta em que a aplicação realmente escuta (PORT, 8400 por padrão).
 # Para liberar tudo em redes confiáveis, defina ALLOWED_ORIGINS=*
-_allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "http://localhost:8000")
+APP_PORT = int(os.getenv("PORT", "8400"))
+_allowed_origins_env = os.getenv("ALLOWED_ORIGINS", f"http://localhost:{APP_PORT}")
 allowed_origins = [o.strip() for o in _allowed_origins_env.split(",") if o.strip()]
 # allow_credentials só é compatível com lista explícita — desliga se for wildcard
 allow_credentials = allowed_origins != ["*"]
@@ -39,6 +43,23 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Cookie de sessão. `secure` precisa ser True quando a aplicação é servida por
+# HTTPS (o navegador deixa de enviar o cookie em HTTP), e False para rodar
+# localmente em http://localhost. O default segue o esquema das origens CORS
+# configuradas: tudo HTTPS => secure, caso contrário não.
+def _default_cookie_secure() -> bool:
+    origins = [o for o in allowed_origins if o != "*"]
+    return bool(origins) and all(o.startswith("https://") for o in origins)
+
+
+_cookie_secure_env = os.getenv("COOKIE_SECURE")
+COOKIE_SECURE = (
+    _cookie_secure_env.strip().lower() in ("1", "true", "yes", "on")
+    if _cookie_secure_env is not None
+    else _default_cookie_secure()
+)
+COOKIE_SAMESITE = os.getenv("COOKIE_SAMESITE", "lax")
 
 # Initialize database
 db = DatabaseManager()
@@ -377,27 +398,29 @@ async def login(user_credentials: UserLogin):
             headers={"WWW-Authenticate": "Bearer"},
         )
     
-    access_token_expires = timedelta(hours=24)  # Aumentado para 24 horas
+    # Uma única fonte de verdade para a validade da sessão: o token JWT e o
+    # cookie que o carrega expiram juntos, no prazo de ACCESS_TOKEN_EXPIRE_MINUTES.
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
         data={"sub": user["username"]}, expires_delta=access_token_expires
     )
-    
+
     response = JSONResponse(content={
-        "access_token": access_token, 
-        "token_type": "bearer", 
+        "access_token": access_token,
+        "token_type": "bearer",
         "user": user
     })
-    
+
     # Set cookie
     response.set_cookie(
         key="access_token",
         value=access_token,
-        max_age=86400,  # 24 hours (24 * 60 * 60)
+        max_age=int(access_token_expires.total_seconds()),
         httponly=True,
-        secure=False,  # Set to True in production with HTTPS
-        samesite="lax"
+        secure=COOKIE_SECURE,
+        samesite=COOKIE_SAMESITE
     )
-    
+
     return response
 
 @app.post("/api/auth/logout")
@@ -407,8 +430,8 @@ async def logout():
     response.delete_cookie(
         key="access_token",
         httponly=True,
-        secure=False,
-        samesite="lax"
+        secure=COOKIE_SECURE,
+        samesite=COOKIE_SAMESITE
     )
     return response
 
@@ -854,6 +877,5 @@ async def get_customer_progress(customer_id: int, request: Request, current_user
 
 if __name__ == "__main__":
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", "8400"))
-    uvicorn.run(app, host=host, port=port)
+    uvicorn.run(app, host=host, port=APP_PORT)
 

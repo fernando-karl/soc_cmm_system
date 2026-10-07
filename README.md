@@ -162,8 +162,10 @@ The application listens on **port 8400** by default. Override with
 | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
 | `SECRET_KEY`                  | **Yes**  | Secret used to sign JWT tokens. The application refuses to start without it.                                          |
 | `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `scripts/migrate_to_auth.py`.                                     |
-| `ALLOWED_ORIGINS`             | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:8400`. Use `*` only in trusted networks.          |
-| `ACCESS_TOKEN_EXPIRE_MINUTES` | No       | JWT lifetime in minutes (default: `30`).                                                                              |
+| `ALLOWED_ORIGINS`             | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:<PORT>`. Use `*` only in trusted networks.          |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | No       | Session lifetime in minutes (default: `480`). The JWT and the cookie carrying it expire together. |
+| `COOKIE_SECURE`               | No       | `Secure` flag on the session cookie. Defaults to on when every `ALLOWED_ORIGINS` entry is `https://`, off otherwise. Set it to `true` behind a TLS-terminating proxy. |
+| `COOKIE_SAMESITE`             | No       | `SameSite` policy for the session cookie (default: `lax`).                                        |
 | `HOST`, `PORT`                | No       | Network interface and port (defaults: `0.0.0.0` and `8400`).                                                          |
 | `ADMIN_EMAIL`                 | No       | Email for the bootstrap admin user (default: `admin@soc-cmm.local`).                                                  |
 | `DB_PATH`                     | No       | SQLite database file. Defaults to `soc_cmm_bilingual.db` next to the application. Set this to a mounted volume path in Docker, or data is lost on rebuild. |

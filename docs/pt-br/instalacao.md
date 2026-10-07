@@ -37,8 +37,10 @@ cp .env.example .env
 | ----------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
 | `SECRET_KEY`                  | **Sim**     | Chave usada para assinar os tokens JWT. A aplicação **não inicia** sem ela.                                |
 | `ADMIN_PASSWORD`              | **Sim**¹    | Senha do usuário `admin` criado pela migração inicial.                                                      |
-| `ALLOWED_ORIGINS`             | Não         | Lista CSV de origens CORS permitidas. Padrão: `http://localhost:8400`. Use `*` apenas em redes confiáveis. |
-| `ACCESS_TOKEN_EXPIRE_MINUTES` | Não         | Tempo de vida do token JWT em minutos (padrão: `30`).                                                      |
+| `ALLOWED_ORIGINS`             | Não         | Lista CSV de origens CORS permitidas. Padrão: `http://localhost:<PORT>`. Use `*` apenas em redes confiáveis. |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | Não         | Duração da sessão em minutos (padrão: `480`). O token JWT e o cookie que o carrega expiram juntos. |
+| `COOKIE_SECURE`               | Não         | Flag `Secure` do cookie de sessão. Sem valor, segue `ALLOWED_ORIGINS`: ligada quando todas as origens são `https://`, desligada caso contrário. Defina `true` atrás de um proxy que termina TLS. |
+| `COOKIE_SAMESITE`             | Não         | Política `SameSite` do cookie de sessão (padrão: `lax`).                                           |
 | `HOST`                        | Não         | Interface de rede em que o servidor escuta (padrão: `0.0.0.0`).                                            |
 | `PORT`                        | Não         | Porta TCP do servidor (padrão: `8400`).                                                                    |
 | `ADMIN_EMAIL`                 | Não         | E-mail do usuário admin inicial (padrão: `admin@soc-cmm.local`).                                            |
