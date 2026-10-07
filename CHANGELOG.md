@@ -28,7 +28,9 @@ questionnaire, export anything you need and rebuild with
   sheet, and each question carries its NIST CSF 2.0 mapping
 - Attribution throughout — the in-app footer and About page in both languages,
   `NOTICE`, and the docs — now names v2.4.2 (advanced)
-- Screenshots and the PDF deck regenerated against the corrected data
+- Screenshots and the PDF deck regenerated against the corrected data; the
+  deck now states the five domains, the 622 questions and 3110 options, the
+  bootstrap step, and that the Portuguese covers the questionnaire itself
 
 ### Added
 
