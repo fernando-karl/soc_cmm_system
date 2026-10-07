@@ -33,7 +33,7 @@ For Docker: `PORT=9000 docker compose up -d`.
 ## Database errors
 
 - Make sure `soc_cmm_translated.db` exists and is writable.
-- Confirm the `users` table exists (run `migrate_to_auth.py`).
+- Confirm the `users` table exists (run `python scripts/migrate_to_auth.py`).
 - For local testing only, you may delete the `.db` file and re-run the
   population scripts (`scripts/legacy/run_populate_database_fixed.py`).
 

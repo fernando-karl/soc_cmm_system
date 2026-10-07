@@ -11,6 +11,16 @@ system built with FastAPI, SQLite, and modern web technologies.
 > project is also licensed under **CC BY-SA 4.0**. See [`LICENSE`](LICENSE)
 > and [`NOTICE`](NOTICE) for full details.
 
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Results](docs/screenshots/06-results-radar.png) | ![Questionnaire](docs/screenshots/05-assessment-questionnaire.png) |
+
+See [`docs/screenshots/`](docs/screenshots/README.md) for the full gallery,
+including the Portuguese interface and mobile views, or the 13-slide
+[project overview (PDF)](docs/presentation/soc-cmm-assessment-system.pdf).
+
 ## Features
 
 - **Customer Management**: Create and manage multiple customers/organizations
@@ -58,12 +68,27 @@ The assessment covers six key domains:
 │   └── migrations/         # Incremental schema changes and fixes
 ├── scripts/                # Operational scripts (auth bootstrap, migrations)
 │   └── legacy/             # Historical one-off tooling — see scripts/legacy/README.md
-├── tests/                  # Manual integration scripts — see tests/README.md
+├── tests/                  # Automated pytest suite (+ manual/ check scripts)
 └── docs/                   # Documentation (en/, pt-br/, archive/)
 ```
 
-Scripts under `scripts/` and `tests/` are written to be run from the
+Scripts under `scripts/` and `tests/manual/` are written to be run from the
 repository root, e.g. `python scripts/migrate_to_auth.py`.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+SECRET_KEY=test-secret pytest tests/ -v
+```
+
+`tests/` holds the automated suite, which covers access control on the
+customer- and assessment-scoped API: every such endpoint is checked against an
+anonymous caller, a different authenticated tenant, and the owner. The suite
+builds its own throwaway database, so it needs no running server.
+
+`tests/manual/` holds older interactive check scripts that do require a running
+instance — see [`tests/manual/README.md`](tests/manual/README.md).
 
 ## Documentation
 
@@ -93,6 +118,14 @@ Documentação completa em dois idiomas:
 - Optional: Docker + Docker Compose (containerised flow)
 
 ### Quick start
+
+> **Known limitation:** there is currently no command that creates a database
+> from scratch. `DatabaseManager.init_database()` and `populate_initial_data()`
+> exist and work, but their calls are commented out in `database.py`, and
+> `scripts/migrate_to_auth.py` expects an existing database file. On a fresh
+> clone the steps below will therefore fail at the migration step. See the
+> "Known gaps" section of [`sql/README.md`](sql/README.md). Contributions that
+> add a proper `scripts/init_db.py` bootstrap are very welcome.
 
 ```bash
 # 1. Clone the repository
@@ -125,11 +158,12 @@ The application listens on **port 8400** by default. Override with
 | Variable                      | Required | Description                                                                                                          |
 | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
 | `SECRET_KEY`                  | **Yes**  | Secret used to sign JWT tokens. The application refuses to start without it.                                          |
-| `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `migrate_to_auth.py`.                                     |
+| `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `scripts/migrate_to_auth.py`.                                     |
 | `ALLOWED_ORIGINS`             | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:8400`. Use `*` only in trusted networks.          |
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | No       | JWT lifetime in minutes (default: `30`).                                                                              |
 | `HOST`, `PORT`                | No       | Network interface and port (defaults: `0.0.0.0` and `8400`).                                                          |
 | `ADMIN_EMAIL`                 | No       | Email for the bootstrap admin user (default: `admin@soc-cmm.local`).                                                  |
+| `DB_PATH`                     | No       | SQLite database file. Defaults to `soc_cmm_bilingual.db` next to the application. Set this to a mounted volume path in Docker, or data is lost on rebuild. |
 
 ¹ Required only for the initial migration. Unset it after the first login
 and password change.
@@ -257,8 +291,17 @@ The system is fully responsive and optimized for mobile devices:
 
 ## Security Considerations
 
-- **Authentication is required.** All assessment data is scoped per user via
-  JWT-based authentication (`auth.py`).
+- **Authentication is required.** Every customer- and assessment-scoped
+  endpoint requires a valid session or bearer token and verifies that the
+  record belongs to the caller, via `assert_customer_owner` /
+  `assert_assessment_owner` in `main.py`. This is covered by
+  `tests/test_assessment_access_control.py`, which asserts a 403 for a
+  different tenant and a 401/403 for anonymous callers on each one.
+
+  > Versions before this fix left seven of these endpoints unauthenticated.
+  > Because customer and assessment ids are sequential integers, anyone who
+  > could reach the server could read — and write — any tenant's assessment
+  > data. If you are running an older deployment, update.
 - The application **refuses to start** if `SECRET_KEY` is not configured —
   there is no insecure fallback.
 - The bootstrap admin password must be supplied through the
@@ -306,7 +349,7 @@ Common issues and fixes — see also
 - **`SECRET_KEY environment variable is required`** — define it in `.env`
   or export it before starting.
 - **`ADMIN_PASSWORD environment variable is required`** — set it before
-  running `migrate_to_auth.py`.
+  running `scripts/migrate_to_auth.py`.
 - **Port conflict** — change with `PORT=9000 python main.py`.
 - **CORS errors** — list your origin in `ALLOWED_ORIGINS`.
 - **Missing dependencies** — `pip install -r requirements.txt`.

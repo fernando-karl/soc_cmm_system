@@ -4,6 +4,7 @@ Camada de Acesso a Dados (SQLite) para o SOC CMM Assessment System.
 Responsável por CRUD de clientes, avaliações, domínios, aspectos, questões,
 opções de resposta, respostas e pontuações.
 """
+import os
 import sqlite3
 import json
 from datetime import datetime
@@ -15,10 +16,15 @@ BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_FILE = BASE_DIR / "sql" / "schema" / "database_schema.sql"
 DATA_FILE = BASE_DIR / "dataset" / "soc_cmm_complete_data.json"
 
+# Database location. Override with DB_PATH (for example a mounted volume in
+# Docker). Defaults to a file next to the application rather than one relative
+# to the current directory, so the app behaves the same from any cwd.
+DEFAULT_DB_PATH = os.environ.get("DB_PATH") or str(BASE_DIR / "soc_cmm_bilingual.db")
+
 class DatabaseManager:
     """Gerencia conexões e operações no banco SQLite."""
-    def __init__(self, db_path: str = "soc_cmm_bilingual.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        self.db_path = db_path or DEFAULT_DB_PATH
         #self.init_database()
         #self.populate_initial_data()
     
@@ -286,16 +292,29 @@ class DatabaseManager:
         return questions
     
     # Answer methods
-    def save_answer(self, assessment_id: int, question_id: int, answer_option_id: int):
+    def save_answer(self, assessment_id: int, question_id: int,
+                    answer_option_id: Optional[int] = None,
+                    answer_text: Optional[str] = None):
+        """Store (or replace) the answer to one question of an assessment.
+
+        `answer_option_id` is optional so free-text answers can be saved; when
+        it is given it must name a real option, and its maturity level becomes
+        this answer's score.
+        """
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT maturity_level FROM answer_options WHERE id = ?
-        """, (answer_option_id,))
-        
-        maturity_score = cursor.fetchone()[0]
-        
+
+        maturity_score = None
+        if answer_option_id is not None:
+            cursor.execute("""
+                SELECT maturity_level FROM answer_options WHERE id = ?
+            """, (answer_option_id,))
+            row = cursor.fetchone()
+            if row is None:
+                conn.close()
+                raise ValueError(f"Unknown answer_option_id: {answer_option_id}")
+            maturity_score = row[0]
+
         # Delete existing answer if any
         cursor.execute("""
             DELETE FROM assessment_answers 
@@ -305,9 +324,9 @@ class DatabaseManager:
         # Insert new answer
         cursor.execute("""
             INSERT INTO assessment_answers 
-            (assessment_id, question_id, answer_option_id, maturity_score)
-            VALUES (?, ?, ?, ?)
-        """, (assessment_id, question_id, answer_option_id, maturity_score))
+            (assessment_id, question_id, answer_option_id, answer_text, maturity_score)
+            VALUES (?, ?, ?, ?, ?)
+        """, (assessment_id, question_id, answer_option_id, answer_text, maturity_score))
         
         conn.commit()
         conn.close()

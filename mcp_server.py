@@ -15,6 +15,7 @@ Permite a modelos de IA:
 import asyncio
 import json
 import logging
+import os
 from typing import Any, Dict, List, Optional, Sequence
 from urllib.parse import urljoin
 
@@ -39,15 +40,27 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration
-API_BASE_URL = "http://localhost:8400"
+API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8400")
 TIMEOUT = 30.0
+
+# Bearer token used for every API call. The assessment endpoints are
+# authenticated and scoped to the owning user, so without a token the server
+# can only reach public endpoints.
+API_TOKEN = os.environ.get("API_TOKEN")
 
 class ApiClient:
     """HTTP client for the SOC CMM Assessment API"""
-    
-    def __init__(self, base_url: str = API_BASE_URL):
+
+    def __init__(self, base_url: str = API_BASE_URL, token: Optional[str] = None):
         self.base_url = base_url
-        self.client = httpx.AsyncClient(timeout=TIMEOUT)
+        token = token or API_TOKEN
+        if not token:
+            logger.warning(
+                "API_TOKEN is not set. Customer and assessment endpoints require "
+                "authentication and will fail with 401."
+            )
+        headers = {"Authorization": f"Bearer {token}"} if token else {}
+        self.client = httpx.AsyncClient(timeout=TIMEOUT, headers=headers)
     
     async def get(self, endpoint: str, params: Optional[Dict] = None) -> Dict:
         """Make GET request to API"""

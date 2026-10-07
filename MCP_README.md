@@ -21,6 +21,7 @@ Assessment System API.
 ```bash
 pip install -r requirements.txt
 cp .env.example .env   # set SECRET_KEY
+export API_TOKEN='<bearer token from POST /api/auth/login>'
 ./start_mcp_server.sh
 ```
 

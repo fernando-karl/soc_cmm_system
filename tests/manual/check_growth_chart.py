@@ -11,10 +11,15 @@ import re
 import time
 
 
-# Admin password for the local test instance. Never hard-code credentials.
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
-if not ADMIN_PASSWORD:
-    raise SystemExit("Set ADMIN_PASSWORD to the admin password of your local test instance.")
+# Admin password for the local instance. Never hard-code credentials.
+# Read lazily so importing this module has no side effects.
+def require_admin_password():
+    password = os.environ.get("ADMIN_PASSWORD")
+    if not password:
+        raise SystemExit(
+            "Set ADMIN_PASSWORD to the admin password of your local instance."
+        )
+    return password
 
 def test_growth_chart():
     """Testar especificamente o gráfico de crescimento"""
@@ -26,7 +31,7 @@ def test_growth_chart():
     print("\n1. Fazendo login com usuário admin...")
     login_data = {
         "username": "admin",
-        "password": ADMIN_PASSWORD
+        "password": require_admin_password()
     }
     
     try:

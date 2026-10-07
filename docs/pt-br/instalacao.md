@@ -66,7 +66,7 @@ O script cria as tabelas `users` necessárias, faz backup do banco existente e
 cadastra o usuário `admin` com a senha vinda de `$ADMIN_PASSWORD`.
 
 > Caso já exista um banco populado em outro nome, edite a variável `db_path` em
-> `migrate_to_auth.py` ou renomeie o arquivo para
+> `scripts/migrate_to_auth.py` ou renomeie o arquivo para
 > `soc_cmm_translated.db`.
 
 ## 5. Iniciar a aplicação

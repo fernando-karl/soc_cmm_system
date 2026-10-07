@@ -24,3 +24,19 @@ Errors are returned with descriptive messages and logged.
 
 See `MCP_README.md` and `MCP_IMPLEMENTATION_SUMMARY.md` at the repository
 root for the full reference.
+
+## Authentication
+
+The customer and assessment endpoints require authentication, so the MCP
+server needs a bearer token. Obtain one from `POST /api/auth/login` and pass
+it as `API_TOKEN`:
+
+```bash
+export API_TOKEN='<token from /api/auth/login>'
+export API_BASE_URL='http://localhost:8400'   # optional, this is the default
+python mcp_server.py
+```
+
+Without `API_TOKEN` the server starts but logs a warning, and every customer or
+assessment call fails with 401. The token carries the permissions of the user it
+was issued to, so the MCP server only ever sees that user's data.

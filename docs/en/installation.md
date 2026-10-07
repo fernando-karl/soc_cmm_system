@@ -68,7 +68,7 @@ database, and registers the `admin` account using the password supplied in
 
 > If you already have a populated database under a different filename,
 > either rename it to `soc_cmm_translated.db` or edit the `db_path`
-> variable inside `migrate_to_auth.py`.
+> variable inside `scripts/migrate_to_auth.py`.
 
 ## 5. Start the application
 

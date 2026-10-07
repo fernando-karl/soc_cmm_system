@@ -206,7 +206,7 @@ extracted_data = extract_soc_cmm_questions()
 
 if extracted_data:
     # Save to JSON file
-    with open('soc_cmm_complete_data-v2.json', 'w') as f:
+    with open('dataset/soc_cmm_complete_data-v2.json', 'w') as f:
         json.dump(extracted_data, f, indent=2)
     
     print(f"Extraction complete!")

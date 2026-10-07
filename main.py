@@ -167,6 +167,31 @@ async def get_current_admin_user_flexible(current_user: dict = Depends(get_curre
         )
     return current_user
 
+def assert_customer_owner(customer_id: int, user: dict) -> dict:
+    """Return the customer, or raise if it does not belong to `user`.
+
+    Every endpoint that reads or writes customer-scoped data must go through
+    this (or `assert_assessment_owner`). Assessment and customer IDs are
+    sequential integers, so an unguarded endpoint lets anyone enumerate other
+    tenants' data.
+    """
+    customer = db.get_customer(customer_id)
+    if not customer:
+        raise HTTPException(status_code=404, detail="Cliente não encontrado")
+    if customer["user_id"] != user["id"]:
+        raise HTTPException(status_code=403, detail="Acesso negado")
+    return customer
+
+
+def assert_assessment_owner(assessment_id: int, user: dict) -> dict:
+    """Return the assessment, or raise if it does not belong to `user`."""
+    assessment = db.get_assessment(assessment_id)
+    if not assessment:
+        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
+    assert_customer_owner(assessment["customer_id"], user)
+    return assessment
+
+
 # API Routes
 
 @app.get("/", response_class=HTMLResponse)
@@ -656,20 +681,16 @@ async def get_customer_assessments(customer_id: int, current_user: dict = Depend
     return {"assessments": assessments}
 
 @app.get("/api/assessments/{assessment_id}")
-async def get_assessment(assessment_id: int):
+async def get_assessment(assessment_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get assessment details"""
-    assessment = db.get_assessment(assessment_id)
-    if not assessment:
-        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
+    assessment = assert_assessment_owner(assessment_id, current_user)
     return {"assessment": assessment}
 
 @app.put("/api/assessments/{assessment_id}/complete")
-async def complete_assessment(assessment_id: int):
+async def complete_assessment(assessment_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Mark assessment as complete"""
-    assessment = db.get_assessment(assessment_id)
-    if not assessment:
-        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
-    
+    assert_assessment_owner(assessment_id, current_user)
+
     # Calculate scores before completing
     db.calculate_assessment_scores(assessment_id)
     db.complete_assessment(assessment_id)
@@ -698,43 +719,42 @@ async def get_aspect_questions(aspect_id: str, request: Request):
     return {"questions": questions}
 
 @app.get("/api/assessments/{assessment_id}/answers")
-async def get_assessment_answers(assessment_id: int):
+async def get_assessment_answers(assessment_id: int, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get all answers for an assessment"""
-    assessment = db.get_assessment(assessment_id)
-    if not assessment:
-        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
-    
+    assert_assessment_owner(assessment_id, current_user)
+
     answers = db.get_assessment_answers(assessment_id)
     return {"answers": answers}
 
 @app.post("/api/answers")
-async def submit_answer(answer: AnswerSubmit):
+async def submit_answer(answer: AnswerSubmit, current_user: dict = Depends(get_current_active_user_flexible)):
     """Submit an answer"""
-    db.save_answer(
-        assessment_id=answer.assessment_id,
-        question_id=answer.question_id,
-        answer_option_id=answer.answer_option_id,
-        answer_text=answer.answer_text
-    )
+    assert_assessment_owner(answer.assessment_id, current_user)
+
+    try:
+        db.save_answer(
+            assessment_id=answer.assessment_id,
+            question_id=answer.question_id,
+            answer_option_id=answer.answer_option_id,
+            answer_text=answer.answer_text
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
     return {"message": "Resposta salva com sucesso"}
 
 @app.get("/api/assessments/{assessment_id}/scores")
-async def get_assessment_scores(assessment_id: int, request: Request):
+async def get_assessment_scores(assessment_id: int, request: Request, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get assessment scores"""
-    assessment = db.get_assessment(assessment_id)
-    if not assessment:
-        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
+    assert_assessment_owner(assessment_id, current_user)
 
     language = get_language_from_request(request)
     scores = db.get_assessment_scores(assessment_id, language)
     return {"scores": scores}
 
 @app.get("/api/assessments/{assessment_id}/radar-data")
-async def get_radar_chart_data(assessment_id: int, request: Request):
+async def get_radar_chart_data(assessment_id: int, request: Request, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get radar chart data for assessment"""
-    assessment = db.get_assessment(assessment_id)
-    if not assessment:
-        raise HTTPException(status_code=404, detail="Avaliação não encontrada")
+    assert_assessment_owner(assessment_id, current_user)
 
     language = get_language_from_request(request)
     radar_data = db.get_radar_chart_data(assessment_id, language)
@@ -806,8 +826,10 @@ async def delete_user(user_id: int, current_user: dict = Depends(get_current_adm
     return {"message": "Usuário deletado com sucesso"}
 
 @app.get("/api/customers/{customer_id}/progress")
-async def get_customer_progress(customer_id: int, request: Request):
+async def get_customer_progress(customer_id: int, request: Request, current_user: dict = Depends(get_current_active_user_flexible)):
     """Get progress over time for a customer"""
+    assert_customer_owner(customer_id, current_user)
+
     language = get_language_from_request(request)
     assessments = db.get_customer_assessments(customer_id)
 

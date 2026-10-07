@@ -15,6 +15,8 @@ from passlib.context import CryptContext
 from pydantic import BaseModel
 import sqlite3
 import os
+
+from database import DEFAULT_DB_PATH
 from fastapi import FastAPI
 
 # Security configuration
@@ -61,8 +63,8 @@ class User(BaseModel):
 
 class AuthManager:
     """Fornece operações de autenticação e gerenciamento de usuários."""
-    def __init__(self, db_path: str = "soc_cmm_bilingual.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        self.db_path = db_path or DEFAULT_DB_PATH
         self.SECRET_KEY = SECRET_KEY
     
     def get_connection(self):

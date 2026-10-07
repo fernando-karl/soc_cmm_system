@@ -484,6 +484,15 @@ body {
     padding: 1.5rem;
 }
 
+/* Keep consecutive paragraphs (e.g. the attribution notice) readable. */
+.card-body p {
+    margin: 0 0 0.875rem;
+}
+
+.card-body p:last-child {
+    margin-bottom: 0;
+}
+
 .card-footer {
     padding: 1rem 1.5rem;
     background-color: var(--background-color);
@@ -788,6 +797,32 @@ body {
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.875rem;
+}
+
+/* SOC-CMM(R) attribution — required by the CC BY-SA 4.0 license of the
+   upstream framework, so it must stay visible on every page. */
+.footer .attribution {
+    margin-top: 1rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .attribution p {
+    margin: 0 auto;
+    max-width: 70ch;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.footer .attribution a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+}
+
+.footer .attribution a:hover,
+.footer .attribution a:focus {
+    color: var(--primary-color);
 }
 
 /* Responsive design */
