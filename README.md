@@ -18,7 +18,8 @@ system built with FastAPI, SQLite, and modern web technologies.
 | ![Results](docs/screenshots/06-results-radar.png) | ![Questionnaire](docs/screenshots/05-assessment-questionnaire.png) |
 
 See [`docs/screenshots/`](docs/screenshots/README.md) for the full gallery,
-including the Portuguese interface and mobile views.
+including the Portuguese interface and mobile views, or the 13-slide
+[project overview (PDF)](docs/presentation/soc-cmm-assessment-system.pdf).
 
 ## Features
 

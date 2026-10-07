@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   trademark reservation and the non-affiliation statement
 - `docs/screenshots/` — a captured gallery of the English and Portuguese
   interfaces and the mobile layout, linked from the README
+- `docs/presentation/` — a 13-slide project overview as a 16:9 PDF, also
+  linked from the README
 
 
 - Open-source readiness: `SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`,
