@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- **Visible SOC-CMM® attribution in the application itself**, as the CC BY-SA 4.0
+  license requires. Previously the credit existed only in `LICENSE`, `NOTICE`
+  and the README, so users of the running tool never saw it. Now: a notice in
+  the footer of every page that extends the base template, a compact notice on
+  the standalone sign-in, registration and change-password pages, and a full
+  "Attribution & License" section on the About page — in both English and
+  Portuguese, covering the credit to Rob van Os, the CC BY-SA 4.0 link, the
+  trademark reservation and the non-affiliation statement
+- `docs/screenshots/` — a captured gallery of the English and Portuguese
+  interfaces and the mobile layout, linked from the README
+
+
 - Open-source readiness: `SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`,
   GitHub issue/PR templates, and minimal CI
 - Maintainer contact on privacy/terms pages and README Support section
@@ -42,6 +54,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- Every `*_pt_br.html` page extended the **English** `base.html`, so the
+  Portuguese interface rendered an English navigation bar and footer and
+  `base_pt_br.html` was dead code. They now extend `base_pt_br.html`
+- The English `base.html` carried a Portuguese footer tagline
 - `POST /api/answers` passed `answer_text` to `DatabaseManager.save_answer()`,
   which did not accept it, so the endpoint returned 500 on every call. The
   method now stores `answer_text` (the column already existed), treats

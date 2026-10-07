@@ -11,6 +11,15 @@ system built with FastAPI, SQLite, and modern web technologies.
 > project is also licensed under **CC BY-SA 4.0**. See [`LICENSE`](LICENSE)
 > and [`NOTICE`](NOTICE) for full details.
 
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Results](docs/screenshots/06-results-radar.png) | ![Questionnaire](docs/screenshots/05-assessment-questionnaire.png) |
+
+See [`docs/screenshots/`](docs/screenshots/README.md) for the full gallery,
+including the Portuguese interface and mobile views.
+
 ## Features
 
 - **Customer Management**: Create and manage multiple customers/organizations
