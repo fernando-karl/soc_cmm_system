@@ -15,7 +15,7 @@ Portuguese version: [`docs/pt-br/contribuindo.md`](docs/pt-br/contribuindo.md).
 1. Fork and clone the repository
 2. Create a virtualenv and install dependencies: `pip install -r requirements.txt`
 3. Copy `.env.example` to `.env` and set `SECRET_KEY` and `ADMIN_PASSWORD`
-4. Bootstrap auth: `python migrate_to_auth.py`
+4. Bootstrap auth: `python scripts/migrate_to_auth.py`
 5. Run: `python main.py` (default port `8400`)
 
 Do **not** commit `.env`, `*.db`, or real assessment data.

@@ -4,6 +4,7 @@ Camada de Acesso a Dados (SQLite) para o SOC CMM Assessment System.
 Responsável por CRUD de clientes, avaliações, domínios, aspectos, questões,
 opções de resposta, respostas e pontuações.
 """
+import os
 import sqlite3
 import json
 from datetime import datetime
@@ -15,10 +16,15 @@ BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_FILE = BASE_DIR / "sql" / "schema" / "database_schema.sql"
 DATA_FILE = BASE_DIR / "dataset" / "soc_cmm_complete_data.json"
 
+# Database location. Override with DB_PATH (for example a mounted volume in
+# Docker). Defaults to a file next to the application rather than one relative
+# to the current directory, so the app behaves the same from any cwd.
+DEFAULT_DB_PATH = os.environ.get("DB_PATH") or str(BASE_DIR / "soc_cmm_bilingual.db")
+
 class DatabaseManager:
     """Gerencia conexões e operações no banco SQLite."""
-    def __init__(self, db_path: str = "soc_cmm_bilingual.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        self.db_path = db_path or DEFAULT_DB_PATH
         #self.init_database()
         #self.populate_initial_data()
     

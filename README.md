@@ -58,11 +58,11 @@ The assessment covers six key domains:
 │   └── migrations/         # Incremental schema changes and fixes
 ├── scripts/                # Operational scripts (auth bootstrap, migrations)
 │   └── legacy/             # Historical one-off tooling — see scripts/legacy/README.md
-├── tests/                  # Manual integration scripts — see tests/README.md
+├── tests/manual/           # Manual check scripts — see tests/manual/README.md
 └── docs/                   # Documentation (en/, pt-br/, archive/)
 ```
 
-Scripts under `scripts/` and `tests/` are written to be run from the
+Scripts under `scripts/` and `tests/manual/` are written to be run from the
 repository root, e.g. `python scripts/migrate_to_auth.py`.
 
 ## Documentation
@@ -93,6 +93,14 @@ Documentação completa em dois idiomas:
 - Optional: Docker + Docker Compose (containerised flow)
 
 ### Quick start
+
+> **Known limitation:** there is currently no command that creates a database
+> from scratch. `DatabaseManager.init_database()` and `populate_initial_data()`
+> exist and work, but their calls are commented out in `database.py`, and
+> `scripts/migrate_to_auth.py` expects an existing database file. On a fresh
+> clone the steps below will therefore fail at the migration step. See the
+> "Known gaps" section of [`sql/README.md`](sql/README.md). Contributions that
+> add a proper `scripts/init_db.py` bootstrap are very welcome.
 
 ```bash
 # 1. Clone the repository
@@ -125,11 +133,12 @@ The application listens on **port 8400** by default. Override with
 | Variable                      | Required | Description                                                                                                          |
 | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
 | `SECRET_KEY`                  | **Yes**  | Secret used to sign JWT tokens. The application refuses to start without it.                                          |
-| `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `migrate_to_auth.py`.                                     |
+| `ADMIN_PASSWORD`              | **Yes**¹ | Initial password for the bootstrap admin account created by `scripts/migrate_to_auth.py`.                                     |
 | `ALLOWED_ORIGINS`             | No       | Comma-separated list of CORS origins. Defaults to `http://localhost:8400`. Use `*` only in trusted networks.          |
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | No       | JWT lifetime in minutes (default: `30`).                                                                              |
 | `HOST`, `PORT`                | No       | Network interface and port (defaults: `0.0.0.0` and `8400`).                                                          |
 | `ADMIN_EMAIL`                 | No       | Email for the bootstrap admin user (default: `admin@soc-cmm.local`).                                                  |
+| `DB_PATH`                     | No       | SQLite database file. Defaults to `soc_cmm_bilingual.db` next to the application. Set this to a mounted volume path in Docker, or data is lost on rebuild. |
 
 ¹ Required only for the initial migration. Unset it after the first login
 and password change.
@@ -306,7 +315,7 @@ Common issues and fixes — see also
 - **`SECRET_KEY environment variable is required`** — define it in `.env`
   or export it before starting.
 - **`ADMIN_PASSWORD environment variable is required`** — set it before
-  running `migrate_to_auth.py`.
+  running `scripts/migrate_to_auth.py`.
 - **Port conflict** — change with `PORT=9000 python main.py`.
 - **CORS errors** — list your origin in `ALLOWED_ORIGINS`.
 - **Missing dependencies** — `pip install -r requirements.txt`.

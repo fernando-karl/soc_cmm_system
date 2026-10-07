@@ -54,7 +54,7 @@ fi
 
 # Run tests
 echo -e "${YELLOW}🧪 Running tests...${NC}"
-python3 test_mcp_server.py
+python3 tests/manual/check_mcp_server.py
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ All tests passed!${NC}"

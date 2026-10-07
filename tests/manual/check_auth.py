@@ -10,9 +10,15 @@ import json
 # Configuração — credenciais via variáveis de ambiente
 BASE_URL = os.getenv("BASE_URL", "http://127.0.0.1:8400")
 ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
-if not ADMIN_PASSWORD:
-    raise SystemExit("Set ADMIN_PASSWORD env var before running this test script.")
+# Admin password for the local instance. Never hard-code credentials.
+# Read lazily so importing this module has no side effects.
+def require_admin_password():
+    password = os.environ.get("ADMIN_PASSWORD")
+    if not password:
+        raise SystemExit(
+            "Set ADMIN_PASSWORD to the admin password of your local instance."
+        )
+    return password
 
 def test_auth():
     """Testa o processo de autenticação completo"""
@@ -21,7 +27,7 @@ def test_auth():
     print("1. Fazendo login como admin...")
     login_data = {
         "username": ADMIN_USERNAME,
-        "password": ADMIN_PASSWORD
+        "password": require_admin_password()
     }
     
     login_response = requests.post(f"{BASE_URL}/api/auth/login", json=login_data)
@@ -77,7 +83,7 @@ def test_with_bearer_token():
     print("\n3. Testando com Bearer token...")
     login_data = {
         "username": ADMIN_USERNAME,
-        "password": ADMIN_PASSWORD
+        "password": require_admin_password()
     }
     
     login_response = requests.post(f"{BASE_URL}/api/auth/login", json=login_data)

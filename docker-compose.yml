@@ -10,6 +10,9 @@ services:
       - .env
     environment:
       - PYTHONUNBUFFERED=1
+      # Keep the database inside the mounted volume below, otherwise it lands in
+      # the image layer and is lost on every rebuild.
+      - DB_PATH=/app/data/soc_cmm_bilingual.db
       # SECRET_KEY and ADMIN_PASSWORD must come from .env (see .env.example).
       # The application aborts on startup if SECRET_KEY is not set.
     restart: unless-stopped

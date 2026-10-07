@@ -12,10 +12,15 @@ import time
 # Throwaway password for the disposable user this script creates.
 TEST_USER_PASSWORD = os.environ.get("TEST_USER_PASSWORD", "change-me-local-test")
 
-# Admin password for the local test instance. Never hard-code credentials.
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
-if not ADMIN_PASSWORD:
-    raise SystemExit("Set ADMIN_PASSWORD to the admin password of your local test instance.")
+# Admin password for the local instance. Never hard-code credentials.
+# Read lazily so importing this module has no side effects.
+def require_admin_password():
+    password = os.environ.get("ADMIN_PASSWORD")
+    if not password:
+        raise SystemExit(
+            "Set ADMIN_PASSWORD to the admin password of your local instance."
+        )
+    return password
 
 BASE_URL = "http://localhost:8400"
 
@@ -122,7 +127,7 @@ def test_admin_access():
     print("\n5. Fazendo login com usuário admin...")
     admin_login = {
         "username": "admin",
-        "password": ADMIN_PASSWORD
+        "password": require_admin_password()
     }
     
     try:
