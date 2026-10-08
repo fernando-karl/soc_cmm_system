@@ -43,9 +43,9 @@ and starting the server, browse to <http://localhost:8400>:
    aspect to view its questions.
 5. Supported question types:
    - Five maturity levels, 1 to 5, each described in that question's own
-     words rather than by a generic label. The worst available answer is
-     level 1, which scores 20% — see the Scoring section of the
-     [README](../../README.md#scoring) for why, and how that differs from the official workbook
+     words rather than by a generic label. Level 1 is the worst available
+     answer and scores 0%, following the official workbook — see the Scoring
+     section of the [README](../../README.md#scoring)
    - Multiple choice
    - Numeric
    - Free text

@@ -1,0 +1,11 @@
+-- Per-question importance, as the SOC-CMM® workbook's `_Output` sheet uses it.
+--
+-- The official score weights each question by an importance the assessor sets:
+-- none / low / normal / high / critical, mapping to a factor of 0, 0.5, 1, 2, 4
+-- (`_Score matrix` rows 31-35). A question marked `none` has factor 0 and drops
+-- out of the score entirely.
+--
+-- 3 (`normal`, factor 1) is the default, which is what every question ships as
+-- in the workbook itself. With every question at `normal` the weighting is a
+-- no-op and the score is a plain mean of (answer - 1) / 4.
+ALTER TABLE assessment_answers ADD COLUMN importance INTEGER NOT NULL DEFAULT 3;

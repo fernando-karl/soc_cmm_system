@@ -12,9 +12,9 @@ framework published by **Rob van Os** (<https://www.soc-cmm.com>).
   People, Process, Technology, Services) and their 27 aspects — 622 questions
   from SOC-CMM® 2.4.2 advanced. `Results` is the workbook's output section,
   not a scored domain.
-- Automatic scoring from five maturity levels per question. The method is a
-  plain average and differs from the official workbook — see the Scoring
-  section of the [README](../../README.md#scoring).
+- Automatic scoring from five maturity levels per question, following the
+  official SOC-CMM® workbook formula including importance weighting — see the
+  Scoring section of the [README](../../README.md#scoring).
 - **Radar-chart** visualisation with historical comparison between past
   assessments of the same customer.
 - Per-user authentication (JWT + HTTP-only cookie) with full data isolation.

@@ -84,6 +84,10 @@ class AnswerSubmit(BaseModel):
     question_id: int
     answer_option_id: Optional[int] = None
     answer_text: Optional[str] = None
+    # SOC-CMM® importance of this question to this SOC: 1 none, 2 low,
+    # 3 normal, 4 high, 5 critical. Weights the question in its aspect score.
+    # Omitted means `normal`, the workbook's own default.
+    importance: Optional[int] = None
 
 class UserUpdate(BaseModel):
     username: str
@@ -759,7 +763,8 @@ async def submit_answer(answer: AnswerSubmit, current_user: dict = Depends(get_c
             assessment_id=answer.assessment_id,
             question_id=answer.question_id,
             answer_option_id=answer.answer_option_id,
-            answer_text=answer.answer_text
+            answer_text=answer.answer_text,
+            importance=answer.importance
         )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))

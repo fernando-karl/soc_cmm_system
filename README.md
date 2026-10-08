@@ -239,36 +239,46 @@ See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
 
 ## Scoring
 
-The maturity score is a **plain average, deliberately simpler than the official
-workbook's**. Read this before comparing a number from this tool with a number
-from the SOC-CMM® spreadsheet — they are not computed the same way.
+Scores follow the **official SOC-CMM® 2.4.2 (advanced) workbook**, so a number
+from this tool is comparable with one from the spreadsheet.
 
-Here, each answer option carries a maturity level of 1 to 5. An aspect score is
-the unweighted mean of its answered questions, a domain score the unweighted
-mean of its aspects, and the percentage is `score / 5 × 100`.
+Each answer option carries a maturity level of 1 to 5. For one aspect, over its
+answered questions, with answer `a` and importance factor `h`:
 
-The SOC-CMM® 2.4.2 (advanced) workbook differs in two ways that matter:
+```
+total = SUM(a × h)      max = SUM(5 × h)      min = SUM(h)
+percentage = 100 × (total − min) / (max − min)
+```
 
-- **It normalises from the bottom of the scale.** Its per-question percentage is
-  `100 × (answer − 1) / 4`, so the lowest answer scores **0%**. Here the same
-  answer scores 20%, because the divisor is the top of the scale rather than its
-  range. A SOC that answers at the lowest level throughout therefore reads 0% in
-  the workbook and 20% here.
-- **It weights questions by importance.** The assessor marks each question
-  `none`, `low`, `normal`, `high` or `critical`, which maps to a factor of 0,
-  0.5, 1, 2 or 4 (`_Score matrix`), and aspect totals are weighted sums rather
-  than plain means. A question marked `none` drops out of the score entirely.
-  This tool treats every question as equally important. (In a stock workbook
-  every question ships as `normal`, so the weighting only takes effect once an
-  assessor changes it.)
+which is a factor-weighted mean of `(a − 1) / 4`. Maturity on the familiar 0–5
+scale is `5 × percentage / 100`, and a domain's score is the plain mean of its
+aspects — both as the workbook's results sheet derives them.
 
-The workbook also tracks completeness separately from maturity and carries its
-own NIST CSF scoring sheet; neither is reproduced here.
+Two things follow from that formula:
 
-None of this makes the numbers wrong, but it does make them **this tool's
-numbers**. Use them to compare a SOC against itself over time, which is what the
-progress chart is for. For a figure to put in front of an auditor or to compare
-against someone else's SOC-CMM® result, use the official workbook.
+- **The scale is normalised over its range, not its top.** The lowest answer
+  scores **0%**, so a SOC that has none of a capability reads zero rather than
+  a misleading 20%.
+- **Questions are weighted by importance.** Each answer carries an importance
+  for this SOC — `none`, `low`, `normal`, `high`, `critical` — mapping to a
+  factor of 0, 0.5, 1, 2 or 4 (the workbook's `_Score matrix`). A question
+  marked `none` drops out of the score entirely. Pass `importance` to
+  `POST /api/answers`; it defaults to `normal`, which is what every question
+  ships as in the workbook, and with everything at `normal` the weighting is
+  inert and the score is a plain mean of `(a − 1) / 4`.
+
+Where the factor cancels — within any single question, and across an aspect
+whose questions share one importance — weighting changes nothing. It only moves
+the result where an aspect mixes importances.
+
+Two parts of the workbook are **not** reproduced here: it tracks completeness
+separately from maturity, and it has its own NIST CSF scoring sheet. Each
+question still carries its NIST CSF 2.0 mapping in the dataset.
+
+> **Upgrading:** scores stored by a release before this change were computed as
+> `mean(a) / 5`, where the lowest answer scored 20%. `scripts/init_db.py`
+> recalculates them from the stored answers and says so when it does. Expect
+> percentages to go **down**; the raw answers are untouched.
 
 ## API Endpoints
 
