@@ -32,20 +32,19 @@ o servidor, acesse <http://localhost:8400>:
 
 1. Na lista de clientes, clique em **Nova Avaliação**.
 2. O sistema redireciona para o questionário.
-3. As perguntas estão organizadas pelos seis domínios do SOC-CMM®:
+3. As perguntas estão organizadas pelos cinco domínios pontuados do SOC-CMM®:
    - **Business** (estratégia, governança, custos, privacidade)
    - **People** (contratação, treinamento, desempenho)
    - **Process** (gestão, operação, relatórios, casos de uso)
    - **Technology** (SIEM, detecção, analytics)
    - **Services** (catálogo, threat hunting, vulnerabilidades)
-   - **Results** (visão geral, fatores de sucesso, sharing)
 4. Cada domínio contém **aspectos** com perguntas. Selecione um aspecto para
    ver suas questões.
 5. Tipos de pergunta suportados:
-   - Escala de maturidade alinhada ao SOC-CMM® (0 — Inexistente ·
-     1 — Inicial · 2 — Gerenciado · 3 — Definido ·
-     4 — Gerenciado quantitativamente · 5 — Otimizando; a interface
-     pode usar rótulos abreviados)
+   - Cinco níveis de maturidade, de 1 a 5, cada um descrito nas palavras
+     da própria questão em vez de um rótulo genérico. A pior resposta
+     disponível é o nível 1, que vale 20% — veja a seção Pontuação de
+     [visao_geral.md](visao_geral.md) para entender por quê, e como isso difere da planilha oficial
    - Múltipla escolha
    - Numérica
    - Texto livre

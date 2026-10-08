@@ -14,7 +14,12 @@ Steps:
   2. translation tables   sql/schema/bilingual_schema.sql
   3. migrations           sql/migrations/add_admin_field.sql
   4. questionnaire data   dataset/soc_cmm_complete_data.json
-  5. admin user           only when ADMIN_PASSWORD is set
+  5. translations         every dataset/translations/<language>.json
+  6. admin user           only when ADMIN_PASSWORD is set
+
+Step 5 matters more than it looks: the questionnaire is seeded in English, and
+the translated text lives in separate tables. Without it a Portuguese user gets
+the whole questionnaire in English, with only the interface translated.
 
 The database location follows the same rule as the application: `DB_PATH` if
 set, otherwise `soc_cmm_bilingual.db` next to the application code.
@@ -28,11 +33,13 @@ from pathlib import Path
 # This script lives outside the repository root; make the app modules importable.
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from database import DatabaseManager, DEFAULT_DB_PATH, DATA_FILE, SCHEMA_FILE
 
 BILINGUAL_SCHEMA = REPO_ROOT / "sql" / "schema" / "bilingual_schema.sql"
 MIGRATIONS = [REPO_ROOT / "sql" / "migrations" / "add_admin_field.sql"]
+TRANSLATIONS_DIR = REPO_ROOT / "dataset" / "translations"
 
 
 def log(message: str) -> None:
@@ -60,6 +67,29 @@ def apply_migration(db: DatabaseManager, path: Path) -> None:
             log(f"migration {path.name} already applied")
         else:
             raise
+
+
+def load_translations(db: DatabaseManager) -> None:
+    """Load every shipped translation file into the translation tables.
+
+    The questionnaire itself is seeded in English; `*_translations` rows are
+    what make the Portuguese interface show Portuguese questions. Importing is
+    `INSERT OR REPLACE`, so this is safe to re-run and picks up a corrected
+    translation file without a rebuild.
+    """
+    files = sorted(TRANSLATIONS_DIR.glob("*.json")) if TRANSLATIONS_DIR.exists() else []
+    if not files:
+        log(f"no translation files in {TRANSLATIONS_DIR} — English only")
+        return
+
+    # Imported here so a schema-only run does not need the script's imports.
+    from translations import do_import
+
+    for path in files:
+        language = path.stem
+        if do_import(language, path, str(db.db_path)) != 0:
+            log(f"WARNING: could not load the {language} translation from {path.name}")
+            log(f"  the questionnaire will show in English for {language} users")
 
 
 def create_admin(db: DatabaseManager) -> None:
@@ -101,18 +131,29 @@ def summarise(db: DatabaseManager) -> None:
         answerable = conn.execute(
             "SELECT COUNT(DISTINCT question_id) FROM answer_options"
         ).fetchone()[0]
+        try:
+            languages = conn.execute(
+                "SELECT language, COUNT(*) FROM question_translations "
+                "GROUP BY language ORDER BY language"
+            ).fetchall()
+        except sqlite3.Error:
+            languages = []
     finally:
         conn.close()
     log("contents: " + ", ".join(f"{k}={v}" for k, v in counts.items()))
+    if languages:
+        log("translated questions: "
+            + ", ".join(f"{lang}={count}" for lang, count in languages))
+    else:
+        log("translated questions: none — the questionnaire is English only")
 
     total = counts.get("questions")
     if isinstance(total, int) and total and answerable < total:
         log("")
         log(f"WARNING: only {answerable} of {total} questions have answer options, so the")
-        log("  rest cannot be scored yet. This is a gap in the shipped dataset")
-        log(f"  ({DATA_FILE.name}), not a problem with this database. A fuller set of")
-        log("  options exists in sql/seed/ but was generated for an older schema and")
-        log("  does not load as is. See sql/README.md.")
+        log("  rest cannot be scored. The shipped dataset covers every question, so")
+        log(f"  this points at a problem with {DATA_FILE.name} or with the seed, not")
+        log("  at a known gap. Rebuild with --recreate, and please report it.")
 
 
 def main() -> int:
@@ -187,6 +228,8 @@ def main() -> int:
             log("      python scripts/init_db.py --recreate")
             log("  There is no in-place migration: question ids are not comparable")
             log("  between the two, so old answers cannot be carried across.")
+
+    load_translations(db)
 
     create_admin(db)
     summarise(db)

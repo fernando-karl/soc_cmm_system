@@ -8,11 +8,13 @@ framework published by **Rob van Os** (<https://www.soc-cmm.com>).
 
 - Customer (organisation) registry and management.
 - Per-customer assessments with incremental autosave.
-- Guided questionnaire across the six SOC-CMM® domains (Business, People,
-  Process, Technology, Services, Results) and their aspects (based on
-  SOC-CMM® 2.4.2 advanced).
-- Automatic scoring on the SOC-CMM® maturity scale (0–5: Non-existent →
-  Optimizing), as implemented by the questionnaire answer options.
+- Guided questionnaire across the five scored SOC-CMM® domains (Business,
+  People, Process, Technology, Services) and their 27 aspects — 622 questions
+  from SOC-CMM® 2.4.2 advanced. `Results` is the workbook's output section,
+  not a scored domain.
+- Automatic scoring from five maturity levels per question. The method is a
+  plain average and differs from the official workbook — see the Scoring
+  section of the [README](../../README.md#scoring).
 - **Radar-chart** visualisation with historical comparison between past
   assessments of the same customer.
 - Per-user authentication (JWT + HTTP-only cookie) with full data isolation.

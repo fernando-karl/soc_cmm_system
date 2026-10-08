@@ -76,10 +76,11 @@ destrói todos os usuários, clientes e avaliações.
 O arquivo do banco é `soc_cmm_bilingual.db`, ao lado do código da aplicação, ou
 onde `DB_PATH` apontar.
 
-> **Cobertura do questionário:** o conjunto de dados distribuído define as 97
-> questões, mas opções de resposta para apenas 11 delas, então as demais ainda
-> não podem ser pontuadas. O script avisa sobre isso ao rodar. Veja
-> `sql/README.md`.
+> **O que é carregado:** o questionário completo do SOC-CMM® 2.4.2 (advanced)
+> — 5 domínios, 27 aspectos, 622 questões e 3110 opções de resposta, todas as
+> questões pontuáveis — além de todas as traduções em `dataset/translations/`.
+> O script imprime as contagens e o número de questões traduzidas por idioma
+> ao rodar, e avisa se algo estiver faltando. Veja `sql/README.md`.
 
 > Atualizando um banco anterior à autenticação? Use
 > `python scripts/migrate_to_auth.py`, que acrescenta as tabelas `users` a um

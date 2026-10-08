@@ -33,19 +33,19 @@ and starting the server, browse to <http://localhost:8400>:
 
 1. From the customer list, click **New Assessment**.
 2. The system redirects to the questionnaire.
-3. Questions are organised by the six SOC-CMM® domains:
+3. Questions are organised by the five scored SOC-CMM® domains:
    - **Business** (strategy, governance, costs, privacy)
    - **People** (hiring, training, performance)
    - **Process** (management, operations, reporting, use cases)
    - **Technology** (SIEM, detection, analytics)
    - **Services** (catalogue, threat hunting, vulnerabilities)
-   - **Results** (overview, success factors, sharing)
 4. Each domain contains **aspects** with their own questions. Pick an
    aspect to view its questions.
 5. Supported question types:
-   - Maturity scale aligned with SOC-CMM® (0 — Non-existent · 1 — Initial ·
-     2 — Managed · 3 — Defined · 4 — Quantitatively Managed ·
-     5 — Optimizing; some UI labels may use shorter names)
+   - Five maturity levels, 1 to 5, each described in that question's own
+     words rather than by a generic label. The worst available answer is
+     level 1, which scores 20% — see the Scoring section of the
+     [README](../../README.md#scoring) for why, and how that differs from the official workbook
    - Multiple choice
    - Numeric
    - Free text
