@@ -12,10 +12,11 @@ Steps:
 
   1. base schema          sql/schema/database_schema.sql
   2. translation tables   sql/schema/bilingual_schema.sql
-  3. migrations           sql/migrations/add_admin_field.sql
+  3. migrations           sql/migrations/*.sql
   4. questionnaire data   dataset/soc_cmm_complete_data.json
   5. translations         every dataset/translations/<language>.json
-  6. admin user           only when ADMIN_PASSWORD is set
+  6. score recalculation  only for assessments already scored
+  7. admin user           only when ADMIN_PASSWORD is set
 
 Step 5 matters more than it looks: the questionnaire is seeded in English, and
 the translated text lives in separate tables. Without it a Portuguese user gets
@@ -38,7 +39,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from database import DatabaseManager, DEFAULT_DB_PATH, DATA_FILE, SCHEMA_FILE
 
 BILINGUAL_SCHEMA = REPO_ROOT / "sql" / "schema" / "bilingual_schema.sql"
-MIGRATIONS = [REPO_ROOT / "sql" / "migrations" / "add_admin_field.sql"]
+MIGRATIONS = [
+    REPO_ROOT / "sql" / "migrations" / "add_admin_field.sql",
+    REPO_ROOT / "sql" / "migrations" / "add_answer_importance.sql",
+]
 TRANSLATIONS_DIR = REPO_ROOT / "dataset" / "translations"
 
 
@@ -90,6 +94,36 @@ def load_translations(db: DatabaseManager) -> None:
         if do_import(language, path, str(db.db_path)) != 0:
             log(f"WARNING: could not load the {language} translation from {path.name}")
             log(f"  the questionnaire will show in English for {language} users")
+
+
+def recalculate_scores(db: DatabaseManager) -> None:
+    """Recompute stored scores for assessments scored under an older formula.
+
+    Scores are only calculated when an assessment is completed, so a database
+    from before the move to the official SOC-CMM® formula keeps numbers
+    computed the old way (a plain average over the top of the scale, where the
+    lowest answer scored 20% rather than 0%). The raw answers are intact, so
+    the fix is to recompute. Saying so matters: the numbers change.
+    """
+    conn = db.get_connection()
+    try:
+        assessments = [r[0] for r in conn.execute(
+            "SELECT DISTINCT assessment_id FROM assessment_scores ORDER BY 1")]
+    except sqlite3.Error:
+        return
+    finally:
+        conn.close()
+
+    if not assessments:
+        return
+
+    log(f"recalculating scores for {len(assessments)} assessment(s) using the")
+    log("  official SOC-CMM formula — previously stored percentages were")
+    log("  computed as score/5, so they will go DOWN; the lowest answer now")
+    log("  scores 0% instead of 20%. The raw answers are untouched.")
+    for assessment_id in assessments:
+        db.calculate_assessment_scores(assessment_id)
+    log(f"recalculated {len(assessments)} assessment(s)")
 
 
 def create_admin(db: DatabaseManager) -> None:
@@ -230,6 +264,7 @@ def main() -> int:
             log("  between the two, so old answers cannot be carried across.")
 
     load_translations(db)
+    recalculate_scores(db)
 
     create_admin(db)
     summarise(db)

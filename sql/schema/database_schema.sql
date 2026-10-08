@@ -82,7 +82,11 @@ CREATE TABLE IF NOT EXISTS assessment_answers (
     question_id INTEGER NOT NULL,
     answer_option_id INTEGER,
     answer_text TEXT,
-    maturity_score INTEGER, -- calculated score for this answer
+    maturity_score INTEGER, -- the chosen option's maturity level, 1-5
+    -- Importance as the SOC-CMM workbook uses it: 1 none, 2 low, 3 normal,
+    -- 4 high, 5 critical. Weights the question in the aspect score; 3 (normal)
+    -- is the workbook's own default for every question.
+    importance INTEGER NOT NULL DEFAULT 3,
     answered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (assessment_id) REFERENCES assessments(id),
     FOREIGN KEY (question_id) REFERENCES questions(id),

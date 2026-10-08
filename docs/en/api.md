@@ -24,7 +24,10 @@ Base URL: `http://localhost:8400` (override the port via `PORT`).
 - `GET  /api/domains` — SOC-CMM domains
 - `GET  /api/domains/{domain_id}/aspects` — Domain's aspects
 - `GET  /api/aspects/{aspect_id}/questions` — Aspect's questions
-- `POST /api/answers` — Submit an answer
+- `POST /api/answers` — Submit an answer. Body: `assessment_id`,
+  `question_id`, `answer_option_id` and/or `answer_text`, plus optional
+  `importance` (1 none, 2 low, 3 normal, 4 high, 5 critical — the
+  SOC-CMM® weighting for this question; defaults to 3)
 - `GET  /api/assessments/{assessment_id}/answers` — Assessment answers
 - `GET  /api/assessments/{assessment_id}/scores` — Scores
 - `GET  /api/assessments/{assessment_id}/radar-data` — Radar chart data

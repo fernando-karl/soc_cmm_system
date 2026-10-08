@@ -12,9 +12,9 @@ de maturidade de SOC (Security Operations Center) com base no framework
   People, Process, Technology, Services) e seus 27 aspectos — 622 questões do
   SOC-CMM® 2.4.2 advanced. `Results` é a seção de saída da planilha, não um
   domínio pontuado.
-- Cálculo automático a partir de cinco níveis de maturidade por questão. O
-  método é uma média simples e difere da planilha oficial — veja a seção Pontuação
-  abaixo.
+- Cálculo automático a partir de cinco níveis de maturidade por questão,
+  seguindo a fórmula da planilha oficial do SOC-CMM®, inclusive a ponderação
+  por importância — veja a seção Pontuação abaixo.
 - Visualização em gráfico **radar**, com comparação histórica entre
   avaliações do mesmo cliente.
 - Autenticação por usuário (JWT + cookie HTTP-only) e isolamento total de
@@ -27,38 +27,48 @@ de maturidade de SOC (Security Operations Center) com base no framework
 
 ## Pontuação
 
-A pontuação de maturidade é uma **média simples, deliberadamente mais simples
-que a da planilha oficial**. Leia isto antes de comparar um número desta
-ferramenta com um número da planilha do SOC-CMM® — eles não são calculados da
-mesma forma.
+As pontuações seguem a **planilha oficial do SOC-CMM® 2.4.2 (advanced)**, de
+modo que um número desta ferramenta é comparável com um número da planilha.
 
-Cada opção de resposta tem um nível de maturidade de 1 a 5. A nota de um aspecto
-é a média não ponderada das questões respondidas, a de um domínio é a média não
-ponderada dos seus aspectos, e o percentual é `nota / 5 × 100`.
+Cada opção de resposta tem um nível de maturidade de 1 a 5. Para um aspecto,
+sobre as questões respondidas, com resposta `a` e fator de importância `h`:
 
-A planilha do SOC-CMM® 2.4.2 (advanced) difere em dois pontos que importam:
+```
+total = SUM(a × h)      max = SUM(5 × h)      min = SUM(h)
+percentual = 100 × (total − min) / (max − min)
+```
 
-- **Ela normaliza a partir da base da escala.** O percentual por questão é
-  `100 × (resposta − 1) / 4`, então a resposta mais baixa vale **0%**. Aqui, a
-  mesma resposta vale 20%, porque o divisor é o topo da escala e não a sua
-  amplitude. Um SOC que responda sempre no nível mais baixo aparece como 0% na
-  planilha e 20% aqui.
-- **Ela pondera as questões por importância.** Quem avalia marca cada questão
-  como `none`, `low`, `normal`, `high` ou `critical`, o que corresponde a um
-  fator de 0, 0,5, 1, 2 ou 4 (`_Score matrix`), e os totais por aspecto são
-  somas ponderadas em vez de médias simples. Uma questão marcada como `none`
-  sai inteiramente do cálculo. Esta ferramenta trata todas as questões como
-  igualmente importantes. (Na planilha distribuída todas as questões vêm como
-  `normal`, então a ponderação só passa a valer quando o avaliador a altera.)
+o que equivale a uma média de `(a − 1) / 4` ponderada pelo fator. A maturidade
+na escala conhecida de 0 a 5 é `5 × percentual / 100`, e a nota de um domínio é
+a média simples dos seus aspectos — ambas como a aba de resultados da planilha
+as calcula.
 
-A planilha também acompanha completude separadamente da maturidade e tem sua
-própria aba de pontuação NIST CSF; nenhuma das duas é reproduzida aqui.
+Duas consequências da fórmula:
 
-Nada disso torna os números errados, mas torna-os **os números desta
-ferramenta**. Use-os para comparar um SOC consigo mesmo ao longo do tempo, que é
-a função do gráfico de evolução. Para um número a ser apresentado a um auditor
-ou comparado com o resultado SOC-CMM® de outra organização, use a planilha
-oficial.
+- **A escala é normalizada pela sua amplitude, não pelo seu topo.** A resposta
+  mais baixa vale **0%**, então um SOC que não tem determinada capacidade
+  aparece como zero, e não como 20%.
+- **As questões são ponderadas por importância.** Cada resposta carrega uma
+  importância para aquele SOC — `none`, `low`, `normal`, `high`, `critical` —
+  que corresponde a um fator de 0, 0,5, 1, 2 ou 4 (aba `_Score matrix` da
+  planilha). Uma questão marcada como `none` sai inteiramente do cálculo. Envie
+  `importance` em `POST /api/answers`; o padrão é `normal`, que é como todas as
+  questões vêm na planilha, e com tudo em `normal` a ponderação não tem efeito
+  e a nota é a média simples de `(a − 1) / 4`.
+
+Onde o fator se cancela — dentro de uma mesma questão e num aspecto cujas
+questões compartilham a mesma importância — a ponderação não muda nada. Ela só
+altera o resultado quando um aspecto mistura importâncias.
+
+Duas partes da planilha **não** são reproduzidas aqui: ela acompanha completude
+separadamente da maturidade e tem a sua própria aba de pontuação NIST CSF. Cada
+questão continua trazendo o seu mapeamento NIST CSF 2.0 no conjunto de dados.
+
+> **Atualizando:** as pontuações gravadas por uma versão anterior a esta mudança
+> foram calculadas como `média(a) / 5`, em que a resposta mais baixa valia 20%.
+> O `scripts/init_db.py` as recalcula a partir das respostas armazenadas e avisa
+> quando o faz. Espere que os percentuais **caiam**; as respostas em si não são
+> alteradas.
 
 ## Stack
 

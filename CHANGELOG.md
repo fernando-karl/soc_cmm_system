@@ -6,6 +6,43 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- **Scoring now follows the official SOC-CMM® 2.4.2 (advanced) workbook**
+  instead of taking a plain average, so a number from this tool is comparable
+  with one from the spreadsheet. Per aspect, over the answered questions with
+  answer `a` and importance factor `h`, the workbook's `_Output` sheet computes
+  `100 × (SUM(a×h) − SUM(h)) / (SUM(5×h) − SUM(h))`, a factor-weighted mean of
+  `(a − 1) / 4`. Maturity on the 0–5 scale is `5 × percentage / 100` and a
+  domain is the plain mean of its aspects, both as the workbook's results sheet
+  derives them (the domain step already matched)
+- **The lowest answer now scores 0%, not 20%.** Subtracting `SUM(h)` normalises
+  over the range of the scale rather than its top, so a SOC that has none of a
+  capability reads zero. **Percentages from earlier releases will go down.**
+  `scripts/init_db.py` recalculates stored scores from the stored answers and
+  says so when it does; the raw answers are untouched
+
+### Added
+
+- **Per-question importance**, as the workbook uses it: `none`, `low`,
+  `normal`, `high` or `critical`, mapping to a factor of 0, 0.5, 1, 2 or 4
+  (`_Score matrix`). A question marked `none` drops out of the score entirely.
+  `POST /api/answers` takes an optional `importance` and it is stored per
+  answer, defaulting to `normal` — what every question ships as in the
+  workbook, which leaves the weighting inert until an assessor sets it
+- `sql/migrations/add_answer_importance.sql`, applied by the bootstrap
+- Tests pinning the scoring to the workbook: each uniform answer level scores
+  exactly `100 × (a − 1) / 4`, importance moves a mixed aspect by the weighted
+  amount, `none` removes a question, an aspect of only `none` questions gets no
+  score rather than a fabricated 0, and the domain score is the mean of its
+  aspects
+
+### Known gap
+
+- The questionnaire interface has no control for importance yet, so it can only
+  be set through the API. Until it is added, every answer saved from the web
+  interface is `normal`, which matches a stock workbook
+
 ### Fixed
 
 - **A fresh install served the questionnaire in English to Portuguese users.**

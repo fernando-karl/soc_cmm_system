@@ -42,9 +42,9 @@ o servidor, acesse <http://localhost:8400>:
    ver suas questões.
 5. Tipos de pergunta suportados:
    - Cinco níveis de maturidade, de 1 a 5, cada um descrito nas palavras
-     da própria questão em vez de um rótulo genérico. A pior resposta
-     disponível é o nível 1, que vale 20% — veja a seção Pontuação de
-     [visao_geral.md](visao_geral.md) para entender por quê, e como isso difere da planilha oficial
+     da própria questão em vez de um rótulo genérico. O nível 1 é a pior
+     resposta disponível e vale 0%, seguindo a planilha oficial — veja a
+     seção Pontuação de [visao_geral.md](visao_geral.md)
    - Múltipla escolha
    - Numérica
    - Texto livre

@@ -24,6 +24,18 @@ DATA_FILE = Path(os.environ.get("DATASET") or
 # to the current directory, so the app behaves the same from any cwd.
 DEFAULT_DB_PATH = os.environ.get("DB_PATH") or str(BASE_DIR / "soc_cmm_bilingual.db")
 
+# SOC-CMM® importance levels and the scoring factor each maps to, from the
+# workbook's `_Score matrix` (rows 31-35). The factor weights a question in its
+# aspect's score; `none` is 0, so such a question drops out of the score.
+IMPORTANCE_FACTORS = {1: 0.0, 2: 0.5, 3: 1.0, 4: 2.0, 5: 4.0}
+IMPORTANCE_NORMAL = 3
+
+# The top of the maturity scale. Answers run 1..MATURITY_MAX, and the official
+# score normalises over the *range* (MATURITY_MAX - 1), not the top, so the
+# lowest answer scores 0 rather than 1/MATURITY_MAX.
+MATURITY_MAX = 5
+
+
 class DatabaseManager:
     """Gerencia conexões e operações no banco SQLite."""
     def __init__(self, db_path: Optional[str] = None):
@@ -307,15 +319,27 @@ class DatabaseManager:
     # Answer methods
     def save_answer(self, assessment_id: int, question_id: int,
                     answer_option_id: Optional[int] = None,
-                    answer_text: Optional[str] = None):
+                    answer_text: Optional[str] = None,
+                    importance: Optional[int] = None):
         """Store (or replace) the answer to one question of an assessment.
 
         `answer_option_id` is optional so free-text answers can be saved; when
         it is given it must name a real option, and its maturity level becomes
         this answer's score.
+
+        `importance` is the SOC-CMM® importance of this question to this SOC
+        (1 none .. 5 critical), which weights it in the aspect score. It
+        defaults to `normal`, the workbook's own default.
         """
         conn = self.get_connection()
         cursor = conn.cursor()
+
+        if importance is None:
+            importance = IMPORTANCE_NORMAL
+        if importance not in IMPORTANCE_FACTORS:
+            conn.close()
+            raise ValueError(
+                f"importance must be one of {sorted(IMPORTANCE_FACTORS)}, got {importance!r}")
 
         maturity_score = None
         if answer_option_id is not None:
@@ -336,10 +360,12 @@ class DatabaseManager:
         
         # Insert new answer
         cursor.execute("""
-            INSERT INTO assessment_answers 
-            (assessment_id, question_id, answer_option_id, answer_text, maturity_score)
-            VALUES (?, ?, ?, ?, ?)
-        """, (assessment_id, question_id, answer_option_id, answer_text, maturity_score))
+            INSERT INTO assessment_answers
+            (assessment_id, question_id, answer_option_id, answer_text,
+             maturity_score, importance)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (assessment_id, question_id, answer_option_id, answer_text,
+              maturity_score, importance))
         
         conn.commit()
         conn.close()
@@ -350,7 +376,8 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         cursor.execute("""
-            SELECT question_id, answer_option_id, answer_text, maturity_score
+            SELECT question_id, answer_option_id, answer_text, maturity_score,
+                   importance
             FROM assessment_answers 
             WHERE assessment_id = ?
         """, (assessment_id,))
@@ -360,60 +387,96 @@ class DatabaseManager:
         return answers
     
     def calculate_assessment_scores(self, assessment_id: int):
-        """Calculate and store assessment scores by aspect and domain"""
+        """Recompute and store aspect and domain scores, the SOC-CMM® way.
+
+        This follows the official 2.4.2 (advanced) workbook rather than taking a
+        plain average, so a number from here is comparable with one from the
+        spreadsheet. Per the `_Output` sheet, for the answered questions of one
+        aspect, with answer `a` in 1..5 and importance factor `h`:
+
+            total = SUM(a * h)      max = SUM(5 * h)      min = SUM(h)
+            percentage = 100 * (total - min) / (max - min)
+
+        which reduces to a factor-weighted mean of `(a - 1) / 4`. Two
+        consequences worth knowing:
+
+        * Subtracting `min` normalises over the *range* of the scale, so the
+          lowest answer scores 0%, not 20%. A SOC that answers at the bottom
+          throughout scores zero, which is the point.
+        * `h` cancels for a single question, so importance only matters where
+          an aspect mixes importances. Every question defaults to `normal`
+          (factor 1), as in the workbook, which makes the weighting inert until
+          an assessor changes it.
+
+        An aspect whose every answered question is marked `none` has
+        `SUM(h) == 0` and no defined score; the workbook yields a division error
+        there and shows 0, so we store no row for it instead of inventing one.
+
+        The domain score is the plain mean of its aspects' percentages, which is
+        what the workbook's results sheet does
+        (`SUM(H10:I14)/COUNT(H10:I14)`).
+        """
         conn = self.get_connection()
         cursor = conn.cursor()
-        
-        # Delete existing scores
-        cursor.execute("DELETE FROM assessment_scores WHERE assessment_id = ?", (assessment_id,))
-        
-        # Calculate aspect scores
+
+        cursor.execute("DELETE FROM assessment_scores WHERE assessment_id = ?",
+                       (assessment_id,))
+
         cursor.execute("""
-            SELECT 
-                a.id as aspect_id,
-                a.domain_id,
-                AVG(aa.maturity_score) as avg_score,
-                COUNT(aa.maturity_score) as question_count
+            SELECT a.id AS aspect_id, a.domain_id,
+                   aa.maturity_score, aa.importance
             FROM aspects a
             JOIN questions q ON a.id = q.aspect_id
-            LEFT JOIN assessment_answers aa ON q.id = aa.question_id AND aa.assessment_id = ?
+            JOIN assessment_answers aa
+                 ON q.id = aa.question_id AND aa.assessment_id = ?
             WHERE aa.maturity_score IS NOT NULL
-            GROUP BY a.id, a.domain_id
         """, (assessment_id,))
-        
-        aspect_scores = cursor.fetchall()
-        
-        for score in aspect_scores:
-            percentage = (score[2] / 5.0) * 100  # Convert to percentage (max score is 5)
+
+        # aspect_id -> [domain_id, SUM(a*h), SUM(5*h), SUM(h)]
+        totals = {}
+        for row in cursor.fetchall():
+            aspect_id, domain_id, answer, importance = (
+                row["aspect_id"], row["domain_id"], row["maturity_score"],
+                row["importance"])
+            factor = IMPORTANCE_FACTORS.get(
+                importance if importance is not None else IMPORTANCE_NORMAL,
+                IMPORTANCE_FACTORS[IMPORTANCE_NORMAL])
+            bucket = totals.setdefault(aspect_id, [domain_id, 0.0, 0.0, 0.0])
+            bucket[1] += answer * factor
+            bucket[2] += MATURITY_MAX * factor
+            bucket[3] += factor
+
+        by_domain = {}
+        for aspect_id, (domain_id, total, maximum, minimum) in totals.items():
+            span = maximum - minimum
+            if span <= 0:
+                # Every answered question in this aspect is marked `none`.
+                continue
+            percentage = 100.0 * (total - minimum) / span
+            percentage = max(0.0, min(100.0, percentage))
+            # Maturity on the familiar 0-5 scale, as the workbook's results
+            # sheet derives it: 5 * percentage / 100.
+            score = MATURITY_MAX * percentage / 100.0
             cursor.execute("""
-                INSERT INTO assessment_scores 
+                INSERT INTO assessment_scores
                 (assessment_id, aspect_id, domain_id, score, max_score, percentage)
                 VALUES (?, ?, ?, ?, ?, ?)
-            """, (assessment_id, score[0], score[1], score[2], 5.0, percentage))
-        
-        # Calculate domain scores
-        cursor.execute("""
-            SELECT 
-                domain_id,
-                AVG(score) as avg_score,
-                AVG(percentage) as avg_percentage
-            FROM assessment_scores
-            WHERE assessment_id = ? AND aspect_id IS NOT NULL
-            GROUP BY domain_id
-        """, (assessment_id,))
-        
-        domain_scores = cursor.fetchall()
-        
-        for score in domain_scores:
+            """, (assessment_id, aspect_id, domain_id, score,
+                  float(MATURITY_MAX), percentage))
+            by_domain.setdefault(domain_id, []).append((score, percentage))
+
+        for domain_id, aspects in by_domain.items():
+            score = sum(a[0] for a in aspects) / len(aspects)
+            percentage = sum(a[1] for a in aspects) / len(aspects)
             cursor.execute("""
-                INSERT INTO assessment_scores 
+                INSERT INTO assessment_scores
                 (assessment_id, domain_id, score, max_score, percentage)
                 VALUES (?, ?, ?, ?, ?)
-            """, (assessment_id, score[0], score[1], 5.0, score[2]))
-        
+            """, (assessment_id, domain_id, score, float(MATURITY_MAX), percentage))
+
         conn.commit()
         conn.close()
-    
+
     def get_assessment_scores(self, assessment_id: int, language: str = "en") -> Dict:
         """Get assessment scores grouped by domain and aspect"""
         conn = self.get_connection()

@@ -24,7 +24,10 @@ Base URL: `http://localhost:8400`
 - GET `/api/domains` — Domínios SOC CMM
 - GET `/api/domains/{domain_id}/aspects` — Aspectos do domínio
 - GET `/api/aspects/{aspect_id}/questions` — Questões do aspecto
-- POST `/api/answers` — Submeter resposta
+- POST `/api/answers` — Submeter resposta. Corpo: `assessment_id`,
+  `question_id`, `answer_option_id` e/ou `answer_text`, mais o opcional
+  `importance` (1 none, 2 low, 3 normal, 4 high, 5 critical — a
+  ponderação SOC-CMM® desta questão; padrão 3)
 - GET `/api/assessments/{assessment_id}/answers` — Respostas da avaliação
 - GET `/api/assessments/{assessment_id}/scores` — Pontuações
 - GET `/api/assessments/{assessment_id}/radar-data` — Dados para gráfico
