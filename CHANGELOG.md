@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Security
+
+- **`.gitignore` did not cover every database backup this project's own scripts
+  write.** `scripts/migrate_bilingual.py` writes `<db>.bak_<timestamp>`, which
+  matched none of the existing rules: `*.db` misses it because the name does
+  not end in `.db`, and `*.bak` misses it because the name ends in
+  `.bak_<timestamp>`. A live SQLite database containing users, bcrypt password
+  hashes and customer records could therefore be staged by `git add -A`. The
+  write-ahead log and shared-memory files (`*.db-wal`, `*.db-shm`) were also
+  uncovered. Every name the migration scripts generate is now ignored, and
+  tests assert it against each one, assert that no tracked file became ignored,
+  and assert that no database is tracked
+- `.cursor/`, `.vscode/` and `.idea/` are ignored
+
+### Added
+
+- A release procedure in `docs/releases/README.md`. Tagging without naming the
+  commit tags whatever `HEAD` is, and because the history was rewritten once to
+  purge committed databases, a pre-rewrite clone shares no common ancestor with
+  `main` — tagging one and pushing re-uploads the purged history. The procedure
+  verifies the SHA first, passes it to `git tag` explicitly, and records how to
+  recover
+
 ### Changed
 
 - **Scoring now follows the official SOC-CMM® 2.4.2 (advanced) workbook**
