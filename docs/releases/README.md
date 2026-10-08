@@ -5,7 +5,12 @@ can be passed to `gh release create --notes-file`.
 
 | Version | Notes |
 | --- | --- |
+| 2.0.1 | [v2.0.1.md](v2.0.1.md) |
 | 2.0.0 | [v2.0.0.md](v2.0.0.md) |
+
+A published release body can be refreshed from its file with
+`gh release edit vX.Y.Z --notes-file docs/releases/vX.Y.Z.md`, which is how a
+release whose notes were written before the last commits landed gets corrected.
 
 For the full change history see [`../../CHANGELOG.md`](../../CHANGELOG.md).
 

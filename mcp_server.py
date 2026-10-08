@@ -111,7 +111,7 @@ class ApiClient:
 api_client = ApiClient()
 
 # Initialize MCP server
-server = Server("soc-cmm-assessment", version="2.0.0")
+server = Server("soc-cmm-assessment", version="2.0.1")
 
 @server.list_tools()
 async def handle_list_tools() -> ListToolsResult:

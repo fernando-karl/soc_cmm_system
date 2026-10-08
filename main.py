@@ -25,7 +25,7 @@ from auth import (auth_manager, create_access_token, get_current_active_user,
                   get_current_admin_user, UserCreate, UserLogin, Token,
                   include_auth_routes, ACCESS_TOKEN_EXPIRE_MINUTES)
 
-app = FastAPI(title="SOC CMM Assessment System", version="2.0.0")
+app = FastAPI(title="SOC CMM Assessment System", version="2.0.1")
 include_auth_routes(app)
 
 # CORS: lista de origens vem de ALLOWED_ORIGINS (CSV). Default seguro = localhost
