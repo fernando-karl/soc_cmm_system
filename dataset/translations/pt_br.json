@@ -3053,6 +3053,276 @@
       "text": "Por exemplo, a capacidade de varrer vulnerabilidades específicas. Pode exigir consentimento e outros processos",
       "origin": "machine"
     },
+    "Cloud monitoring": {
+      "kind": "question",
+      "text": "Monitoramento de nuvem",
+      "origin": "machine"
+    },
+    "Monitoring of private and public cloud environment: SAAS, IAAS and PAAS": {
+      "kind": "guidance",
+      "text": "Monitoramento de ambientes de nuvem privada e pública: SaaS, IaaS e PaaS",
+      "origin": "machine"
+    },
+    "Mobile device monitoring": {
+      "kind": "question",
+      "text": "Monitoramento de dispositivo móvel",
+      "origin": "legacy"
+    },
+    "Monitoring of corporate owned mobile devices or mobile devices containing corporate information": {
+      "kind": "guidance",
+      "text": "Monitoramento de dispositivos móveis corporativos ou de dispositivos móveis que contenham informações corporativas",
+      "origin": "machine"
+    },
+    "Restore integrity verification": {
+      "kind": "question",
+      "text": "Verificação de integridade da restauração",
+      "origin": "machine"
+    },
+    "Verification that backups and restored assets do not contain IoCs or backdoors used in the initial incident": {
+      "kind": "guidance",
+      "text": "Verificação de que backups e ativos restaurados não contêm IoCs ou backdoors usados no incidente inicial",
+      "origin": "machine"
+    },
+    "Evaluation template": {
+      "kind": "question",
+      "text": "Modelo de avaliação",
+      "origin": "machine"
+    },
+    "A template for post-incident evaluation": {
+      "kind": "guidance",
+      "text": "Um modelo para avaliação pós-incidente",
+      "origin": "machine"
+    },
+    "Reporting template": {
+      "kind": "question",
+      "text": "Modelo de relatório",
+      "origin": "machine"
+    },
+    "A template for reporting on the security incident": {
+      "kind": "guidance",
+      "text": "Um modelo para relatar o incidente de segurança",
+      "origin": "machine"
+    },
+    "Is there an information security policy in place that supports the SOC activities?": {
+      "kind": "question",
+      "text": "Existe uma política de segurança da informação que suporta as atividades do SOC?",
+      "origin": "legacy"
+    },
+    "A clear security policy that supports SOC operations provides guidance and helps to enforce mandate for the SOC in the organisation": {
+      "kind": "guidance",
+      "text": "Uma política de segurança clara que suporta as operações do SOC fornece orientação e ajuda a fazer valer o mandato do SOC na organização",
+      "origin": "legacy"
+    },
+    "Is the SOC consulted in the creation and updates of operational security policy?": {
+      "kind": "question",
+      "text": "O SOC é consultado na criação e atualização da política de segurança operacional?",
+      "origin": "legacy"
+    },
+    "Consulting the SOC in the creation of security policy will ensure that SOC activities are properly mentioned and enforceable": {
+      "kind": "guidance",
+      "text": "Consultar o SOC na criação da política de segurança garantirá que as atividades do SOC sejam mencionadas e aplicáveis corretamente",
+      "origin": "legacy"
+    },
+    "Is a reporting policy for security incidents in place?": {
+      "kind": "question",
+      "text": "Existe uma política de relatórios para incidentes de segurança?",
+      "origin": "legacy"
+    },
+    "A reporting policy for security incidents will aid the SOC in identifying incidents and threats in the organization": {
+      "kind": "guidance",
+      "text": "Uma política de relatórios para incidentes de segurança auxiliará o SOC na identificação de incidentes e ameaças na organização",
+      "origin": "legacy"
+    },
+    "Do you have specific KSAOs established for SOC personnel?": {
+      "kind": "question",
+      "text": "Você tem KSAOs específicos estabelecidos para o pessoal do SOC?",
+      "origin": "legacy"
+    },
+    "Knowledge, Skills, Abilities and Other attributes (KSAOs) should be in place: technical, cognitive, social and character": {
+      "kind": "guidance",
+      "text": "Conhecimentos, Habilidades, Aptidões e Outros atributos (KSAOs) devem estar em vigor: técnicos, cognitivos, sociais e de caráter",
+      "origin": "legacy"
+    },
+    "Do you actively seek to create a psychologically safe environment for SOC personnel?": {
+      "kind": "question",
+      "text": "Você busca ativamente criar um ambiente psicologicamente seguro para o pessoal do SOC?",
+      "origin": "legacy"
+    },
+    "A psychologically safe environment is an environment where everyone is able to speak their mind and feel valued": {
+      "kind": "guidance",
+      "text": "Um ambiente psicologicamente seguro é um ambiente onde todos são capazes de expressar suas opiniões e se sentir valorizados",
+      "origin": "legacy"
+    },
+    "Have you established team goals?": {
+      "kind": "question",
+      "text": "Você estabeleceu metas de equipe?",
+      "origin": "legacy"
+    },
+    "Team goals help to bring focus to the team and monitor progress": {
+      "kind": "guidance",
+      "text": "As metas de equipe ajudam a dar foco à equipe e monitorar o progresso",
+      "origin": "legacy"
+    },
+    "Do you document and track individual team member goals?": {
+      "kind": "question",
+      "text": "Você documenta e acompanha as metas individuais dos membros da equipe?",
+      "origin": "legacy"
+    },
+    "Individual team member goals should be set to help grow the employee to full potential": {
+      "kind": "guidance",
+      "text": "As metas individuais dos membros da equipe devem ser definidas para ajudar o funcionário a desenvolver todo o seu potencial",
+      "origin": "legacy"
+    },
+    "Do you perform regular teambuilding exercises with other teams relevant to the SOC?": {
+      "kind": "question",
+      "text": "Você realiza exercícios regulares de construção de equipe com outras equipes relevantes para o SOC?",
+      "origin": "legacy"
+    },
+    "In multi-team systems (MTS), the SOC collaborates with other teams. Use cross-team teambuilding to maximize performance": {
+      "kind": "guidance",
+      "text": "Em sistemas de múltiplas equipes (MTS), o SOC colabora com outras equipes. Use a construção de equipe entre equipes para maximizar o desempenho",
+      "origin": "legacy"
+    },
+    "Do you periodically evaluate team performance?": {
+      "kind": "question",
+      "text": "Você avalia periodicamente o desempenho da equipe?",
+      "origin": "legacy"
+    },
+    "Besides individual performance, team performance and dynamics are also important to measure and improve on": {
+      "kind": "guidance",
+      "text": "Além do desempenho individual, o desempenho e a dinâmica da equipe também são importantes para medir e melhorar",
+      "origin": "legacy"
+    },
+    "Have you documented SOC team member abilities?": {
+      "kind": "question",
+      "text": "Você documentou as habilidades dos membros da equipe do SOC?",
+      "origin": "legacy"
+    },
+    "Besides knowledge and skills, team member abilities are also important to document": {
+      "kind": "guidance",
+      "text": "Além do conhecimento e das habilidades, as habilidades dos membros da equipe também são importantes de documentar",
+      "origin": "legacy"
+    },
+    "Have you established an Operational Security (OPSEC) program?": {
+      "kind": "question",
+      "text": "A precisão da coleta de dados é medida?",
+      "origin": "legacy"
+    },
+    "An OPSEC program dictates security rules to ensure the integrity and confidentiality of SOC processes, tools and information": {
+      "kind": "guidance",
+      "text": "A precisão da coleta de dados é importante para evitar a perda de dados",
+      "origin": "legacy"
+    },
+    "Have you optimized secure remote working capabilities for SOC employees?": {
+      "kind": "question",
+      "text": "Você otimizou as capacidades de trabalho remoto seguro para os funcionários do SOC?",
+      "origin": "machine"
+    },
+    "Secure working enabled means secure access (MFA, encryption, etc.), secure working facilitated also means equipped and optimized": {
+      "kind": "guidance",
+      "text": "Trabalho seguro habilitado significa acesso seguro (MFA, criptografia etc.); trabalho seguro facilitado significa também equipado e otimizado",
+      "origin": "machine"
+    },
+    "Have schedules been optimized for vigilance during shifts?": {
+      "kind": "question",
+      "text": "As escalas foram otimizadas para a vigilância durante os turnos?",
+      "origin": "machine"
+    },
+    "Schedules should be created to optimize vigilance. Thus, shift should include mandatory breaks and not be too long": {
+      "kind": "guidance",
+      "text": "As escalas devem ser criadas para otimizar a vigilância. Assim, os turnos devem incluir pausas obrigatórias e não ser longos demais",
+      "origin": "machine"
+    },
+    "Do you measure use cases against the MITRE ATT&CK® framework for gap analysis purposes?": {
+      "kind": "question",
+      "text": "Você mede os casos de uso em relação ao framework MITRE ATT&CK® para fins de análise de lacunas?",
+      "origin": "machine"
+    },
+    "By measuring use cases against MITRE ATT&CK®, it is possible to determine strengths and weaknesses in your layered detection approach": {
+      "kind": "guidance",
+      "text": "Ao medir os casos de uso em relação ao MITRE ATT&CK®, é possível determinar pontos fortes e fracos da sua abordagem de detecção em camadas",
+      "origin": "machine"
+    },
+    "Are monitoring rules tagged with MITRE ATT&CK® framework identifiers? [2]": {
+      "kind": "question",
+      "text": "As regras de monitoramento são marcadas com identificadores do framework MITRE ATT&CK®? [2]",
+      "origin": "machine"
+    },
+    "Tagging monitoring rules with MITRE ATT&CK® identifiers allows for reporting on sightings of attack techniques": {
+      "kind": "guidance",
+      "text": "Marcar as regras de monitoramento com identificadores do MITRE ATT&CK® permite relatar as ocorrências de técnicas de ataque",
+      "origin": "machine"
+    },
+    "Have you created a MITRE ATT&CK® risk profile for your organization?": {
+      "kind": "question",
+      "text": "Você criou um perfil de risco MITRE ATT&CK® para a sua organização?",
+      "origin": "machine"
+    },
+    "The creation of a risk profile in MITRE ATT&CK® can help to identify relevant attack techniques": {
+      "kind": "guidance",
+      "text": "A criação de um perfil de risco no MITRE ATT&CK® pode ajudar a identificar técnicas de ataque relevantes",
+      "origin": "machine"
+    },
+    "Have you prioritized MITRE ATT&CK® techniques for relevance? [3]": {
+      "kind": "question",
+      "text": "Você priorizou as técnicas do MITRE ATT&CK® por relevância? [3]",
+      "origin": "machine"
+    },
+    "Using organizational context (protection and detection mechanisms), ATT&CK® techniques can be prioritized": {
+      "kind": "guidance",
+      "text": "Usando o contexto organizacional (mecanismos de proteção e detecção), as técnicas do ATT&CK® podem ser priorizadas",
+      "origin": "machine"
+    },
+    "Is use case output (alerts) used in threat intelligence activities?": {
+      "kind": "question",
+      "text": "A saída dos casos de uso (alertas) é usada nas atividades de inteligência de ameaças?",
+      "origin": "machine"
+    },
+    "Using MITRE ATT&CK®, it is possible to connect alerts to specific threat actors, or potentially even active campaigns": {
+      "kind": "guidance",
+      "text": "Usando o MITRE ATT&CK®, é possível relacionar alertas a agentes de ameaça específicos ou até a campanhas ativas",
+      "origin": "machine"
+    },
+    "Is threat intelligence used for the creation and updates of use cases?": {
+      "kind": "question",
+      "text": "A inteligência de ameaças é usada na criação e atualização dos casos de uso?",
+      "origin": "machine"
+    },
+    "Threat intelligence can provide input into security monitoring, especially when using MITRE ATT&CK® to connect both": {
+      "kind": "guidance",
+      "text": "A inteligência de ameaças pode fornecer insumos para o monitoramento de segurança, especialmente quando o MITRE ATT&CK® é usado para conectar ambos",
+      "origin": "machine"
+    },
+    "Do you determine and document visibility requirements for each use case?": {
+      "kind": "question",
+      "text": "Você determina e documenta os requisitos de visibilidade de cada caso de uso?",
+      "origin": "machine"
+    },
+    "Data source requirements should be part of use case design": {
+      "kind": "guidance",
+      "text": "Os requisitos de fontes de dados devem fazer parte do desenho do caso de uso",
+      "origin": "machine"
+    },
+    "Do you measure visibility status for your use cases for gap analysis purposes?": {
+      "kind": "question",
+      "text": "Você mede o status de visibilidade dos seus casos de uso para fins de análise de lacunas?",
+      "origin": "machine"
+    },
+    "Measuring visibility status of use cases will help to identify use cases that require additional data sources for detection optimization": {
+      "kind": "guidance",
+      "text": "Medir o status de visibilidade dos casos de uso ajuda a identificar os casos que exigem fontes de dados adicionais para otimizar a detecção",
+      "origin": "machine"
+    },
+    "Do you map data source visibility to the MITRE ATT&CK® framework? [4]": {
+      "kind": "question",
+      "text": "Você mapeia a visibilidade das fontes de dados para o framework MITRE ATT&CK®? [4]",
+      "origin": "machine"
+    },
+    "Mapping available data sources to MITRE ATT&CK® data source requirements will help identify gaps in visibility of attack techniques": {
+      "kind": "guidance",
+      "text": "Mapear as fontes de dados disponíveis para os requisitos de fontes de dados do MITRE ATT&CK® ajuda a identificar lacunas na visibilidade de técnicas de ataque",
+      "origin": "machine"
+    },
     "Do you have a detection engineering process in place?": {
       "kind": "question",
       "text": "Existe um processo formal de gerenciamento de casos implementado?",
@@ -7411,6 +7681,511 @@
     "Methodology fully adopted, process set up and executed accordingly": {
       "kind": "option",
       "text": "Metodologia plenamente adotada, com processo definido e executado conforme ela",
+      "origin": "machine"
+    },
+    "No formal information security policy in place": {
+      "kind": "option",
+      "text": "Não há política formal de segurança da informação",
+      "origin": "machine"
+    },
+    "Information security policy in place, no mention of SOC activities": {
+      "kind": "option",
+      "text": "Política de segurança da informação existente, sem menção às atividades do SOC",
+      "origin": "machine"
+    },
+    "Policy in place, SOC activities mentioned without mandate": {
+      "kind": "option",
+      "text": "Política existente, atividades do SOC mencionadas sem mandato",
+      "origin": "machine"
+    },
+    "Policy in place, SOC activities mentioned in detail with mandate": {
+      "kind": "option",
+      "text": "Política existente, atividades do SOC detalhadas com mandato",
+      "origin": "machine"
+    },
+    "Policy with SOC activities and mandate in place, actively communicated": {
+      "kind": "option",
+      "text": "Política com atividades e mandato do SOC em vigor, comunicada ativamente",
+      "origin": "machine"
+    },
+    "SOC not consulted or informed of policy creation or policy updates": {
+      "kind": "option",
+      "text": "SOC não é consultado nem informado sobre a criação ou atualização de políticas",
+      "origin": "machine"
+    },
+    "SOC informed of policy creation and updates only": {
+      "kind": "option",
+      "text": "SOC apenas informado sobre a criação e atualização de políticas",
+      "origin": "machine"
+    },
+    "SOC consulted before policy creation and updates, not actively involved": {
+      "kind": "option",
+      "text": "SOC consultado antes da criação e atualização de políticas, sem envolvimento ativo",
+      "origin": "machine"
+    },
+    "SOC consulted before policy creation and updates, performs reviews": {
+      "kind": "option",
+      "text": "SOC consultado antes da criação e atualização de políticas, realiza revisões",
+      "origin": "machine"
+    },
+    "Full involvement of the SOC in the creation of operational security policy": {
+      "kind": "option",
+      "text": "Envolvimento total do SOC na criação da política de segurança operacional",
+      "origin": "machine"
+    },
+    "No reporting policy in place": {
+      "kind": "option",
+      "text": "Não há política de comunicação de incidentes",
+      "origin": "machine"
+    },
+    "Policy in place, no mention of the SOC": {
+      "kind": "option",
+      "text": "Política existente, sem menção ao SOC",
+      "origin": "machine"
+    },
+    "Policy in place, role of the SOC in security incidents mentioned": {
+      "kind": "option",
+      "text": "Política existente, papel do SOC em incidentes de segurança mencionado",
+      "origin": "machine"
+    },
+    "Policy in place with all SOC activities, no central point for reporting": {
+      "kind": "option",
+      "text": "Política existente com todas as atividades do SOC, sem ponto central de comunicação",
+      "origin": "machine"
+    },
+    "Policy & central point for reporting in place, SOC part of the workflow": {
+      "kind": "option",
+      "text": "Política e ponto central de comunicação existentes, SOC faz parte do fluxo",
+      "origin": "machine"
+    },
+    "KSAOs have not been created": {
+      "kind": "option",
+      "text": "Os KSAOs não foram criados",
+      "origin": "machine"
+    },
+    "KSOAs are used ad-hoc in staffing activities": {
+      "kind": "option",
+      "text": "Os KSAOs são usados de forma ad hoc nas atividades de contratação",
+      "origin": "machine"
+    },
+    "A basic standardized KSAO set is created": {
+      "kind": "option",
+      "text": "Um conjunto básico e padronizado de KSAOs foi criado",
+      "origin": "machine"
+    },
+    "A full KSAO is created, but not actively used in staffing": {
+      "kind": "option",
+      "text": "Um conjunto completo de KSAOs foi criado, mas não é usado ativamente na contratação",
+      "origin": "machine"
+    },
+    "A full KSAO is created, regularly updated and actively used in staffing": {
+      "kind": "option",
+      "text": "Um conjunto completo de KSAOs foi criado, é atualizado regularmente e usado ativamente na contratação",
+      "origin": "machine"
+    },
+    "A safe environment is not actively created": {
+      "kind": "option",
+      "text": "Um ambiente seguro não é criado ativamente",
+      "origin": "machine"
+    },
+    "Basic awareness of a safe environment exists, but is not implemented": {
+      "kind": "option",
+      "text": "Existe consciência básica sobre um ambiente seguro, mas não está implementado",
+      "origin": "machine"
+    },
+    "A safe environment has been established, but not actively managed": {
+      "kind": "option",
+      "text": "Um ambiente seguro foi estabelecido, mas não é gerenciado ativamente",
+      "origin": "machine"
+    },
+    "A safe environment has been established, and actively managed": {
+      "kind": "option",
+      "text": "Um ambiente seguro foi estabelecido e é gerenciado ativamente",
+      "origin": "machine"
+    },
+    "A safe and actively managed environment exists and is evaluated": {
+      "kind": "option",
+      "text": "Existe um ambiente seguro, gerenciado ativamente e avaliado",
+      "origin": "machine"
+    },
+    "Team goals are not determined": {
+      "kind": "option",
+      "text": "As metas da equipe não são definidas",
+      "origin": "machine"
+    },
+    "Team goals are determined, but not formally documented": {
+      "kind": "option",
+      "text": "As metas da equipe são definidas, mas não documentadas formalmente",
+      "origin": "machine"
+    },
+    "Team goals are determined, and formally documented": {
+      "kind": "option",
+      "text": "As metas da equipe são definidas e documentadas formalmente",
+      "origin": "machine"
+    },
+    "Team goals are determined and documented, but not tracked": {
+      "kind": "option",
+      "text": "As metas da equipe são definidas e documentadas, mas não acompanhadas",
+      "origin": "machine"
+    },
+    "Team goals are determined, approved and tracked regularly": {
+      "kind": "option",
+      "text": "As metas da equipe são definidas, aprovadas e acompanhadas regularmente",
+      "origin": "machine"
+    },
+    "Individual goals are not determined": {
+      "kind": "option",
+      "text": "As metas individuais não são definidas",
+      "origin": "machine"
+    },
+    "Individual goals are determined, but not formally documented": {
+      "kind": "option",
+      "text": "As metas individuais são definidas, mas não documentadas formalmente",
+      "origin": "machine"
+    },
+    "Individual goals are determined, and formally documented": {
+      "kind": "option",
+      "text": "As metas individuais são definidas e documentadas formalmente",
+      "origin": "machine"
+    },
+    "Individual goals are determined and documented, but not tracked": {
+      "kind": "option",
+      "text": "As metas individuais são definidas e documentadas, mas não acompanhadas",
+      "origin": "machine"
+    },
+    "Individual goals are determined, approved and tracked regularly": {
+      "kind": "option",
+      "text": "As metas individuais são definidas, aprovadas e acompanhadas regularmente",
+      "origin": "machine"
+    },
+    "No MTS team building exercises are performed": {
+      "kind": "option",
+      "text": "Não são realizados exercícios de integração de equipes multiequipe (MTS)",
+      "origin": "machine"
+    },
+    "MTS exercises are performed in an ad-hoc fashion": {
+      "kind": "option",
+      "text": "Os exercícios de MTS são realizados de forma ad hoc",
+      "origin": "machine"
+    },
+    "MTS exercises are usually performed, but not embedded in processes": {
+      "kind": "option",
+      "text": "Os exercícios de MTS costumam ser realizados, mas não estão incorporados aos processos",
+      "origin": "machine"
+    },
+    "MTS exercises are regularly done, but not focused on improvement": {
+      "kind": "option",
+      "text": "Os exercícios de MTS são feitos regularmente, mas sem foco em melhoria",
+      "origin": "machine"
+    },
+    "MTS exercises done regularly and focused on improving team dynamics": {
+      "kind": "option",
+      "text": "Os exercícios de MTS são feitos regularmente e focados em melhorar a dinâmica das equipes",
+      "origin": "machine"
+    },
+    "Periodic evaluation is performed, results are used for team growth": {
+      "kind": "option",
+      "text": "É feita avaliação periódica, e os resultados são usados para o crescimento da equipe",
+      "origin": "machine"
+    },
+    "Documentation is not in place": {
+      "kind": "option",
+      "text": "Não há documentação",
+      "origin": "machine"
+    },
+    "Documentation only covers some employees' abilities": {
+      "kind": "option",
+      "text": "A documentação cobre apenas as habilidades de alguns funcionários",
+      "origin": "machine"
+    },
+    "Documentation covers the most relevant abilities for the team": {
+      "kind": "option",
+      "text": "A documentação cobre as habilidades mais relevantes para a equipe",
+      "origin": "machine"
+    },
+    "All employee abilities documented, but is not regularly updated": {
+      "kind": "option",
+      "text": "Todas as habilidades dos funcionários estão documentadas, mas sem atualização regular",
+      "origin": "machine"
+    },
+    "All employee abilities documented, and regularly updated": {
+      "kind": "option",
+      "text": "Todas as habilidades dos funcionários estão documentadas e são atualizadas regularmente",
+      "origin": "machine"
+    },
+    "An OPSEC program is not in place": {
+      "kind": "option",
+      "text": "Não há programa de OPSEC",
+      "origin": "machine"
+    },
+    "Some ad-hoc information across documents regarding OPSEC": {
+      "kind": "option",
+      "text": "Algumas informações ad hoc sobre OPSEC espalhadas em documentos",
+      "origin": "machine"
+    },
+    "Consistent OPSEC documentation, no program": {
+      "kind": "option",
+      "text": "Documentação consistente de OPSEC, sem programa",
+      "origin": "machine"
+    },
+    "Comprehensive OPSEC program exists, not consistently enforced/maintained": {
+      "kind": "option",
+      "text": "Existe um programa abrangente de OPSEC, mas não é aplicado/mantido de forma consistente",
+      "origin": "machine"
+    },
+    "OPSEC program is formally approved, enforced and regularly maintained": {
+      "kind": "option",
+      "text": "O programa de OPSEC é formalmente aprovado, aplicado e mantido regularmente",
+      "origin": "machine"
+    },
+    "Shift schedules not created with vigilance in mind": {
+      "kind": "option",
+      "text": "As escalas de turno não são criadas pensando na vigilância",
+      "origin": "machine"
+    },
+    "Vigilance requirements understood, but not implemented": {
+      "kind": "option",
+      "text": "Requisitos de vigilância compreendidos, mas não implementados",
+      "origin": "machine"
+    },
+    "Vigilance requirements implemented, but not optimized": {
+      "kind": "option",
+      "text": "Requisitos de vigilância implementados, mas não otimizados",
+      "origin": "machine"
+    },
+    "Shift schedule optimized for vigilance, but not regularly improved": {
+      "kind": "option",
+      "text": "Escala de turnos otimizada para a vigilância, mas sem melhoria regular",
+      "origin": "machine"
+    },
+    "Shift schedule optimized for vigilance, regularly evaluated and improved": {
+      "kind": "option",
+      "text": "Escala de turnos otimizada para a vigilância, avaliada e melhorada regularmente",
+      "origin": "machine"
+    },
+    "Use cases not measured against Mitre ATT&CK": {
+      "kind": "option",
+      "text": "Casos de uso não medidos em relação ao MITRE ATT&CK",
+      "origin": "machine"
+    },
+    "High risk use cases measured against MITRE ATT&CK®": {
+      "kind": "option",
+      "text": "Casos de uso de alto risco medidos em relação ao MITRE ATT&CK®",
+      "origin": "machine"
+    },
+    "High- and medium risk use cases measured against MITRE ATT&CK®": {
+      "kind": "option",
+      "text": "Casos de uso de alto e médio risco medidos em relação ao MITRE ATT&CK®",
+      "origin": "machine"
+    },
+    "All use cases frequently measured, output used in improvement": {
+      "kind": "option",
+      "text": "Todos os casos de uso medidos com frequência, resultado usado na melhoria",
+      "origin": "machine"
+    },
+    "All use cases continuously measured, output used in improvement": {
+      "kind": "option",
+      "text": "Todos os casos de uso medidos continuamente, resultado usado na melhoria",
+      "origin": "machine"
+    },
+    "Monitoring rules not tagged": {
+      "kind": "option",
+      "text": "Regras de monitoramento não marcadas",
+      "origin": "machine"
+    },
+    "High risk monitoring rules tagged": {
+      "kind": "option",
+      "text": "Regras de monitoramento de alto risco marcadas",
+      "origin": "machine"
+    },
+    "High- and medium risk monitoring rules tagged": {
+      "kind": "option",
+      "text": "Regras de monitoramento de alto e médio risco marcadas",
+      "origin": "machine"
+    },
+    "All monitoring rules tagged, not regularly revised": {
+      "kind": "option",
+      "text": "Todas as regras de monitoramento marcadas, sem revisão regular",
+      "origin": "machine"
+    },
+    "All monitoring rules tagged and regularly revised": {
+      "kind": "option",
+      "text": "Todas as regras de monitoramento marcadas e revisadas regularmente",
+      "origin": "machine"
+    },
+    "MITRE ATT&CK® profile not created": {
+      "kind": "option",
+      "text": "Perfil MITRE ATT&CK® não criado",
+      "origin": "machine"
+    },
+    "MITRE ATT&CK® analysis performed, no formal profile in place": {
+      "kind": "option",
+      "text": "Análise MITRE ATT&CK® realizada, sem perfil formal",
+      "origin": "machine"
+    },
+    "MITRE ATT&CK® profile created, not validated or maintained": {
+      "kind": "option",
+      "text": "Perfil MITRE ATT&CK® criado, não validado nem mantido",
+      "origin": "machine"
+    },
+    "MITRE ATT&CK® profile created and validated, not regularly maintained": {
+      "kind": "option",
+      "text": "Perfil MITRE ATT&CK® criado e validado, sem manutenção regular",
+      "origin": "machine"
+    },
+    "Mitre ATT&CK profile created, validated and regularly maintained": {
+      "kind": "option",
+      "text": "Perfil MITRE ATT&CK criado, validado e mantido regularmente",
+      "origin": "machine"
+    },
+    "ATT&CK® techniques not prioritized": {
+      "kind": "option",
+      "text": "Técnicas do ATT&CK® não priorizadas",
+      "origin": "machine"
+    },
+    "ATT&CK® analysis performed, no formal prioritization created": {
+      "kind": "option",
+      "text": "Análise do ATT&CK® realizada, sem priorização formal",
+      "origin": "machine"
+    },
+    "ATT&CK® techniques prioritized, not validated or maintained": {
+      "kind": "option",
+      "text": "Técnicas do ATT&CK® priorizadas, não validadas nem mantidas",
+      "origin": "machine"
+    },
+    "ATT&CK® techniques prioritized and validated, not regularly maintained": {
+      "kind": "option",
+      "text": "Técnicas do ATT&CK® priorizadas e validadas, sem manutenção regular",
+      "origin": "machine"
+    },
+    "ATT&CK® techniques prioritized, validated and regularly updated": {
+      "kind": "option",
+      "text": "Técnicas do ATT&CK® priorizadas, validadas e atualizadas regularmente",
+      "origin": "machine"
+    },
+    "Use case output not used in TI activities": {
+      "kind": "option",
+      "text": "Saída dos casos de uso não usada nas atividades de inteligência de ameaças",
+      "origin": "machine"
+    },
+    "Use case output used in TI activities in an ad-hoc fashion": {
+      "kind": "option",
+      "text": "Saída dos casos de uso usada nas atividades de inteligência de ameaças de forma ad hoc",
+      "origin": "machine"
+    },
+    "Use case output used in TI activities for high-risk alerts": {
+      "kind": "option",
+      "text": "Saída dos casos de uso usada nas atividades de inteligência de ameaças para alertas de alto risco",
+      "origin": "machine"
+    },
+    "Use case output used in TI activities for most alerts, no formal process": {
+      "kind": "option",
+      "text": "Saída dos casos de uso usada nas atividades de inteligência de ameaças para a maioria dos alertas, sem processo formal",
+      "origin": "machine"
+    },
+    "Formal process in place, connecting use case output to TI activities": {
+      "kind": "option",
+      "text": "Processo formal em vigor, conectando a saída dos casos de uso às atividades de inteligência de ameaças",
+      "origin": "machine"
+    },
+    "TI not used in use case creation / updates": {
+      "kind": "option",
+      "text": "Inteligência de ameaças não usada na criação / atualização de casos de uso",
+      "origin": "machine"
+    },
+    "TI used in use case creation / updates in an ad-hoc fashion": {
+      "kind": "option",
+      "text": "Inteligência de ameaças usada na criação / atualização de casos de uso de forma ad hoc",
+      "origin": "machine"
+    },
+    "TI used in use case creation / updates for high-risk threats": {
+      "kind": "option",
+      "text": "Inteligência de ameaças usada na criação / atualização de casos de uso para ameaças de alto risco",
+      "origin": "machine"
+    },
+    "TI used in use case creation / updates for most threats, no formal process": {
+      "kind": "option",
+      "text": "Inteligência de ameaças usada na criação / atualização de casos de uso para a maioria das ameaças, sem processo formal",
+      "origin": "machine"
+    },
+    "Formal process in place, connecting TI activities to use cases": {
+      "kind": "option",
+      "text": "Processo formal em vigor, conectando as atividades de inteligência de ameaças aos casos de uso",
+      "origin": "machine"
+    },
+    "Visibility requirements not determined": {
+      "kind": "option",
+      "text": "Requisitos de visibilidade não determinados",
+      "origin": "machine"
+    },
+    "Visibility requirements determined for some use cases": {
+      "kind": "option",
+      "text": "Requisitos de visibilidade determinados para alguns casos de uso",
+      "origin": "machine"
+    },
+    "Visibility requirements determined for most use cases, not documented": {
+      "kind": "option",
+      "text": "Requisitos de visibilidade determinados para a maioria dos casos de uso, não documentados",
+      "origin": "machine"
+    },
+    "Visibility requirements formally determined and documented, not reviewed": {
+      "kind": "option",
+      "text": "Requisitos de visibilidade formalmente determinados e documentados, não revisados",
+      "origin": "machine"
+    },
+    "Visibility requirements formally determined, documented and reviewed": {
+      "kind": "option",
+      "text": "Requisitos de visibilidade formalmente determinados, documentados e revisados",
+      "origin": "machine"
+    },
+    "Visibility status not measured": {
+      "kind": "option",
+      "text": "Status de visibilidade não medido",
+      "origin": "machine"
+    },
+    "Visibility status measured in an ad-hoc fashion": {
+      "kind": "option",
+      "text": "Status de visibilidade medido de forma ad hoc",
+      "origin": "machine"
+    },
+    "Visibility status measured, not actively used in improvement": {
+      "kind": "option",
+      "text": "Status de visibilidade medido, não usado ativamente na melhoria",
+      "origin": "machine"
+    },
+    "Visibility status measured frequently, output used in improvement": {
+      "kind": "option",
+      "text": "Status de visibilidade medido com frequência, resultado usado na melhoria",
+      "origin": "machine"
+    },
+    "Visibility status continuously measured, output used in improvement": {
+      "kind": "option",
+      "text": "Status de visibilidade medido continuamente, resultado usado na melhoria",
+      "origin": "machine"
+    },
+    "Data sources not mapped to MITRE ATT&CK®": {
+      "kind": "option",
+      "text": "Fontes de dados não mapeadas para o MITRE ATT&CK®",
+      "origin": "machine"
+    },
+    "Data source mapping to ATT&CK® performed in an ad-hoc fashion": {
+      "kind": "option",
+      "text": "Mapeamento de fontes de dados para o ATT&CK® realizado de forma ad hoc",
+      "origin": "machine"
+    },
+    "Data sources mapped to ATT&CK®, not actively used in improvement": {
+      "kind": "option",
+      "text": "Fontes de dados mapeadas para o ATT&CK®, não usadas ativamente na melhoria",
+      "origin": "machine"
+    },
+    "Data sources frequently mapped to ATT&CK®, output used in improvement": {
+      "kind": "option",
+      "text": "Fontes de dados mapeadas com frequência para o ATT&CK®, resultado usado na melhoria",
+      "origin": "machine"
+    },
+    "Data sources continuously mapped to ATT&CK®, output used in improvement": {
+      "kind": "option",
+      "text": "Fontes de dados mapeadas continuamente para o ATT&CK®, resultado usado na melhoria",
       "origin": "machine"
     },
     "A detection engineering process is not in place": {

@@ -75,7 +75,7 @@ The database file is `soc_cmm_bilingual.db` next to the application code, or
 wherever `DB_PATH` points.
 
 > **What gets seeded:** the full SOC-CMM® 2.4.2 (advanced) questionnaire — 5
-> domains, 27 aspects, 622 questions and 3110 answer options, every question
+> domains, 27 aspects, 649 questions and 3245 answer options, every question
 > scorable — plus every translation in `dataset/translations/`. The script
 > prints the counts and the translated-question count per language when it
 > runs, and warns if anything is missing. See `sql/README.md`.

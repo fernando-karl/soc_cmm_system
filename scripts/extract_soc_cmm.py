@@ -153,7 +153,15 @@ def read_output_spine(wb):
             section = key
             continue
         qid = normalise_id(label)
-        if qid and section and qid not in questions:
+        if qid and qid not in questions:
+            # Assign by the question's own code ("S 2.3.1" -> ("S", 2)), never by
+            # the last header seen: _Output re-lists items under other sections
+            # (e.g. capability items under M5) and some headers ("S 2 - ...")
+            # carry a space the SECTION pattern does not expect.
+            code = re.match(r"^([A-Z]{1,2})\s?(\d+)", qid)
+            if not code:
+                continue
+            section = (code.group(1), int(code.group(2)))
             qtype = str(cells[2]).strip() if cells[2] else ""
             nist = {}
             for index, label in nist_columns.items():

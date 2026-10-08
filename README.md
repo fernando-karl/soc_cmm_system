@@ -36,7 +36,7 @@ including the Portuguese interface and mobile views, or the 13-slide
 
 ## SOC CMM Domains
 
-SOC-CMM® has **five** scored domains, covering 27 aspects and 622 questions:
+SOC-CMM® has **five** scored domains, covering 27 aspects and 649 questions:
 
 1. **Business** - Business drivers, customers, charter, governance, privacy
 2. **People** - Employees, roles and hierarchy, people management, knowledge
@@ -156,7 +156,7 @@ that add a migration. (`scripts/migrate_to_auth.py` is still there for upgrading
 a database that predates authentication.)
 
 > **What gets seeded:** the shipped dataset is the full SOC-CMM® 2.4.2
-> (advanced) questionnaire — 5 domains, 27 aspects, **622 questions and 3110
+> (advanced) questionnaire — 5 domains, 27 aspects, **649 questions and 3245
 > answer options, every question scorable**. The bootstrap also loads every
 > translation in `dataset/translations/`, so a Portuguese user gets the
 > questionnaire in Portuguese and not just the interface. (The older partial

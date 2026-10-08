@@ -9,7 +9,7 @@ de maturidade de SOC (Security Operations Center) com base no framework
 - Cadastro e gestão de clientes (organizações avaliadas).
 - Criação de avaliações por cliente, com salvamento incremental.
 - Questionário guiado pelos cinco domínios pontuados do SOC-CMM® (Business,
-  People, Process, Technology, Services) e seus 27 aspectos — 622 questões do
+  People, Process, Technology, Services) e seus 27 aspectos — 649 questões do
   SOC-CMM® 2.4.2 advanced. `Results` é a seção de saída da planilha, não um
   domínio pontuado.
 - Cálculo automático a partir de cinco níveis de maturidade por questão,

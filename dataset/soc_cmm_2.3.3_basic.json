@@ -2793,7 +2793,7 @@
     },
     {
       "id": 226,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.2",
       "question_text": "Have you adopted a standard for the Security Incident Management process?",
       "question_type": "multiple_choice",
@@ -2803,7 +2803,7 @@
     },
     {
       "id": 227,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.3",
       "question_text": "Have you formally described the security incident management process?",
       "question_type": "multiple_choice",
@@ -2815,7 +2815,7 @@
     },
     {
       "id": 228,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.5",
       "question_text": "Is the service measured for quality?",
       "question_type": "multiple_choice",
@@ -2827,7 +2827,7 @@
     },
     {
       "id": 229,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.6",
       "question_text": "Is the service measured for service delivery in accordance with service levels?",
       "question_type": "multiple_choice",
@@ -2837,7 +2837,7 @@
     },
     {
       "id": 230,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.7",
       "question_text": "Are customers and/or stakeholders regularly updated about the service?",
       "question_type": "multiple_choice",
@@ -2849,7 +2849,7 @@
     },
     {
       "id": 231,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.8",
       "question_text": "Is there a contractual agreement between the SOC and the customers?",
       "question_type": "multiple_choice",
@@ -2859,7 +2859,7 @@
     },
     {
       "id": 232,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.9",
       "question_text": "Is sufficient personnel allocated to the process to ensure required service delivery?",
       "question_type": "multiple_choice",
@@ -2871,7 +2871,7 @@
     },
     {
       "id": 233,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.10",
       "question_text": "Is the service aligned with other relevant processes?",
       "question_type": "multiple_choice",
@@ -2881,7 +2881,7 @@
     },
     {
       "id": 234,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.11",
       "question_text": "Is the incident response team authorized to perform (invasive) actions when required?",
       "question_type": "multiple_choice",
@@ -2893,7 +2893,7 @@
     },
     {
       "id": 235,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.13",
       "question_text": "Are best practices applied to the service?",
       "question_type": "multiple_choice",
@@ -2903,7 +2903,7 @@
     },
     {
       "id": 236,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.14",
       "question_text": "Is the service supported by predefined workflows or scenarios?",
       "question_type": "multiple_choice",
@@ -2915,7 +2915,7 @@
     },
     {
       "id": 237,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.15",
       "question_text": "Is process data gathered for prediction of service performance?",
       "question_type": "multiple_choice",
@@ -2927,7 +2927,7 @@
     },
     {
       "id": 238,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.16",
       "question_text": "Is the service continuously being improved based on improvement goals?",
       "question_type": "multiple_choice",
@@ -2939,7 +2939,7 @@
     },
     {
       "id": 239,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.1",
       "question_text": "Incident logging procedure",
       "question_type": "multiple_choice",
@@ -2951,7 +2951,7 @@
     },
     {
       "id": 240,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.2",
       "question_text": "Incident resolution procedure",
       "question_type": "multiple_choice",
@@ -2963,7 +2963,7 @@
     },
     {
       "id": 241,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.3",
       "question_text": "Incident investigation procedure",
       "question_type": "multiple_choice",
@@ -2975,7 +2975,7 @@
     },
     {
       "id": 242,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.4",
       "question_text": "Escalation procedure",
       "question_type": "multiple_choice",
@@ -2987,7 +2987,7 @@
     },
     {
       "id": 243,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.5",
       "question_text": "Evidence collection procedure",
       "question_type": "multiple_choice",
@@ -2999,7 +2999,7 @@
     },
     {
       "id": 244,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.6",
       "question_text": "Incident containment procedures",
       "question_type": "multiple_choice",
@@ -3011,7 +3011,7 @@
     },
     {
       "id": 245,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.7",
       "question_text": "IR Training",
       "question_type": "multiple_choice",
@@ -3023,7 +3023,7 @@
     },
     {
       "id": 246,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.8",
       "question_text": "Table-top exercises",
       "question_type": "multiple_choice",
@@ -3035,7 +3035,7 @@
     },
     {
       "id": 247,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.9",
       "question_text": "Red team / blue team exercises",
       "question_type": "multiple_choice",
@@ -3047,7 +3047,7 @@
     },
     {
       "id": 248,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.10",
       "question_text": "RACI matrix",
       "question_type": "multiple_choice",
@@ -3059,7 +3059,7 @@
     },
     {
       "id": 249,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.11",
       "question_text": "Response authorization",
       "question_type": "multiple_choice",
@@ -3071,7 +3071,7 @@
     },
     {
       "id": 250,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.12",
       "question_text": "Incident template",
       "question_type": "multiple_choice",
@@ -3083,7 +3083,7 @@
     },
     {
       "id": 251,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.13",
       "question_text": "Incident tracking system",
       "question_type": "multiple_choice",
@@ -3095,7 +3095,7 @@
     },
     {
       "id": 252,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.14",
       "question_text": "False-positive reduction",
       "question_type": "multiple_choice",
@@ -3107,7 +3107,7 @@
     },
     {
       "id": 253,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.15",
       "question_text": "Priority assignment",
       "question_type": "multiple_choice",
@@ -3119,7 +3119,7 @@
     },
     {
       "id": 254,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.16",
       "question_text": "Severity assignment",
       "question_type": "multiple_choice",
@@ -3131,7 +3131,7 @@
     },
     {
       "id": 255,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.17",
       "question_text": "Categorization",
       "question_type": "multiple_choice",
@@ -3143,7 +3143,7 @@
     },
     {
       "id": 256,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.18",
       "question_text": "Critical bridge",
       "question_type": "multiple_choice",
@@ -3155,7 +3155,7 @@
     },
     {
       "id": 257,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.19",
       "question_text": "War room",
       "question_type": "multiple_choice",
@@ -3167,7 +3167,7 @@
     },
     {
       "id": 258,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.20",
       "question_text": "Communication plan & email templates",
       "question_type": "multiple_choice",
@@ -3179,7 +3179,7 @@
     },
     {
       "id": 259,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.21",
       "question_text": "Backup communication technology",
       "question_type": "multiple_choice",
@@ -3191,7 +3191,7 @@
     },
     {
       "id": 260,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.22",
       "question_text": "Secure communication channels",
       "question_type": "multiple_choice",
@@ -3203,7 +3203,7 @@
     },
     {
       "id": 261,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.23",
       "question_text": "(dedicated) information sharing platform",
       "question_type": "multiple_choice",
@@ -3215,7 +3215,7 @@
     },
     {
       "id": 262,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.24",
       "question_text": "Change management integration",
       "question_type": "multiple_choice",
@@ -3225,7 +3225,7 @@
     },
     {
       "id": 263,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.25",
       "question_text": "Malware extraction & analysis",
       "question_type": "multiple_choice",
@@ -3237,7 +3237,7 @@
     },
     {
       "id": 264,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.26",
       "question_text": "On-site incident response",
       "question_type": "multiple_choice",
@@ -3249,7 +3249,7 @@
     },
     {
       "id": 265,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.27",
       "question_text": "Remote incident response",
       "question_type": "multiple_choice",
@@ -3261,7 +3261,7 @@
     },
     {
       "id": 266,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.28",
       "question_text": "Third-party escalation",
       "question_type": "multiple_choice",
@@ -3273,7 +3273,7 @@
     },
     {
       "id": 267,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.29",
       "question_text": "Evaluation template",
       "question_type": "multiple_choice",
@@ -3285,7 +3285,7 @@
     },
     {
       "id": 268,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.30",
       "question_text": "Reporting template",
       "question_type": "multiple_choice",
@@ -3297,7 +3297,7 @@
     },
     {
       "id": 269,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.31",
       "question_text": "Incident closure",
       "question_type": "multiple_choice",
@@ -3309,7 +3309,7 @@
     },
     {
       "id": 270,
-      "aspect_id": 20,
+      "aspect_id": 21,
       "code": "S 2.17.32",
       "question_text": "Lessons learned extraction for process improvement",
       "question_type": "multiple_choice",
@@ -3321,7 +3321,7 @@
     },
     {
       "id": 271,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.1",
       "question_text": "Have you formally described the security analysis & forensics service?",
       "question_type": "multiple_choice",
@@ -3333,7 +3333,7 @@
     },
     {
       "id": 272,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.3",
       "question_text": "Is the service measured for quality?",
       "question_type": "multiple_choice",
@@ -3345,7 +3345,7 @@
     },
     {
       "id": 273,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.4",
       "question_text": "Is the service measured for service delivery in accordance with service levels?",
       "question_type": "multiple_choice",
@@ -3357,7 +3357,7 @@
     },
     {
       "id": 274,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.5",
       "question_text": "Are customers and/or stakeholders regularly updated about the service?",
       "question_type": "multiple_choice",
@@ -3369,7 +3369,7 @@
     },
     {
       "id": 275,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.6",
       "question_text": "Is there a contractual agreement between the SOC and the customers?",
       "question_type": "multiple_choice",
@@ -3381,7 +3381,7 @@
     },
     {
       "id": 276,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.7",
       "question_text": "Is sufficient personnel allocated to the process to ensure required service delivery?",
       "question_type": "multiple_choice",
@@ -3393,7 +3393,7 @@
     },
     {
       "id": 277,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.8",
       "question_text": "Is the service aligned with other relevant processes?",
       "question_type": "multiple_choice",
@@ -3405,7 +3405,7 @@
     },
     {
       "id": 278,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.9",
       "question_text": "Is there a incident resolution / service continuity process in place for this service?",
       "question_type": "multiple_choice",
@@ -3417,7 +3417,7 @@
     },
     {
       "id": 279,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.10",
       "question_text": "Has a set of procedures been created for this service?",
       "question_type": "multiple_choice",
@@ -3429,7 +3429,7 @@
     },
     {
       "id": 280,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.12",
       "question_text": "Are best practices applied to the service?",
       "question_type": "multiple_choice",
@@ -3441,7 +3441,7 @@
     },
     {
       "id": 281,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.13",
       "question_text": "Is the service supported by predefined workflows or scenarios?",
       "question_type": "multiple_choice",
@@ -3453,7 +3453,7 @@
     },
     {
       "id": 282,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.14",
       "question_text": "Is process data gathered for prediction of service performance?",
       "question_type": "multiple_choice",
@@ -3465,7 +3465,7 @@
     },
     {
       "id": 283,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.15",
       "question_text": "Is the service continuously being improved based on improvement goals?",
       "question_type": "multiple_choice",
@@ -3477,7 +3477,7 @@
     },
     {
       "id": 284,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.1",
       "question_text": "Event analysis",
       "question_type": "multiple_choice",
@@ -3489,7 +3489,7 @@
     },
     {
       "id": 285,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.2",
       "question_text": "Event analysis toolkit",
       "question_type": "multiple_choice",
@@ -3501,7 +3501,7 @@
     },
     {
       "id": 286,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.3",
       "question_text": "Trend analysis",
       "question_type": "multiple_choice",
@@ -3513,7 +3513,7 @@
     },
     {
       "id": 287,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.4",
       "question_text": "Incident analysis",
       "question_type": "multiple_choice",
@@ -3525,7 +3525,7 @@
     },
     {
       "id": 288,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.5",
       "question_text": "Visual analysis",
       "question_type": "multiple_choice",
@@ -3537,7 +3537,7 @@
     },
     {
       "id": 289,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.6",
       "question_text": "Static malware analysis",
       "question_type": "multiple_choice",
@@ -3549,7 +3549,7 @@
     },
     {
       "id": 290,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.7",
       "question_text": "Dynamic malware analysis",
       "question_type": "multiple_choice",
@@ -3561,7 +3561,7 @@
     },
     {
       "id": 291,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.8",
       "question_text": "Tradecraft analysis",
       "question_type": "multiple_choice",
@@ -3573,7 +3573,7 @@
     },
     {
       "id": 292,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.9",
       "question_text": "Historic analysis",
       "question_type": "multiple_choice",
@@ -3585,7 +3585,7 @@
     },
     {
       "id": 293,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.10",
       "question_text": "Network analysis",
       "question_type": "multiple_choice",
@@ -3597,7 +3597,7 @@
     },
     {
       "id": 294,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.11",
       "question_text": "Memory analysis",
       "question_type": "multiple_choice",
@@ -3609,7 +3609,7 @@
     },
     {
       "id": 295,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.12",
       "question_text": "Mobile device analysis",
       "question_type": "multiple_choice",
@@ -3621,7 +3621,7 @@
     },
     {
       "id": 296,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.13",
       "question_text": "Volatile information collection",
       "question_type": "multiple_choice",
@@ -3633,7 +3633,7 @@
     },
     {
       "id": 297,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.14",
       "question_text": "Remote evidence collection",
       "question_type": "multiple_choice",
@@ -3645,7 +3645,7 @@
     },
     {
       "id": 298,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.15",
       "question_text": "Forensic hardware toolkit",
       "question_type": "multiple_choice",
@@ -3657,7 +3657,7 @@
     },
     {
       "id": 299,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.16",
       "question_text": "Forensic analysis software toolkit",
       "question_type": "multiple_choice",
@@ -3669,7 +3669,7 @@
     },
     {
       "id": 300,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.17",
       "question_text": "Dedicated analysis workstations",
       "question_type": "multiple_choice",
@@ -3681,7 +3681,7 @@
     },
     {
       "id": 301,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.18",
       "question_text": "Security analysis & forensics handbook",
       "question_type": "multiple_choice",
@@ -3693,7 +3693,7 @@
     },
     {
       "id": 302,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.19",
       "question_text": "Security analysis & forensics workflows",
       "question_type": "multiple_choice",
@@ -3705,7 +3705,7 @@
     },
     {
       "id": 303,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.20",
       "question_text": "Case management system",
       "question_type": "multiple_choice",
@@ -3717,7 +3717,7 @@
     },
     {
       "id": 304,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.21",
       "question_text": "Report templates",
       "question_type": "multiple_choice",
@@ -3729,7 +3729,7 @@
     },
     {
       "id": 305,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.22",
       "question_text": "Evidence seizure procedure",
       "question_type": "multiple_choice",
@@ -3741,7 +3741,7 @@
     },
     {
       "id": 306,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.23",
       "question_text": "Evidence transport procedure",
       "question_type": "multiple_choice",
@@ -3753,7 +3753,7 @@
     },
     {
       "id": 307,
-      "aspect_id": 20,
+      "aspect_id": 22,
       "code": "S 3.16.24",
       "question_text": "Chain of custody preservation procedure",
       "question_type": "multiple_choice",
@@ -5353,7 +5353,7 @@
     },
     {
       "id": 446,
-      "aspect_id": 26,
+      "aspect_id": 20,
       "code": "S 1.16.25",
       "question_text": "Cloud monitoring",
       "question_type": "multiple_choice",
@@ -5365,7 +5365,7 @@
     },
     {
       "id": 447,
-      "aspect_id": 26,
+      "aspect_id": 20,
       "code": "S 1.16.26",
       "question_text": "Mobile device monitoring",
       "question_type": "multiple_choice",
@@ -5377,7 +5377,7 @@
     },
     {
       "id": 448,
-      "aspect_id": 26,
+      "aspect_id": 5,
       "code": "B 5.1",
       "question_text": "Is there an information security policy in place that supports the SOC activities?",
       "question_type": "multiple_choice",
@@ -5387,7 +5387,7 @@
     },
     {
       "id": 449,
-      "aspect_id": 26,
+      "aspect_id": 5,
       "code": "B 5.4",
       "question_text": "Is the SOC consulted in the creation and updates of operational security policy?",
       "question_type": "multiple_choice",
@@ -5397,7 +5397,7 @@
     },
     {
       "id": 450,
-      "aspect_id": 26,
+      "aspect_id": 5,
       "code": "B 5.5",
       "question_text": "Is a reporting policy for security incidents in place?",
       "question_type": "multiple_choice",
@@ -5407,7 +5407,7 @@
     },
     {
       "id": 451,
-      "aspect_id": 26,
+      "aspect_id": 6,
       "code": "P 1.9",
       "question_text": "Do you have specific KSAOs established for SOC personnel?",
       "question_type": "multiple_choice",
@@ -5417,7 +5417,7 @@
     },
     {
       "id": 452,
-      "aspect_id": 26,
+      "aspect_id": 6,
       "code": "P 1.10",
       "question_text": "Do you actively seek to create a psychologically safe environment for SOC personnel?",
       "question_type": "multiple_choice",
@@ -5427,7 +5427,7 @@
     },
     {
       "id": 453,
-      "aspect_id": 26,
+      "aspect_id": 8,
       "code": "P 3.5",
       "question_text": "Have you established team goals?",
       "question_type": "multiple_choice",
@@ -5437,7 +5437,7 @@
     },
     {
       "id": 454,
-      "aspect_id": 26,
+      "aspect_id": 8,
       "code": "P 3.6",
       "question_text": "Do you document and track individual team member goals?",
       "question_type": "multiple_choice",
@@ -5447,7 +5447,7 @@
     },
     {
       "id": 455,
-      "aspect_id": 26,
+      "aspect_id": 8,
       "code": "P 3.13",
       "question_text": "Do you perform regular teambuilding exercises with other teams relevant to the SOC?",
       "question_type": "multiple_choice",
@@ -5457,7 +5457,7 @@
     },
     {
       "id": 456,
-      "aspect_id": 26,
+      "aspect_id": 8,
       "code": "P 3.14",
       "question_text": "Do you periodically evaluate team performance?",
       "question_type": "multiple_choice",
@@ -5467,7 +5467,7 @@
     },
     {
       "id": 457,
-      "aspect_id": 26,
+      "aspect_id": 9,
       "code": "P 4.8",
       "question_text": "Have you documented SOC team member abilities?",
       "question_type": "multiple_choice",
@@ -5477,7 +5477,7 @@
     },
     {
       "id": 458,
-      "aspect_id": 26,
+      "aspect_id": 12,
       "code": "M 2.4.2",
       "question_text": "Do you have a war room for the SOC?",
       "question_type": "multiple_choice",
@@ -5487,7 +5487,7 @@
     },
     {
       "id": 459,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.12.1",
       "question_text": "Do you provide education and security awareness to the organization?",
       "question_type": "multiple_choice",
@@ -5499,7 +5499,7 @@
     },
     {
       "id": 460,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.12.2",
       "question_text": "Do you measure the effect of education and security awareness efforts?",
       "question_type": "multiple_choice",
@@ -5509,7 +5509,7 @@
     },
     {
       "id": 461,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.13.1",
       "question_text": "Do you use communication templates?",
       "question_type": "multiple_choice",
@@ -5519,7 +5519,7 @@
     },
     {
       "id": 462,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.13.2",
       "question_text": "Do you have a communication matrix in place?",
       "question_type": "multiple_choice",
@@ -5529,7 +5529,7 @@
     },
     {
       "id": 463,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.13.3",
       "question_text": "Is communication training (verbal/written) available for SOC personnel?",
       "question_type": "multiple_choice",
@@ -5541,7 +5541,7 @@
     },
     {
       "id": 464,
-      "aspect_id": 26,
+      "aspect_id": 13,
       "code": "M 3.13.4",
       "question_text": "Are communication skills element of SOC role descriptions?",
       "question_type": "multiple_choice",
@@ -5551,7 +5551,7 @@
     },
     {
       "id": 465,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.1",
       "question_text": "Do you measure use cases against the MITRE ATT&CK® framework for gap analysis purposes?",
       "question_type": "multiple_choice",
@@ -5561,7 +5561,7 @@
     },
     {
       "id": 466,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.2",
       "question_text": "Are monitoring rules tagged with MITRE ATT&CK® framework identifiers? [2]",
       "question_type": "multiple_choice",
@@ -5571,7 +5571,7 @@
     },
     {
       "id": 467,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.3",
       "question_text": "Have you created a MITRE ATT&CK® risk profile for your organization?",
       "question_type": "multiple_choice",
@@ -5581,7 +5581,7 @@
     },
     {
       "id": 468,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.4",
       "question_text": "Have you prioritized MITRE ATT&CK® techniques for relevance? [3]",
       "question_type": "multiple_choice",
@@ -5591,7 +5591,7 @@
     },
     {
       "id": 469,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.5",
       "question_text": "Is use case output (alerts) used in threat intelligence activities?",
       "question_type": "multiple_choice",
@@ -5601,7 +5601,7 @@
     },
     {
       "id": 470,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.2.6",
       "question_text": "Is threat intelligence used for the creation and updates of use cases?",
       "question_type": "multiple_choice",
@@ -5613,7 +5613,7 @@
     },
     {
       "id": 471,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.3.1",
       "question_text": "Do you determine and document visibility requirements for each use case?",
       "question_type": "multiple_choice",
@@ -5623,7 +5623,7 @@
     },
     {
       "id": 472,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.3.2",
       "question_text": "Do you measure visibility status for your use cases for gap analysis purposes?",
       "question_type": "multiple_choice",
@@ -5635,7 +5635,7 @@
     },
     {
       "id": 473,
-      "aspect_id": 26,
+      "aspect_id": 14,
       "code": "M 4.3.3",
       "question_text": "Do you map data source visibility to the MITRE ATT&CK® framework? [4]",
       "question_type": "multiple_choice",
@@ -5821,7 +5821,7 @@
     },
     {
       "id": 490,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.4.1",
       "question_text": "Is the system regularly maintained?",
       "question_type": "multiple_choice",
@@ -5833,7 +5833,7 @@
     },
     {
       "id": 491,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.4.2",
       "question_text": "Is remote maintenance on the system managed?",
       "question_type": "multiple_choice",
@@ -5845,7 +5845,7 @@
     },
     {
       "id": 492,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.4.3",
       "question_text": "Are maintenance & configuration updates executed through the change management process?",
       "question_type": "multiple_choice",
@@ -5857,7 +5857,7 @@
     },
     {
       "id": 493,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.4.4",
       "question_text": "Have you established maintenance windows?",
       "question_type": "multiple_choice",
@@ -5869,7 +5869,7 @@
     },
     {
       "id": 494,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.4.5",
       "question_text": "Is maintenance performed using authorised and trusted tooling?",
       "question_type": "multiple_choice",
@@ -5881,7 +5881,7 @@
     },
     {
       "id": 495,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.4.1",
       "question_text": "Is the system regularly maintained?",
       "question_type": "multiple_choice",
@@ -5893,7 +5893,7 @@
     },
     {
       "id": 496,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.4.2",
       "question_text": "Is remote maintenance on the system managed?",
       "question_type": "multiple_choice",
@@ -5905,7 +5905,7 @@
     },
     {
       "id": 497,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.4.3",
       "question_text": "Are maintenance & configuration updates executed through the change management process?",
       "question_type": "multiple_choice",
@@ -5917,7 +5917,7 @@
     },
     {
       "id": 498,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.4.4",
       "question_text": "Have you established maintenance windows?",
       "question_type": "multiple_choice",
@@ -5929,7 +5929,7 @@
     },
     {
       "id": 499,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.4.5",
       "question_text": "Is maintenance performed using authorised and trusted tooling?",
       "question_type": "multiple_choice",
@@ -5941,7 +5941,7 @@
     },
     {
       "id": 500,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.4.1",
       "question_text": "Is the system regularly maintained?",
       "question_type": "multiple_choice",
@@ -5953,7 +5953,7 @@
     },
     {
       "id": 501,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.4.2",
       "question_text": "Is remote maintenance on the system managed?",
       "question_type": "multiple_choice",
@@ -5965,7 +5965,7 @@
     },
     {
       "id": 502,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.4.3",
       "question_text": "Are maintenance & configuration updates executed through the change management process?",
       "question_type": "multiple_choice",
@@ -5977,7 +5977,7 @@
     },
     {
       "id": 503,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.4.4",
       "question_text": "Have you established maintenance windows?",
       "question_type": "multiple_choice",
@@ -5989,7 +5989,7 @@
     },
     {
       "id": 504,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.4.5",
       "question_text": "Is maintenance performed using authorised and trusted tooling?",
       "question_type": "multiple_choice",
@@ -6001,7 +6001,7 @@
     },
     {
       "id": 505,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.4.1",
       "question_text": "Is the system regularly maintained?",
       "question_type": "multiple_choice",
@@ -6013,7 +6013,7 @@
     },
     {
       "id": 506,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.4.2",
       "question_text": "Is remote maintenance on the system managed?",
       "question_type": "multiple_choice",
@@ -6025,7 +6025,7 @@
     },
     {
       "id": 507,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.4.3",
       "question_text": "Are maintenance & configuration updates executed through the change management process?",
       "question_type": "multiple_choice",
@@ -6037,7 +6037,7 @@
     },
     {
       "id": 508,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.4.4",
       "question_text": "Have you established maintenance windows?",
       "question_type": "multiple_choice",
@@ -6049,7 +6049,7 @@
     },
     {
       "id": 509,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.4.5",
       "question_text": "Is maintenance performed using authorised and trusted tooling?",
       "question_type": "multiple_choice",
@@ -6061,7 +6061,7 @@
     },
     {
       "id": 510,
-      "aspect_id": 15,
+      "aspect_id": 20,
       "code": "S 1.11",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6071,7 +6071,7 @@
     },
     {
       "id": 511,
-      "aspect_id": 15,
+      "aspect_id": 21,
       "code": "S 2.12",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6081,7 +6081,7 @@
     },
     {
       "id": 512,
-      "aspect_id": 15,
+      "aspect_id": 22,
       "code": "S 3.11",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6091,7 +6091,7 @@
     },
     {
       "id": 513,
-      "aspect_id": 15,
+      "aspect_id": 23,
       "code": "S 4.11",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6101,7 +6101,7 @@
     },
     {
       "id": 514,
-      "aspect_id": 15,
+      "aspect_id": 24,
       "code": "S 5.12",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6111,7 +6111,7 @@
     },
     {
       "id": 515,
-      "aspect_id": 15,
+      "aspect_id": 25,
       "code": "S 6.11",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6121,7 +6121,7 @@
     },
     {
       "id": 516,
-      "aspect_id": 15,
+      "aspect_id": 26,
       "code": "S 7.11",
       "question_text": "Is there an onboarding and offloading procedure for this service?",
       "question_type": "multiple_choice",
@@ -6131,7 +6131,7 @@
     },
     {
       "id": 517,
-      "aspect_id": 15,
+      "aspect_id": 4,
       "code": "B 4.7",
       "question_text": "Are SOC governance meetings regularly held?",
       "question_type": "multiple_choice",
@@ -6141,7 +6141,7 @@
     },
     {
       "id": 518,
-      "aspect_id": 15,
+      "aspect_id": 5,
       "code": "B 5.2",
       "question_text": "Has a SOC policy been created?",
       "question_type": "multiple_choice",
@@ -6153,7 +6153,7 @@
     },
     {
       "id": 519,
-      "aspect_id": 15,
+      "aspect_id": 9,
       "code": "P 4.2",
       "question_text": "Do you have a skill matrix in place?",
       "question_type": "multiple_choice",
@@ -6163,7 +6163,7 @@
     },
     {
       "id": 520,
-      "aspect_id": 15,
+      "aspect_id": 9,
       "code": "P 4.4",
       "question_text": "Is the skill matrix actively used for team and personal improvement?",
       "question_type": "multiple_choice",
@@ -6173,7 +6173,7 @@
     },
     {
       "id": 521,
-      "aspect_id": 15,
+      "aspect_id": 9,
       "code": "P 4.5",
       "question_text": "Do you have a knowledge matrix in place?",
       "question_type": "multiple_choice",
@@ -6183,7 +6183,7 @@
     },
     {
       "id": 522,
-      "aspect_id": 15,
+      "aspect_id": 9,
       "code": "P 4.7",
       "question_text": "Is the knowledge matrix actively used to determine training and education needs?",
       "question_type": "multiple_choice",
@@ -6193,7 +6193,7 @@
     },
     {
       "id": 523,
-      "aspect_id": 15,
+      "aspect_id": 11,
       "code": "M 1.6",
       "question_text": "Have you implemented a process for continuous improvement (CI)?",
       "question_type": "multiple_choice",
@@ -6203,7 +6203,7 @@
     },
     {
       "id": 524,
-      "aspect_id": 15,
+      "aspect_id": 11,
       "code": "M 1.8",
       "question_text": "Have you implemented a process to manage SOC quality assurance (QA)?",
       "question_type": "multiple_choice",
@@ -6215,7 +6215,7 @@
     },
     {
       "id": 525,
-      "aspect_id": 15,
+      "aspect_id": 12,
       "code": "M 2.1.1",
       "question_text": "Do you have a documented exercise plan?",
       "question_type": "multiple_choice",
@@ -6227,7 +6227,7 @@
     },
     {
       "id": 526,
-      "aspect_id": 15,
+      "aspect_id": 12,
       "code": "M 2.1.4",
       "question_text": "Are the results from exercises documented?",
       "question_type": "multiple_choice",
@@ -6239,7 +6239,7 @@
     },
     {
       "id": 527,
-      "aspect_id": 15,
+      "aspect_id": 12,
       "code": "M 2.1.5",
       "question_text": "Is the output from exercises actively used to improve security operations?",
       "question_type": "multiple_choice",
@@ -6275,7 +6275,7 @@
     },
     {
       "id": 530,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.6.3",
       "question_text": "Is a break glass procedure in place?",
       "question_type": "multiple_choice",
@@ -6287,7 +6287,7 @@
     },
     {
       "id": 531,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.6.3",
       "question_text": "Is a break glass procedure in place?",
       "question_type": "multiple_choice",
@@ -6299,7 +6299,7 @@
     },
     {
       "id": 532,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.6.3",
       "question_text": "Is a break glass procedure in place?",
       "question_type": "multiple_choice",
@@ -6311,7 +6311,7 @@
     },
     {
       "id": 533,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.6.3",
       "question_text": "Is a break glass procedure in place?",
       "question_type": "multiple_choice",
@@ -6323,7 +6323,7 @@
     },
     {
       "id": 534,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.1",
       "question_text": "Subtle event detection",
       "question_type": "multiple_choice",
@@ -6335,7 +6335,7 @@
     },
     {
       "id": 535,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.2",
       "question_text": "Automated alerting",
       "question_type": "multiple_choice",
@@ -6347,7 +6347,7 @@
     },
     {
       "id": 536,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.3",
       "question_text": "Alert acknowledgement",
       "question_type": "multiple_choice",
@@ -6357,7 +6357,7 @@
     },
     {
       "id": 537,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.4",
       "question_text": "Case management system",
       "question_type": "multiple_choice",
@@ -6367,7 +6367,7 @@
     },
     {
       "id": 538,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.5",
       "question_text": "Network model",
       "question_type": "multiple_choice",
@@ -6377,7 +6377,7 @@
     },
     {
       "id": 539,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.6",
       "question_text": "Detailed audit trail of analyst activities",
       "question_type": "multiple_choice",
@@ -6387,7 +6387,7 @@
     },
     {
       "id": 540,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.7",
       "question_text": "Historical activity detection",
       "question_type": "multiple_choice",
@@ -6397,7 +6397,7 @@
     },
     {
       "id": 541,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.8",
       "question_text": "Flexible and scalable architecture",
       "question_type": "multiple_choice",
@@ -6407,7 +6407,7 @@
     },
     {
       "id": 542,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.9",
       "question_text": "MITRE ATT&CK® identifier tagging",
       "question_type": "multiple_choice",
@@ -6417,7 +6417,7 @@
     },
     {
       "id": 543,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.10",
       "question_text": "Aggregation",
       "question_type": "multiple_choice",
@@ -6427,7 +6427,7 @@
     },
     {
       "id": 544,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.11",
       "question_text": "Normalisation",
       "question_type": "multiple_choice",
@@ -6437,7 +6437,7 @@
     },
     {
       "id": 545,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.12",
       "question_text": "Correlation",
       "question_type": "multiple_choice",
@@ -6449,7 +6449,7 @@
     },
     {
       "id": 546,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.13",
       "question_text": "Multi-stage correlation",
       "question_type": "multiple_choice",
@@ -6461,7 +6461,7 @@
     },
     {
       "id": 547,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.14",
       "question_text": "Custom parsing",
       "question_type": "multiple_choice",
@@ -6471,7 +6471,7 @@
     },
     {
       "id": 548,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.15",
       "question_text": "API Integration",
       "question_type": "multiple_choice",
@@ -6481,7 +6481,7 @@
     },
     {
       "id": 549,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.16",
       "question_text": "Secure Event Transfer",
       "question_type": "multiple_choice",
@@ -6493,7 +6493,7 @@
     },
     {
       "id": 550,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.17",
       "question_text": "Support for multiple event transfer technologies",
       "question_type": "multiple_choice",
@@ -6505,7 +6505,7 @@
     },
     {
       "id": 551,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.18",
       "question_text": "Asset management integration",
       "question_type": "multiple_choice",
@@ -6515,7 +6515,7 @@
     },
     {
       "id": 552,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.19",
       "question_text": "Business context integration",
       "question_type": "multiple_choice",
@@ -6525,7 +6525,7 @@
     },
     {
       "id": 553,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.20",
       "question_text": "Identity context integration",
       "question_type": "multiple_choice",
@@ -6535,7 +6535,7 @@
     },
     {
       "id": 554,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.21",
       "question_text": "Asset context integration",
       "question_type": "multiple_choice",
@@ -6545,7 +6545,7 @@
     },
     {
       "id": 555,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.22",
       "question_text": "Vulnerability context integration",
       "question_type": "multiple_choice",
@@ -6555,7 +6555,7 @@
     },
     {
       "id": 556,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.23",
       "question_text": "Threat Intelligence integration",
       "question_type": "multiple_choice",
@@ -6565,7 +6565,7 @@
     },
     {
       "id": 557,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.24",
       "question_text": "Threat hunting integration",
       "question_type": "multiple_choice",
@@ -6575,7 +6575,7 @@
     },
     {
       "id": 558,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.25",
       "question_text": "Security incident management integration",
       "question_type": "multiple_choice",
@@ -6585,7 +6585,7 @@
     },
     {
       "id": 559,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.26",
       "question_text": "SOAR integration",
       "question_type": "multiple_choice",
@@ -6595,7 +6595,7 @@
     },
     {
       "id": 560,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.27",
       "question_text": "Standard detection rules",
       "question_type": "multiple_choice",
@@ -6607,7 +6607,7 @@
     },
     {
       "id": 561,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.28",
       "question_text": "Custom detection rules",
       "question_type": "multiple_choice",
@@ -6619,7 +6619,7 @@
     },
     {
       "id": 562,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.29",
       "question_text": "User anomalies",
       "question_type": "multiple_choice",
@@ -6631,7 +6631,7 @@
     },
     {
       "id": 563,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.30",
       "question_text": "Application anomalies",
       "question_type": "multiple_choice",
@@ -6643,7 +6643,7 @@
     },
     {
       "id": 564,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.31",
       "question_text": "Device anomalies",
       "question_type": "multiple_choice",
@@ -6655,7 +6655,7 @@
     },
     {
       "id": 565,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.32",
       "question_text": "Network anomalies",
       "question_type": "multiple_choice",
@@ -6667,7 +6667,7 @@
     },
     {
       "id": 566,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.33",
       "question_text": "Reporting",
       "question_type": "multiple_choice",
@@ -6677,7 +6677,7 @@
     },
     {
       "id": 567,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.34",
       "question_text": "Dashboards",
       "question_type": "multiple_choice",
@@ -6687,7 +6687,7 @@
     },
     {
       "id": 568,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.35",
       "question_text": "Data visualization techniques",
       "question_type": "multiple_choice",
@@ -6699,7 +6699,7 @@
     },
     {
       "id": 569,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.36",
       "question_text": "Data drilldowns",
       "question_type": "multiple_choice",
@@ -6711,7 +6711,7 @@
     },
     {
       "id": 570,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.37",
       "question_text": "Central analysis console",
       "question_type": "multiple_choice",
@@ -6723,7 +6723,7 @@
     },
     {
       "id": 571,
-      "aspect_id": 15,
+      "aspect_id": 16,
       "code": "T 1.7.38",
       "question_text": "Advanced searching and querying",
       "question_type": "multiple_choice",
@@ -6735,7 +6735,7 @@
     },
     {
       "id": 572,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.1",
       "question_text": "Encrypted traffic analysis",
       "question_type": "multiple_choice",
@@ -6745,7 +6745,7 @@
     },
     {
       "id": 573,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.2",
       "question_text": "IDS signature matching",
       "question_type": "multiple_choice",
@@ -6755,7 +6755,7 @@
     },
     {
       "id": 574,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.3",
       "question_text": "Supervised machine learning",
       "question_type": "multiple_choice",
@@ -6765,7 +6765,7 @@
     },
     {
       "id": 575,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.4",
       "question_text": "Unsupervised machine learning",
       "question_type": "multiple_choice",
@@ -6775,7 +6775,7 @@
     },
     {
       "id": 576,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.5",
       "question_text": "Traffic blocking",
       "question_type": "multiple_choice",
@@ -6785,7 +6785,7 @@
     },
     {
       "id": 577,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.6",
       "question_text": "Unauthorised device detection",
       "question_type": "multiple_choice",
@@ -6797,7 +6797,7 @@
     },
     {
       "id": 578,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.7",
       "question_text": "MITRE ATT&CK® identifier tagging",
       "question_type": "multiple_choice",
@@ -6807,7 +6807,7 @@
     },
     {
       "id": 579,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.8",
       "question_text": "Deep packet inspection",
       "question_type": "multiple_choice",
@@ -6817,7 +6817,7 @@
     },
     {
       "id": 580,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.9",
       "question_text": "Correlation",
       "question_type": "multiple_choice",
@@ -6827,7 +6827,7 @@
     },
     {
       "id": 581,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.10",
       "question_text": "Full packet capture",
       "question_type": "multiple_choice",
@@ -6837,7 +6837,7 @@
     },
     {
       "id": 582,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.11",
       "question_text": "Flow data ingestion",
       "question_type": "multiple_choice",
@@ -6847,7 +6847,7 @@
     },
     {
       "id": 583,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.12",
       "question_text": "Monitoring north - south network traffic",
       "question_type": "multiple_choice",
@@ -6859,7 +6859,7 @@
     },
     {
       "id": 584,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.13",
       "question_text": "Monitoring east - west network traffic",
       "question_type": "multiple_choice",
@@ -6871,7 +6871,7 @@
     },
     {
       "id": 585,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.14",
       "question_text": "Monitoring classified network segements",
       "question_type": "multiple_choice",
@@ -6883,7 +6883,7 @@
     },
     {
       "id": 586,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.15",
       "question_text": "Monitoring cloud environments",
       "question_type": "multiple_choice",
@@ -6895,7 +6895,7 @@
     },
     {
       "id": 587,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.16",
       "question_text": "Monitoring ICS/SCADA networks",
       "question_type": "multiple_choice",
@@ -6907,7 +6907,7 @@
     },
     {
       "id": 588,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.17",
       "question_text": "Monitoring DNS traffic",
       "question_type": "multiple_choice",
@@ -6919,7 +6919,7 @@
     },
     {
       "id": 589,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.18",
       "question_text": "Business context integration",
       "question_type": "multiple_choice",
@@ -6929,7 +6929,7 @@
     },
     {
       "id": 590,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.19",
       "question_text": "Identity context integration",
       "question_type": "multiple_choice",
@@ -6939,7 +6939,7 @@
     },
     {
       "id": 591,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.20",
       "question_text": "Threat Intelligence integration",
       "question_type": "multiple_choice",
@@ -6949,7 +6949,7 @@
     },
     {
       "id": 592,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.21",
       "question_text": "Threat hunting integration",
       "question_type": "multiple_choice",
@@ -6959,7 +6959,7 @@
     },
     {
       "id": 593,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.22",
       "question_text": "Security incident management integration",
       "question_type": "multiple_choice",
@@ -6969,7 +6969,7 @@
     },
     {
       "id": 594,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.23",
       "question_text": "SIEM integration",
       "question_type": "multiple_choice",
@@ -6981,7 +6981,7 @@
     },
     {
       "id": 595,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.24",
       "question_text": "Malware sandbox integration",
       "question_type": "multiple_choice",
@@ -6991,7 +6991,7 @@
     },
     {
       "id": 596,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.25",
       "question_text": "Standard detection rules",
       "question_type": "multiple_choice",
@@ -7001,7 +7001,7 @@
     },
     {
       "id": 597,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.26",
       "question_text": "Custom detection rules",
       "question_type": "multiple_choice",
@@ -7011,7 +7011,7 @@
     },
     {
       "id": 598,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.27",
       "question_text": "Traffic baselining",
       "question_type": "multiple_choice",
@@ -7023,7 +7023,7 @@
     },
     {
       "id": 599,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.28",
       "question_text": "Pattern analysis",
       "question_type": "multiple_choice",
@@ -7033,7 +7033,7 @@
     },
     {
       "id": 600,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.29",
       "question_text": "Reporting",
       "question_type": "multiple_choice",
@@ -7043,7 +7043,7 @@
     },
     {
       "id": 601,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.30",
       "question_text": "Dashboards",
       "question_type": "multiple_choice",
@@ -7053,7 +7053,7 @@
     },
     {
       "id": 602,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.31",
       "question_text": "Data visualization techniques",
       "question_type": "multiple_choice",
@@ -7065,7 +7065,7 @@
     },
     {
       "id": 603,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.32",
       "question_text": "Data drilldowns",
       "question_type": "multiple_choice",
@@ -7077,7 +7077,7 @@
     },
     {
       "id": 604,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.33",
       "question_text": "Central analysis console",
       "question_type": "multiple_choice",
@@ -7089,7 +7089,7 @@
     },
     {
       "id": 605,
-      "aspect_id": 15,
+      "aspect_id": 17,
       "code": "T 2.7.34",
       "question_text": "Advanced searching and querying",
       "question_type": "multiple_choice",
@@ -7101,7 +7101,7 @@
     },
     {
       "id": 606,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.1",
       "question_text": "OS support",
       "question_type": "multiple_choice",
@@ -7111,7 +7111,7 @@
     },
     {
       "id": 607,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.2",
       "question_text": "Mobile device support",
       "question_type": "multiple_choice",
@@ -7121,7 +7121,7 @@
     },
     {
       "id": 608,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.3",
       "question_text": "Physical, virtual & cloud deployment",
       "question_type": "multiple_choice",
@@ -7131,7 +7131,7 @@
     },
     {
       "id": 609,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.4",
       "question_text": "Vulnerability patching",
       "question_type": "multiple_choice",
@@ -7141,7 +7141,7 @@
     },
     {
       "id": 610,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.5",
       "question_text": "Forensic information preservation",
       "question_type": "multiple_choice",
@@ -7151,7 +7151,7 @@
     },
     {
       "id": 611,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.6",
       "question_text": "Historic data retention",
       "question_type": "multiple_choice",
@@ -7161,7 +7161,7 @@
     },
     {
       "id": 612,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.7",
       "question_text": "MITRE ATT&CK® identifier tagging",
       "question_type": "multiple_choice",
@@ -7171,7 +7171,7 @@
     },
     {
       "id": 613,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.8",
       "question_text": "Memory analysis",
       "question_type": "multiple_choice",
@@ -7181,7 +7181,7 @@
     },
     {
       "id": 614,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.9",
       "question_text": "Correlation",
       "question_type": "multiple_choice",
@@ -7191,7 +7191,7 @@
     },
     {
       "id": 615,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.10",
       "question_text": "Exploit prevention",
       "question_type": "multiple_choice",
@@ -7201,7 +7201,7 @@
     },
     {
       "id": 616,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.11",
       "question_text": "Fileless malware protection",
       "question_type": "multiple_choice",
@@ -7213,7 +7213,7 @@
     },
     {
       "id": 617,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.12",
       "question_text": "Application allowlisting",
       "question_type": "multiple_choice",
@@ -7223,7 +7223,7 @@
     },
     {
       "id": 618,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.13",
       "question_text": "Ransomware protection",
       "question_type": "multiple_choice",
@@ -7235,7 +7235,7 @@
     },
     {
       "id": 619,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.14",
       "question_text": "Attack surface reduction",
       "question_type": "multiple_choice",
@@ -7245,7 +7245,7 @@
     },
     {
       "id": 620,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.15",
       "question_text": "Vulnerability detection",
       "question_type": "multiple_choice",
@@ -7255,7 +7255,7 @@
     },
     {
       "id": 621,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.16",
       "question_text": "Process execution monitoring",
       "question_type": "multiple_choice",
@@ -7265,7 +7265,7 @@
     },
     {
       "id": 622,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.17",
       "question_text": "File system monitoring",
       "question_type": "multiple_choice",
@@ -7275,7 +7275,7 @@
     },
     {
       "id": 623,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.18",
       "question_text": "Task & service monitoring",
       "question_type": "multiple_choice",
@@ -7285,7 +7285,7 @@
     },
     {
       "id": 624,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.19",
       "question_text": "Network connection monitoring",
       "question_type": "multiple_choice",
@@ -7297,7 +7297,7 @@
     },
     {
       "id": 625,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.20",
       "question_text": "Registry monitoring",
       "question_type": "multiple_choice",
@@ -7307,7 +7307,7 @@
     },
     {
       "id": 626,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.21",
       "question_text": "User activity monitoring",
       "question_type": "multiple_choice",
@@ -7317,7 +7317,7 @@
     },
     {
       "id": 627,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.22",
       "question_text": "Configuration monitoring",
       "question_type": "multiple_choice",
@@ -7327,7 +7327,7 @@
     },
     {
       "id": 628,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.23",
       "question_text": "Air-gaped end-point monitoring",
       "question_type": "multiple_choice",
@@ -7337,7 +7337,7 @@
     },
     {
       "id": 629,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.24",
       "question_text": "File reputation service",
       "question_type": "multiple_choice",
@@ -7347,7 +7347,7 @@
     },
     {
       "id": 630,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.25",
       "question_text": "Deception techniques",
       "question_type": "multiple_choice",
@@ -7357,7 +7357,7 @@
     },
     {
       "id": 631,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.26",
       "question_text": "URL filtering / blocking",
       "question_type": "multiple_choice",
@@ -7367,7 +7367,7 @@
     },
     {
       "id": 632,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.27",
       "question_text": "Web content filtering",
       "question_type": "multiple_choice",
@@ -7377,7 +7377,7 @@
     },
     {
       "id": 633,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.28",
       "question_text": "Machine isolation",
       "question_type": "multiple_choice",
@@ -7387,7 +7387,7 @@
     },
     {
       "id": 634,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.29",
       "question_text": "Process termination / suspension",
       "question_type": "multiple_choice",
@@ -7397,7 +7397,7 @@
     },
     {
       "id": 635,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.30",
       "question_text": "File / registry key deletion",
       "question_type": "multiple_choice",
@@ -7407,7 +7407,7 @@
     },
     {
       "id": 636,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.31",
       "question_text": "Forced user logoff",
       "question_type": "multiple_choice",
@@ -7417,7 +7417,7 @@
     },
     {
       "id": 637,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.32",
       "question_text": "Threat Intelligence integration",
       "question_type": "multiple_choice",
@@ -7427,7 +7427,7 @@
     },
     {
       "id": 638,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.33",
       "question_text": "Vulnerability intelligence integration",
       "question_type": "multiple_choice",
@@ -7437,7 +7437,7 @@
     },
     {
       "id": 639,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.34",
       "question_text": "Threat hunting integration - TTPs",
       "question_type": "multiple_choice",
@@ -7447,7 +7447,7 @@
     },
     {
       "id": 640,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.35",
       "question_text": "Threat hunting integration - Tools & artifacts",
       "question_type": "multiple_choice",
@@ -7457,7 +7457,7 @@
     },
     {
       "id": 641,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.36",
       "question_text": "Threat hunting integration - Technical indicators",
       "question_type": "multiple_choice",
@@ -7469,7 +7469,7 @@
     },
     {
       "id": 642,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.37",
       "question_text": "Security incident management integration",
       "question_type": "multiple_choice",
@@ -7479,7 +7479,7 @@
     },
     {
       "id": 643,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.38",
       "question_text": "SIEM integration",
       "question_type": "multiple_choice",
@@ -7489,7 +7489,7 @@
     },
     {
       "id": 644,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.39",
       "question_text": "Malware sandbox integration",
       "question_type": "multiple_choice",
@@ -7499,7 +7499,7 @@
     },
     {
       "id": 645,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.40",
       "question_text": "Online signature-based detection",
       "question_type": "multiple_choice",
@@ -7509,7 +7509,7 @@
     },
     {
       "id": 646,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.41",
       "question_text": "Offline signature-based detection",
       "question_type": "multiple_choice",
@@ -7519,7 +7519,7 @@
     },
     {
       "id": 647,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.42",
       "question_text": "Custom rules",
       "question_type": "multiple_choice",
@@ -7529,7 +7529,7 @@
     },
     {
       "id": 648,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.43",
       "question_text": "Behavioural detection",
       "question_type": "multiple_choice",
@@ -7539,7 +7539,7 @@
     },
     {
       "id": 649,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.44",
       "question_text": "Reporting",
       "question_type": "multiple_choice",
@@ -7549,7 +7549,7 @@
     },
     {
       "id": 650,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.45",
       "question_text": "Dashboards",
       "question_type": "multiple_choice",
@@ -7559,7 +7559,7 @@
     },
     {
       "id": 651,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.46",
       "question_text": "Data visualization techniques",
       "question_type": "multiple_choice",
@@ -7571,7 +7571,7 @@
     },
     {
       "id": 652,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.47",
       "question_text": "Data drilldowns",
       "question_type": "multiple_choice",
@@ -7583,7 +7583,7 @@
     },
     {
       "id": 653,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.48",
       "question_text": "Central analysis console",
       "question_type": "multiple_choice",
@@ -7595,7 +7595,7 @@
     },
     {
       "id": 654,
-      "aspect_id": 15,
+      "aspect_id": 18,
       "code": "T 3.7.49",
       "question_text": "Advanced searching and querying",
       "question_type": "multiple_choice",
@@ -7607,7 +7607,7 @@
     },
     {
       "id": 655,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.12",
       "question_text": "EDR integration",
       "question_type": "multiple_choice",
@@ -7617,7 +7617,7 @@
     },
     {
       "id": 656,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.17",
       "question_text": "SIEM integration",
       "question_type": "multiple_choice",
@@ -7627,7 +7627,7 @@
     },
     {
       "id": 657,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.18",
       "question_text": "Standard playbooks",
       "question_type": "multiple_choice",
@@ -7637,7 +7637,7 @@
     },
     {
       "id": 658,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.19",
       "question_text": "Customised playbooks",
       "question_type": "multiple_choice",
@@ -7647,7 +7647,7 @@
     },
     {
       "id": 659,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.20",
       "question_text": "Playbook automation",
       "question_type": "multiple_choice",
@@ -7657,7 +7657,7 @@
     },
     {
       "id": 660,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.21",
       "question_text": "Playbook development process",
       "question_type": "multiple_choice",
@@ -7667,7 +7667,7 @@
     },
     {
       "id": 661,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.22",
       "question_text": "Reporting",
       "question_type": "multiple_choice",
@@ -7677,7 +7677,7 @@
     },
     {
       "id": 662,
-      "aspect_id": 15,
+      "aspect_id": 19,
       "code": "T 4.7.23",
       "question_text": "Dashboards",
       "question_type": "multiple_choice",
@@ -7687,7 +7687,7 @@
     },
     {
       "id": 663,
-      "aspect_id": 15,
+      "aspect_id": 11,
       "code": "M 1.10",
       "question_text": "Have you implemented a SOC architecture process?",
       "question_type": "multiple_choice",
@@ -7697,7 +7697,7 @@
     },
     {
       "id": 664,
-      "aspect_id": 15,
+      "aspect_id": 20,
       "code": "S 1.16.27",
       "question_text": "OT monitoring",
       "question_type": "multiple_choice",

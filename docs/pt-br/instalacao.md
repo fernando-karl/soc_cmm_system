@@ -77,7 +77,7 @@ O arquivo do banco é `soc_cmm_bilingual.db`, ao lado do código da aplicação,
 onde `DB_PATH` apontar.
 
 > **O que é carregado:** o questionário completo do SOC-CMM® 2.4.2 (advanced)
-> — 5 domínios, 27 aspectos, 622 questões e 3110 opções de resposta, todas as
+> — 5 domínios, 27 aspectos, 649 questões e 3245 opções de resposta, todas as
 > questões pontuáveis — além de todas as traduções em `dataset/translations/`.
 > O script imprime as contagens e o número de questões traduzidas por idioma
 > ao rodar, e avisa se algo estiver faltando. Veja `sql/README.md`.

@@ -6,6 +6,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **270 of the 622 questions were filed under the wrong aspect** (283 of 664 in
+  the 2.3.3 dataset). `scripts/extract_soc_cmm.py` assigned each question to
+  the last section header it had passed in the workbook's `_Output` sheet, and
+  two quirks of that sheet broke it: some headers are written with a space
+  (`S 2 - Security incident Management`), which the header pattern did not
+  match, and a block near the end re-lists capability items from other aspects
+  under `M5`. As a result **Security Incident Management and Forensic analysis
+  had no questions at all**, Detection Engineering & Validation had 193 instead
+  of 18, Security Monitoring 119 instead of 41, and the four Technology aspects
+  had 16 each instead of 46–71. Every aspect score built on those questions was
+  computed over the wrong set. Questions are now assigned by their own id
+  (`S 2.3.1` → Services aspect 2). This also recovers **27 questions** that
+  were silently dropped: the questionnaire is now **649 questions and 3245
+  answer options**.
+- Both shipped datasets are regenerated, and the 132 new Portuguese strings are
+  translated (`origin: machine`, pending review like the rest).
+
+### Added
+
+- `tests/test_dataset_integrity.py`: every question's id must match its
+  aspect, no aspect may be empty, question ids must be unique, translation files
+  must have no gaps, and the committed 2.4.2 JSON must equal a fresh extraction
+  from the workbook. Run against the 2.0.1 data, five of these fail.
+
+### Upgrading
+
+Question ids change, and `scripts/init_db.py` never overwrites an existing
+questionnaire, so an existing database keeps the mis-filed one. Rebuild it the
+same way as for the 1.x → 2.0 upgrade (see `docs/releases/v2.0.0.md`). Scores
+from assessments taken on 2.0.x are not comparable with this release for any
+aspect whose question set changed.
+
 ## [2.0.1] - 2026-10-08
 
 Housekeeping release. The application behaves identically to 2.0.0: this

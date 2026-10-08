@@ -81,7 +81,7 @@ def test_seeds_the_questionnaire(built):
     """SOC-CMM has five scored domains; Results is output, not a sixth domain."""
     assert count(built, "domains") == 5
     assert count(built, "aspects") == 27
-    assert count(built, "questions") == 622
+    assert count(built, "questions") == 649
 
 
 def test_every_question_is_scorable(built):
@@ -132,7 +132,7 @@ def test_loads_the_shipped_translations(built):
 
     The questionnaire is seeded in English and the translated text lives in
     separate tables, so a bootstrap that skips the import leaves a PT-BR user
-    reading 622 English questions with only the interface translated.
+    reading 649 English questions with only the interface translated.
     """
     conn = sqlite3.connect(built)
     try:

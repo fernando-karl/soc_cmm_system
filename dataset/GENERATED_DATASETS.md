@@ -4,20 +4,20 @@ Generated from the official SOC-CMM® workbooks by
 `scripts/extract_soc_cmm.py`. Do not edit them by hand — regenerate.
 
 ```bash
-# 2.3.3 basic (the default)
+# 2.4.2 advanced (the default, and what the application seeds)
 python scripts/extract_soc_cmm.py
 
-# 2.4.2 advanced
+# 2.3.3 basic
 python scripts/extract_soc_cmm.py \
-    --workbook dataset/soc-cmm-2.4.2-advanced.xlsx \
-    --version "2.4.2 (advanced)" \
-    --out dataset/soc_cmm_2.4.2_advanced.json
+    --workbook dataset/soc-cmm2.3.3-basic.xlsx \
+    --version "2.3.3 (basic)" \
+    --out dataset/soc_cmm_2.3.3_basic.json
 ```
 
 | Version | Domains | Aspects | Questions | Options | NIST |
 | --- | --- | --- | --- | --- | --- |
 | 2.3.3 (basic) | 5 | 26 | 664 | 3320 | CSF 1.1 |
-| 2.4.2 (advanced) | 5 | 27 | 622 | 3110 | CSF 2.0 |
+| 2.4.2 (advanced) | 5 | 27 | 649 | 3245 | CSF 2.0 |
 
 Both are released by SOC-CMM® under CC BY-SA 4.0; the advanced workbook states
 this itself ("The SOC-CMM advanced version is part of the SOC-CMM®. The
@@ -30,6 +30,15 @@ aspects to Log / Network / Endpoint Monitoring and SecOps Automation, and
 broadens Business "Customers" to "Customers / Stakeholders". Column positions in
 `_Output` also moved, so the NIST columns are located by their header rather
 than by position.
+
+Each question is filed under the aspect its own id names (`S 2.3.1` belongs to
+Services aspect 2), not under the last section header the extractor passed in
+`_Output`. Up to 2.0.1 it used the header, which mis-filed 270 of the 2.4.2
+questions and 283 of the 2.3.3 ones: `_Output` writes some headers with a space
+(`S 2 - ...`) and re-lists capability items under `M5`. Security Incident
+Management and Forensics came out empty, and 27 questions were dropped.
+`tests/test_dataset_integrity.py` now checks every id against its aspect and
+that the committed JSON matches a fresh extraction.
 
 ## Why it was regenerated
 

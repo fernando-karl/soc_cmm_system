@@ -10,8 +10,8 @@ every translation lives outside it, in `dataset/translations/<language>.json`.
     # load it into a database
     python scripts/translations.py import --language pt_br
 
-Export deduplicates: the 3110 answer options across the questionnaire are only
-792 distinct strings, so a translator sees each phrase once. Import expands a
+Export deduplicates: the 3245 answer options across the questionnaire are only
+893 distinct strings, so a translator sees each phrase once. Import expands a
 translated string back to every row that uses it.
 
 Strings already translated keep their text on re-export, so running `export`
