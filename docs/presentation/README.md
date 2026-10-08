@@ -10,7 +10,7 @@ selectable text.
 | 1. Cover | 8. Progress over time |
 | 2. What it measures | 9. Bilingual interface |
 | 3. Why not a spreadsheet | 10. REST API and MCP server |
-| 4. The six domains | 11. Access control |
+| 4. The five domains | 11. Access control |
 | 5. Guided questionnaire | 12. Attribution and license |
 | 6. Results and radar chart | 13. Getting started and contributing |
 | 7. Domain and aspect breakdown | |

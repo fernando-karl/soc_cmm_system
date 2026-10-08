@@ -25,7 +25,10 @@ including the Portuguese interface and mobile views, or the 13-slide
 
 - **Customer Management**: Create and manage multiple customers/organizations
 - **Step-by-Step Assessment**: Guided questionnaire broken into manageable sections by domain and aspect
-- **Maturity Evaluation**: SOC-CMM® maturity scale (0–5: Non-existent through Optimizing), as implemented in the questionnaire scoring
+- **Maturity Evaluation**: five maturity levels per question, each described in
+  that question's own words from the workbook's guidance. See
+  [Scoring](#scoring) for how the numbers are calculated and how they differ
+  from the official workbook
 - **Visual Results**: Interactive radar charts showing maturity levels across all domains
 - **Progress Tracking**: Multiple assessments per customer to track improvements over time
 - **Mobile Optimized**: Responsive design for desktop and mobile devices
@@ -33,14 +36,20 @@ including the Portuguese interface and mobile views, or the 13-slide
 
 ## SOC CMM Domains
 
-The assessment covers six key domains:
+SOC-CMM® has **five** scored domains, covering 27 aspects and 622 questions:
 
-1. **Business** - Strategy, governance, cost management, and privacy
-2. **People** - Employment, training, performance, and knowledge management
-3. **Process** - Management, operations, reporting, and use case management
-4. **Technology** - Security information management, detection, and analytics
-5. **Services** - Service catalog, analysis, threat hunting, and vulnerability management
-6. **Results** - Overview, critical success factors, and sharing
+1. **Business** - Business drivers, customers, charter, governance, privacy
+2. **People** - Employees, roles and hierarchy, people management, knowledge
+   management, training and education
+3. **Process** - Management, operations and facilities, reporting, use case
+   management, detection engineering and validation, automation, logging
+4. **Technology** - Logging, network, endpoint, automation
+5. **Services** - Security monitoring, security incident management, analysis
+   and forensics, threat intelligence, threat hunting, vulnerability management
+
+The workbook's `Results` section is its **output** — the overview, NIST CSF
+scoring and results sharing — not a sixth scored domain, and is not part of the
+questionnaire. Releases before 2.0.0 scored it as one.
 
 ## Technology Stack
 
@@ -146,11 +155,17 @@ existing data alone. Use it on an existing database too, after pulling changes
 that add a migration. (`scripts/migrate_to_auth.py` is still there for upgrading
 a database that predates authentication.)
 
-> **Note on questionnaire coverage:** the shipped dataset defines all 97
-> questions but answer options for only 11 of them, so the rest cannot be scored
-> yet. A fuller set exists in `sql/seed/` but was generated for an older schema
-> and does not load as is — see [`sql/README.md`](sql/README.md). Help closing
-> that gap is very welcome.
+> **What gets seeded:** the shipped dataset is the full SOC-CMM® 2.4.2
+> (advanced) questionnaire — 5 domains, 27 aspects, **622 questions and 3110
+> answer options, every question scorable**. The bootstrap also loads every
+> translation in `dataset/translations/`, so a Portuguese user gets the
+> questionnaire in Portuguese and not just the interface. (The older partial
+> seed in `sql/seed/` was generated for a previous schema and is kept only for
+> reference — see [`sql/README.md`](sql/README.md).)
+>
+> Most of the Portuguese is machine-translated and unreviewed —
+> **[help reviewing it](https://github.com/fernando-karl/soc_cmm_system/issues/22) is the most useful contribution to this
+> project right now.**
 
 The application listens on **port 8400** by default. Override with
 `PORT=9000 python main.py`. Browse to <http://localhost:8400>, log in as
@@ -205,9 +220,9 @@ See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
 
 - From the customer list, click **New Assessment**.
 - Answer the questionnaire by domain and aspect (Business, People,
-  Process, Technology, Services, Results).
-- The assessment supports multiple question types: maturity scale
-  (SOC-CMM® 0–5), multiple choice, numeric, free text, and checkboxes.
+  Process, Technology, Services).
+- Every question offers five maturity levels, worded for that question. See
+  [Scoring](#scoring) for how they turn into a percentage.
 - Answers autosave; the progress bar shows what is still pending.
 - When every aspect is complete, click **Complete Assessment**.
 
@@ -221,6 +236,39 @@ See [`docs/en/docker.md`](docs/en/docker.md) for the full Docker guide.
 
 - Use the 🇺🇸 / 🇧🇷 flags in the top bar.
 - The choice is stored in a `language` cookie (1 year).
+
+## Scoring
+
+The maturity score is a **plain average, deliberately simpler than the official
+workbook's**. Read this before comparing a number from this tool with a number
+from the SOC-CMM® spreadsheet — they are not computed the same way.
+
+Here, each answer option carries a maturity level of 1 to 5. An aspect score is
+the unweighted mean of its answered questions, a domain score the unweighted
+mean of its aspects, and the percentage is `score / 5 × 100`.
+
+The SOC-CMM® 2.4.2 (advanced) workbook differs in two ways that matter:
+
+- **It normalises from the bottom of the scale.** Its per-question percentage is
+  `100 × (answer − 1) / 4`, so the lowest answer scores **0%**. Here the same
+  answer scores 20%, because the divisor is the top of the scale rather than its
+  range. A SOC that answers at the lowest level throughout therefore reads 0% in
+  the workbook and 20% here.
+- **It weights questions by importance.** The assessor marks each question
+  `none`, `low`, `normal`, `high` or `critical`, which maps to a factor of 0,
+  0.5, 1, 2 or 4 (`_Score matrix`), and aspect totals are weighted sums rather
+  than plain means. A question marked `none` drops out of the score entirely.
+  This tool treats every question as equally important. (In a stock workbook
+  every question ships as `normal`, so the weighting only takes effect once an
+  assessor changes it.)
+
+The workbook also tracks completeness separately from maturity and carries its
+own NIST CSF scoring sheet; neither is reproduced here.
+
+None of this makes the numbers wrong, but it does make them **this tool's
+numbers**. Use them to compare a SOC against itself over time, which is what the
+progress chart is for. For a figure to put in front of an auditor or to compare
+against someone else's SOC-CMM® result, use the official workbook.
 
 ## API Endpoints
 

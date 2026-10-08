@@ -20,6 +20,15 @@ Portuguese version: [`docs/pt-br/contribuindo.md`](docs/pt-br/contribuindo.md).
 
 Do **not** commit `.env`, `*.db`, or real assessment data.
 
+## Where help is most needed
+
+The Brazilian Portuguese questionnaire is complete but **1,397 of its 1,746
+strings are machine-translated and unreviewed**. Reviewing any part of it is the
+highest-value contribution available — see
+[help wanted: review the Brazilian Portuguese translation](https://github.com/fernando-karl/soc_cmm_system/issues/22). Taking one
+domain, or just the answer options, is a perfectly good pull request. The same
+tooling takes any other language.
+
 ## Pull requests
 
 - Open an issue first for large changes

@@ -3,6 +3,7 @@
 These run `scripts/init_db.py` as a subprocess against a throwaway DB_PATH,
 which is exactly how a new contributor runs it.
 """
+import json
 import sqlite3
 import subprocess
 import sys
@@ -124,6 +125,87 @@ def test_a_fully_mature_assessment_scores_full_marks(built):
     finally:
         conn.close()
     assert max(levels) == 5, f"top maturity level is {max(levels)}, expected 5"
+
+
+def test_loads_the_shipped_translations(built):
+    """A fresh install must serve Portuguese to Portuguese users.
+
+    The questionnaire is seeded in English and the translated text lives in
+    separate tables, so a bootstrap that skips the import leaves a PT-BR user
+    reading 622 English questions with only the interface translated.
+    """
+    conn = sqlite3.connect(built)
+    try:
+        counts = {
+            table: conn.execute(
+                f"SELECT COUNT(*) FROM {table} WHERE language = 'pt_br'").fetchone()[0]
+            for table in ("domain_translations", "aspect_translations",
+                          "question_translations", "answer_option_translations")
+        }
+    finally:
+        conn.close()
+    assert counts["domain_translations"] == count(built, "domains")
+    assert counts["aspect_translations"] == count(built, "aspects")
+    assert counts["question_translations"] == count(built, "questions")
+    assert counts["answer_option_translations"] == count(built, "answer_options")
+
+
+def test_translated_questions_are_actually_in_portuguese(built):
+    """Guard against the import writing the English text into the pt_br rows,
+    which would satisfy a row count but change nothing a user sees."""
+    conn = sqlite3.connect(built)
+    try:
+        same = conn.execute(
+            "SELECT COUNT(*) FROM questions q "
+            "JOIN question_translations t ON t.question_id = q.id "
+            "WHERE t.language = 'pt_br' AND t.question_text = q.question_text"
+        ).fetchone()[0]
+        total = conn.execute(
+            "SELECT COUNT(*) FROM question_translations WHERE language = 'pt_br'"
+        ).fetchone()[0]
+    finally:
+        conn.close()
+    # A handful of identical strings is plausible (acronyms, product names);
+    # a large overlap means the import copied the English across.
+    assert same < total * 0.1, (
+        f"{same} of {total} pt_br questions are byte-identical to the English")
+
+
+LANGUAGE_PROBE = """
+import json, sys
+sys.path.insert(0, ".")
+from database import DatabaseManager
+db = DatabaseManager()
+out = {}
+for lang in ("en", "pt_br"):
+    domains = db.get_domains(lang)
+    aspects = db.get_domain_aspects(domains[0]["id"], lang)
+    questions = db.get_aspect_questions(aspects[0]["id"], lang)
+    out[lang] = {"domains": [d["name"] for d in domains],
+                 "aspect": aspects[0]["name"],
+                 "question": questions[0]["question_text"]}
+print(json.dumps(out))
+"""
+
+
+def test_the_language_aware_queries_return_the_translations(built):
+    """The rows exist; this is the path the application actually reads them by."""
+    result = subprocess.run(
+        [sys.executable, "-c", LANGUAGE_PROBE],
+        cwd=REPO_ROOT,
+        env={"PATH": "/usr/bin:/bin:/usr/local/bin", "DB_PATH": str(built),
+             "SECRET_KEY": "test-only-secret-key-not-for-production"},
+        capture_output=True, text=True, timeout=120,
+    )
+    assert result.returncode == 0, result.stderr
+    out = json.loads(result.stdout.strip().splitlines()[-1])
+    assert out["en"]["domains"] == ["Business", "People", "Process",
+                                   "Technology", "Services"]
+    assert out["pt_br"]["domains"] == ["Neg\u00f3cio", "Pessoas", "Processo",
+                                       "Tecnologia", "Servi\u00e7os"]
+    for field in ("aspect", "question"):
+        assert out["pt_br"][field] != out["en"][field], (
+            f"pt_br {field} is still the English text: {out['pt_br'][field]!r}")
 
 
 def test_is_idempotent(built):

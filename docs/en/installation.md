@@ -74,9 +74,11 @@ it destroys all users, customers and assessments.
 The database file is `soc_cmm_bilingual.db` next to the application code, or
 wherever `DB_PATH` points.
 
-> **Questionnaire coverage:** the shipped dataset defines all 97 questions but
-> answer options for only 11 of them, so the rest cannot be scored yet. The
-> script warns about this when it runs. See `sql/README.md`.
+> **What gets seeded:** the full SOC-CMM® 2.4.2 (advanced) questionnaire — 5
+> domains, 27 aspects, 622 questions and 3110 answer options, every question
+> scorable — plus every translation in `dataset/translations/`. The script
+> prints the counts and the translated-question count per language when it
+> runs, and warns if anything is missing. See `sql/README.md`.
 
 > Upgrading a database that predates authentication? Use
 > `python scripts/migrate_to_auth.py` instead, which adds the `users` tables

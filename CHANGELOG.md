@@ -6,6 +6,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **A fresh install served the questionnaire in English to Portuguese users.**
+  `scripts/init_db.py` created the four translation tables but never loaded
+  anything into them, so only the interface was translated and all 622
+  questions, their guidance and all 3110 answer options appeared in English.
+  The fix was a documented manual step (`scripts/translations.py import`) that
+  the README never mentioned. The bootstrap now imports every
+  `dataset/translations/*.json` itself, and reports the translated-question
+  count per language when it finishes
+- README and both installation guides claimed the dataset held "97 questions
+  but answer options for only 11 of them". That has been wrong since 2.0.0
+  regenerated the questionnaire: it is 622 questions and 3110 options, all
+  scorable
+- README, both overviews and both usage guides still described **six** domains
+  including `Results`, the misrepresentation 2.0.0 set out to fix, and still
+  listed aspects under their pre-2.0.0 guessed names. The docs now describe the
+  five scored domains and their real aspects
+- The docs described a 0–5 maturity scale ("0 — Non-existent"), but the shipped
+  questionnaire offers levels 1–5 with no zero. They now describe what ships
+
+### Added
+
+- A **Scoring** section in the README and in `docs/pt-br/visao_geral.md`,
+  stating plainly that the score is an unweighted average and how it differs
+  from the official workbook: the workbook normalises per question as
+  `100 × (answer − 1) / 4` so its lowest answer scores 0% where this tool's
+  scores 20%, and it weights questions by an assessor-set importance
+  (factor 0 / 0.5 / 1 / 2 / 4) where this tool treats all questions equally.
+  The point is that nobody compares a number from here with a number from the
+  workbook and concludes one of them is broken
+- Tests that a fresh bootstrap actually produces a usable Portuguese
+  questionnaire: the translation row counts match the content counts, the
+  stored Portuguese is not just the English text copied across, and the
+  language-aware queries the application uses return it
+
 ## [2.0.0] - 2026-10-08
 
 
