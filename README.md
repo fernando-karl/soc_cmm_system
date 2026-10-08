@@ -453,9 +453,10 @@ Summary of your rights and obligations:
 - You **must distribute** any derivative work under the same CC BY-SA 4.0
   license.
 
-See [`LICENSE`](LICENSE) for the full license summary and
-[`NOTICE`](NOTICE) for the complete third-party attribution. The full legal
-text of CC BY-SA 4.0 is available at
+[`LICENSE`](LICENSE) holds the complete, verbatim legal code of CC BY-SA 4.0,
+and [`NOTICE`](NOTICE) holds this project's attribution: what is derived from
+the SOC-CMM® framework, the modifications made, the trademark reservation and
+the non-affiliation statement. The licence is also published at
 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
 
 > "SOC-CMM" is a trademark of Rob van Os. This project is **not affiliated
