@@ -6,18 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-10-08
+
+Housekeeping release. The application behaves identically to 2.0.0: this
+differs only in `.gitignore`, a documented release procedure, and the tests
+covering both. If you are on 2.0.0 there is nothing to recalculate or rebuild.
+
 ### Security
 
 - **`.gitignore` did not cover every database backup this project's own scripts
   write.** `scripts/migrate_bilingual.py` writes `<db>.bak_<timestamp>`, which
-  matched none of the existing rules: `*.db` misses it because the name does
-  not end in `.db`, and `*.bak` misses it because the name ends in
+  matched none of the existing rules: `*.db` misses it because the name does not
+  end in `.db`, and `*.bak` misses it because the name ends in
   `.bak_<timestamp>`. A live SQLite database containing users, bcrypt password
   hashes and customer records could therefore be staged by `git add -A`. The
   write-ahead log and shared-memory files (`*.db-wal`, `*.db-shm`) were also
-  uncovered. Every name the migration scripts generate is now ignored, and
-  tests assert it against each one, assert that no tracked file became ignored,
-  and assert that no database is tracked
+  uncovered. Every name the migration scripts generate is now ignored, and tests
+  assert it against each one, assert that no tracked file became ignored, and
+  assert that no database is tracked
 - `.cursor/`, `.vscode/` and `.idea/` are ignored
 
 ### Added
@@ -28,79 +34,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `main` — tagging one and pushing re-uploads the purged history. The procedure
   verifies the SHA first, passes it to `git tag` explicitly, and records how to
   recover
-
-### Changed
-
-- **Scoring now follows the official SOC-CMM® 2.4.2 (advanced) workbook**
-  instead of taking a plain average, so a number from this tool is comparable
-  with one from the spreadsheet. Per aspect, over the answered questions with
-  answer `a` and importance factor `h`, the workbook's `_Output` sheet computes
-  `100 × (SUM(a×h) − SUM(h)) / (SUM(5×h) − SUM(h))`, a factor-weighted mean of
-  `(a − 1) / 4`. Maturity on the 0–5 scale is `5 × percentage / 100` and a
-  domain is the plain mean of its aspects, both as the workbook's results sheet
-  derives them (the domain step already matched)
-- **The lowest answer now scores 0%, not 20%.** Subtracting `SUM(h)` normalises
-  over the range of the scale rather than its top, so a SOC that has none of a
-  capability reads zero. **Percentages from earlier releases will go down.**
-  `scripts/init_db.py` recalculates stored scores from the stored answers and
-  says so when it does; the raw answers are untouched
-
-### Added
-
-- **Per-question importance**, as the workbook uses it: `none`, `low`,
-  `normal`, `high` or `critical`, mapping to a factor of 0, 0.5, 1, 2 or 4
-  (`_Score matrix`). A question marked `none` drops out of the score entirely.
-  `POST /api/answers` takes an optional `importance` and it is stored per
-  answer, defaulting to `normal` — what every question ships as in the
-  workbook, which leaves the weighting inert until an assessor sets it
-- `sql/migrations/add_answer_importance.sql`, applied by the bootstrap
-- Tests pinning the scoring to the workbook: each uniform answer level scores
-  exactly `100 × (a − 1) / 4`, importance moves a mixed aspect by the weighted
-  amount, `none` removes a question, an aspect of only `none` questions gets no
-  score rather than a fabricated 0, and the domain score is the mean of its
-  aspects
-
-### Known gap
-
-- The questionnaire interface has no control for importance yet, so it can only
-  be set through the API. Until it is added, every answer saved from the web
-  interface is `normal`, which matches a stock workbook
-
-### Fixed
-
-- **A fresh install served the questionnaire in English to Portuguese users.**
-  `scripts/init_db.py` created the four translation tables but never loaded
-  anything into them, so only the interface was translated and all 622
-  questions, their guidance and all 3110 answer options appeared in English.
-  The fix was a documented manual step (`scripts/translations.py import`) that
-  the README never mentioned. The bootstrap now imports every
-  `dataset/translations/*.json` itself, and reports the translated-question
-  count per language when it finishes
-- README and both installation guides claimed the dataset held "97 questions
-  but answer options for only 11 of them". That has been wrong since 2.0.0
-  regenerated the questionnaire: it is 622 questions and 3110 options, all
-  scorable
-- README, both overviews and both usage guides still described **six** domains
-  including `Results`, the misrepresentation 2.0.0 set out to fix, and still
-  listed aspects under their pre-2.0.0 guessed names. The docs now describe the
-  five scored domains and their real aspects
-- The docs described a 0–5 maturity scale ("0 — Non-existent"), but the shipped
-  questionnaire offers levels 1–5 with no zero. They now describe what ships
-
-### Added
-
-- A **Scoring** section in the README and in `docs/pt-br/visao_geral.md`,
-  stating plainly that the score is an unweighted average and how it differs
-  from the official workbook: the workbook normalises per question as
-  `100 × (answer − 1) / 4` so its lowest answer scores 0% where this tool's
-  scores 20%, and it weights questions by an assessor-set importance
-  (factor 0 / 0.5 / 1 / 2 / 4) where this tool treats all questions equally.
-  The point is that nobody compares a number from here with a number from the
-  workbook and concludes one of them is broken
-- Tests that a fresh bootstrap actually produces a usable Portuguese
-  questionnaire: the translation row counts match the content counts, the
-  stored Portuguese is not just the English text copied across, and the
-  language-aware queries the application uses return it
 
 ## [2.0.0] - 2026-10-08
 
@@ -151,6 +84,17 @@ questionnaire, export anything you need and rebuild with
 
 ### Changed
 
+- **Scoring follows the official SOC-CMM® 2.4.2 (advanced) workbook** rather
+  than a plain average, so a number from this tool is comparable with one from
+  the spreadsheet. Per aspect, over the answered questions with answer `a` and
+  importance factor `h`, the workbook's `_Output` sheet computes
+  `100 × (SUM(a×h) − SUM(h)) / (SUM(5×h) − SUM(h))`, a factor-weighted mean of
+  `(a − 1) / 4`. Maturity on the 0–5 scale is `5 × percentage / 100` and a
+  domain is the plain mean of its aspects, both as the workbook's results sheet
+  derives them
+- **The lowest answer scores 0%, not 20%.** Subtracting `SUM(h)` normalises over
+  the range of the scale rather than its top, so a SOC that has none of a
+  capability reads zero rather than a misleading fifth of the scale
 - `mcp` 1.0.0 → 1.30.0 (the 2.x line moved the decorator API off the lowlevel
   `Server` onto `FastMCP` and would need the server rewritten), and `httpx`
   0.27.0 → 0.28.1, which `mcp` 1.30 requires
@@ -181,6 +125,28 @@ questionnaire, export anything you need and rebuild with
 
 ### Added
 
+- **Per-question importance**, as the workbook uses it: `none`, `low`,
+  `normal`, `high` or `critical`, mapping to a factor of 0, 0.5, 1, 2 or 4
+  (`_Score matrix`). A question marked `none` drops out of the score entirely.
+  `POST /api/answers` takes an optional `importance`, stored per answer and
+  defaulting to `normal` — what every question ships as in the workbook, which
+  leaves the weighting inert until an assessor sets it. The questionnaire
+  interface has **no control for it yet**, so every answer saved from the web
+  interface is `normal`
+- `sql/migrations/add_answer_importance.sql`, applied by the bootstrap
+- A **Scoring** section in the README and `docs/pt-br/visao_geral.md` setting
+  out the formula, the 0% floor, how importance weighting works, and the two
+  parts of the workbook not reproduced here (completeness tracked separately
+  from maturity, and its own NIST CSF scoring sheet)
+- Tests pinning the scoring to the workbook: each uniform answer level scores
+  exactly `100 × (a − 1) / 4`, importance moves a mixed aspect by the weighted
+  amount, `none` removes a question, an aspect of only `none` questions gets no
+  score rather than a fabricated 0, and the domain score is the mean of its
+  aspects
+- Tests that a fresh bootstrap produces a usable Portuguese questionnaire: the
+  translation row counts match the content counts, the stored Portuguese is not
+  just the English text copied across, and the language-aware queries the
+  application uses return it
 - `scripts/init_db.py` — a one-command database bootstrap. It applies the base
   schema, the translation tables and the migrations, seeds the questionnaire,
   and creates the admin user when `ADMIN_PASSWORD` is set. It is idempotent, so
@@ -218,6 +184,20 @@ questionnaire, export anything you need and rebuild with
 
 ### Fixed
 
+- **A fresh install served the questionnaire in English to Portuguese users.**
+  `scripts/init_db.py` created the four translation tables but never loaded
+  anything into them, so only the interface was translated and all 622
+  questions, their guidance and all 3110 answer options appeared in English.
+  Loading them was a documented manual step the README never mentioned. The
+  bootstrap now imports every `dataset/translations/*.json` itself and reports
+  the translated-question count per language
+- README and both installation guides claimed the dataset held "97 questions
+  but answer options for only 11 of them", which the regenerated questionnaire
+  had already made wrong: it is 622 questions and 3110 options, all scorable
+- README, both overviews and both usage guides described **six** domains
+  including `Results`, with aspects under their pre-2.0.0 guessed names
+- The docs described a 0–5 maturity scale ("0 — Non-existent"), but the
+  questionnaire offers levels 1–5 with no zero
 - `ALLOWED_ORIGINS` defaulted to `http://localhost:8000` while the application
   serves on 8400, so the documented default rejected every browser request it
   was meant to allow. It now follows `PORT`
