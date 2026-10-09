@@ -1,7 +1,13 @@
 # Screenshots
 
-Captured from a local instance seeded with demo data (fictional customers —
-"Northwind Industries" and "Acme Financial"; no real assessment data).
+Captured from a local instance running **2.1.0**, seeded with demo data — a
+fictional customer, "Northwind Energy", with two assessments six months apart.
+No real assessment data appears here.
+
+Regenerate them with `python scripts/capture_screenshots.py` (see
+[`../../scripts/capture_screenshots.py`](../../scripts/capture_screenshots.py)
+for the options) so a release can refresh the gallery instead of leaving
+screenshots that show counts and scores the software no longer produces.
 
 ## English interface
 
@@ -11,16 +17,24 @@ Captured from a local instance seeded with demo data (fictional customers —
 | **Dashboard** — assessment overview for the signed-in user.<br>![Dashboard](03-dashboard.png) | **Customers** — multiple client organisations, scoped per user.<br>![Customers](04-customers.png) |
 
 ### Guided questionnaire
-Step-by-step through the five SOC-CMM® domains, with per-aspect progress.
+Step-by-step through the five SOC-CMM® domains and their 27 aspects — 649
+questions in all. Each question carries the workbook's own guidance, and each
+of its five maturity levels is worded for that specific question rather than
+with a generic label.
 
 ![Questionnaire](05-assessment-questionnaire.png)
 
 ### Results
-Overall maturity gauge, radar chart across all five domains, per-domain and
-per-aspect breakdown with maturity labels, and progress over time across
-repeated assessments.
+Radar chart across the five scored domains. Scores follow the official
+SOC-CMM® formula, so the lowest answer reads 0% rather than a fifth of the
+scale.
 
-![Results](06-results-radar.png)
+![Radar chart](06-results-radar.png)
+
+Overall maturity gauge above the radar, with the per-domain and per-aspect
+breakdown and progress over time further down the page.
+
+![Results overview](15-results-overview.png)
 
 ### Attribution
 The About page carries the full SOC-CMM® attribution, license and
@@ -36,8 +50,10 @@ non-affiliation notice.
 
 ## Portuguese (PT-BR) interface
 
-The entire interface — navigation, questionnaire flow, results and the
-attribution notice — is available in Brazilian Portuguese.
+Not only the interface: all 649 questions, their guidance and all 3245 answer
+options are translated, so the assessment itself is in Portuguese. Most of that
+is machine-translated and unreviewed — see
+[help wanted: review the Brazilian Portuguese translation](https://github.com/fernando-karl/soc_cmm_system/issues/22).
 
 | | |
 | --- | --- |
