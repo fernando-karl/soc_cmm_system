@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-10-09
+
+Corrects which aspect each question belongs to. **Every aspect score from 2.0.x
+is affected for the aspects listed below; rebuild the database and re-run any
+assessment you rely on.**
+
 ### Fixed
 
 - **270 of the 622 questions were filed under the wrong aspect** (283 of 664 in
@@ -31,6 +37,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   aspect, no aspect may be empty, question ids must be unique, translation files
   must have no gaps, and the committed 2.4.2 JSON must equal a fresh extraction
   from the workbook. Run against the 2.0.1 data, five of these fail.
+
+### Changed
+
+- `LICENSE` is now the verbatim CC BY-SA 4.0 legal code, so GitHub detects the
+  licence. Attribution, derived components and the trademark position remain in
+  `NOTICE`. No change to the licence itself.
 
 ### Upgrading
 

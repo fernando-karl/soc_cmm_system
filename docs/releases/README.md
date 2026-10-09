@@ -5,6 +5,7 @@ can be passed to `gh release create --notes-file`.
 
 | Version | Notes |
 | --- | --- |
+| 2.1.0 | [v2.1.0.md](v2.1.0.md) |
 | 2.0.1 | [v2.0.1.md](v2.0.1.md) |
 | 2.0.0 | [v2.0.0.md](v2.0.0.md) |
 
