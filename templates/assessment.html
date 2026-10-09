@@ -174,13 +174,14 @@ function updateCompletedAspects() {
 }
 
 // Domain icons mapping
+// Keyed on order_index, not on the name: the name is translated, so keying on
+// it left every domain in the Portuguese interface with the fallback icon.
 const domainIcons = {
-    'Business': 'fas fa-building',
-    'People': 'fas fa-users',
-    'Process': 'fas fa-cogs',
-    'Technology': 'fas fa-microchip',
-    'Services': 'fas fa-server',
-    'Results': 'fas fa-chart-line'
+    1: 'fas fa-building',    // Business
+    2: 'fas fa-users',       // People
+    3: 'fas fa-cogs',        // Process
+    4: 'fas fa-microchip',   // Technology
+    5: 'fas fa-server'       // Services
 };
 
 // Initialize assessment
@@ -649,7 +650,7 @@ function updateDomainProgressDisplay() {
 
 function updateDomainUI() {
     const domain = domains[currentDomainIndex];
-    const icon = domainIcons[domain.name] || 'fas fa-circle';
+    const icon = domainIcons[domain.order_index] || 'fas fa-circle';
     
     document.getElementById('currentDomainTitle').innerHTML = `
         <i class="${icon}"></i>

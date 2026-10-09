@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **The Portuguese interface had no flag icons.** `templates/base_pt_br.html`
+  never loaded the `flag-icons` stylesheet that `base.html` loads, so the
+  language switcher it renders showed labels with no flags
+- **Domain icons were missing throughout the Portuguese questionnaire.** The
+  icon map was keyed on the English domain name (`domainIcons[domain.name]`),
+  so in Portuguese every domain fell through to the generic `fa-circle`
+  fallback. It is now keyed on `order_index`, which does not change with
+  language
+
+### Added
+
+- `scripts/capture_screenshots.py`, so the gallery can be regenerated for a
+  release instead of drifting. It frames the radar by its own card (a plain
+  viewport shot of the results page shows the summary donut and none of the
+  chart), opens an aspect so the questionnaire shots show real questions, and
+  can serve the CDN assets from a local directory for machines without CDN
+  access — without Chart.js the radar renders blank
+
+### Changed
+
+- Screenshots retaken against 2.1.0. The previous set predated the scoring
+  change and the aspect-assignment fix, so they showed 622 questions, a
+  20% floor and the misfiled aspects. The gallery now also states how to
+  regenerate itself
+
 ## [2.1.0] - 2026-10-09
 
 Corrects which aspect each question belongs to. **Every aspect score from 2.0.x

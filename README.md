@@ -15,7 +15,8 @@ system built with FastAPI, SQLite, and modern web technologies.
 
 | | |
 | --- | --- |
-| ![Results](docs/screenshots/06-results-radar.png) | ![Questionnaire](docs/screenshots/05-assessment-questionnaire.png) |
+| **Maturity across the five domains**<br>![Radar chart](docs/screenshots/06-results-radar.png) | **649 questions, each level in its own words**<br>![Questionnaire](docs/screenshots/05-assessment-questionnaire.png) |
+| **The questionnaire in Portuguese, not just the interface**<br>![Questionário em português](docs/screenshots/14-questionnaire-pt-br.png) | **Results overview**<br>![Results overview](docs/screenshots/15-results-overview.png) |
 
 See [`docs/screenshots/`](docs/screenshots/README.md) for the full gallery,
 including the Portuguese interface and mobile views, or the 13-slide
